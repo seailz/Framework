@@ -7,6 +7,7 @@ public class VersionChecker {
 
     @Getter
     private static VersionChecker instance;
+    @Getter
     private final ServerVersion serverVersion;
 
     public VersionChecker() {
