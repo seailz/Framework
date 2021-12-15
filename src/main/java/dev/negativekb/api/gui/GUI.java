@@ -156,7 +156,7 @@ public class GUI {
         for (i = 0; i < (9 * rows); i++) {
             int indexSlot = i;
             boolean inSlot = items.stream().anyMatch(menuItem -> menuItem.getSlot() == indexSlot);
-            if (inSlot)
+            if (!inSlot)
                 break;
 
         }
