@@ -1,5 +1,7 @@
 package dev.negativekb.api.commands.annotation;
 
+import dev.negativekb.api.commands.Command;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -17,6 +17,7 @@ package dev.negativekb.api.util.cache;
 
 import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public abstract class ObjectCache<T> {
      *
      * @param cacheArrayList Class Type ArrayList
      */
-    public void save(ArrayList<T> cacheArrayList) throws IOException {
+    public void save(@NotNull ArrayList<T> cacheArrayList) throws IOException {
         File file = getFile(path);
         file.getParentFile().mkdir();
         file.createNewFile();
@@ -51,6 +52,7 @@ public abstract class ObjectCache<T> {
      *
      * @return A new instance of an ArrayList with the new Cache
      */
+    @NotNull
     public ArrayList<T> load() throws IOException {
         File file = getFile(path);
         if (file.exists()) {
@@ -61,7 +63,7 @@ public abstract class ObjectCache<T> {
         return new ArrayList<>();
     }
 
-    private File getFile(String path) {
+    private File getFile(@NotNull String path) {
         return new File(path);
     }
 }

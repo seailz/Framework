@@ -17,6 +17,7 @@ package dev.negativekb.api.util;
 
 import dev.negativekb.api.message.Message;
 import lombok.experimental.UtilityClass;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Time Utility
@@ -32,6 +33,7 @@ public class TimeUtil {
         format = "%day%%hour%%min%%sec%";
     }
 
+    @NotNull
     public String format(long l1, long l2) {
         return format(l1, l2, false);
     }
@@ -80,7 +82,7 @@ public class TimeUtil {
         String dayFormat = (dayNotZero ? toDays + (shortened ? "" : " ") + day + " " : "");
         String hourFormat = (hourNotZero ? toHour + (shortened ? "" : " ") + hour + " " : "");
         String minuteFormat = (minuteNotZero ? toMin + (shortened ? "" : " ") + minute + " " : "");
-        String secondFormat = (secondNotZero ? toSec + (shortened ? "" : " ") + second + " " : "");
+        String secondFormat = (secondNotZero ? toSec + (shortened ? "" : " ") + second + "" : "");
 
         return new Message(format)
                 .replace("%day%", dayFormat)

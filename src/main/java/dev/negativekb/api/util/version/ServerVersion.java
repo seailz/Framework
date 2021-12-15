@@ -15,6 +15,8 @@
 
 package dev.negativekb.api.util.version;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Server Version
  *
@@ -40,7 +42,7 @@ public enum ServerVersion {
     V1_8,
     V1_7;
 
-    public static ServerVersion fromServerPackageName(String packageName) {
+    public static ServerVersion fromServerPackageName(@NotNull String packageName) {
         packageName = packageName.split("\\.")[3];
         packageName = packageName.substring(0, packageName.length() - 3); // removes the _R1 for example
         try {

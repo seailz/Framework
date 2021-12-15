@@ -15,7 +15,6 @@
 
 package dev.negativekb.api.gui;
 
-import dev.negativekb.api.BasePlugin;
 import dev.negativekb.api.gui.internal.MenuItem;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +25,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
@@ -59,8 +57,6 @@ public class GUI {
     @Getter
     @Setter
     private BiConsumer<Player, InventoryCloseEvent> onClose;
-    @Getter
-    private BukkitTask autoRefreshTask;
 
     /**
      * Constructor for GUI
@@ -182,29 +178,6 @@ public class GUI {
     public void refresh(Player player) {
         Optional.ofNullable(activeInventories.get(player)).ifPresent(inventory ->
                 items.forEach(menuItem -> inventory.setItem(menuItem.getSlot(), menuItem.getItem().apply(player))));
-    }
-
-    /**
-     * Sets the automatic refresh task interval to the provided time
-     * in seconds.
-     * <p>
-     * Once the menu is closed, the task will be deleted.
-     *
-     * @param plugin  Plugin instance
-     * @param player  Player
-     * @param seconds Time in seconds
-     */
-    public void setAutoRefreshInterval(BasePlugin plugin, Player player, int seconds) {
-        BukkitTask autoRefreshTask = this.autoRefreshTask;
-        Optional.ofNullable(autoRefreshTask).ifPresent(BukkitTask::cancel);
-
-        this.autoRefreshTask = new BukkitRunnable() {
-
-            @Override
-            public void run() {
-                refresh(player);
-            }
-        }.runTaskTimer(plugin, 0, 20L * seconds);
     }
 
 }

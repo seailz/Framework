@@ -1,6 +1,8 @@
 package dev.negativekb.api.util;
 
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -20,7 +22,7 @@ import java.nio.charset.StandardCharsets;
  */
 public class HasteBin {
 
-    public String post(String text, boolean raw) throws IOException {
+    public String post(@NotNull String text, boolean raw) throws IOException {
         byte[] postData = text.getBytes(StandardCharsets.UTF_8);
         int postDataLength = postData.length;
 

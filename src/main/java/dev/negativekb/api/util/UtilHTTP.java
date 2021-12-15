@@ -2,6 +2,7 @@ package dev.negativekb.api.util;
 
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -13,7 +14,7 @@ import java.net.URL;
 public class UtilHTTP {
 
     @SneakyThrows
-    public JSONObject getJSONObjectFromMojang(String url) {
+    public JSONObject getJSONObjectFromMojang(@NotNull String url) {
         URL rawURL = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
         connection.setRequestMethod("GET");

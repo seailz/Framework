@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class ItemBuilder {
      *
      * @param m The material to create the ItemBuilder with.
      */
-    public ItemBuilder(Material m) {
+    public ItemBuilder(@NotNull Material m) {
         this(m, 1);
     }
 
@@ -39,7 +40,7 @@ public class ItemBuilder {
      *
      * @param is The itemstack to create the ItemBuilder over.
      */
-    public ItemBuilder(ItemStack is) {
+    public ItemBuilder(@NotNull ItemStack is) {
         this.is = is;
     }
 
@@ -49,7 +50,7 @@ public class ItemBuilder {
      * @param m      The material of the item.
      * @param amount The amount of the item.
      */
-    public ItemBuilder(Material m, int amount) {
+    public ItemBuilder(@NotNull Material m, int amount) {
         is = new ItemStack(m, amount);
     }
 
@@ -60,7 +61,7 @@ public class ItemBuilder {
      * @param amount     The amount of the item.
      * @param durability The durability of the item.
      */
-    public ItemBuilder(Material m, int amount, byte durability) {
+    public ItemBuilder(@NotNull Material m, int amount, byte durability) {
         is = new ItemStack(m, amount, durability);
     }
 
@@ -88,7 +89,7 @@ public class ItemBuilder {
      *
      * @param name The name to change it to.
      */
-    public ItemBuilder setName(String name) {
+    public ItemBuilder setName(@NotNull String name) {
         ItemMeta im = is.getItemMeta();
         im.setDisplayName(translate(name));
         is.setItemMeta(im);
@@ -101,7 +102,7 @@ public class ItemBuilder {
      * @param ench  The enchantment to add.
      * @param level The level to put the enchantment on.
      */
-    public ItemBuilder addUnsafeEnchantment(Enchantment ench, int level) {
+    public ItemBuilder addUnsafeEnchantment(@NotNull Enchantment ench, int level) {
         is.addUnsafeEnchantment(ench, level);
         return this;
     }
@@ -111,19 +112,19 @@ public class ItemBuilder {
      *
      * @param ench The enchantment to remove
      */
-    public ItemBuilder removeEnchantment(Enchantment ench) {
+    public ItemBuilder removeEnchantment(@NotNull Enchantment ench) {
         is.removeEnchantment(ench);
         return this;
     }
 
-    public ItemBuilder addItemFlag(ItemFlag flag) {
+    public ItemBuilder addItemFlag(@NotNull ItemFlag flag) {
         ItemMeta im = is.getItemMeta();
         im.addItemFlags(flag);
         is.setItemMeta(im);
         return this;
     }
 
-    public ItemBuilder removeItemFlag(ItemFlag flag) {
+    public ItemBuilder removeItemFlag(@NotNull ItemFlag flag) {
         ItemMeta im = is.getItemMeta();
         if (im.hasItemFlag(flag)) {
             im.removeItemFlags(flag);
@@ -137,7 +138,7 @@ public class ItemBuilder {
      *
      * @param owner The name of the skull's owner.
      */
-    public ItemBuilder setSkullOwner(String owner) {
+    public ItemBuilder setSkullOwner(@NotNull String owner) {
         try {
             SkullMeta im = (SkullMeta) is.getItemMeta();
             im.setOwner(owner);
@@ -153,7 +154,7 @@ public class ItemBuilder {
      * @param ench  The enchantment to add
      * @param level The level
      */
-    public ItemBuilder addEnchant(Enchantment ench, int level) {
+    public ItemBuilder addEnchant(@NotNull Enchantment ench, int level) {
         ItemMeta im = is.getItemMeta();
         im.addEnchant(ench, level, true);
         is.setItemMeta(im);
@@ -165,7 +166,7 @@ public class ItemBuilder {
      *
      * @param enchantments The enchants to add.
      */
-    public ItemBuilder addEnchantments(Map<Enchantment, Integer> enchantments) {
+    public ItemBuilder addEnchantments(@NotNull Map<Enchantment, Integer> enchantments) {
         is.addEnchantments(enchantments);
         return this;
     }
@@ -182,7 +183,7 @@ public class ItemBuilder {
     /**
      * Remove a lore line.
      */
-    public ItemBuilder removeLoreLine(String line) {
+    public ItemBuilder removeLoreLine(@NotNull String line) {
         ItemMeta im = is.getItemMeta();
         List<String> lore = new ArrayList<>(im.getLore());
         if (!lore.contains(line)) return this;
@@ -212,7 +213,7 @@ public class ItemBuilder {
      *
      * @param line The lore line to add.
      */
-    public ItemBuilder addLoreLine(String line) {
+    public ItemBuilder addLoreLine(@NotNull String line) {
         ItemMeta im = is.getItemMeta();
         List<String> lore = new ArrayList<>();
         if (im.hasLore()) lore = new ArrayList<>(im.getLore());
@@ -228,7 +229,7 @@ public class ItemBuilder {
      * @param line The lore line to add.
      * @param pos  The index of where to put it.
      */
-    public ItemBuilder addLoreLine(String line, int pos) {
+    public ItemBuilder addLoreLine(@NotNull String line, int pos) {
         ItemMeta im = is.getItemMeta();
         List<String> lore = new ArrayList<>(im.getLore());
         lore.set(pos, translate(line));
@@ -244,7 +245,7 @@ public class ItemBuilder {
      * @param color The color to put.
      */
     @SuppressWarnings("deprecation")
-    public ItemBuilder setDyeColor(DyeColor color) {
+    public ItemBuilder setDyeColor(@NotNull DyeColor color) {
         this.is.setDurability(color.getData());
         return this;
     }
@@ -257,7 +258,7 @@ public class ItemBuilder {
      * @deprecated As of version 1.2 changed to setDyeColor.
      */
     @Deprecated
-    public ItemBuilder setWoolColor(DyeColor color) {
+    public ItemBuilder setWoolColor(@NotNull DyeColor color) {
         if (!is.getType().equals(Material.WOOL)) return this;
         this.is.setDurability(color.getData());
         return this;
@@ -268,7 +269,7 @@ public class ItemBuilder {
      *
      * @param color The color to set it to.
      */
-    public ItemBuilder setLeatherArmorColor(Color color) {
+    public ItemBuilder setLeatherArmorColor(@NotNull Color color) {
         try {
             LeatherArmorMeta im = (LeatherArmorMeta) is.getItemMeta();
             im.setColor(color);
@@ -278,7 +279,7 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setMaterial(Material material) {
+    public ItemBuilder setMaterial(@NotNull Material material) {
         this.is.setType(material);
         return this;
     }
@@ -292,7 +293,7 @@ public class ItemBuilder {
      *
      * @param lore The lore to set it to.
      */
-    public ItemBuilder setLore(String... lore) {
+    public ItemBuilder setLore(@NotNull String... lore) {
         ItemMeta im = is.getItemMeta();
 
         List<String> l = new ArrayList<>();
@@ -310,7 +311,7 @@ public class ItemBuilder {
      *
      * @param lore The lore to set it to.
      */
-    public ItemBuilder setLore(List<String> lore) {
+    public ItemBuilder setLore(@NotNull List<String> lore) {
         ItemMeta im = is.getItemMeta();
 
         List<String> l = new ArrayList<>();
@@ -330,7 +331,7 @@ public class ItemBuilder {
         return is;
     }
 
-    private String translate(String s) {
+    private String translate(@NotNull String s) {
         return ChatColor.translateAlternateColorCodes('&', s);
     }
 }

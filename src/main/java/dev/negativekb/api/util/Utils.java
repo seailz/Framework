@@ -4,6 +4,7 @@ import lombok.experimental.UtilityClass;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class Utils {
      * @param i Input
      * @return Output (Fancy String!)
      */
-    public String decimalFormat(Object i) {
+    public String decimalFormat(@NotNull Object i) {
         return df.format(i);
     }
 
@@ -73,7 +74,7 @@ public class Utils {
      *
      * @param command Command input
      */
-    public void executeConsoleCommand(String command) {
+    public void executeConsoleCommand(@NotNull String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
 
@@ -82,7 +83,7 @@ public class Utils {
      *
      * @param message Message input
      */
-    public void broadcast(String message) {
+    public void broadcast(@NotNull String message) {
         Bukkit.broadcastMessage(color(message));
     }
 
@@ -92,7 +93,8 @@ public class Utils {
      * @param input Input String
      * @return Chat Color formatted String
      */
-    public String color(String input) {
+    @NotNull
+    public String color(@NotNull String input) {
         return ChatColor.translateAlternateColorCodes('&', input);
     }
 
@@ -102,7 +104,7 @@ public class Utils {
      * @param input Input StringList
      * @return Chat Color formatted List of Strings
      */
-    public List<String> color(List<String> input) {
+    public List<String> color(@NotNull List<String> input) {
         List<String> returnValue = new ArrayList<>();
         input.forEach(s -> returnValue.add(color(s)));
         return returnValue;
@@ -114,7 +116,7 @@ public class Utils {
      * @param name Plugin Name
      * @return Returns true if the plugin is enabled
      */
-    public boolean hasPlugin(String name) {
+    public boolean hasPlugin(@NotNull String name) {
         return Bukkit.getPluginManager().isPluginEnabled(name);
     }
 

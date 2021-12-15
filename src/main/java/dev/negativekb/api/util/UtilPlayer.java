@@ -6,6 +6,7 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.util.UUID;
@@ -18,7 +19,7 @@ public class UtilPlayer {
      *
      * @param player Player
      */
-    public void reset(@NonNull Player player) {
+    public void reset(@NotNull Player player) {
         for (PotionEffect effect : player.getActivePotionEffects())
             player.removePotionEffect(effect.getType());
         player.setWalkSpeed(0.2F);

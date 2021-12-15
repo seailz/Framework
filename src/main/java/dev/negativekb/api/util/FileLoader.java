@@ -3,6 +3,7 @@ package dev.negativekb.api.util;
 import com.google.common.io.ByteStreams;
 import lombok.experimental.UtilityClass;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,7 +14,7 @@ import java.io.OutputStream;
 @UtilityClass
 public class FileLoader {
 
-    public File loadFile(JavaPlugin plugin, String resource) {
+    public File loadFile(@NotNull JavaPlugin plugin, @NotNull String resource) {
         File folder = plugin.getDataFolder();
         if (!folder.exists())
             folder.mkdir();

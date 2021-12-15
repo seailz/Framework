@@ -49,7 +49,6 @@ public class GUIListener implements Listener {
 
         first.flatMap(menuItem -> Optional.ofNullable(menuItem.getClickEvent()))
                 .ifPresent(function -> function.accept((Player) event.getWhoClicked(), event));
-
     }
 
     @EventHandler

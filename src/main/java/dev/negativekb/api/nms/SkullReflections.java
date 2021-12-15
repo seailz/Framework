@@ -1,6 +1,7 @@
 package dev.negativekb.api.nms;
 
 import org.bukkit.Bukkit;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -12,11 +13,11 @@ import java.util.regex.Pattern;
 public final class SkullReflections {
 
     // Deduce the net.minecraft.server.v* package
-    private static String OBC_PREFIX = Bukkit.getServer().getClass().getPackage().getName();
-    private static String NMS_PREFIX = OBC_PREFIX.replace("org.bukkit.craftbukkit", "net.minecraft.server");
-    private static String VERSION = OBC_PREFIX.replace("org.bukkit.craftbukkit", "").replace(".", "");
+    private static final String OBC_PREFIX = Bukkit.getServer().getClass().getPackage().getName();
+    private static final String NMS_PREFIX = OBC_PREFIX.replace("org.bukkit.craftbukkit", "net.minecraft.server");
+    private static final String VERSION = OBC_PREFIX.replace("org.bukkit.craftbukkit", "").replace(".", "");
     // Variable replacement
-    private static Pattern MATCH_VARIABLE = Pattern.compile("\\{([^\\}]+)\\}");
+    private static final Pattern MATCH_VARIABLE = Pattern.compile("\\{([^\\}]+)\\}");
 
     private SkullReflections() {
     }
@@ -27,7 +28,7 @@ public final class SkullReflections {
      * @param name the full name of the class
      * @return the expanded string
      */
-    private static String expandVariables(String name) {
+    private static String expandVariables(@NotNull String name) {
         StringBuffer output = new StringBuffer();
         Matcher matcher = MATCH_VARIABLE.matcher(name);
 
@@ -60,7 +61,7 @@ public final class SkullReflections {
      * @param canonicalName the canonical name
      * @return the class
      */
-    private static Class<?> getCanonicalClass(String canonicalName) {
+    private static Class<?> getCanonicalClass(@NotNull String canonicalName) {
         try {
             return Class.forName(canonicalName);
         } catch (ClassNotFoundException e) {
@@ -97,7 +98,7 @@ public final class SkullReflections {
      * @return the looked up class
      * @throws IllegalArgumentException If a variable or class could not be found
      */
-    public static Class<?> getClass(String lookupName) {
+    public static Class<?> getClass(@NotNull String lookupName) {
         return getCanonicalClass(expandVariables(lookupName));
     }
 
@@ -109,7 +110,7 @@ public final class SkullReflections {
      * @return an object that invokes this constructor
      * @throws IllegalStateException If we cannot find this method
      */
-    public static ConstructorInvoker getConstructor(String className, Class<?>... params) {
+    public static ConstructorInvoker getConstructor(@NotNull String className, @NotNull Class<?>... params) {
         return getConstructor(getClass(className), params);
     }
 
@@ -121,7 +122,7 @@ public final class SkullReflections {
      * @return an object that invokes this constructor
      * @throws IllegalStateException If we cannot find this method
      */
-    public static ConstructorInvoker getConstructor(Class<?> clazz, Class<?>... params) {
+    public static ConstructorInvoker getConstructor(@NotNull Class<?> clazz, @NotNull Class<?>... params) {
         for (final Constructor<?> constructor : clazz.getDeclaredConstructors()) {
             if (Arrays.equals(constructor.getParameterTypes(), params)) {
 
@@ -148,7 +149,7 @@ public final class SkullReflections {
      * @param name the name of the class, excluding the package
      * @throws IllegalArgumentException If the class doesn't exist
      */
-    public static Class<?> getCraftBukkitClass(String name) {
+    public static Class<?> getCraftBukkitClass(@NotNull String name) {
         return getCanonicalClass(OBC_PREFIX + "." + name);
     }
 
@@ -160,7 +161,7 @@ public final class SkullReflections {
      * @param fieldType a compatible field type
      * @return the field accessor
      */
-    public static <T> FieldAccessor<T> getField(Class<?> target, String name, Class<T> fieldType) {
+    public static <T> FieldAccessor<T> getField(@NotNull Class<?> target, @NotNull String name, @NotNull Class<T> fieldType) {
         return getField(target, name, fieldType, 0);
     }
 
@@ -172,7 +173,7 @@ public final class SkullReflections {
      * @param fieldType a compatible field type
      * @return the field accessor
      */
-    public static <T> FieldAccessor<T> getField(String className, String name, Class<T> fieldType) {
+    public static <T> FieldAccessor<T> getField(@NotNull String className, @NotNull String name, @NotNull Class<T> fieldType) {
         return getField(getClass(className), name, fieldType, 0);
     }
 
@@ -184,7 +185,7 @@ public final class SkullReflections {
      * @param index     the number of compatible fields to skip
      * @return the field accessor
      */
-    public static <T> FieldAccessor<T> getField(Class<?> target, Class<T> fieldType, int index) {
+    public static <T> FieldAccessor<T> getField(@NotNull Class<?> target, @NotNull Class<T> fieldType, int index) {
         return getField(target, null, fieldType, index);
     }
 
@@ -196,12 +197,12 @@ public final class SkullReflections {
      * @param index     the number of compatible fields to skip
      * @return the field accessor
      */
-    public static <T> FieldAccessor<T> getField(String className, Class<T> fieldType, int index) {
+    public static <T> FieldAccessor<T> getField(@NotNull String className, @NotNull Class<T> fieldType, int index) {
         return getField(getClass(className), fieldType, index);
     }
 
     // Common method
-    private static <T> FieldAccessor<T> getField(Class<?> target, String name, Class<T> fieldType, int index) {
+    private static <T> FieldAccessor<T> getField(@NotNull Class<?> target, String name, @NotNull Class<T> fieldType, int index) {
         for (final Field field : target.getDeclaredFields()) {
             if ((name == null || field.getName().equals(name)) && fieldType.isAssignableFrom(field.getType()) && index-- <= 0) {
                 field.setAccessible(true);
@@ -210,7 +211,7 @@ public final class SkullReflections {
                 return new FieldAccessor<T>() {
                     @SuppressWarnings("unchecked")
                     @Override
-                    public T get(Object target) {
+                    public T get(@NotNull Object target) {
                         try {
                             return (T) field.get(target);
                         } catch (IllegalAccessException e) {
@@ -219,7 +220,7 @@ public final class SkullReflections {
                     }
 
                     @Override
-                    public void set(Object target, Object value) {
+                    public void set(@NotNull Object target, @NotNull Object value) {
                         try {
                             field.set(target, value);
                         } catch (IllegalAccessException e) {
@@ -228,7 +229,7 @@ public final class SkullReflections {
                     }
 
                     @Override
-                    public boolean hasField(Object target) {
+                    public boolean hasField(@NotNull Object target) {
                         // target instanceof DeclaringClass
                         return field.getDeclaringClass().isAssignableFrom(target.getClass());
                     }
@@ -251,7 +252,7 @@ public final class SkullReflections {
      * @return an object that invokes this specific method
      * @throws IllegalStateException If we cannot find this method
      */
-    public static MethodInvoker getMethod(String className, String methodName, Class<?>... params) {
+    public static MethodInvoker getMethod(@NotNull String className, @NotNull String methodName, @NotNull Class<?>... params) {
         return getTypedMethod(getClass(className), methodName, null, params);
     }
 
@@ -264,7 +265,7 @@ public final class SkullReflections {
      * @return an object that invokes this specific method
      * @throws IllegalStateException If we cannot find this method
      */
-    public static MethodInvoker getMethod(Class<?> clazz, String methodName, Class<?>... params) {
+    public static MethodInvoker getMethod(@NotNull Class<?> clazz, @NotNull String methodName, @NotNull Class<?>... params) {
         return getTypedMethod(clazz, methodName, null, params);
     }
 
@@ -275,7 +276,7 @@ public final class SkullReflections {
      * @param method the method name
      * @return the method found
      */
-    public static Method getMethodSimply(Class<?> clazz, String method) {
+    public static Method getMethodSimply(@NotNull Class<?> clazz, @NotNull String method) {
         for (Method m : clazz.getMethods()) if (m.getName().equals(method)) return m;
         return null;
     }
@@ -286,7 +287,7 @@ public final class SkullReflections {
      * @param name the name of the class, excluding the package
      * @throws IllegalArgumentException If the class doesn't exist
      */
-    public static Class<?> getMinecraftClass(String name) {
+    public static Class<?> getMinecraftClass(@NotNull String name) {
         return getCanonicalClass(NMS_PREFIX + "." + name);
     }
 
@@ -300,21 +301,18 @@ public final class SkullReflections {
      * @return an object that invokes this specific method
      * @throws IllegalStateException If we cannot find this method
      */
-    public static MethodInvoker getTypedMethod(Class<?> clazz, String methodName, Class<?> returnType, Class<?>... params) {
+    public static MethodInvoker getTypedMethod(@NotNull Class<?> clazz, String methodName, Class<?> returnType, @NotNull Class<?>... params) {
         for (final Method method : clazz.getDeclaredMethods()) {
             if ((methodName == null || method.getName().equals(methodName)) &&
                     (returnType == null) || method.getReturnType().equals(returnType) &&
                     Arrays.equals(method.getParameterTypes(), params)) {
 
                 method.setAccessible(true);
-                return new MethodInvoker() {
-                    @Override
-                    public Object invoke(Object target, Object... arguments) {
-                        try {
-                            return method.invoke(target, arguments);
-                        } catch (Exception e) {
-                            throw new RuntimeException("Cannot invoke method " + method, e);
-                        }
+                return (target, arguments) -> {
+                    try {
+                        return method.invoke(target, arguments);
+                    } catch (Exception e) {
+                        throw new RuntimeException("Cannot invoke method " + method, e);
                     }
                 };
             }
@@ -336,13 +334,13 @@ public final class SkullReflections {
      * @return the class
      * @see {@link #getClass()} for more information
      */
-    public static Class<Object> getUntypedClass(String lookupName) {
+    public static Class<Object> getUntypedClass(@NotNull String lookupName) {
         @SuppressWarnings({"rawtypes", "unchecked"})
         Class<Object> clazz = (Class<Object>) (Class) getClass(lookupName);
         return clazz;
     }
 
-    public static <T> T newInstance(Class<T> type) {
+    public static <T> T newInstance(@NotNull Class<T> type) {
         try {
             return type.newInstance();
         } catch (Exception e) {
@@ -361,7 +359,7 @@ public final class SkullReflections {
          * @param arguments the arguments to pass to the constructor.
          * @return the constructed object.
          */
-        public Object invoke(Object... arguments);
+        Object invoke(@NotNull Object... arguments);
     }
 
     /**
@@ -375,7 +373,7 @@ public final class SkullReflections {
          * @param arguments the arguments to pass to the method.
          * @return the return value, or NULL if is void.
          */
-        public Object invoke(Object target, Object... arguments);
+        Object invoke(@NotNull Object target, @NotNull Object... arguments);
     }
 
     /**
@@ -390,7 +388,7 @@ public final class SkullReflections {
          * @param target the target object, or NULL for a static field
          * @return the value of the field
          */
-        public T get(Object target);
+        T get(@NotNull Object target);
 
         /**
          * Set the content of a field.
@@ -398,7 +396,7 @@ public final class SkullReflections {
          * @param target the target object, or NULL for a static field
          * @param value  the new value of the field
          */
-        public void set(Object target, Object value);
+        void set(@NotNull Object target, @NotNull Object value);
 
         /**
          * Determine if the given object has this field.
@@ -406,7 +404,7 @@ public final class SkullReflections {
          * @param target the object to test
          * @return TRUE if it does, FALSE otherwise
          */
-        public boolean hasField(Object target);
+        boolean hasField(@NotNull Object target);
     }
 
 }

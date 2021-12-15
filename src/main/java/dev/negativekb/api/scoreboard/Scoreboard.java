@@ -18,6 +18,7 @@ package dev.negativekb.api.scoreboard;
 import dev.negativekb.api.nms.FastReflection;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -157,7 +158,7 @@ public class Scoreboard {
          *
          * @param player the owner of the scoreboard
          */
-        public Scoreboard(Player player) {
+        public Scoreboard(@NotNull Player player) {
             this.player = Objects.requireNonNull(player, "player");
             this.id = "sb-" + Integer.toHexString(ThreadLocalRandom.current().nextInt());
 
@@ -174,6 +175,7 @@ public class Scoreboard {
          *
          * @return the scoreboard title
          */
+        @NotNull
         public String getTitle() {
             return this.title;
         }
@@ -208,6 +210,7 @@ public class Scoreboard {
          *
          * @return the scoreboard lines
          */
+        @NotNull
         public List<String> getLines() {
             return new ArrayList<>(this.lines);
         }

@@ -10,16 +10,20 @@ import org.apache.commons.codec.binary.Base64;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
 @RequiredArgsConstructor
 public abstract class CustomSkull {
 
+    @NotNull
     private final String name;
+    @NotNull
     private final String link;
     private final Base64 base64 = new Base64();
 
+    @NotNull
     public ItemStack toItem() {
         GameProfile profile = new GameProfile(UUID.randomUUID(), null);
         PropertyMap propertyMap = profile.getProperties();

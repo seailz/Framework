@@ -1,6 +1,7 @@
 package dev.negativekb.api.util.data;
 
 import lombok.Data;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class BiMap<K, V, V1> {
      * @param value1 Value 1
      * @param value2 Value 2
      */
-    public void put(K key, V value1, V1 value2) {
+    public void put(@NotNull K key, V value1, @NotNull V1 value2) {
         if (getEntry(key).isPresent())
             return;
 
@@ -60,7 +61,7 @@ public class BiMap<K, V, V1> {
      * @param value1 Value 1
      * @param value2 Value 2
      */
-    public void replace(K key, V value1, V1 value2) {
+    public void replace(@NotNull K key, V value1, @NotNull V1 value2) {
         if (!getEntry(key).isPresent())
             return;
 
@@ -77,7 +78,7 @@ public class BiMap<K, V, V1> {
      * @param key    Key
      * @param value1 Value
      */
-    public void putFirst(K key, V value1) {
+    public void putFirst(@NotNull K key, @NotNull V value1) {
         if (getEntry(key).isPresent())
             return;
 
@@ -92,7 +93,7 @@ public class BiMap<K, V, V1> {
      * @param key   Key
      * @param value Value
      */
-    public void replaceFirst(K key, V value) {
+    public void replaceFirst(@NotNull K key, @NotNull V value) {
         if (!getEntry(key).isPresent())
             return;
 
@@ -108,7 +109,7 @@ public class BiMap<K, V, V1> {
      * @param key    Key
      * @param value2 Value
      */
-    public void putSecond(K key, V1 value2) {
+    public void putSecond(@NotNull K key, @NotNull V1 value2) {
         if (getEntry(key).isPresent())
             return;
 
@@ -124,7 +125,7 @@ public class BiMap<K, V, V1> {
      * @param key   Key
      * @param value Value
      */
-    public void replaceSecond(K key, V1 value) {
+    public void replaceSecond(@NotNull K key, @NotNull V1 value) {
         if (!getEntry(key).isPresent())
             return;
 
@@ -141,7 +142,7 @@ public class BiMap<K, V, V1> {
      * @return Value
      * @throws NullPointerException If the entry does not exist inside the entry data
      */
-    public Optional<V> getFirst(K key) {
+    public Optional<V> getFirst(@NotNull K key) {
         if (!getEntry(key).isPresent())
             throw new NullPointerException("This entry with key of `" + key.toString() + "` is not in the BiMap");
 
@@ -168,7 +169,7 @@ public class BiMap<K, V, V1> {
      * @return Value
      * @throws NullPointerException If the entry does not exist inside the entry data
      */
-    public Optional<V1> getSecond(K key) {
+    public Optional<V1> getSecond(@NotNull K key) {
         if (!getEntry(key).isPresent())
             throw new NullPointerException("This entry with key of `" + key.toString() + "` is not in the BiMap");
 
@@ -195,7 +196,7 @@ public class BiMap<K, V, V1> {
      * @return Entry
      * @throws NullPointerException If the Entry does not exist
      */
-    public Optional<Entry<K, V, V1>> get(K key) {
+    public Optional<Entry<K, V, V1>> get(@NotNull K key) {
         return getEntry(key);
     }
 
@@ -204,7 +205,7 @@ public class BiMap<K, V, V1> {
      *
      * @param key Key
      */
-    public void remove(K key) {
+    public void remove(@NotNull K key) {
         if (!getEntry(key).isPresent())
             return;
 
@@ -217,7 +218,7 @@ public class BiMap<K, V, V1> {
      * @param key      Key
      * @param function Function
      */
-    public void removeIf(K key, Function<Entry<K, V, V1>, Boolean> function) {
+    public void removeIf(@NotNull K key, @NotNull Function<Entry<K, V, V1>, Boolean> function) {
         if (getEntry(key).isPresent())
             return;
 
@@ -234,7 +235,7 @@ public class BiMap<K, V, V1> {
      *
      * @param function Function
      */
-    public void removeAllIf(Function<Entry<K, V, V1>, Boolean> function) {
+    public void removeAllIf(@NotNull Function<Entry<K, V, V1>, Boolean> function) {
         List<Entry<K, V, V1>> toRemove = new ArrayList<>();
         getEntries().stream().filter(function::apply).forEach(toRemove::add);
         toRemove.forEach(e -> remove(e.getKey()));
@@ -246,7 +247,7 @@ public class BiMap<K, V, V1> {
      * @param key Key
      * @return true or false
      */
-    public boolean containsKey(K key) {
+    public boolean containsKey(@NotNull K key) {
         return getEntry(key).isPresent();
     }
 
@@ -256,7 +257,7 @@ public class BiMap<K, V, V1> {
      * @param key Key
      * @return Entry
      */
-    private Optional<Entry<K, V, V1>> getEntry(K key) {
+    private Optional<Entry<K, V, V1>> getEntry(@NotNull K key) {
         return data.stream().filter(e -> e.getKey().equals(key)).findAny();
     }
 
@@ -266,7 +267,7 @@ public class BiMap<K, V, V1> {
      * @param key Key
      * @return Index of the Entry provided
      */
-    private int getDataIndex(K key) {
+    private int getDataIndex(@NotNull K key) {
         if (!getEntry(key).isPresent())
             return -1;
 
@@ -288,6 +289,7 @@ public class BiMap<K, V, V1> {
      *
      * @return Entries
      */
+    @NotNull
     public List<Entry<K, V, V1>> getEntries() {
         return this.data;
     }
@@ -297,7 +299,7 @@ public class BiMap<K, V, V1> {
      *
      * @param entries Entry set
      */
-    public void setEntries(List<Entry<K, V, V1>> entries) {
+    public void setEntries(@NotNull List<Entry<K, V, V1>> entries) {
         this.data = entries;
     }
 
@@ -336,7 +338,7 @@ public class BiMap<K, V, V1> {
      *
      * @param function Function
      */
-    public void forEach(TriConsumer<? super K, ? super V, ? super V1> function) {
+    public void forEach(@NotNull TriConsumer<? super K, ? super V, ? super V1> function) {
         this.data.forEach(e -> function.accept(e.getKey(), e.getValue1(), e.getValue2()));
     }
 
@@ -346,7 +348,7 @@ public class BiMap<K, V, V1> {
      * @param condition Condition
      * @param value     Value
      */
-    public void replaceAllFirstValues(Function<Entry<K, V, V1>, Boolean> condition, V value) {
+    public void replaceAllFirstValues(@NotNull Function<Entry<K, V, V1>, Boolean> condition, @NotNull V value) {
         List<Entry<K, V, V1>> passed = this.data.stream().filter(condition::apply).collect(Collectors.toList());
         passed.forEach(entry -> entry.setValue1(value));
     }
@@ -357,7 +359,7 @@ public class BiMap<K, V, V1> {
      * @param condition Condition
      * @param value1    Value
      */
-    public void replaceAllSecondaryValues(Function<Entry<K, V, V1>, Boolean> condition, V1 value1) {
+    public void replaceAllSecondaryValues(@NotNull Function<Entry<K, V, V1>, Boolean> condition, @NotNull V1 value1) {
         List<Entry<K, V, V1>> passed = this.data.stream().filter(condition::apply).collect(Collectors.toList());
         passed.forEach(entry -> entry.setValue2(value1));
     }
@@ -369,7 +371,7 @@ public class BiMap<K, V, V1> {
      * @param value1    Value
      * @param value2    Value
      */
-    public void replaceAllValues(Function<Entry<K, V, V1>, Boolean> condition, V value1, V1 value2) {
+    public void replaceAllValues(@NotNull Function<Entry<K, V, V1>, Boolean> condition, @NotNull V value1, @NotNull V1 value2) {
         List<Entry<K, V, V1>> passed = this.data.stream().filter(condition::apply).collect(Collectors.toList());
         passed.forEach(entry -> {
             entry.setValue2(value2);

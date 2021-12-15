@@ -6,6 +6,7 @@ import com.mojang.authlib.properties.Property;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
@@ -13,7 +14,7 @@ import java.util.Optional;
 public class MigrationCheck {
 
     @SneakyThrows
-    public boolean check(Player player) {
+    public boolean check(@NotNull Player player) {
         GameProfile profile = DeltaReflection.getGameProfile(player);
         Optional<Property> capeProperties = DeltaReflection.getProperty(profile, "CAPE");
 

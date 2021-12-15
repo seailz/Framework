@@ -15,6 +15,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -31,7 +32,6 @@ public abstract class BasePlugin extends JavaPlugin {
                 new GUIListener(),
                 new ShortCommandsListener()
         );
-
     }
 
     /**
@@ -40,7 +40,7 @@ public abstract class BasePlugin extends JavaPlugin {
      * @param plugin Plugin instance
      * @param names  File names
      */
-    public void loadFiles(@NonNull JavaPlugin plugin, @NonNull String... names) {
+    public void loadFiles(@NotNull JavaPlugin plugin, @NotNull String... names) {
         File dataFolder = plugin.getDataFolder();
         Arrays.stream(names).forEach(name -> {
             File file = new File(dataFolder, name);
@@ -52,6 +52,7 @@ public abstract class BasePlugin extends JavaPlugin {
             try {
                 fileConfig.load(file);
             } catch (Exception e3) {
+                System.out.println("Could not load " + name + " due to the following:");
                 e3.printStackTrace();
             }
 
@@ -63,7 +64,7 @@ public abstract class BasePlugin extends JavaPlugin {
 
     @SneakyThrows
     @SuppressWarnings("unchecked")
-    public void registerCommands(@NonNull Command... commands) {
+    public void registerCommands(@NotNull Command... commands) {
         VersionChecker versionChecker = VersionChecker.getInstance();
 
         Server server = Bukkit.getServer();
@@ -103,7 +104,7 @@ public abstract class BasePlugin extends JavaPlugin {
      *
      * @param listeners Listeners
      */
-    public void registerListeners(@NonNull Listener... listeners) {
+    public void registerListeners(@NotNull Listener... listeners) {
         PluginManager pluginManager = Bukkit.getPluginManager();
         Arrays.stream(listeners).forEach(listener -> pluginManager.registerEvents(listener, this));
     }
