@@ -1,5 +1,5 @@
 # Plugin-Framework
-A simple plugin framework that is mainly used for completing comissions
+A simple plugin framework that is mainly used for completing commissions
 
 
 ## ✨Maven Repo
@@ -7,20 +7,20 @@ A simple plugin framework that is mainly used for completing comissions
 ### Repository
 
 ```xml
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
+<repository>     
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
 ```
 
 ### Dependency
 
 ```xml
 <dependency>
-  <groupId>com.github.NegativeKB</groupId>
-  <artifactId>Plugin-Framework</artifactId>
-  <version>{VERSION]</version>
-  <scope>compile</scope>
+    <groupId>com.github.NegativeKB</groupId>
+    <artifactId>Plugin-Framework</artifactId>
+    <version>{VERSION}</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
@@ -30,7 +30,7 @@ Add this to your build configuration for this to work correctly.
 <configuration>
   <relocations>
     <relocation>
-      <pattern>dev.negativekb.api.plugin</pattern>
+      <pattern>dev.negativekb.api</pattern>
       <shadedPattern>{YOUR PACKAGE NAME}</shadedPattern>
     </relocation>
   </relocations>
@@ -43,7 +43,7 @@ An example would be
 <configuration>
   <relocations>
     <relocation>
-      <pattern>dev.negativekb.api.plugin</pattern>
+      <pattern>dev.negativekb.api</pattern>
       <shadedPattern>dev.negaivekb.myplugin.api</shadedPattern>
     </relocation>
   </relocations>
