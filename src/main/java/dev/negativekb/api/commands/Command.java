@@ -18,20 +18,25 @@ package dev.negativekb.api.commands;
 import dev.negativekb.api.commands.annotation.CommandInfo;
 import dev.negativekb.api.commands.shortcommands.ShortCommands;
 import dev.negativekb.api.message.Message;
+import dev.negativekb.api.nms.DeltaReflection;
+import dev.negativekb.api.util.UtilPlayer;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public abstract class Command extends org.bukkit.command.Command {
     @Getter
@@ -58,20 +63,20 @@ public abstract class Command extends org.bukkit.command.Command {
         this("1");
     }
 
-    public Command(String name) {
+    public Command(@NotNull String name) {
         this(name, "", Collections.emptyList());
     }
 
-    public Command(String name, String description) {
+    public Command(@NotNull String name, @NotNull String description) {
         this(name, description, Collections.emptyList());
     }
 
-    public Command(String name, List<String> aliases) {
+    public Command(@NotNull String name, @NotNull Collection<String> aliases) {
         this(name, "", aliases);
     }
 
-    public Command(String name, String description, List<String> aliases) {
-        super(name, description, "/" + name, aliases);
+    public Command(@NotNull String name, @NotNull String description, @NotNull Collection<String> aliases) {
+        super(name, description, "/" + name, new ArrayList<>(aliases));
 
         cannotUseThis = new Message("&cYou cannot use this!");
         commandDisabled = new Message("&cThis command is currently disabled");
@@ -228,22 +233,22 @@ public abstract class Command extends org.bukkit.command.Command {
         }
     }
 
-    public void ifHasPermission(CommandSender sender, String perm, Consumer<CommandSender> consumer) {
+    public void ifHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer) {
         if (sender.hasPermission(perm))
             consumer.accept(sender);
     }
 
-    public void ifNotHasPermission(CommandSender sender, String perm, Consumer<CommandSender> consumer) {
+    public void ifNotHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer) {
         if (!sender.hasPermission(perm))
             consumer.accept(sender);
     }
 
-    public void ifPlayer(CommandSender sender, Consumer<Player> consumer) {
+    public void ifPlayer(@NotNull CommandSender sender, @NotNull Consumer<Player> consumer) {
         if (sender instanceof Player)
             consumer.accept((Player) sender);
     }
 
-    public void ifConsole(CommandSender sender, Consumer<ConsoleCommandSender> consumer) {
+    public void ifConsole(@NotNull CommandSender sender, @NotNull Consumer<ConsoleCommandSender> consumer) {
         if (sender instanceof ConsoleCommandSender)
             consumer.accept((ConsoleCommandSender) sender);
     }
@@ -254,8 +259,26 @@ public abstract class Command extends org.bukkit.command.Command {
      * @param name Player Name
      * @return Optional Player
      */
-    public Optional<Player> getPlayer(String name) {
+    public Optional<Player> getPlayer(@NotNull String name) {
         return Optional.ofNullable(Bukkit.getPlayer(name));
+    }
+
+    /**
+     * Get the {@link UUID} of the {@link String} name
+     * @param name Name of the {@link OfflinePlayer} that you want to retrieve
+     * @return {@link UUID} of the {@link OfflinePlayer} that you want to retrieve
+     */
+    public UUID getOfflineUUID(@NotNull String name) {
+        return UtilPlayer.getUUIDByName(name);
+    }
+
+    /**
+     * Get the {@link OfflinePlayer} of the {@link String} name
+     * @param name Name of the {@link OfflinePlayer} you want to retrieve
+     * @return {@link OfflinePlayer} of the {@link String} name you input
+     */
+    public OfflinePlayer getOfflinePlayerByName(@NotNull String name) {
+        return Bukkit.getOfflinePlayer(getOfflineUUID(name));
     }
 
     /**

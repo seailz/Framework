@@ -3,9 +3,11 @@ package dev.negativekb.api.commands.shortcommands.provider;
 import dev.negativekb.api.commands.Command;
 import dev.negativekb.api.commands.SubCommand;
 import dev.negativekb.api.commands.shortcommands.ShortCommands;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+@SuppressWarnings("all")
 public class ShortCommandsProvider extends ShortCommands {
 
     private final HashMap<Command, ArrayList<String>> commandShortCommands = new HashMap<>();
@@ -16,7 +18,7 @@ public class ShortCommandsProvider extends ShortCommands {
     }
 
     @Override
-    public void addShortCommand(Command command, String[] commands) {
+    public void addShortCommand(@NotNull Command command, String[] commands) {
         ArrayList<String> strings = commandShortCommands.getOrDefault(command, new ArrayList<>());
         Arrays.stream(commands).filter(s -> !strings.contains(s)).forEach(strings::add);
 
@@ -28,7 +30,7 @@ public class ShortCommandsProvider extends ShortCommands {
     }
 
     @Override
-    public void addShortSubCommand(SubCommand command, String[] commands) {
+    public void addShortSubCommand(@NotNull SubCommand command, String[] commands) {
         ArrayList<String> strings = subCommandShortCommands.getOrDefault(command, new ArrayList<>());
         Arrays.stream(commands).filter(s -> !strings.contains(s)).forEach(strings::add);
 
@@ -40,7 +42,7 @@ public class ShortCommandsProvider extends ShortCommands {
     }
 
     @Override
-    public Optional<Command> getCommand(String cmd) {
+    public Optional<Command> getCommand(@NotNull String cmd) {
         Optional<Map.Entry<Command, ArrayList<String>>> entry = commandShortCommands.entrySet()
                 .stream()
                 .filter(commandArrayListEntry -> commandArrayListEntry.getValue().stream().anyMatch(s -> s.equalsIgnoreCase(cmd)))
@@ -49,7 +51,7 @@ public class ShortCommandsProvider extends ShortCommands {
     }
 
     @Override
-    public Optional<SubCommand> getSubCommand(String cmd) {
+    public Optional<SubCommand> getSubCommand(@NotNull String cmd) {
         Optional<Map.Entry<SubCommand, ArrayList<String>>> entry = subCommandShortCommands.entrySet()
                 .stream()
                 .filter(subCommandArrayListEntry -> subCommandArrayListEntry.getValue().stream().anyMatch(s -> s.equalsIgnoreCase(cmd)))
