@@ -15,6 +15,7 @@
 
 package dev.negativekb.api.scoreboard;
 
+import dev.negativekb.api.nms.FastReflection;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
