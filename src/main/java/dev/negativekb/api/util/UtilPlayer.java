@@ -7,6 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.json.JSONObject;
 
 import java.util.UUID;
@@ -75,6 +76,7 @@ public class UtilPlayer {
         return player.getInventory().firstEmpty() == -1;
     }
 
+    @Nullable
     public UUID getUUIDByName(String name) {
         JSONObject jsonObject = UtilHTTP.getJSONObjectFromMojang("https://api.mojang.com/users/profiles/minecraft/" + name);
         if (jsonObject == null)
@@ -82,5 +84,15 @@ public class UtilPlayer {
 
         return UUID.fromString(jsonObject.getString("id"));
     }
+
+    @Nullable
+    public String getNameByUUID(UUID uuid) {
+        JSONObject jsonObject = UtilHTTP.getJSONObjectFromMojang("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid.toString());
+        if (jsonObject == null)
+            return null;
+
+        return jsonObject.getString("name");
+    }
+
 
 }
