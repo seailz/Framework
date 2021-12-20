@@ -2,6 +2,7 @@ package dev.negativekb.api;
 
 import dev.negativekb.api.commands.shortcommands.provider.ShortCommandsListener;
 import dev.negativekb.api.gui.GUIListener;
+import dev.negativekb.api.inputlistener.InputListener;
 import dev.negativekb.api.util.FileLoader;
 import dev.negativekb.api.util.version.VersionChecker;
 import lombok.NonNull;
@@ -30,7 +31,8 @@ public abstract class BasePlugin extends JavaPlugin {
 
         registerListeners(
                 new GUIListener(),
-                new ShortCommandsListener()
+                new ShortCommandsListener(),
+                new InputListener()
         );
     }
 
