@@ -26,7 +26,7 @@ public class InputListener implements Listener {
     }
 
 
-    public void listen(UUID uuid, InputListenerResponse response) {
+    public static void listen(UUID uuid, InputListenerResponse response) {
         listenerMap.putIfAbsent(uuid, response);
     }
 
