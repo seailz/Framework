@@ -177,7 +177,11 @@ public class GUI {
      */
     public void refresh(Player player) {
         Optional.ofNullable(activeInventories.get(player)).ifPresent(inventory ->
-                items.forEach(menuItem -> inventory.setItem(menuItem.getSlot(), menuItem.getItem().apply(player))));
+                items.forEach(menuItem -> {
+                    try {
+                        inventory.setItem(menuItem.getSlot(), menuItem.getItem().apply(player));
+                    } catch (Exception ignored) {}
+                }));
     }
 
 }
