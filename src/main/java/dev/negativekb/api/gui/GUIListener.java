@@ -21,6 +21,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.InventoryHolder;
 
@@ -59,5 +60,15 @@ public class GUIListener implements Listener {
 
         BaseGUI base = (BaseGUI) event.getInventory().getHolder();
         base.onClose((Player) event.getPlayer(), event);
+    }
+
+    @EventHandler
+    public void onOpen(InventoryOpenEvent event) {
+        InventoryHolder holder = event.getInventory().getHolder();
+        if (!(holder instanceof BaseGUI))
+            return;
+
+        BaseGUI base = (BaseGUI) event.getInventory().getHolder();
+        base.onOpen((Player) event.getPlayer(), event);
     }
 }
