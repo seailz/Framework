@@ -20,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
@@ -34,6 +35,11 @@ public class BaseGUI implements InventoryHolder {
     @Getter
     @Setter
     private Inventory inventory;
+
+    public void onOpen(Player player, InventoryOpenEvent event) {
+        Optional.ofNullable(gui.getOnOpen()).ifPresent(function ->
+                function.accept(player, event));
+    }
 
     public void onClose(Player player, InventoryCloseEvent event) {
         Optional.ofNullable(gui.getOnClose()).ifPresent(closeFunction ->

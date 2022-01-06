@@ -23,9 +23,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +57,8 @@ public class GUI {
     @Getter
     @Setter
     private BiConsumer<Player, InventoryCloseEvent> onClose;
+    @Getter @Setter
+    private BiConsumer<Player, InventoryOpenEvent> onOpen;
 
     /**
      * Constructor for GUI

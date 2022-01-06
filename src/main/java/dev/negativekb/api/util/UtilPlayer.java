@@ -76,6 +76,12 @@ public class UtilPlayer {
         return player.getInventory().firstEmpty() == -1;
     }
 
+    /**
+     * Get a UUID by a Name from Mojang's Servers
+     * @param name Name
+     * @return UUID of the Player
+     * @apiNote Requires org.json to work!
+     */
     @Nullable
     public UUID getUUIDByName(String name) {
         JSONObject jsonObject = UtilHTTP.getJSONObjectFromMojang("https://api.mojang.com/users/profiles/minecraft/" + name);
@@ -85,6 +91,12 @@ public class UtilPlayer {
         return UUID.fromString(jsonObject.getString("id"));
     }
 
+    /**
+     * Get an IGN through a UUID from Mojang's servers
+     * @param uuid UUID
+     * @return IGN of the UUID
+     * @apiNote Requires org.json to work!
+     */
     @Nullable
     public String getNameByUUID(UUID uuid) {
         JSONObject jsonObject = UtilHTTP.getJSONObjectFromMojang("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid.toString());

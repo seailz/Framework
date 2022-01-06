@@ -13,6 +13,12 @@ import java.net.URL;
 @UtilityClass
 public class UtilHTTP {
 
+    /**
+     * Get a JSONObject from Mojang's server
+     * @param url URL
+     * @return JSON Object from the HTTP request
+     * @apiNote Requires org.json to work!
+     */
     @SneakyThrows
     public JSONObject getJSONObjectFromMojang(@NotNull String url) {
         URL rawURL = new URL(url);

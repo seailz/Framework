@@ -42,8 +42,6 @@ public class TimeUtil {
     public String format(long l1, long l2, boolean shortened) {
         long newTime = l1 - l2;
 
-        // Anything over a day
-
         int toSec = (int) (newTime / 1000) % 60;
         int toMin = (int) ((newTime / (1000 * 60)) % 60);
         int toHour = (int) ((newTime / (1000 * 60 * 60)) % 24);
