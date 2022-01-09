@@ -16,6 +16,7 @@
 package dev.negativekb.api.util.cache;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,7 +30,7 @@ public abstract class ObjectCache<T> {
 
     private final String path;
     private final Class<T[]> clazz;
-    private final Gson gson = new Gson();
+    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     /**
      * Save the Cache to the JSON file
