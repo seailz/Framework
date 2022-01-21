@@ -40,25 +40,19 @@ import java.util.function.Function;
  * @author Negative
  * @since May 24th, 2021
  */
+@Getter @Setter
 public class GUI {
 
-    @Getter
     private final int rows;
-    @Getter
     private final String title;
-    @Getter
     private final ArrayList<MenuItem> items;
 
-    @Getter
     private final HashMap<Player, Inventory> activeInventories;
     // Are people allowed to take items from the GUI?
-    @Getter
     private final boolean allowTakeItems;
-    @Getter
-    @Setter
     private BiConsumer<Player, InventoryCloseEvent> onClose;
-    @Getter @Setter
     private BiConsumer<Player, InventoryOpenEvent> onOpen;
+    private BiConsumer<Player, InventoryClickEvent> playerInventoryClickEvent;
 
     /**
      * Constructor for GUI

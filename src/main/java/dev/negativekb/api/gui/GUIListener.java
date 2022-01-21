@@ -40,8 +40,11 @@ public class GUIListener implements Listener {
         if (!base.getGui().isAllowTakeItems())
             event.setCancelled(true);
 
-        if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER)
+        if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER) {
+            GUI gui = base.getGui();
+            gui.getPlayerInventoryClickEvent().accept((Player) event.getWhoClicked(), event);
             return;
+        }
 
         int slot = event.getSlot();
         Optional<MenuItem> first = base.getGui().getItems().stream()
