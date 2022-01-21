@@ -1,0 +1,26 @@
+package dev.negativekb.api.commands.events;
+
+import dev.negativekb.api.commands.Command;
+import dev.negativekb.api.commands.SubCommand;
+import dev.negativekb.api.event.PluginEvent;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+@RequiredArgsConstructor
+@Getter
+@Setter
+public class SubCommandLogEvent extends PluginEvent {
+
+    private final CommandSender sender;
+    private final String[] arguments;
+    private final SubCommand command;
+    private boolean cancelled;
+
+    public Player getPlayer() throws ClassCastException {
+        return (Player) sender;
+    }
+
+}

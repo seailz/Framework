@@ -1,6 +1,7 @@
 package dev.negativekb.api.commands;
 
 import dev.negativekb.api.commands.annotation.CommandInfo;
+import dev.negativekb.api.commands.events.SubCommandLogEvent;
 import dev.negativekb.api.commands.shortcommands.ShortCommands;
 import dev.negativekb.api.message.Message;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * SubCommand
@@ -18,33 +20,25 @@ import java.util.*;
  * @author Negative
  * @apiNote Must be added to a {@link Command} class in order to work!
  */
+@Getter @Setter
 public abstract class SubCommand {
 
     // subcommands of subcommands lol
     @Getter
     private final List<SubCommand> subCommands = new ArrayList<>();
-    private final Message cannotUseThis;
-    private final Message commandDisabled;
-    private final Message noPerm;
-    @Setter
-    @Getter
+
+    protected final Message cannotUseThis;
+    protected final Message commandDisabled;
+    protected final Message noPerm;
+
     private String argument;
-    @Getter
-    @Setter
     private List<String> aliases;
-    @Getter
-    @Setter
     private String permission = "";
-    @Getter
-    @Setter
     private boolean consoleOnly = false;
-    @Getter
-    @Setter
     private boolean playerOnly = false;
-    @Getter
-    @Setter
     private boolean disabled;
     private String[] params;
+    private Consumer<SubCommandLogEvent> subCommandLogEventConsumer;
 
 
     public SubCommand() {
@@ -108,16 +102,28 @@ public abstract class SubCommand {
         // If the Command is disabled, send this message
 
         if (isDisabled()) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return;
+
             commandDisabled.send(sender);
             return;
         }
 
         if (isPlayerOnly() && !(sender instanceof Player)) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return;
+
             cannotUseThis.send(sender);
             return;
         }
 
         if (isConsoleOnly() && sender instanceof Player) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return;
+
             cannotUseThis.send(sender);
             return;
         }
@@ -127,6 +133,10 @@ public abstract class SubCommand {
         // send this message
         if (!getPermission().isEmpty()) {
             if (!sender.hasPermission(getPermission())) {
+                boolean cancelled = runLogEvent(this, sender, args);
+                if (cancelled)
+                    return;
+
                 noPerm.send(sender);
                 return;
             }
@@ -136,6 +146,10 @@ public abstract class SubCommand {
         // if so, execute regular command
         List<SubCommand> subCommands = getSubCommands();
         if (args.length == 0 || subCommands.isEmpty()) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return;
+
             if (params != null && (args.length < params.length)) {
                 StringBuilder builder = new StringBuilder();
                 for (String param : params) {
@@ -167,6 +181,10 @@ public abstract class SubCommand {
         if (command.isPresent())
             runSubCommand(command.get(), sender, newArgs);
         else {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return;
+
             if (params != null && (args.length < params.length)) {
                 StringBuilder builder = new StringBuilder();
                 for (String param : params) {
@@ -212,4 +230,17 @@ public abstract class SubCommand {
         return Optional.ofNullable(Bukkit.getPlayer(name));
     }
 
+    private boolean runLogEvent(SubCommand command, CommandSender sender, String[] args) {
+        if (subCommandLogEventConsumer == null)
+            return false;
+
+        SubCommandLogEvent event = new SubCommandLogEvent(sender, args, command);
+        Bukkit.getPluginManager().callEvent(event);
+
+        return event.isCancelled();
+    }
+
+    public Consumer<SubCommandLogEvent> getSubCommandLogEvent() {
+        return subCommandLogEventConsumer;
+    }
 }
