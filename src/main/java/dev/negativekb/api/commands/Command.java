@@ -16,6 +16,7 @@
 package dev.negativekb.api.commands;
 
 import dev.negativekb.api.commands.annotation.CommandInfo;
+import dev.negativekb.api.commands.events.CommandLogEvent;
 import dev.negativekb.api.commands.shortcommands.ShortCommands;
 import dev.negativekb.api.message.Message;
 import dev.negativekb.api.nms.DeltaReflection;
@@ -38,26 +39,20 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+@Getter @Setter
 public abstract class Command extends org.bukkit.command.Command {
-    @Getter
     private final List<SubCommand> subCommands = new ArrayList<>();
-    private final Message cannotUseThis;
-    private final Message commandDisabled;
-    private final Message noPerm;
-    @Getter
-    @Setter
+    protected final Message cannotUseThis;
+    protected final Message commandDisabled;
+    protected final Message noPerm;
+
     public boolean consoleOnly = false;
-    @Getter
-    @Setter
     public boolean playerOnly = false;
-    @Getter
-    @Setter
     public boolean disabled = false;
-    @Getter
-    @Setter
     public String permissionNode = "";
     private String[] params;
     private TabCompleter completer;
+    private Consumer<CommandLogEvent> logEvent;
 
     public Command() {
         this("1");
@@ -133,16 +128,28 @@ public abstract class Command extends org.bukkit.command.Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         // If the Command is disabled, send this message
         if (isDisabled()) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return true;
+
             commandDisabled.send(sender);
             return true;
         }
 
         if (isPlayerOnly() && !(sender instanceof Player)) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return true;
+
             cannotUseThis.send(sender);
             return true;
         }
 
         if (isConsoleOnly() && sender instanceof Player) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return true;
+
             cannotUseThis.send(sender);
             return true;
         }
@@ -152,6 +159,10 @@ public abstract class Command extends org.bukkit.command.Command {
         // send this message
         String permNode = getPermissionNode();
         if (!permNode.isEmpty() && !sender.hasPermission(permNode)) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return true;
+
             noPerm.send(sender);
             return true;
         }
@@ -161,6 +172,10 @@ public abstract class Command extends org.bukkit.command.Command {
         // execute the regular command
         List<SubCommand> subCommands = getSubCommands();
         if (args.length == 0 || subCommands.isEmpty()) {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return true;
+
             if (params != null && (args.length < params.length)) {
                 StringBuilder builder = new StringBuilder();
                 for (String param : params) {
@@ -192,6 +207,10 @@ public abstract class Command extends org.bukkit.command.Command {
         if (command.isPresent())
             runSubCommand(command.get(), sender, newArgs);
         else {
+            boolean cancelled = runLogEvent(this, sender, args);
+            if (cancelled)
+                return true;
+
             if (params != null && (args.length < params.length)) {
                 StringBuilder builder = new StringBuilder();
                 for (String param : params) {
@@ -203,6 +222,16 @@ public abstract class Command extends org.bukkit.command.Command {
             onCommand(sender, label, args);
         }
         return true;
+    }
+
+    private boolean runLogEvent(Command command, CommandSender sender, String[] args) {
+        if (logEvent == null)
+            return false;
+
+        CommandLogEvent event = new CommandLogEvent(sender, args, command);
+        Bukkit.getPluginManager().callEvent(event);
+
+        return event.isCancelled();
     }
 
     /**
@@ -315,4 +344,5 @@ public abstract class Command extends org.bukkit.command.Command {
         }
         return this.completer.onTabComplete(sender, this, alias, args);
     }
+
 }

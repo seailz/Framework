@@ -1,5 +1,6 @@
 package dev.negativekb.api;
 
+import dev.negativekb.api.commands.logging.CommandLogListener;
 import dev.negativekb.api.commands.shortcommands.provider.ShortCommandsListener;
 import dev.negativekb.api.gui.GUIListener;
 import dev.negativekb.api.inputlistener.InputListener;
@@ -32,7 +33,8 @@ public abstract class BasePlugin extends JavaPlugin {
         registerListeners(
                 new GUIListener(),
                 new ShortCommandsListener(),
-                new InputListener()
+                new InputListener(),
+                new CommandLogListener()
         );
     }
 
