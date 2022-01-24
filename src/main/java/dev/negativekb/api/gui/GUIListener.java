@@ -42,7 +42,8 @@ public class GUIListener implements Listener {
 
         if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER) {
             GUI gui = base.getGui();
-            gui.getPlayerInventoryClickEvent().accept((Player) event.getWhoClicked(), event);
+            Optional.ofNullable(gui.getPlayerInventoryClickEvent()).ifPresent(function ->
+                    function.accept((Player) event.getWhoClicked(), event));
             return;
         }
 
