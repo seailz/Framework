@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 @RequiredArgsConstructor
 @SuppressWarnings("all")
@@ -22,7 +23,7 @@ public abstract class ObjectHashCache<K, V> {
      *
      * @param cacheHashMap Class Type HashMap
      */
-    public void save(@NotNull HashMap<K, V> cacheHashMap) throws IOException {
+    public void save(@NotNull LinkedHashMap<K, V> cacheHashMap) throws IOException {
         File file = getFile(path);
         file.getParentFile().mkdir();
         file.createNewFile();
@@ -39,12 +40,12 @@ public abstract class ObjectHashCache<K, V> {
      * @return A new instance of an ArrayList with the new Cache
      */
     @NotNull
-    public HashMap<K, V> load() throws IOException {
+    public LinkedHashMap<K, V> load() throws IOException {
         File file = getFile(path);
-        HashMap<K, V> loaded = new HashMap<>();
+        LinkedHashMap<K, V> loaded = new LinkedHashMap<>();
         if (file.exists()) {
             Reader reader = new FileReader(file);
-            Type type = new TypeToken<HashMap<K, V>>(){}.getType();
+            Type type = new TypeToken<LinkedHashMap<K, V>>(){}.getType();
             loaded = gson.fromJson(reader, type);
             return loaded;
         }
