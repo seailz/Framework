@@ -12,6 +12,8 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +41,7 @@ public class HopperGUI {
      * @apiNote The title supports color codes automatically!
      * @apiNote By default, allowTakeItems is false.
      */
-    public HopperGUI(String title) {
+    public HopperGUI(@NotNull String title) {
         this(title, false);
     }
 
@@ -50,7 +52,7 @@ public class HopperGUI {
      * @param allowTakeItems Allowed taking items from the menu?
      * @apiNote The title supports color codes automatically!
      */
-    public HopperGUI(String title, boolean allowTakeItems) {
+    public HopperGUI(@NotNull String title, boolean allowTakeItems) {
         this.title = title;
         this.allowTakeItems = allowTakeItems;
 
@@ -63,7 +65,7 @@ public class HopperGUI {
      *
      * @param player Player
      */
-    public void open(Player player) {
+    public void open(@NotNull Player player) {
         HopperGUIHolder holder = new HopperGUIHolder(this);
         Inventory inv = Bukkit.createInventory(holder, InventoryType.HOPPER, ChatColor.translateAlternateColorCodes('&', title));
 
@@ -82,7 +84,7 @@ public class HopperGUI {
      * @apiNote There is no click event linked to this item
      * @apiNote First slot of GUIs are 0
      */
-    public void setItem(int index, Function<Player, ItemStack> itemFunction) {
+    public void setItem(int index, @NotNull Function<Player, ItemStack> itemFunction) {
         setItemClickEvent(index, itemFunction, null);
     }
 
@@ -93,7 +95,7 @@ public class HopperGUI {
      * @param itemFunction ItemStack
      * @param function     Click Event of the Item
      */
-    public void setItemClickEvent(int index, Function<Player, ItemStack> itemFunction, BiConsumer<Player, InventoryClickEvent> function) {
+    public void setItemClickEvent(int index, @NotNull Function<Player, ItemStack> itemFunction, @Nullable BiConsumer<Player, InventoryClickEvent> function) {
         MenuItem menuItem = new MenuItem(index, itemFunction, function);
 
         Optional<MenuItem> firstItem = items.stream().filter(item -> item.getSlot() == index).findFirst();
@@ -118,7 +120,7 @@ public class HopperGUI {
      * @param function     Click Event of the Item
      * @apiNote This adds the Item to the next available slot
      */
-    public void addItemClickEvent(Function<Player, ItemStack> itemFunction, BiConsumer<Player, InventoryClickEvent> function) {
+    public void addItemClickEvent(@NotNull Function<Player, ItemStack> itemFunction, @Nullable BiConsumer<Player, InventoryClickEvent> function) {
         int i;
         for (i = 0; i < 5; i++) {
             int indexSlot = i;
@@ -137,7 +139,7 @@ public class HopperGUI {
      * @param itemFunction ItemStack
      * @apiNote This adds the Item to the next available slot
      */
-    public void addItem(Function<Player, ItemStack> itemFunction) {
+    public void addItem(@NotNull Function<Player, ItemStack> itemFunction) {
         addItemClickEvent(itemFunction, null);
     }
 
@@ -146,7 +148,7 @@ public class HopperGUI {
      *
      * @param player Player
      */
-    public void refresh(Player player) {
+    public void refresh(@NotNull Player player) {
         Optional.ofNullable(activeInventories.get(player)).ifPresent(inventory ->
                 items.forEach(menuItem -> {
                     try {
