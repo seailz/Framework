@@ -159,6 +159,14 @@ public class GUI {
     }
 
     /**
+     * Clears the {@link ItemStack} and item click functionality in the {@param slot} slot
+     * @param slot Slot of the item function you would like to remove
+     */
+    public void clearSlot(int slot) {
+        items.stream().filter(menuItem -> menuItem.getSlot() == slot).findFirst().ifPresent(items::remove);
+    }
+
+    /**
      * Add Item to the GUI
      *
      * @param itemFunction ItemStack
