@@ -71,7 +71,7 @@ public class ItemBuilder {
      * @return The cloned instance.
      */
     public ItemBuilder clone() {
-        return new ItemBuilder(is);
+        return new ItemBuilder(is.clone());
     }
 
     /**
