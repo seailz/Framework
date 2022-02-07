@@ -182,12 +182,15 @@ public class GUI {
      * @param player Player
      */
     public void refresh(@NotNull Player player) {
-        Optional.ofNullable(activeInventories.get(player)).ifPresent(inventory ->
-                items.forEach(menuItem -> {
-                    try {
-                        inventory.setItem(menuItem.getSlot(), menuItem.getItem().apply(player));
-                    } catch (Exception ignored) {}
-                }));
+        Optional.ofNullable(activeInventories.get(player)).ifPresent(inventory -> {
+            inventory.clear();
+            items.forEach(menuItem -> {
+                try {
+                    inventory.setItem(menuItem.getSlot(), menuItem.getItem().apply(player));
+                } catch (Exception ignored) {
+                }
+            });
+        });
     }
 
 }
