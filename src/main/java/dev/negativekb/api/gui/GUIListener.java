@@ -82,20 +82,28 @@ public class GUIListener implements Listener {
     @EventHandler
     public void onClose(InventoryCloseEvent event) {
         InventoryHolder holder = event.getInventory().getHolder();
-        if (!(holder instanceof BaseGUI))
-            return;
+        if (holder instanceof BaseGUI) {
+            BaseGUI base = (BaseGUI) holder;
+            base.onClose((Player) event.getPlayer(), event);
+        }
 
-        BaseGUI base = (BaseGUI) event.getInventory().getHolder();
-        base.onClose((Player) event.getPlayer(), event);
+        if (holder instanceof HopperGUIHolder) {
+            HopperGUIHolder base = (HopperGUIHolder) holder;
+            base.onClose((Player) event.getPlayer(), event);
+        }
     }
 
     @EventHandler
     public void onOpen(InventoryOpenEvent event) {
         InventoryHolder holder = event.getInventory().getHolder();
-        if (!(holder instanceof BaseGUI))
-            return;
+        if (holder instanceof BaseGUI) {
+            BaseGUI base = (BaseGUI) holder;
+            base.onOpen((Player) event.getPlayer(), event);
+        }
 
-        BaseGUI base = (BaseGUI) event.getInventory().getHolder();
-        base.onOpen((Player) event.getPlayer(), event);
+        if (holder instanceof HopperGUIHolder) {
+            HopperGUIHolder base = (HopperGUIHolder) holder;
+            base.onOpen((Player) event.getPlayer(), event);
+        }
     }
 }
