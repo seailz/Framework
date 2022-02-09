@@ -322,6 +322,10 @@ public class ItemBuilder {
         return this;
     }
 
+    public String getDisplayName() {
+        return this.is.getItemMeta().getDisplayName();
+    }
+
     /**
      * Retrieves the itemstack from the ItemBuilder.
      *
