@@ -77,7 +77,7 @@ public class HasteBin {
 
         if (response.contains("\"key\"")) {
             response = response.substring(response.indexOf(":") + 2, response.length() - 2);
-            String postURL = raw ? "https://paste.deltapvp.club/raw/" : "https://paste.deltapvp.club/";
+            String postURL = raw ? "https://bin.hypews.com/raw/" : "https://paste.deltapvp.club/";
             response = postURL + response;
         }
 
