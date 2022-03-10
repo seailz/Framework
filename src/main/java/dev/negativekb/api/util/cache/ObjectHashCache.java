@@ -67,7 +67,7 @@ public abstract class ObjectHashCache<K, V> {
     @NotNull
     public HashMap<K, V> load() throws IOException {
         File file = getFile(path);
-        LinkedHashMap<K, V> loaded = new LinkedHashMap<>();
+        HashMap<K, V> loaded = new HashMap<>();
         if (file.exists()) {
             Reader reader = new FileReader(file);
             Type type = new TypeToken<HashMap<K, V>>(){}.getType();
