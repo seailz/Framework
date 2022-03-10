@@ -70,7 +70,7 @@ public abstract class ObjectHashCache<K, V> {
         LinkedHashMap<K, V> loaded = new LinkedHashMap<>();
         if (file.exists()) {
             Reader reader = new FileReader(file);
-            Type type = new TypeToken<LinkedHashMap<K, V>>(){}.getType();
+            Type type = new TypeToken<HashMap<K, V>>(){}.getType();
             loaded = gson.fromJson(reader, type);
             return loaded;
         }
