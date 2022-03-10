@@ -48,7 +48,7 @@ public abstract class ObjectHashCache<K, V> {
      *
      * @param cacheHashMap Class Type HashMap
      */
-    public void save(@NotNull LinkedHashMap<K, V> cacheHashMap) throws IOException {
+    public void save(@NotNull HashMap<K, V> cacheHashMap) throws IOException {
         File file = getFile(path);
         file.getParentFile().mkdir();
         file.createNewFile();
@@ -65,7 +65,7 @@ public abstract class ObjectHashCache<K, V> {
      * @return A new instance of an ArrayList with the new Cache
      */
     @NotNull
-    public LinkedHashMap<K, V> load() throws IOException {
+    public HashMap<K, V> load() throws IOException {
         File file = getFile(path);
         LinkedHashMap<K, V> loaded = new LinkedHashMap<>();
         if (file.exists()) {
