@@ -27,6 +27,7 @@ package games.negative.framework.command.shortcommand;
 
 import games.negative.framework.command.Command;
 import games.negative.framework.command.SubCommand;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +36,7 @@ import java.util.Optional;
 
 public abstract class ShortCommands {
 
-    @Getter @Setter
+    @Getter @Setter(AccessLevel.PROTECTED)
     private static ShortCommands instance;
 
     public abstract void addShortCommand(@NotNull Command command, @NotNull String[] commands);
