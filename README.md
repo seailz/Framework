@@ -1,6 +1,5 @@
-# Plugin-Framework
-A simple plugin framework that is mainly used for completing commissions
-
+# Negative Games - Framework
+An expanded plugin library which allows more effective and rapid plugin development.
 
 ## ✨Maven Repo
 
@@ -17,8 +16,8 @@ A simple plugin framework that is mainly used for completing commissions
 
 ```xml
 <dependency>
-    <groupId>com.github.NegativeKB</groupId>
-    <artifactId>Plugin-Framework</artifactId>
+    <groupId>com.github.Negative-Games</groupId>
+    <artifactId>Framework</artifactId>
     <version>{VERSION}</version>
     <scope>compile</scope>
 </dependency>
@@ -30,7 +29,7 @@ Add this to your build configuration for this to work correctly.
 <configuration>
   <relocations>
     <relocation>
-      <pattern>dev.negativekb.api</pattern>
+      <pattern>games.negative.framework</pattern>
       <shadedPattern>{YOUR PACKAGE NAME}</shadedPattern>
     </relocation>
   </relocations>
@@ -43,8 +42,8 @@ An example would be
 <configuration>
   <relocations>
     <relocation>
-      <pattern>dev.negativekb.api</pattern>
-      <shadedPattern>dev.negaivekb.myplugin.api</shadedPattern>
+      <pattern>games.negative.framework</pattern>
+      <shadedPattern>me.name.myplugin.framework</shadedPattern>
     </relocation>
   </relocations>
 </configuration>
