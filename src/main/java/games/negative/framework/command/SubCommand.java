@@ -28,6 +28,7 @@ package games.negative.framework.command;
 import games.negative.framework.command.annotation.CommandInfo;
 import games.negative.framework.command.event.SubCommandLogEvent;
 import games.negative.framework.command.shortcommand.ShortCommands;
+import games.negative.framework.message.FrameworkMessage;
 import games.negative.framework.message.Message;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,12 +50,7 @@ import java.util.function.Consumer;
 public abstract class SubCommand {
 
     // subcommands of subcommands lol
-    @Getter
     private final List<SubCommand> subCommands = new ArrayList<>();
-
-    protected final Message cannotUseThis;
-    protected final Message commandDisabled;
-    protected final Message noPerm;
 
     private String argument;
     private List<String> aliases;
@@ -91,10 +87,6 @@ public abstract class SubCommand {
     public SubCommand(String argument, List<String> aliases) {
         this.argument = argument;
         this.aliases = aliases;
-        
-        cannotUseThis = new Message("&cYou cannot use this!");
-        commandDisabled = new Message("&cThis command is currently disabled.");
-        noPerm = new Message("&cYou do not have permission to use this.");
 
         if (this.getClass().isAnnotationPresent(CommandInfo.class)) {
             CommandInfo annotation = this.getClass().getAnnotation(CommandInfo.class);
@@ -131,7 +123,7 @@ public abstract class SubCommand {
             if (cancelled)
                 return;
 
-            commandDisabled.send(sender);
+            FrameworkMessage.COMMAND_DISABLED.send(sender);
             return;
         }
 
@@ -140,7 +132,7 @@ public abstract class SubCommand {
             if (cancelled)
                 return;
 
-            cannotUseThis.send(sender);
+            FrameworkMessage.COMMAND_CANNOT_USE_THIS_AS_CONSOLE.send(sender);
             return;
         }
 
@@ -149,7 +141,7 @@ public abstract class SubCommand {
             if (cancelled)
                 return;
 
-            cannotUseThis.send(sender);
+            FrameworkMessage.COMMAND_CANNOT_USE_THIS_AS_PLAYER.send(sender);
             return;
         }
 
@@ -162,7 +154,7 @@ public abstract class SubCommand {
                 if (cancelled)
                     return;
 
-                noPerm.send(sender);
+                FrameworkMessage.COMMAND_NO_PERMISSION.send(sender);
                 return;
             }
         }
@@ -180,7 +172,8 @@ public abstract class SubCommand {
                 for (String param : params) {
                     builder.append("<").append(param).append(">").append(" ");
                 }
-                sender.sendMessage(ChatColor.RED + "Usage: /" + this.getArgument() + " " + builder);
+                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getArgument()).replace("%usage%", builder.toString()).send(sender);
+
                 return;
             }
             runCommand(sender, args);
@@ -215,7 +208,8 @@ public abstract class SubCommand {
                 for (String param : params) {
                     builder.append("<").append(param).append(">").append(" ");
                 }
-                sender.sendMessage(ChatColor.RED + "Usage: /" + this.getArgument() + " " + builder);
+                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getArgument()).replace("%usage%", builder.toString()).send(sender);
+
                 return;
             }
             runCommand(sender, args);

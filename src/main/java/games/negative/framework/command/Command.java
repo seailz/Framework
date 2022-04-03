@@ -28,20 +28,17 @@ package games.negative.framework.command;
 import games.negative.framework.command.annotation.CommandInfo;
 import games.negative.framework.command.event.CommandLogEvent;
 import games.negative.framework.command.shortcommand.ShortCommands;
-import games.negative.framework.message.Message;
-import games.negative.framework.util.UtilPlayer;
+import games.negative.framework.message.FrameworkMessage;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -50,9 +47,6 @@ import java.util.function.Consumer;
 @Getter @Setter
 public abstract class Command extends org.bukkit.command.Command {
     private final List<SubCommand> subCommands = new ArrayList<>();
-    protected final Message cannotUseThis;
-    protected final Message commandDisabled;
-    protected final Message noPerm;
 
     public boolean consoleOnly = false;
     public boolean playerOnly = false;
@@ -80,10 +74,6 @@ public abstract class Command extends org.bukkit.command.Command {
 
     public Command(@NotNull String name, @NotNull String description, @NotNull Collection<String> aliases) {
         super(name, description, "/" + name, new ArrayList<>(aliases));
-
-        cannotUseThis = new Message("&cYou cannot use this!");
-        commandDisabled = new Message("&cThis command is currently disabled");
-        noPerm = new Message("&cYou do not have permission to use this!");
 
         boolean hasInfo = getClass().isAnnotationPresent(CommandInfo.class);
         if (hasInfo) {
@@ -140,7 +130,7 @@ public abstract class Command extends org.bukkit.command.Command {
             if (cancelled)
                 return true;
 
-            commandDisabled.send(sender);
+            FrameworkMessage.COMMAND_DISABLED.send(sender);
             return true;
         }
 
@@ -149,7 +139,7 @@ public abstract class Command extends org.bukkit.command.Command {
             if (cancelled)
                 return true;
 
-            cannotUseThis.send(sender);
+            FrameworkMessage.COMMAND_CANNOT_USE_THIS_AS_CONSOLE.send(sender);
             return true;
         }
 
@@ -158,7 +148,7 @@ public abstract class Command extends org.bukkit.command.Command {
             if (cancelled)
                 return true;
 
-            cannotUseThis.send(sender);
+            FrameworkMessage.COMMAND_CANNOT_USE_THIS_AS_PLAYER.send(sender);
             return true;
         }
 
@@ -171,7 +161,7 @@ public abstract class Command extends org.bukkit.command.Command {
             if (cancelled)
                 return true;
 
-            noPerm.send(sender);
+            FrameworkMessage.COMMAND_NO_PERMISSION.send(sender);
             return true;
         }
 
@@ -189,7 +179,7 @@ public abstract class Command extends org.bukkit.command.Command {
                 for (String param : params) {
                     builder.append("<").append(param).append(">").append(" ");
                 }
-                sender.sendMessage(ChatColor.RED + "Usage: /" + this.getName() + " " + builder);
+                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getName()).replace("%usage%", builder.toString()).send(sender);
                 return true;
             }
             onCommand(sender, label, args);
@@ -224,7 +214,7 @@ public abstract class Command extends org.bukkit.command.Command {
                 for (String param : params) {
                     builder.append("<").append(param).append(">").append(" ");
                 }
-                sender.sendMessage(ChatColor.RED + "Usage: /" + this.getName() + " " + builder);
+                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getName()).replace("%usage%", builder.toString()).send(sender);
                 return true;
             }
             onCommand(sender, label, args);
@@ -253,23 +243,6 @@ public abstract class Command extends org.bukkit.command.Command {
         subCommand.execute(sender, args);
     }
 
-    /**
-     * @param sender - Sender of the command. Usually a player
-     * @param perm   - Permission node
-     * @return - Returns whether the player has the permission provided in the "perm" String
-     * @deprecated Never used and kind of useless.
-     */
-    @Deprecated
-    public boolean hasPermission(CommandSender sender, String perm) {
-        Server server = Bukkit.getServer();
-        Player p = server.getPlayer(sender.getName());
-        if (p == null) {
-            return server.getConsoleSender().hasPermission(perm);
-        } else {
-            return p.hasPermission(perm);
-        }
-    }
-
     public void ifHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer) {
         if (sender.hasPermission(perm))
             consumer.accept(sender);
@@ -296,26 +269,9 @@ public abstract class Command extends org.bukkit.command.Command {
      * @param name Player Name
      * @return Optional Player
      */
-    public Optional<Player> getPlayer(@NotNull String name) {
-        return Optional.ofNullable(Bukkit.getPlayer(name));
-    }
-
-    /**
-     * Get the {@link UUID} of the {@link String} name
-     * @param name Name of the {@link OfflinePlayer} that you want to retrieve
-     * @return {@link UUID} of the {@link OfflinePlayer} that you want to retrieve
-     */
-    public UUID getOfflineUUID(@NotNull String name) {
-        return UtilPlayer.getUUIDByName(name);
-    }
-
-    /**
-     * Get the {@link OfflinePlayer} of the {@link String} name
-     * @param name Name of the {@link OfflinePlayer} you want to retrieve
-     * @return {@link OfflinePlayer} of the {@link String} name you input
-     */
-    public OfflinePlayer getOfflinePlayerByName(@NotNull String name) {
-        return Bukkit.getOfflinePlayer(getOfflineUUID(name));
+    @Nullable
+    public Player getPlayer(@NotNull String name) {
+        return Bukkit.getPlayer(name);
     }
 
     /**
