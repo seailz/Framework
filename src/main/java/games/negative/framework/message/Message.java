@@ -29,24 +29,28 @@ import games.negative.framework.util.Utils;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import java.util.Collection;
 
+@Getter @Setter
 public class Message {
 
-    @Getter
     private final String initial;
-    @Getter
-    @Setter
     private String message;
 
-    /**
-     * Message Constructor (as String)
-     *
-     * @param msg Message
-     */
-    public Message(String... msg) {
+    public Message(@NotNull String... msg) {
+        String actual = String.join("\n", msg);
+        setMessage(actual);
+        this.initial = actual;
+    }
+
+    public Message(@NotNull String msg) {
+        setMessage(msg);
+        this.initial = msg;
+    }
+
+    public Message(@NotNull Collection<String> msg) {
         String actual = String.join("\n", msg);
         setMessage(actual);
         this.initial = actual;
@@ -58,18 +62,18 @@ public class Message {
      * Simply replaces object1 with object2.
      * Could be a string, int, double, whatever
      *
-     * @param o1 - Object 1
-     * @param o2 - Object 2
-     * @return - Returns replaced value
+     * @param placeholder - Placeholder
+     *                     (ex. %player% or %amount%)
+     *                     <p>
+     * @param replacement - Replacement
+     *                     (ex. "Negative" or 100)
+     *                     <p>
+     * @return - Message instance with the replacement
      */
-    public Message replace(Object o1, Object o2) {
-        if (o2 instanceof Integer || o2 instanceof Double || o2 instanceof Long) {
-            o2 = Utils.decimalFormat(o2);
-        }
-
+    public Message replace(String placeholder, String replacement) {
         String newMSG = this.message;
 
-        newMSG = newMSG.replaceAll(String.valueOf(o1), String.valueOf(o2));
+        newMSG = newMSG.replaceAll(placeholder, replacement);
 
         setMessage(newMSG);
         return this;
@@ -83,7 +87,7 @@ public class Message {
      *
      * @param sender - Sender
      */
-    public void send(CommandSender sender) {
+    public void send(@NotNull CommandSender sender) {
         if (this.message.contains("\n")) {
             String[] msg = getMessage().split("\n");
             for (String s : msg) {
@@ -103,7 +107,7 @@ public class Message {
      *
      * @param players - List of players
      */
-    public void send(List<Player> players) {
+    public void send(@NotNull Iterable<CommandSender> players) {
         players.forEach(this::send);
     }
 
