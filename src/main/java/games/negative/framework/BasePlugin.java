@@ -29,6 +29,7 @@ import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.shortcommand.provider.ShortCommandsListener;
 import games.negative.framework.gui.GUIListener;
 import games.negative.framework.inputlistener.InputListener;
+import games.negative.framework.message.FrameworkMessage;
 import games.negative.framework.util.FileLoader;
 import games.negative.framework.util.version.VersionChecker;
 import lombok.SneakyThrows;
@@ -52,6 +53,7 @@ public abstract class BasePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        FrameworkMessage.init();
         new VersionChecker();
 
         registerListeners(
