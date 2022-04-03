@@ -39,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
+@Deprecated
 @RequiredArgsConstructor
 public abstract class CustomSkull {
 

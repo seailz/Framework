@@ -27,6 +27,7 @@ package games.negative.framework.skulls.items;
 
 import games.negative.framework.skulls.CustomSkull;
 
+@Deprecated
 public class NegativeSkull extends CustomSkull {
 
     public NegativeSkull() {

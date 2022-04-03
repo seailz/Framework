@@ -27,6 +27,7 @@ package games.negative.framework.skulls;
 
 import games.negative.framework.skulls.items.NegativeSkull;
 
+@Deprecated
 public class CustomSkulls {
 
     public static CustomSkull NEGATIVE_SKULL = new NegativeSkull();
