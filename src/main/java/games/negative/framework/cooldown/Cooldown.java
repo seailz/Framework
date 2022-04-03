@@ -4,6 +4,7 @@ import games.negative.framework.key.Keyd;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * A cooldown is a timer that can be used to limit the rate of an action.
@@ -66,5 +67,13 @@ public interface Cooldown<I, V extends Comparable<V>> extends Keyd<String> {
      * Code to be ran when you want to stop the cooldown task.
      */
     void stopCooldowns();
+
+    default boolean ifOnCooldown(I identifier, Consumer<I> consumer) {
+        if (isOnCooldown(identifier)) {
+            consumer.accept(identifier);
+            return true;
+        }
+        return false;
+    }
 
 }
