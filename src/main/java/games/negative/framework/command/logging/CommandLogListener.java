@@ -23,26 +23,22 @@
  *
  */
 
-package games.negative.framework.commands.shortcommands;
+package games.negative.framework.command.logging;
 
-import games.negative.framework.commands.Command;
-import games.negative.framework.commands.SubCommand;
-import lombok.Getter;
-import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
+import games.negative.framework.command.event.CommandLogEvent;
+import games.negative.framework.command.event.SubCommandLogEvent;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
-import java.util.Optional;
+public class CommandLogListener implements Listener {
 
-public abstract class ShortCommands {
+    @EventHandler
+    public void onCommandLog(CommandLogEvent event) {
+        event.getCommand().getLogEvent().accept(event);
+    }
 
-    @Getter @Setter
-    private static ShortCommands instance;
-
-    public abstract void addShortCommand(@NotNull Command command, @NotNull String[] commands);
-
-    public abstract void addShortSubCommand(@NotNull SubCommand command, @NotNull String[] commands);
-
-    public abstract Optional<Command> getCommand(@NotNull String cmd);
-
-    public abstract Optional<SubCommand> getSubCommand(@NotNull String cmd);
+    @EventHandler
+    public void onSubCommandLog(SubCommandLogEvent event) {
+        event.getCommand().getSubCommandLogEvent().accept(event);
+    }
 }

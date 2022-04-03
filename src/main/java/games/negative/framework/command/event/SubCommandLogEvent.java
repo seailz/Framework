@@ -23,22 +23,28 @@
  *
  */
 
-package games.negative.framework.commands.logging;
+package games.negative.framework.command.event;
 
-import games.negative.framework.commands.events.CommandLogEvent;
-import games.negative.framework.commands.events.SubCommandLogEvent;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
+import games.negative.framework.command.SubCommand;
+import games.negative.framework.event.PluginEvent;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
-public class CommandLogListener implements Listener {
+@RequiredArgsConstructor
+@Getter
+@Setter
+public class SubCommandLogEvent extends PluginEvent {
 
-    @EventHandler
-    public void onCommandLog(CommandLogEvent event) {
-        event.getCommand().getLogEvent().accept(event);
+    private final CommandSender sender;
+    private final String[] arguments;
+    private final SubCommand command;
+    private boolean cancelled;
+
+    public Player getPlayer() throws ClassCastException {
+        return (Player) sender;
     }
 
-    @EventHandler
-    public void onSubCommandLog(SubCommandLogEvent event) {
-        event.getCommand().getSubCommandLogEvent().accept(event);
-    }
 }

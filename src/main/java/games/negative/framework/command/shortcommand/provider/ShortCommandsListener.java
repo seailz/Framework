@@ -23,9 +23,9 @@
  *
  */
 
-package games.negative.framework.commands.shortcommands.provider;
+package games.negative.framework.command.shortcommand.provider;
 
-import games.negative.framework.commands.shortcommands.ShortCommands;
+import games.negative.framework.command.shortcommand.ShortCommands;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;

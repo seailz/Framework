@@ -23,28 +23,26 @@
  *
  */
 
-package games.negative.framework.commands.events;
+package games.negative.framework.command.shortcommand;
 
-import games.negative.framework.commands.SubCommand;
-import games.negative.framework.event.PluginEvent;
+import games.negative.framework.command.Command;
+import games.negative.framework.command.SubCommand;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
-@RequiredArgsConstructor
-@Getter
-@Setter
-public class SubCommandLogEvent extends PluginEvent {
+import java.util.Optional;
 
-    private final CommandSender sender;
-    private final String[] arguments;
-    private final SubCommand command;
-    private boolean cancelled;
+public abstract class ShortCommands {
 
-    public Player getPlayer() throws ClassCastException {
-        return (Player) sender;
-    }
+    @Getter @Setter
+    private static ShortCommands instance;
 
+    public abstract void addShortCommand(@NotNull Command command, @NotNull String[] commands);
+
+    public abstract void addShortSubCommand(@NotNull SubCommand command, @NotNull String[] commands);
+
+    public abstract Optional<Command> getCommand(@NotNull String cmd);
+
+    public abstract Optional<SubCommand> getSubCommand(@NotNull String cmd);
 }

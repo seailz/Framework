@@ -23,7 +23,7 @@
  *
  */
 
-package games.negative.framework.commands.annotation;
+package games.negative.framework.command.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

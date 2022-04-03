@@ -23,9 +23,9 @@
  *
  */
 
-package games.negative.framework.commands.events;
+package games.negative.framework.command.event;
 
-import games.negative.framework.commands.Command;
+import games.negative.framework.command.Command;
 import games.negative.framework.event.PluginEvent;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

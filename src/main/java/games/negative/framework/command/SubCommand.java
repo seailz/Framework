@@ -23,11 +23,11 @@
  *
  */
 
-package games.negative.framework.commands;
+package games.negative.framework.command;
 
-import games.negative.framework.commands.annotation.CommandInfo;
-import games.negative.framework.commands.events.SubCommandLogEvent;
-import games.negative.framework.commands.shortcommands.ShortCommands;
+import games.negative.framework.command.annotation.CommandInfo;
+import games.negative.framework.command.event.SubCommandLogEvent;
+import games.negative.framework.command.shortcommand.ShortCommands;
 import games.negative.framework.message.Message;
 import lombok.Getter;
 import lombok.Setter;

@@ -25,8 +25,8 @@
 
 package games.negative.framework;
 
-import games.negative.framework.commands.logging.CommandLogListener;
-import games.negative.framework.commands.shortcommands.provider.ShortCommandsListener;
+import games.negative.framework.command.logging.CommandLogListener;
+import games.negative.framework.command.shortcommand.provider.ShortCommandsListener;
 import games.negative.framework.gui.GUIListener;
 import games.negative.framework.inputlistener.InputListener;
 import games.negative.framework.util.FileLoader;

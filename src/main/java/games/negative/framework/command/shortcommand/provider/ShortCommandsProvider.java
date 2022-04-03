@@ -23,11 +23,11 @@
  *
  */
 
-package games.negative.framework.commands.shortcommands.provider;
+package games.negative.framework.command.shortcommand.provider;
 
-import games.negative.framework.commands.Command;
-import games.negative.framework.commands.SubCommand;
-import games.negative.framework.commands.shortcommands.ShortCommands;
+import games.negative.framework.command.Command;
+import games.negative.framework.command.SubCommand;
+import games.negative.framework.command.shortcommand.ShortCommands;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
