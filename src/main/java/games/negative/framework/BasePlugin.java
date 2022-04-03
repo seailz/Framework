@@ -27,6 +27,7 @@ package games.negative.framework;
 
 import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.shortcommand.provider.ShortCommandsListener;
+import games.negative.framework.cooldown.Cooldowns;
 import games.negative.framework.gui.GUIListener;
 import games.negative.framework.inputlistener.InputListener;
 import games.negative.framework.message.FrameworkMessage;
@@ -62,6 +63,8 @@ public abstract class BasePlugin extends JavaPlugin {
                 new InputListener(),
                 new CommandLogListener()
         );
+
+        Cooldowns.startInternalCooldowns(this);
     }
 
     /**
