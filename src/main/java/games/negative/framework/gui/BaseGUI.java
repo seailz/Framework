@@ -25,21 +25,26 @@
 
 package games.negative.framework.gui;
 
+import games.negative.framework.gui.base.MenuHolder;
+import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
+import java.util.function.BiConsumer;
 
 @RequiredArgsConstructor
 @Getter @Setter
-public class BaseGUI implements InventoryHolder {
+public class BaseGUI implements MenuHolder<GUI> {
 
     private final GUI gui;
     private Inventory inventory;
@@ -54,6 +59,36 @@ public class BaseGUI implements InventoryHolder {
                 closeFunction.accept(player, event));
 
         gui.getActiveInventories().remove(player);
+    }
+
+    @Override
+    public void onClick(InventoryClickEvent event) {
+        if (!gui.isAllowTakeItems())
+            event.setCancelled(true);
+
+        if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER) {
+            BiConsumer<Player, InventoryClickEvent> playerClick = gui.getPlayerInventoryClickEvent();
+            if (playerClick != null)
+                playerClick.accept((Player) event.getWhoClicked(), event);
+            return;
+        }
+
+        int slot = event.getSlot();
+
+        MenuItem item = gui.getItems().stream().filter(menuItem -> menuItem.getSlot() == slot).findFirst().orElse(null);
+        if (item == null)
+            return;
+
+        BiConsumer<Player, InventoryClickEvent> click = item.getClickEvent();
+        if (click == null)
+            return;
+
+        click.accept((Player) event.getWhoClicked(), event);
+    }
+
+    @Override
+    public @NotNull GUI getMenu() {
+        return gui;
     }
 
 }

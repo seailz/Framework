@@ -25,6 +25,7 @@
 
 package games.negative.framework.gui;
 
+import games.negative.framework.gui.base.MenuBase;
 import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,7 +48,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 @Getter @Setter
-public class HopperGUI {
+public class HopperGUI implements MenuBase {
 
     private final String title;
     private final ArrayList<MenuItem> items;
@@ -99,6 +100,21 @@ public class HopperGUI {
 
         // Will simply put the items in the corresponding slots
         refresh(player);
+    }
+
+    @Override
+    public void onOpen(BiConsumer<Player, InventoryOpenEvent> function) {
+        onOpen = function;
+    }
+
+    @Override
+    public void onClose(BiConsumer<Player, InventoryCloseEvent> function) {
+        onClose = function;
+    }
+
+    @Override
+    public void onInventoryClick(BiConsumer<Player, InventoryClickEvent> function) {
+        playerInventoryClickEvent = function;
     }
 
     /**

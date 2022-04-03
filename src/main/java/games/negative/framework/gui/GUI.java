@@ -25,6 +25,7 @@
 
 package games.negative.framework.gui;
 
+import games.negative.framework.gui.base.MenuBase;
 import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
 import lombok.Setter;
@@ -53,7 +54,7 @@ import java.util.function.Function;
  * @since May 24th, 2021
  */
 @Getter @Setter
-public class GUI {
+public class GUI implements MenuBase {
 
     private final int rows;
     private final String title;
@@ -100,6 +101,7 @@ public class GUI {
      *
      * @param player Player
      */
+    @Override
     public void open(@NotNull Player player) {
         BaseGUI holder = new BaseGUI(this);
         Inventory inv = Bukkit.createInventory(holder, (9 * rows), ChatColor.translateAlternateColorCodes('&', title));
@@ -111,6 +113,21 @@ public class GUI {
         refresh(player);
     }
 
+    @Override
+    public void onOpen(BiConsumer<Player, InventoryOpenEvent> function) {
+        onOpen = function;
+    }
+
+    @Override
+    public void onClose(BiConsumer<Player, InventoryCloseEvent> function) {
+        onClose = function;
+    }
+
+    @Override
+    public void onInventoryClick(BiConsumer<Player, InventoryClickEvent> function) {
+        playerInventoryClickEvent = function;
+    }
+
     /**
      * Set Item to a certain index in the GUI
      *
@@ -119,17 +136,18 @@ public class GUI {
      * @apiNote There is no click event linked to this item
      * @apiNote First slot of GUIs are 0
      */
+    @Override
     public void setItem(int index, @NotNull Function<Player, ItemStack> itemFunction) {
         setItemClickEvent(index, itemFunction, null);
     }
 
     /**
      * Set Item Click Event to a certain index in the GUI
-     *
      * @param index        Index/Placement of the Item in the GUI
      * @param itemFunction ItemStack
      * @param function     Click Event of the Item
      */
+    @Override
     public void setItemClickEvent(int index, @NotNull Function<Player, ItemStack> itemFunction, @Nullable BiConsumer<Player, InventoryClickEvent> function) {
         MenuItem menuItem = new MenuItem(index, itemFunction, function);
 

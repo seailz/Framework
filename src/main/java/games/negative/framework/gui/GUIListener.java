@@ -25,66 +25,27 @@
 
 package games.negative.framework.gui;
 
-import games.negative.framework.gui.internal.MenuItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.InventoryHolder;
-
-import java.util.Optional;
 
 public class GUIListener implements Listener {
 
     @EventHandler
     public void onInvClick(InventoryClickEvent event) {
         InventoryHolder holder = event.getInventory().getHolder();
-        // Chest GUI
         if (holder instanceof BaseGUI) {
             BaseGUI base = (BaseGUI) holder;
-
-            if (!base.getGui().isAllowTakeItems())
-                event.setCancelled(true);
-
-            if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER) {
-                GUI gui = base.getGui();
-                Optional.ofNullable(gui.getPlayerInventoryClickEvent()).ifPresent(function ->
-                        function.accept((Player) event.getWhoClicked(), event));
-                return;
-            }
-
-            int slot = event.getSlot();
-            Optional<MenuItem> first = base.getGui().getItems().stream()
-                    .filter(menuItem -> menuItem.getSlot() == slot)
-                    .findFirst();
-
-            first.flatMap(menuItem -> Optional.ofNullable(menuItem.getClickEvent()))
-                    .ifPresent(function -> function.accept((Player) event.getWhoClicked(), event));
+            base.onClick(event);
         }
 
-        // Hopper GUI
         if (holder instanceof HopperGUIHolder) {
             HopperGUIHolder base = (HopperGUIHolder) holder;
-            if (!base.getGui().isAllowTakeItems())
-                event.setCancelled(true);
-
-            if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER) {
-                HopperGUI gui = base.getGui();
-                Optional.ofNullable(gui.getPlayerInventoryClickEvent()).ifPresent(function ->
-                        function.accept((Player) event.getWhoClicked(), event));
-                return;
-            }
-
-            int slot = event.getSlot();
-            Optional<MenuItem> first = base.getGui().getItems().stream()
-                    .filter(menuItem -> menuItem.getSlot() == slot)
-                    .findFirst();
-
-            first.flatMap(menuItem -> Optional.ofNullable(menuItem.getClickEvent()))
-                    .ifPresent(function -> function.accept((Player) event.getWhoClicked(), event));
+            base.onClick(event);
         }
 
     }

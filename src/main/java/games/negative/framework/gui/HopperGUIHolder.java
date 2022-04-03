@@ -25,35 +25,72 @@
 
 package games.negative.framework.gui;
 
+import games.negative.framework.gui.base.MenuHolder;
+import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
+import java.util.function.BiConsumer;
 
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class HopperGUIHolder implements InventoryHolder {
+public class HopperGUIHolder implements MenuHolder<HopperGUI> {
 
     private final HopperGUI gui;
     private Inventory inventory;
 
+    @Override
     public void onOpen(@NotNull Player player, @NotNull InventoryOpenEvent event) {
         Optional.ofNullable(gui.getOnOpen()).ifPresent(function ->
                 function.accept(player, event));
     }
 
+    @Override
     public void onClose(@NotNull Player player, @NotNull InventoryCloseEvent event) {
         Optional.ofNullable(gui.getOnClose()).ifPresent(closeFunction ->
                 closeFunction.accept(player, event));
 
         gui.getActiveInventories().remove(player);
+    }
+
+    @Override
+    public void onClick(InventoryClickEvent event) {
+        if (!gui.isAllowTakeItems())
+            event.setCancelled(true);
+
+        if (event.getClickedInventory() != null && event.getClickedInventory().getType() == InventoryType.PLAYER) {
+            BiConsumer<Player, InventoryClickEvent> playerClick = gui.getPlayerInventoryClickEvent();
+            if (playerClick != null)
+                playerClick.accept((Player) event.getWhoClicked(), event);
+            return;
+        }
+
+        int slot = event.getSlot();
+
+        MenuItem item = gui.getItems().stream().filter(menuItem -> menuItem.getSlot() == slot).findFirst().orElse(null);
+        if (item == null)
+            return;
+
+        BiConsumer<Player, InventoryClickEvent> click = item.getClickEvent();
+        if (click == null)
+            return;
+
+        click.accept((Player) event.getWhoClicked(), event);
+    }
+
+    @Override
+    public @NotNull HopperGUI getMenu() {
+        return gui;
     }
 }
