@@ -9,9 +9,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -201,7 +199,20 @@ public interface CommandBase {
                 for (String param : params) {
                     builder.append("<").append(param).append(">").append(" ");
                 }
-                FrameworkMessage.COMMAND_USAGE.replace("%command%", getName()).replace("%usage%", builder.toString()).send(sender);
+
+                ArrayList<String> parentNames = new ArrayList<>();
+                CommandBase search = this;
+                while (search.getParent() != null) {
+                    parentNames.add(search.getParent().getName());
+                    search = search.getParent();
+                }
+
+                Collections.reverse(parentNames);
+                StringBuilder parentBuilder = new StringBuilder();
+                for (String parentName : parentNames) {
+                    parentBuilder.append(parentName).append(" ");
+                }
+                FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
 
                 return;
             }
@@ -237,7 +248,19 @@ public interface CommandBase {
                 for (String param : params) {
                     builder.append("<").append(param).append(">").append(" ");
                 }
-                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getName()).replace("%usage%", builder.toString()).send(sender);
+                ArrayList<String> parentNames = new ArrayList<>();
+                CommandBase search = this;
+                while (search.getParent() != null) {
+                    parentNames.add(search.getParent().getName());
+                    search = search.getParent();
+                }
+
+                Collections.reverse(parentNames);
+                StringBuilder parentBuilder = new StringBuilder();
+                for (String parentName : parentNames) {
+                    parentBuilder.append(parentName).append(" ");
+                }
+                FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
 
                 return;
             }
