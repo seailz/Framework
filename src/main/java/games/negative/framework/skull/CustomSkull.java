@@ -43,7 +43,13 @@ public interface CustomSkull {
         return head;
     }
 
-    static CustomSkull of(String link) {
+    @NotNull
+    static CustomSkull of(@NotNull String link) {
         return () -> link;
+    }
+
+    @NotNull
+    static CustomSkull create(@NotNull String link) {
+        return of(link);
     }
 }
