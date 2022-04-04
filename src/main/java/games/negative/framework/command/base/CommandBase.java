@@ -210,8 +210,12 @@ public interface CommandBase {
 
                 Collections.reverse(parentNames);
                 StringBuilder parentBuilder = new StringBuilder();
+                int iteration = 0;
                 for (String parentName : parentNames) {
-                    parentBuilder.append(" ").append(parentName);
+                    if (iteration != 0)
+                        parentBuilder.append(" ");
+                    parentBuilder.append(parentName);
+                    iteration++;
                 }
                 FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
 
@@ -259,8 +263,12 @@ public interface CommandBase {
 
                 Collections.reverse(parentNames);
                 StringBuilder parentBuilder = new StringBuilder();
+                int iteration = 0;
                 for (String parentName : parentNames) {
-                    parentBuilder.append(" ").append(parentName);
+                    if (iteration != 0)
+                        parentBuilder.append(" ");
+                    parentBuilder.append(parentName);
+                    iteration++;
                 }
                 FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
 
