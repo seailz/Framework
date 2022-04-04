@@ -195,30 +195,7 @@ public interface CommandBase {
                 return;
 
             if (params != null && (args.length < params.length)) {
-                StringBuilder builder = new StringBuilder();
-                for (String param : params) {
-                    builder.append("<").append(param).append(">").append(" ");
-                }
-
-                ArrayList<String> parentNames = new ArrayList<>();
-                parentNames.add(getName());
-                CommandBase search = this;
-                while (search.getParent() != null) {
-                    parentNames.add(search.getParent().getName());
-                    search = search.getParent();
-                }
-
-                Collections.reverse(parentNames);
-                StringBuilder parentBuilder = new StringBuilder();
-                int iteration = 0;
-                for (String parentName : parentNames) {
-                    if (iteration != 0)
-                        parentBuilder.append(" ");
-                    parentBuilder.append(parentName);
-                    iteration++;
-                }
-                FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
-
+                sendParamMessage(params, sender);
                 return;
             }
             onCommand(sender, args);
@@ -249,33 +226,37 @@ public interface CommandBase {
                 return;
 
             if (params != null && (args.length < params.length)) {
-                StringBuilder builder = new StringBuilder();
-                for (String param : params) {
-                    builder.append("<").append(param).append(">").append(" ");
-                }
-                ArrayList<String> parentNames = new ArrayList<>();
-                parentNames.add(getName());
-                CommandBase search = this;
-                while (search.getParent() != null) {
-                    parentNames.add(search.getParent().getName());
-                    search = search.getParent();
-                }
-
-                Collections.reverse(parentNames);
-                StringBuilder parentBuilder = new StringBuilder();
-                int iteration = 0;
-                for (String parentName : parentNames) {
-                    if (iteration != 0)
-                        parentBuilder.append(" ");
-                    parentBuilder.append(parentName);
-                    iteration++;
-                }
-                FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
-
+                sendParamMessage(params, sender);
                 return;
             }
             onCommand(sender, args);
         }
+    }
+
+    default void sendParamMessage(String[] params, CommandSender sender) {
+        StringBuilder builder = new StringBuilder();
+        for (String param : params) {
+            builder.append("<").append(param).append(">").append(" ");
+        }
+        ArrayList<String> parentNames = new ArrayList<>();
+        parentNames.add(getName());
+        CommandBase search = this;
+        while (search.getParent() != null) {
+            parentNames.add(search.getParent().getName());
+            search = search.getParent();
+        }
+
+        Collections.reverse(parentNames);
+        StringBuilder parentBuilder = new StringBuilder();
+        int iteration = 0;
+        for (String parentName : parentNames) {
+            if (iteration != 0)
+                parentBuilder.append(" ");
+            parentBuilder.append(parentName);
+            iteration++;
+        }
+        FrameworkMessage.COMMAND_USAGE.replace("%command%", parentBuilder.toString()).replace("%usage%", builder.toString()).send(sender);
+
     }
 
     /**
