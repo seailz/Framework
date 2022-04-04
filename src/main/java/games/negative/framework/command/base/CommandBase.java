@@ -201,6 +201,7 @@ public interface CommandBase {
                 }
 
                 ArrayList<String> parentNames = new ArrayList<>();
+                parentNames.add(getName());
                 CommandBase search = this;
                 while (search.getParent() != null) {
                     parentNames.add(search.getParent().getName());
@@ -249,6 +250,7 @@ public interface CommandBase {
                     builder.append("<").append(param).append(">").append(" ");
                 }
                 ArrayList<String> parentNames = new ArrayList<>();
+                parentNames.add(getName());
                 CommandBase search = this;
                 while (search.getParent() != null) {
                     parentNames.add(search.getParent().getName());
