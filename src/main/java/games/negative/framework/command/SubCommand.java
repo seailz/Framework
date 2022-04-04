@@ -26,18 +26,22 @@
 package games.negative.framework.command;
 
 import games.negative.framework.command.annotation.CommandInfo;
+import games.negative.framework.command.base.CommandBase;
 import games.negative.framework.command.event.SubCommandLogEvent;
 import games.negative.framework.command.shortcommand.ShortCommands;
-import games.negative.framework.message.FrameworkMessage;
-import games.negative.framework.message.Message;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -47,7 +51,7 @@ import java.util.function.Consumer;
  * @apiNote Must be added to a {@link Command} class in order to work!
  */
 @Getter @Setter
-public abstract class SubCommand {
+public abstract class SubCommand implements CommandBase {
 
     // subcommands of subcommands lol
     private final List<SubCommand> subCommands = new ArrayList<>();
@@ -60,7 +64,7 @@ public abstract class SubCommand {
     private boolean disabled;
     private String[] params;
     private Consumer<SubCommandLogEvent> subCommandLogEventConsumer;
-
+    private CommandBase parent;
 
     public SubCommand() {
         this(null, null);
@@ -115,109 +119,6 @@ public abstract class SubCommand {
         }
     }
 
-    public void execute(CommandSender sender, String[] args) {
-        // If the Command is disabled, send this message
-
-        if (isDisabled()) {
-            boolean cancelled = runLogEvent(this, sender, args);
-            if (cancelled)
-                return;
-
-            FrameworkMessage.COMMAND_DISABLED.send(sender);
-            return;
-        }
-
-        if (isPlayerOnly() && !(sender instanceof Player)) {
-            boolean cancelled = runLogEvent(this, sender, args);
-            if (cancelled)
-                return;
-
-            FrameworkMessage.COMMAND_CANNOT_USE_THIS_AS_CONSOLE.send(sender);
-            return;
-        }
-
-        if (isConsoleOnly() && sender instanceof Player) {
-            boolean cancelled = runLogEvent(this, sender, args);
-            if (cancelled)
-                return;
-
-            FrameworkMessage.COMMAND_CANNOT_USE_THIS_AS_PLAYER.send(sender);
-            return;
-        }
-
-        // If the permission node is not null and not empty
-        // but, if the user doesn't have permission for the command
-        // send this message
-        if (!getPermission().isEmpty()) {
-            if (!sender.hasPermission(getPermission())) {
-                boolean cancelled = runLogEvent(this, sender, args);
-                if (cancelled)
-                    return;
-
-                FrameworkMessage.COMMAND_NO_PERMISSION.send(sender);
-                return;
-            }
-        }
-
-        // Checks if the SubCommand SubCommands are empty (subcommand seption)
-        // if so, execute regular command
-        List<SubCommand> subCommands = getSubCommands();
-        if (args.length == 0 || subCommands.isEmpty()) {
-            boolean cancelled = runLogEvent(this, sender, args);
-            if (cancelled)
-                return;
-
-            if (params != null && (args.length < params.length)) {
-                StringBuilder builder = new StringBuilder();
-                for (String param : params) {
-                    builder.append("<").append(param).append(">").append(" ");
-                }
-                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getArgument()).replace("%usage%", builder.toString()).send(sender);
-
-                return;
-            }
-            runCommand(sender, args);
-            return;
-        }
-
-        // Gets args 0
-        String arg = args[0];
-        // Removes args 0
-        String[] newArgs = Arrays.copyOfRange(args, 1, args.length);
-
-        Optional<SubCommand> command = subCommands.stream().filter(subCmd -> {
-            if (subCmd.getArgument().equalsIgnoreCase(arg))
-                return true;
-
-            List<String> aliases = subCmd.getAliases();
-            if (aliases == null || aliases.isEmpty())
-                return false;
-
-            return aliases.contains(arg.toLowerCase());
-        }).findFirst();
-
-        if (command.isPresent())
-            runSubCommand(command.get(), sender, newArgs);
-        else {
-            boolean cancelled = runLogEvent(this, sender, args);
-            if (cancelled)
-                return;
-
-            if (params != null && (args.length < params.length)) {
-                StringBuilder builder = new StringBuilder();
-                for (String param : params) {
-                    builder.append("<").append(param).append(">").append(" ");
-                }
-                FrameworkMessage.COMMAND_USAGE.replace("%command%", this.getArgument()).replace("%usage%", builder.toString()).send(sender);
-
-                return;
-            }
-            runCommand(sender, args);
-        }
-    }
-
-    public abstract void runCommand(CommandSender sender, String[] args);
-
     /**
      * Adds SubCommand to the SubCommand's subcommands
      * SubCommand seption
@@ -235,28 +136,58 @@ public abstract class SubCommand {
      * @param sender     Sender
      * @param args       Arguments
      */
-    private void runSubCommand(SubCommand subCommand, CommandSender sender, String[] args) {
+    @Override
+    public void runSubCommand(SubCommand subCommand, CommandSender sender, String[] args) {
         subCommand.execute(sender, args);
     }
 
-    /**
-     * Checks to see if a Player is online
-     *
-     * @param name Name
-     * @return Optional
-     */
-    public Optional<Player> getPlayer(String name) {
-        return Optional.ofNullable(Bukkit.getPlayer(name));
-    }
-
-    private boolean runLogEvent(SubCommand command, CommandSender sender, String[] args) {
+    @Override
+    public boolean runLogEvent(CommandBase base, CommandSender sender, String[] args) {
         if (subCommandLogEventConsumer == null)
             return false;
 
-        SubCommandLogEvent event = new SubCommandLogEvent(sender, args, command);
+        SubCommandLogEvent event = new SubCommandLogEvent(sender, args, this);
         Bukkit.getPluginManager().callEvent(event);
 
         return event.isCancelled();
+    }
+
+    @Override
+    public void ifHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer) {
+        if (sender.hasPermission(perm))
+            consumer.accept(sender);
+    }
+
+    @Override
+    public void ifNotHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer) {
+        if (!sender.hasPermission(perm))
+            consumer.accept(sender);
+    }
+
+    @Override
+    public void ifPlayer(@NotNull CommandSender sender, @NotNull Consumer<Player> consumer) {
+        if (sender instanceof Player)
+            consumer.accept((Player) sender);
+    }
+
+    public void ifConsole(@NotNull CommandSender sender, @NotNull Consumer<ConsoleCommandSender> consumer) {
+        if (sender instanceof ConsoleCommandSender)
+            consumer.accept((ConsoleCommandSender) sender);
+    }
+
+    @Override
+    public @Nullable CommandBase getParent() {
+        return parent;
+    }
+
+    @Override
+    public void setParent(@NotNull CommandBase parent) {
+        this.parent = parent;
+    }
+
+    @Override
+    public @NotNull String getName() {
+        return argument;
     }
 
     public Consumer<SubCommandLogEvent> getSubCommandLogEvent() {
