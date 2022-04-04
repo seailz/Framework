@@ -174,7 +174,7 @@ public interface CommandBase {
         // If the permission node is not null and not empty
         // but, if the user doesn't have permission for the command
         // send this message
-        if (!getPermission().isEmpty()) {
+        if (getPermission() != null && !getPermission().isEmpty()) {
             if (!sender.hasPermission(getPermission())) {
                 boolean cancelled = runLogEvent(this, sender, args);
                 if (cancelled)
