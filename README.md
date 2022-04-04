@@ -1,7 +1,7 @@
 # Negative Games - Framework
 An expanded plugin library which allows more effective and rapid plugin development.
 
-## ✨Maven Repo
+## ✨Maven Repo✨
 
 ### Repository
 
@@ -49,5 +49,39 @@ An example would be
 </configuration>
 ```
 
-## Gradle Repo
-Coming soon.
+## ✨Gradle Repo✨
+```groovy
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+```
+
+```groovy
+dependencies {
+    implementation 'com.github.Negative-Games:Framework:{VERSION}'
+}
+```
+To mask the dependency, add this to your plugins section
+```groovy
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+```
+And then make a shadowJar section and put the following
+```groovy
+shadowJar {
+    archiveBaseName.set("${id}-${version}")
+    archiveClassifier.set("")
+    archiveVersion.set("")
+    
+    relocate "games.negative.framework", "${group}.libs.plugin"
+}
+```
+If you are wondering what `${group}` and `${id}` are, it is this:
+```groovy
+def id = "MyPlugin" // Replace with the plugin name
+def group = 'games.negative' // Replace with your group id
+def version = '1.0-SNAPSHOT' // Replace with the version
+```
