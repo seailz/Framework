@@ -1,5 +1,6 @@
 # Negative Games - Framework
-An expanded plugin library which allows more effective and rapid plugin development.
+An expanded plugin library which allows more effective and rapid plugin development.  
+[Javadocs](https://docs.joehosten.me/negative-framework)
 
 ## ✨Maven Repo
 
