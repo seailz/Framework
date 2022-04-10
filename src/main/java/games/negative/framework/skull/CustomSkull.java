@@ -15,7 +15,6 @@ import org.apache.commons.codec.binary.Base64;
 
 import java.util.UUID;
 
-@ApiStatus.Experimental
 public interface CustomSkull {
 
     @NotNull
