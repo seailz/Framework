@@ -53,7 +53,7 @@ public class HasteBin {
     public String post(@NotNull String text, boolean raw) throws IOException {
         byte[] postData = text.getBytes(StandardCharsets.UTF_8);
         int postDataLength = postData.length;
-        String requestURL = "https://paste.deltapvp.club/documents";
+        String requestURL = "https://bin.hypews.com/documents";
         URL url = new URL(requestURL);
         HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
         conn.setDoOutput(true);
@@ -77,7 +77,7 @@ public class HasteBin {
 
         if (response.contains("\"key\"")) {
             response = response.substring(response.indexOf(":") + 2, response.length() - 2);
-            String postURL = raw ? "https://bin.hypews.com/raw/" : "https://paste.deltapvp.club/";
+            String postURL = raw ? "https://bin.hypews.com/raw/" : "https://bin.hypews.com/";
             response = postURL + response;
         }
 
