@@ -167,7 +167,7 @@ public interface ItemUpdater {
 
             @Override
             public ItemUpdater clone() {
-                return ItemUpdater.of(is.clone());
+                return ItemUpdater.update(is.clone());
             }
         };
     }
