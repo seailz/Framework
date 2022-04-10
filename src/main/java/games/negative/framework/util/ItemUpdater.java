@@ -40,7 +40,7 @@ public interface ItemUpdater {
 
     ItemUpdater clone();
 
-    static ItemUpdater of(ItemStack item) {
+    static ItemUpdater update(ItemStack item) {
         return new ItemUpdater() {
 
             private final ItemStack is = item;
