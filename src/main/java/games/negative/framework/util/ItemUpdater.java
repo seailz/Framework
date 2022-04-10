@@ -48,7 +48,7 @@ public interface ItemUpdater {
             @Override
             public ItemUpdater setName(String displayName) {
                 ItemMeta meta = is.getItemMeta();
-                meta.setDisplayName(displayName);
+                meta.setDisplayName(Utils.color(displayName));
                 is.setItemMeta(meta);
                 return this;
             }
@@ -56,7 +56,7 @@ public interface ItemUpdater {
             @Override
             public ItemUpdater setLore(String... lore) {
                 ItemMeta meta = is.getItemMeta();
-                meta.setLore(Arrays.asList(lore));
+                meta.setLore(Utils.color(Arrays.asList(lore)));
                 is.setItemMeta(meta);
                 return this;
             }
@@ -64,7 +64,7 @@ public interface ItemUpdater {
             @Override
             public ItemUpdater setLore(List<String> lore) {
                 ItemMeta meta = is.getItemMeta();
-                meta.setLore(lore);
+                meta.setLore(Utils.color(lore));
                 is.setItemMeta(meta);
                 return this;
             }
@@ -120,7 +120,7 @@ public interface ItemUpdater {
                 if (lore == null)
                     lore = new ArrayList<>();
 
-                lore.add(line);
+                lore.add(Utils.color(line));
                 meta.setLore(lore);
                 is.setItemMeta(meta);
                 return this;
@@ -146,7 +146,7 @@ public interface ItemUpdater {
                 if (lore == null)
                     return this;
 
-                lore.set(index, line);
+                lore.set(index, Utils.color(line));
                 meta.setLore(lore);
                 is.setItemMeta(meta);
                 return this;
@@ -160,7 +160,7 @@ public interface ItemUpdater {
                     return this;
 
                 function.accept(lore);
-                meta.setLore(lore);
+                meta.setLore(Utils.color(lore));
                 is.setItemMeta(meta);
                 return this;
             }
