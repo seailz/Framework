@@ -1,32 +1,7 @@
-/*
- * MIT License
- *
- * Copyright (c) 2022 Negative
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *
- */
-
 package games.negative.framework.gui;
 
 import games.negative.framework.gui.base.MenuBase;
-import games.negative.framework.gui.holder.HopperGUIHolder;
+import games.negative.framework.gui.holder.DropperGUIHolder;
 import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,8 +24,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 @Getter @Setter
-public class HopperGUI implements MenuBase {
-
+public class DropperGUI implements MenuBase {
     private final String title;
     private final ArrayList<MenuItem> items;
 
@@ -68,7 +42,7 @@ public class HopperGUI implements MenuBase {
      * @apiNote The title supports color codes automatically!
      * @apiNote By default, allowTakeItems is false.
      */
-    public HopperGUI(@NotNull String title) {
+    public DropperGUI(@NotNull String title) {
         this(title, false);
     }
 
@@ -79,7 +53,7 @@ public class HopperGUI implements MenuBase {
      * @param allowTakeItems Allowed taking items from the menu?
      * @apiNote The title supports color codes automatically!
      */
-    public HopperGUI(@NotNull String title, boolean allowTakeItems) {
+    public DropperGUI(@NotNull String title, boolean allowTakeItems) {
         this.title = title;
         this.allowTakeItems = allowTakeItems;
 
@@ -93,8 +67,8 @@ public class HopperGUI implements MenuBase {
      * @param player Player
      */
     public void open(@NotNull Player player) {
-        HopperGUIHolder holder = new HopperGUIHolder(this);
-        Inventory inv = Bukkit.createInventory(holder, InventoryType.HOPPER, ChatColor.translateAlternateColorCodes('&', title));
+        DropperGUIHolder holder = new DropperGUIHolder(this);
+        Inventory inv = Bukkit.createInventory(holder, InventoryType.DROPPER, ChatColor.translateAlternateColorCodes('&', title));
 
         player.openInventory(inv);
         activeInventories.put(player, inv);
@@ -210,5 +184,4 @@ public class HopperGUI implements MenuBase {
             }
         });
     }
-
 }
