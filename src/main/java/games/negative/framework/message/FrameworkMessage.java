@@ -3,10 +3,8 @@ package games.negative.framework.message;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,8 +33,8 @@ public enum FrameworkMessage {
     )),
 
     ;
-    private Message message;
     private final List<String> defaultMessage;
+    private Message message;
 
     public static void init() {
         Arrays.stream(values()).forEach(message -> message.message = new Message(message.defaultMessage));

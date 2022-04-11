@@ -36,7 +36,8 @@ public class Task {
 
     /**
      * Run a task asynchronously
-     * @param plugin {@link JavaPlugin} instance
+     *
+     * @param plugin   {@link JavaPlugin} instance
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -46,8 +47,9 @@ public class Task {
 
     /**
      * Run a delayed task asynchronously
-     * @param plugin {@link JavaPlugin} instance
-     * @param delay Delay in ticks
+     *
+     * @param plugin   {@link JavaPlugin} instance
+     * @param delay    Delay in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -57,8 +59,9 @@ public class Task {
 
     /**
      * Run a repeating task asynchronously
-     * @param plugin {@link JavaPlugin} instance
-     * @param delay Delay in ticks
+     *
+     * @param plugin   {@link JavaPlugin} instance
+     * @param delay    Delay in ticks
      * @param interval Interval the task gets repeated in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
@@ -69,7 +72,8 @@ public class Task {
 
     /**
      * Run a task
-     * @param plugin {@link JavaPlugin} instance
+     *
+     * @param plugin   {@link JavaPlugin} instance
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -79,8 +83,9 @@ public class Task {
 
     /**
      * Run a delayed task
-     * @param plugin {@link JavaPlugin} instance
-     * @param delay Delay in ticks
+     *
+     * @param plugin   {@link JavaPlugin} instance
+     * @param delay    Delay in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -90,8 +95,9 @@ public class Task {
 
     /**
      * Run a repeating task
-     * @param plugin {@link JavaPlugin} instance
-     * @param delay Delay in ticks
+     *
+     * @param plugin   {@link JavaPlugin} instance
+     * @param delay    Delay in ticks
      * @param interval Interval the task gets repeated in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance

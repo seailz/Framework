@@ -5,17 +5,26 @@ import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
 import games.negative.framework.nms.SkullReflections;
 import games.negative.framework.util.version.VersionChecker;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.codec.binary.Base64;
 
 import java.util.UUID;
 
 public interface CustomSkull {
+
+    @NotNull
+    static CustomSkull of(@NotNull String link) {
+        return () -> link;
+    }
+
+    @NotNull
+    static CustomSkull create(@NotNull String link) {
+        return of(link);
+    }
 
     @NotNull
     String link();
@@ -40,15 +49,5 @@ public interface CustomSkull {
         SkullReflections.getField(headMetaClass, "profile", GameProfile.class).set(headMeta, profile);
         head.setItemMeta(headMeta);
         return head;
-    }
-
-    @NotNull
-    static CustomSkull of(@NotNull String link) {
-        return () -> link;
-    }
-
-    @NotNull
-    static CustomSkull create(@NotNull String link) {
-        return of(link);
     }
 }

@@ -169,7 +169,7 @@ public class BiMap<K, V, V1> {
      */
     public Optional<V> getFirst(@NotNull K key) {
         if (!getEntry(key).isPresent())
-            throw new NullPointerException("This entry with key of `" + key.toString() + "` is not in the BiMap");
+            throw new NullPointerException("This entry with key of `" + key + "` is not in the BiMap");
 
         Entry<K, V, V1> entry = getEntry(key).get();
         return Optional.ofNullable(entry.getValue1());
@@ -196,7 +196,7 @@ public class BiMap<K, V, V1> {
      */
     public Optional<V1> getSecond(@NotNull K key) {
         if (!getEntry(key).isPresent())
-            throw new NullPointerException("This entry with key of `" + key.toString() + "` is not in the BiMap");
+            throw new NullPointerException("This entry with key of `" + key + "` is not in the BiMap");
 
         Entry<K, V, V1> entry = getEntry(key).get();
         return Optional.ofNullable(entry.getValue2());

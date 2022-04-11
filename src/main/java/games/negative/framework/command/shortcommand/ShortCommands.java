@@ -36,7 +36,8 @@ import java.util.Optional;
 
 public abstract class ShortCommands {
 
-    @Getter @Setter(AccessLevel.PROTECTED)
+    @Getter
+    @Setter(AccessLevel.PROTECTED)
     private static ShortCommands instance;
 
     public abstract void addShortCommand(@NotNull Command command, @NotNull String[] commands);

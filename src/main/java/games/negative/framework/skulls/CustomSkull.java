@@ -25,11 +25,11 @@
 
 package games.negative.framework.skulls;
 
-import games.negative.framework.nms.SkullReflections;
-import games.negative.framework.util.version.VersionChecker;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
+import games.negative.framework.nms.SkullReflections;
+import games.negative.framework.util.version.VersionChecker;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.codec.binary.Base64;
 import org.bukkit.Material;

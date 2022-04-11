@@ -50,7 +50,8 @@ import java.util.function.Consumer;
  * @author Negative
  * @apiNote Must be added to a {@link Command} class in order to work!
  */
-@Getter @Setter
+@Getter
+@Setter
 public abstract class SubCommand implements CommandBase {
 
     // subcommands of subcommands lol

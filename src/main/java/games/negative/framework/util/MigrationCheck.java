@@ -25,9 +25,9 @@
 
 package games.negative.framework.util;
 
-import games.negative.framework.nms.DeltaReflection;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import games.negative.framework.nms.DeltaReflection;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import org.bukkit.entity.Player;

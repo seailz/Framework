@@ -44,7 +44,7 @@ import java.nio.charset.StandardCharsets;
  * The ability to post text to HasteBin.
  * <p>
  * *CREDIT TO FALS3*
-*/
+ */
 
 public class HasteBin {
     public HasteBin() {
@@ -55,7 +55,7 @@ public class HasteBin {
         int postDataLength = postData.length;
         String requestURL = "https://bin.hypews.com/documents";
         URL url = new URL(requestURL);
-        HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
         conn.setDoOutput(true);
         conn.setInstanceFollowRedirects(false);
         conn.setRequestMethod("POST");

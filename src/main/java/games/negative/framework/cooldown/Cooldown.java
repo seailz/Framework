@@ -16,6 +16,7 @@ public interface Cooldown<I, V extends Comparable<V>> extends Keyd<String> {
 
     /**
      * Validates if the identifier is on the cooldown.
+     *
      * @param identifier The identifier of the cooldown.
      * @return True if the identifier is on the cooldown.
      */
@@ -23,6 +24,7 @@ public interface Cooldown<I, V extends Comparable<V>> extends Keyd<String> {
 
     /**
      * Gets the value of the cooldown.
+     *
      * @param identifier The identifier of the cooldown.
      * @return The value of the cooldown.
      */
@@ -30,13 +32,15 @@ public interface Cooldown<I, V extends Comparable<V>> extends Keyd<String> {
 
     /**
      * Sets the value of the cooldown.
+     *
      * @param identifier The identifier of the cooldown.
-     * @param value The value of the cooldown.
+     * @param value      The value of the cooldown.
      */
     void setCooldown(I identifier, V value);
 
     /**
      * Resets the cooldown.
+     *
      * @param identifier The identifier of the cooldown.
      */
     void resetCooldown(I identifier);
@@ -53,12 +57,14 @@ public interface Cooldown<I, V extends Comparable<V>> extends Keyd<String> {
 
     /**
      * Gets the identifiers of the cooldowns.
+     *
      * @return The identifiers of the cooldowns.
      */
     Collection<I> getCooldowns();
 
     /**
      * Gets the cooldowns.
+     *
      * @return The cooldowns.
      */
     Map<I, V> getCooldownEntries();

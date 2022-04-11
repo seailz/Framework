@@ -19,51 +19,58 @@ public interface CommandBase {
 
     /**
      * Executes the command.
+     *
      * @param sender The sender of the command.
-     * @param args The arguments of the command.
+     * @param args   The arguments of the command.
      */
     void onCommand(CommandSender sender, String[] args);
 
     /**
      * Runs a subcommand
+     *
      * @param subCommand The subcommand to run.
-     * @param sender The sender of the command.
-     * @param args The arguments of the command.
+     * @param sender     The sender of the command.
+     * @param args       The arguments of the command.
      */
     void runSubCommand(SubCommand subCommand, CommandSender sender, String[] args);
 
     /**
      * If the sender has the permission to run the command, execute some code
-     * @param sender The sender of the command.
-     * @param perm The permission to check.
+     *
+     * @param sender   The sender of the command.
+     * @param perm     The permission to check.
      * @param consumer The code to execute if the sender has the permission.
      */
     void ifHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer);
 
     /**
      * If the sender does not have permission to run the command, execute some code
-     * @param sender The sender of the command.
-     * @param perm The permission to check.
+     *
+     * @param sender   The sender of the command.
+     * @param perm     The permission to check.
      * @param consumer The code to execute if the sender does not have the permission.
      */
     void ifNotHasPermission(@NotNull CommandSender sender, @NotNull String perm, @NotNull Consumer<CommandSender> consumer);
 
     /**
      * If the sender is a player, run some code.
-     * @param sender The sender of the command.
+     *
+     * @param sender   The sender of the command.
      * @param consumer The code to execute if the sender is a player.
      */
     void ifPlayer(@NotNull CommandSender sender, @NotNull Consumer<Player> consumer);
 
     /**
      * If the sender is the console, run some code.
-     * @param sender The sender of the command.
+     *
+     * @param sender   The sender of the command.
      * @param consumer The code to execute if the sender is the console.
      */
     void ifConsole(@NotNull CommandSender sender, @NotNull Consumer<ConsoleCommandSender> consumer);
 
     /**
      * Gets a player by a name.
+     *
      * @param name The name of the player.
      * @return The player.
      * @throws NullPointerException If the player is not found.
@@ -75,12 +82,14 @@ public interface CommandBase {
 
     /**
      * Add subcommands to the command.
+     *
      * @param subCommands The subcommands to add.
      */
     void addSubCommands(SubCommand... subCommands);
 
     /**
      * Get the parent of the command.
+     *
      * @return The parent of the command.
      */
     @Nullable
@@ -88,12 +97,14 @@ public interface CommandBase {
 
     /**
      * Set the parent of the command.
+     *
      * @param parent The parent of the command.
      */
     void setParent(@NotNull CommandBase parent);
 
     /**
      * Get the name of the command.
+     *
      * @return The name of the command.
      */
     @NotNull
@@ -101,24 +112,28 @@ public interface CommandBase {
 
     /**
      * Validates if the command is disabled.
+     *
      * @return If the command is disabled.
      */
     boolean isDisabled();
 
     /**
      * Validates if the command is player-only.
+     *
      * @return If the command is player-only.
      */
     boolean isPlayerOnly();
 
     /**
      * Validates if the command is console-only.
+     *
      * @return If the command is console-only.
      */
     boolean isConsoleOnly();
 
     /**
      * Get the permission of the command.
+     *
      * @return The permission of the command.
      * @throws NullPointerException If the permission is not set.
      */
@@ -127,12 +142,14 @@ public interface CommandBase {
 
     /**
      * Get the parameters of the command.
+     *
      * @return The parameters of the command.
      */
     String[] getParams();
 
     /**
      * Get the subcommands of the command.
+     *
      * @return The subcommands of the command.
      */
     @NotNull
@@ -140,8 +157,9 @@ public interface CommandBase {
 
     /**
      * Code to validate everything before execution of the command.
+     *
      * @param sender The sender of the command.
-     * @param args The arguments of the command.
+     * @param args   The arguments of the command.
      */
     default void execute(CommandSender sender, String[] args) {
         if (isDisabled()) {
@@ -261,9 +279,10 @@ public interface CommandBase {
 
     /**
      * Run log event
-     * @param base The base command
+     *
+     * @param base   The base command
      * @param sender The sender of the command
-     * @param args The arguments of the command
+     * @param args   The arguments of the command
      * @return If the event was cancelled
      */
     boolean runLogEvent(CommandBase base, CommandSender sender, String[] args);

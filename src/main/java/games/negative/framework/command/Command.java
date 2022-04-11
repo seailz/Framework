@@ -44,7 +44,8 @@ import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
-@Getter @Setter
+@Getter
+@Setter
 public abstract class Command extends org.bukkit.command.Command implements CommandBase {
     private final List<SubCommand> subCommands = new ArrayList<>();
 

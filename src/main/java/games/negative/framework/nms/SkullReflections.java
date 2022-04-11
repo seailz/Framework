@@ -361,7 +361,7 @@ public final class SkullReflections {
      */
     public static Class<Object> getUntypedClass(@NotNull String lookupName) {
         @SuppressWarnings({"rawtypes", "unchecked"})
-        Class<Object> clazz = (Class<Object>) (Class) getClass(lookupName);
+        Class<Object> clazz = (Class<Object>) getClass(lookupName);
         return clazz;
     }
 

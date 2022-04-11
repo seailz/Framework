@@ -23,7 +23,8 @@ import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-@Getter @Setter
+@Getter
+@Setter
 public class DropperGUI implements MenuBase {
     private final String title;
     private final ArrayList<MenuItem> items;
@@ -161,6 +162,7 @@ public class DropperGUI implements MenuBase {
 
     /**
      * Clears the {@link ItemStack} and item click functionality in the {@param slot} slot
+     *
      * @param slot Slot of the item function you would like to remove
      */
     public void clearSlot(int slot) {

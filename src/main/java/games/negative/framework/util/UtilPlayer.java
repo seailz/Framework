@@ -103,6 +103,7 @@ public class UtilPlayer {
 
     /**
      * Get a UUID by a Name from Mojang's Servers
+     *
      * @param name Name
      * @return UUID of the Player
      * @apiNote Requires org.json to work!
@@ -118,6 +119,7 @@ public class UtilPlayer {
 
     /**
      * Get an IGN through a UUID from Mojang's servers
+     *
      * @param uuid UUID
      * @return IGN of the UUID
      * @apiNote Requires org.json to work!

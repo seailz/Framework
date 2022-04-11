@@ -42,49 +42,56 @@ public @interface CommandInfo {
 
     /**
      * Name of the command
+     *
      * @return name of the command
      */
     String name();
 
     /**
      * Aliases of the command
+     *
      * @return aliases of the command
      */
     String[] aliases() default "";
 
     /**
      * The permission required to execute the command
+     *
      * @return permission required to execute the command
      */
     String permission() default "";
 
     /**
      * The description of the command
+     *
      * @return description of the command
      */
     String description() default "";
 
     /**
      * If the command is only for the console
+     *
      * @return if the command is only for the console
      */
     boolean consoleOnly() default false;
 
     /**
      * If the command is only for players
+     *
      * @return if the command is only for players
      */
     boolean playerOnly() default false;
 
     /**
      * If the command is disabled
+     *
      * @return if the command is disabled
      */
     boolean disabled() default false;
 
     /**
      * The shortcommand alias of the command
-     *
+     * <p>
      * This is intended to be a shortcut for the command
      * For example if you have a command called "gamemode creative" and you want to use "gmc" as a shortcut
      * You can do this by having a short command called "gmc"
@@ -95,7 +102,7 @@ public @interface CommandInfo {
 
     /**
      * Arguments of the command
-     *
+     * <p>
      * This is intended to remove the redundancy of checking the arguments of the command for a certain length.
      *
      * @return arguments of the command

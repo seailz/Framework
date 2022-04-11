@@ -38,6 +38,10 @@ public class InputListener implements Listener {
 
     private static final Map<UUID, InputListenerResponse> listenerMap = new HashMap<>();
 
+    public static void listen(UUID uuid, InputListenerResponse response) {
+        listenerMap.putIfAbsent(uuid, response);
+    }
+
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
@@ -48,11 +52,6 @@ public class InputListener implements Listener {
             response.handle(event);
             listenerMap.remove(uuid);
         }
-    }
-
-
-    public static void listen(UUID uuid, InputListenerResponse response) {
-        listenerMap.putIfAbsent(uuid, response);
     }
 
 

@@ -54,7 +54,8 @@ import java.util.function.Function;
  * @author Negative
  * @since May 24th, 2021
  */
-@Getter @Setter
+@Getter
+@Setter
 public class GUI implements MenuBase {
 
     private final int rows;
@@ -144,6 +145,7 @@ public class GUI implements MenuBase {
 
     /**
      * Set Item Click Event to a certain index in the GUI
+     *
      * @param index        Index/Placement of the Item in the GUI
      * @param itemFunction ItemStack
      * @param function     Click Event of the Item
@@ -174,7 +176,7 @@ public class GUI implements MenuBase {
      * @param function     Click Event of the Item
      * @apiNote This adds the Item to the next available slot
      */
-    public void addItemClickEvent(@NotNull Function<Player, ItemStack> itemFunction, @Nullable  BiConsumer<Player, InventoryClickEvent> function) {
+    public void addItemClickEvent(@NotNull Function<Player, ItemStack> itemFunction, @Nullable BiConsumer<Player, InventoryClickEvent> function) {
         int i;
         for (i = 0; i < (9 * rows); i++) {
             int indexSlot = i;
@@ -189,6 +191,7 @@ public class GUI implements MenuBase {
 
     /**
      * Clears the {@link ItemStack} and item click functionality in the {@param slot} slot
+     *
      * @param slot Slot of the item function you would like to remove
      */
     public void clearSlot(int slot) {

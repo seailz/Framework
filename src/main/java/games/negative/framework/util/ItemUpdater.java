@@ -12,34 +12,6 @@ import java.util.function.Consumer;
 
 public interface ItemUpdater {
 
-    ItemUpdater setName(String displayName);
-
-    ItemUpdater setLore(String... lore);
-
-    ItemUpdater setLore(List<String> lore);
-
-    ItemUpdater addEnchantment(Enchantment enchantment, int level);
-
-    ItemUpdater removeEnchantment(Enchantment enchantment);
-
-    ItemUpdater setAmount(int amount);
-
-    ItemUpdater setData(short durability);
-
-    ItemUpdater addItemFlags(ItemFlag... flags);
-
-    ItemUpdater removeItemFlags(ItemFlag... flags);
-
-    ItemUpdater addLoreLine(String line);
-
-    ItemUpdater removeLoreLine(int index);
-
-    ItemUpdater setLoreLine(String line, int index);
-
-    ItemUpdater replaceLore(Consumer<List<String>> function);
-
-    ItemUpdater clone();
-
     static ItemUpdater update(ItemStack item) {
         return new ItemUpdater() {
 
@@ -171,4 +143,32 @@ public interface ItemUpdater {
             }
         };
     }
+
+    ItemUpdater setName(String displayName);
+
+    ItemUpdater setLore(String... lore);
+
+    ItemUpdater setLore(List<String> lore);
+
+    ItemUpdater addEnchantment(Enchantment enchantment, int level);
+
+    ItemUpdater removeEnchantment(Enchantment enchantment);
+
+    ItemUpdater setAmount(int amount);
+
+    ItemUpdater setData(short durability);
+
+    ItemUpdater addItemFlags(ItemFlag... flags);
+
+    ItemUpdater removeItemFlags(ItemFlag... flags);
+
+    ItemUpdater addLoreLine(String line);
+
+    ItemUpdater removeLoreLine(int index);
+
+    ItemUpdater setLoreLine(String line, int index);
+
+    ItemUpdater replaceLore(Consumer<List<String>> function);
+
+    ItemUpdater clone();
 }

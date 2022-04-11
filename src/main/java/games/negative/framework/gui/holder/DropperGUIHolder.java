@@ -1,7 +1,6 @@
 package games.negative.framework.gui.holder;
 
 import games.negative.framework.gui.DropperGUI;
-import games.negative.framework.gui.HopperGUI;
 import games.negative.framework.gui.base.MenuHolder;
 import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
@@ -15,7 +14,6 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Optional;
 import java.util.function.BiConsumer;
 
 @Getter

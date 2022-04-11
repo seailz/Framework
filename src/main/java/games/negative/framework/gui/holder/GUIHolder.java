@@ -39,11 +39,11 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Optional;
 import java.util.function.BiConsumer;
 
 @RequiredArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class GUIHolder implements MenuHolder<GUI> {
 
     private final GUI gui;

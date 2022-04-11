@@ -33,7 +33,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Message {
 
     private final String initial;
@@ -63,11 +64,11 @@ public class Message {
      * Could be a string, int, double, whatever
      *
      * @param placeholder - Placeholder
-     *                     (ex. %player% or %amount%)
-     *                     <p>
+     *                    (ex. %player% or %amount%)
+     *                    <p>
      * @param replacement - Replacement
-     *                     (ex. "Negative" or 100)
-     *                     <p>
+     *                    (ex. "Negative" or 100)
+     *                    <p>
      * @return - Message instance with the replacement
      */
     public Message replace(String placeholder, String replacement) {
