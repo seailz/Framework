@@ -23,8 +23,11 @@
  *
  */
 
-package games.negative.framework.gui;
+package games.negative.framework.gui.listener;
 
+import games.negative.framework.gui.holder.DropperGUIHolder;
+import games.negative.framework.gui.holder.GUIHolder;
+import games.negative.framework.gui.holder.HopperGUIHolder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -38,8 +41,8 @@ public class GUIListener implements Listener {
     @EventHandler
     public void onInvClick(InventoryClickEvent event) {
         InventoryHolder holder = event.getInventory().getHolder();
-        if (holder instanceof BaseGUI) {
-            BaseGUI base = (BaseGUI) holder;
+        if (holder instanceof GUIHolder) {
+            GUIHolder base = (GUIHolder) holder;
             base.onClick(event);
         }
 
@@ -48,13 +51,18 @@ public class GUIListener implements Listener {
             base.onClick(event);
         }
 
+        if (holder instanceof DropperGUIHolder) {
+            DropperGUIHolder base = (DropperGUIHolder) holder;
+            base.onClick(event);
+        }
+
     }
 
     @EventHandler
     public void onClose(InventoryCloseEvent event) {
         InventoryHolder holder = event.getInventory().getHolder();
-        if (holder instanceof BaseGUI) {
-            BaseGUI base = (BaseGUI) holder;
+        if (holder instanceof GUIHolder) {
+            GUIHolder base = (GUIHolder) holder;
             base.onClose((Player) event.getPlayer(), event);
         }
 
@@ -67,8 +75,8 @@ public class GUIListener implements Listener {
     @EventHandler
     public void onOpen(InventoryOpenEvent event) {
         InventoryHolder holder = event.getInventory().getHolder();
-        if (holder instanceof BaseGUI) {
-            BaseGUI base = (BaseGUI) holder;
+        if (holder instanceof GUIHolder) {
+            GUIHolder base = (GUIHolder) holder;
             base.onOpen((Player) event.getPlayer(), event);
         }
 

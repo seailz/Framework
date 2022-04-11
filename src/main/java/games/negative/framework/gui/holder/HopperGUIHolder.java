@@ -23,8 +23,9 @@
  *
  */
 
-package games.negative.framework.gui;
+package games.negative.framework.gui.holder;
 
+import games.negative.framework.gui.HopperGUI;
 import games.negative.framework.gui.base.MenuHolder;
 import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
@@ -52,14 +53,14 @@ public class HopperGUIHolder implements MenuHolder<HopperGUI> {
 
     @Override
     public void onOpen(@NotNull Player player, @NotNull InventoryOpenEvent event) {
-        Optional.ofNullable(gui.getOnOpen()).ifPresent(function ->
-                function.accept(player, event));
+        BiConsumer<Player, InventoryOpenEvent> onOpen = gui.getOnOpen();
+        if (onOpen != null) onOpen.accept(player, event);
     }
 
     @Override
     public void onClose(@NotNull Player player, @NotNull InventoryCloseEvent event) {
-        Optional.ofNullable(gui.getOnClose()).ifPresent(closeFunction ->
-                closeFunction.accept(player, event));
+        BiConsumer<Player, InventoryCloseEvent> onClose = gui.getOnClose();
+        if (onClose != null) onClose.accept(player, event);
 
         gui.getActiveInventories().remove(player);
     }

@@ -23,8 +23,9 @@
  *
  */
 
-package games.negative.framework.gui;
+package games.negative.framework.gui.holder;
 
+import games.negative.framework.gui.GUI;
 import games.negative.framework.gui.base.MenuHolder;
 import games.negative.framework.gui.internal.MenuItem;
 import lombok.Getter;
@@ -36,7 +37,6 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
@@ -44,19 +44,21 @@ import java.util.function.BiConsumer;
 
 @RequiredArgsConstructor
 @Getter @Setter
-public class BaseGUI implements MenuHolder<GUI> {
+public class GUIHolder implements MenuHolder<GUI> {
 
     private final GUI gui;
     private Inventory inventory;
 
+    @Override
     public void onOpen(@NotNull Player player, @NotNull InventoryOpenEvent event) {
-        Optional.ofNullable(gui.getOnOpen()).ifPresent(function ->
-                function.accept(player, event));
+        BiConsumer<Player, InventoryOpenEvent> onOpen = gui.getOnOpen();
+        if (onOpen != null) onOpen.accept(player, event);
     }
 
+    @Override
     public void onClose(@NotNull Player player, @NotNull InventoryCloseEvent event) {
-        Optional.ofNullable(gui.getOnClose()).ifPresent(closeFunction ->
-                closeFunction.accept(player, event));
+        BiConsumer<Player, InventoryCloseEvent> onClose = gui.getOnClose();
+        if (onClose != null) onClose.accept(player, event);
 
         gui.getActiveInventories().remove(player);
     }
