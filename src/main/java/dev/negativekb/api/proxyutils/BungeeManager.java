@@ -2,6 +2,7 @@ package dev.negativekb.api.proxyutils;
 
 import dev.negativekb.api.BasePlugin;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -25,7 +26,7 @@ public class BungeeManager {
      *
      * @throws IOException if {@code server} is {@code null}
      */
-    public void connect(Player player, String server) throws IOException {
+    public void connect(@NotNull Player player, @NotNull String server) throws IOException {
         ByteArrayOutputStream b = new ByteArrayOutputStream();
         DataOutputStream out = new DataOutputStream(b);
 
