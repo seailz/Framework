@@ -1,6 +1,6 @@
-package dev.negativekb.api.proxyutils;
+package games.negative.framework.util.proxy;
 
-import dev.negativekb.api.BasePlugin;
+import games.negative.framework.BasePlugin;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
