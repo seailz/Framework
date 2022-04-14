@@ -194,4 +194,8 @@ public abstract class SubCommand implements CommandBase {
     public Consumer<SubCommandLogEvent> getSubCommandLogEvent() {
         return subCommandLogEventConsumer;
     }
+
+    public String getPermission() {
+        return permission;
+    }
 }
