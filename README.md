@@ -3,9 +3,12 @@
 
 An expanded plugin library which allows more effective and rapid plugin development.
 
-## ✨Maven Repo✨
+## Wiki
+https://github.com/Negative-Games/Framework/wiki
 
-### Repository
+# ✨Maven Repo✨
+
+## Repository
 
 ```xml
 <repository>     
@@ -14,7 +17,7 @@ An expanded plugin library which allows more effective and rapid plugin developm
 </repository>
 ```
 
-### Dependency
+## Dependency
 
 ```xml
 <dependency>
@@ -25,7 +28,7 @@ An expanded plugin library which allows more effective and rapid plugin developm
 </dependency>
 ```
 
-### Build Configuration
+## Build Configuration
 Add this to your build configuration for this to work correctly.
 ```xml
 <configuration>
@@ -38,7 +41,7 @@ Add this to your build configuration for this to work correctly.
 </configuration>
 ```
 
-#### Example
+### Example
 An example would be
 ```xml
 <configuration>
@@ -51,7 +54,7 @@ An example would be
 </configuration>
 ```
 
-## ✨Gradle Repo✨
+# ✨Gradle Repo✨
 ```groovy
 repositories {
     mavenCentral()
