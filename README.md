@@ -1,6 +1,7 @@
 # Negative Games - Framework
-An expanded plugin library which allows more effective and rapid plugin development.  
-[Javadocs](https://docs.joehosten.me/negative-framework)
+[![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework)
+
+An expanded plugin library which allows more effective and rapid plugin development.
 
 ## ✨Maven Repo
 
