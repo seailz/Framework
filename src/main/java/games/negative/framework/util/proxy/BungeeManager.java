@@ -1,4 +1,4 @@
-package games.negative.framework.proxyutils;
+package games.negative.framework.util.proxy;
 
 import games.negative.framework.BasePlugin;
 import org.bukkit.entity.Player;
