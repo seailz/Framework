@@ -1,6 +1,7 @@
 package games.negative.framework.util.proxy;
 
 import games.negative.framework.BasePlugin;
+import games.negative.framework.util.Utils;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -49,7 +50,7 @@ public class BungeeManager {
 
         out.writeUTF("Message");
         out.writeUTF(player.getName());
-        out.writeUTF(ChatColor.translateAlternateColorCodes('&', message));
+        out.writeUTF(Utils.color(message));
         player.sendPluginMessage(main, "BungeeCord", b.toByteArray());
     }
 
