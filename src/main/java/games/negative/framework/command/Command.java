@@ -227,4 +227,9 @@ public abstract class Command extends org.bukkit.command.Command implements Comm
 
         return event.isCancelled();
     }
+
+    @Override
+    public String getPermission() {
+        return getPermissionNode();
+    }
 }
