@@ -1,6 +1,6 @@
 package games.negative.framework.command.repository;
 
-import games.negative.framework.command.Command;
+import org.bukkit.command.Command;
 
 import java.util.Collection;
 import java.util.HashSet;
