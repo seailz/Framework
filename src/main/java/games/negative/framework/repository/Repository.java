@@ -77,8 +77,6 @@ public interface Repository<T> {
      * @return The size of the repository
      */
     int size();
-    
-    boolean isFull();
 
     /**
      * Clears the repository.
