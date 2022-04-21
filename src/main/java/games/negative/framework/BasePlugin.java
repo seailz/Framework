@@ -35,6 +35,7 @@ import games.negative.framework.inputlistener.InputListener;
 import games.negative.framework.message.FrameworkMessage;
 import games.negative.framework.util.FileLoader;
 import games.negative.framework.util.version.VersionChecker;
+import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
@@ -52,6 +53,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Map;
 
+@Getter
 public abstract class BasePlugin extends JavaPlugin {
 
     private CommandRepository commandRepository;
