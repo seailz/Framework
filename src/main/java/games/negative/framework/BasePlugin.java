@@ -26,6 +26,8 @@
 package games.negative.framework;
 
 import games.negative.framework.command.logging.CommandLogListener;
+import games.negative.framework.command.repository.CommandRepository;
+import games.negative.framework.command.repository.FrameworkCommandRepository;
 import games.negative.framework.command.shortcommand.provider.ShortCommandsListener;
 import games.negative.framework.cooldown.Cooldowns;
 import games.negative.framework.gui.listener.GUIListener;
@@ -33,6 +35,7 @@ import games.negative.framework.inputlistener.InputListener;
 import games.negative.framework.message.FrameworkMessage;
 import games.negative.framework.util.FileLoader;
 import games.negative.framework.util.version.VersionChecker;
+import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
@@ -50,7 +53,10 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Map;
 
+@Getter
 public abstract class BasePlugin extends JavaPlugin {
+
+    private CommandRepository commandRepository;
 
     @Override
     public void onEnable() {
@@ -65,6 +71,8 @@ public abstract class BasePlugin extends JavaPlugin {
         );
 
         Cooldowns.startInternalCooldowns(this);
+
+        commandRepository = new FrameworkCommandRepository();
     }
 
     /**
@@ -125,6 +133,7 @@ public abstract class BasePlugin extends JavaPlugin {
                     iCommand.getAliases().forEach(map::remove);
                 }
 
+                commandRepository.add(iCommand);
                 commandMap.register(name, iCommand);
             } catch (Exception e) {
                 e.printStackTrace();
