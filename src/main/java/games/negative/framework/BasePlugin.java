@@ -26,6 +26,8 @@
 package games.negative.framework;
 
 import games.negative.framework.command.logging.CommandLogListener;
+import games.negative.framework.command.repository.CommandRepository;
+import games.negative.framework.command.repository.FrameworkCommandRepository;
 import games.negative.framework.command.shortcommand.provider.ShortCommandsListener;
 import games.negative.framework.cooldown.Cooldowns;
 import games.negative.framework.gui.listener.GUIListener;
@@ -52,6 +54,8 @@ import java.util.Map;
 
 public abstract class BasePlugin extends JavaPlugin {
 
+    private CommandRepository commandRepository;
+
     @Override
     public void onEnable() {
         FrameworkMessage.init();
@@ -65,6 +69,8 @@ public abstract class BasePlugin extends JavaPlugin {
         );
 
         Cooldowns.startInternalCooldowns(this);
+
+        commandRepository = new FrameworkCommandRepository();
     }
 
     /**
@@ -125,6 +131,7 @@ public abstract class BasePlugin extends JavaPlugin {
                     iCommand.getAliases().forEach(map::remove);
                 }
 
+                commandRepository.add(iCommand);
                 commandMap.register(name, iCommand);
             } catch (Exception e) {
                 e.printStackTrace();
