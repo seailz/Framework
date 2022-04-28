@@ -1,5 +1,5 @@
 # Negative Games - Framework
-[![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework)
+[![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub branch checks state](https://img.shields.io/github/checks-status/negative-games/framework/main)
 
 An expanded plugin library which allows more effective and rapid plugin development.
 
