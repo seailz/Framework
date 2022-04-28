@@ -1,6 +1,8 @@
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, labeled]
 jobs:
   createCard:
     runs-on: ubuntu-latest
