@@ -213,13 +213,5 @@ public class HopperGUI implements MenuBase {
         });
     }
 
-    /**
-     * Set the title of the GUI
-     *
-     * @param s The new title
-     */
-    public void setTitle(@NotNull String s) {
-        this.title = s;
-    }
 
 }
