@@ -42,7 +42,7 @@ Add this to your build configuration for this to work correctly.
 ```
 
 ### Example
-An example would be
+An example would be:
 ```xml
 <configuration>
   <relocations>
@@ -53,6 +53,7 @@ An example would be
   </relocations>
 </configuration>
 ```
+To view an example in a full pom, head to [this link](https://gist.github.com/joeecodes/f0d2da7807b256e44cce7da3be0bb188).
 
 # ✨Gradle Repo✨
 ```groovy
