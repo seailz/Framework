@@ -17,7 +17,7 @@ https://github.com/Negative-Games/Framework/wiki
 </repository>
 ```
 
-## Dependency
+## Dependenc
 
 ```xml
 <dependency>
