@@ -6,7 +6,7 @@ An expanded plugin library which allows more effective and rapid plugin developm
 ## Wiki
 https://github.com/Negative-Games/Framework/wiki
 
-# ✨Maven Repo✨
+# ✨Maven Repository✨
 
 ## Repository
 
