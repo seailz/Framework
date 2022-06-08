@@ -11,25 +11,31 @@ import java.sql.SQLException;
  * A way to interact with databases easier
  * @author Seailz
  */
-@Getter
 public class Database {
 
+    @Getter
     @Setter
     private String ip;
 
+    @Getter
     @Setter
     private int port;
 
+    @Getter
     @Setter
     private String username;
 
+    @Getter
     @Setter
     private String password;
 
+    @Getter
     @Setter
     private String databaseName;
 
     private Connection connection;
+
+    private String url = null;
 
     /**
      * Create a database instance
@@ -50,14 +56,24 @@ public class Database {
         setDatabaseName(databaseName);
     }
 
+    public Database(String url) throws ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+
+        this.url = url;
+    }
+
     /**
      * Initiate the connection to the database
      * @author Seailz
      */
     public void connect() throws SQLException {
-        connection = DriverManager.getConnection(
-                "jdbc:mysql://" + getIp() + ":" + getPort() + "/feedback?"
-                        + "user=" + getUsername() + "&password=" + getPassword()
-        );
+        if (url != null) {
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://" + getIp() + ":" + getPort() + "/" + getDatabaseName(),
+                    getUsername(),
+                    getPassword()
+            );
+        } else
+            connection = DriverManager.getConnection(url);
     }
 }
