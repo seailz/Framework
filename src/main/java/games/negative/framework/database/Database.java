@@ -1,47 +1,64 @@
-/*
- * MIT License
- *
- * Copyright (c) 2022 Negative
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *
- */
-
 package games.negative.framework.database;
 
+import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Connection;
-import java.util.Optional;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-public abstract class Database {
+/**
+ * A way to interact with databases easier
+ * @author Seailz
+ */
+@Getter
+public class Database {
 
     @Setter
-    private static Database instance;
+    private String ip;
 
-    public static Database get() {
-        return instance;
+    @Setter
+    private int port;
+
+    @Setter
+    private String username;
+
+    @Setter
+    private String password;
+
+    @Setter
+    private String databaseName;
+
+    private Connection connection;
+
+    /**
+     * Create a database instance
+     * @param ip The ip which you would like to connect to
+     * @param port The port on which the database is hosted
+     * @param username The username you'd like to use
+     * @param password The password you'd like to use.
+     * @param databaseName The name of the database
+     * @author Seailz
+     */
+    public Database(String ip, int port, String username, String password, String databaseName) throws ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+
+        setIp(ip);
+        setPort(port);
+        setUsername(username);
+        setPassword(password);
+        setDatabaseName(databaseName);
     }
 
-    public abstract void connect();
-
-    public abstract void disconnect();
-
-    public abstract Optional<Connection> getConnection();
+    /**
+     * Initiate the connection to the database
+     * @author Seailz
+     */
+    public void connect() throws SQLException {
+        // TODO: Connect
+        connection = DriverManager.getConnection(
+                "jdbc:mysql://" + getIp() + ":" + getPort() + "/feedback?"
+                        + "user=" + getUsername() + "&password=" + getPassword()
+        );
+    }
 }
