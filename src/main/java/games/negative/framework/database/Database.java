@@ -55,7 +55,6 @@ public class Database {
      * @author Seailz
      */
     public void connect() throws SQLException {
-        // TODO: Connect
         connection = DriverManager.getConnection(
                 "jdbc:mysql://" + getIp() + ":" + getPort() + "/feedback?"
                         + "user=" + getUsername() + "&password=" + getPassword()
