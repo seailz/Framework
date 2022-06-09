@@ -191,7 +191,7 @@ public class BiMap<K, V, V1> {
      * Gets the second value of an Entry with a valid key
      *
      * @param key Key
-     * @return Collum
+     * @return Column
      * @throws NullPointerException If the entry does not exist inside the entry data
      */
     public Optional<V1> getSecond(@NotNull K key) {

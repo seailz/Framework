@@ -38,5 +38,5 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Table {
     private final String name;
-    private final List<Collum> collums;
+    private final List<Column> columns;
 }
