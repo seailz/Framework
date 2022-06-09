@@ -58,7 +58,11 @@ public class Statement {
      * @return a {@link ResultSet}
      * @throws SQLException If your connection is invalid
      */
-    public ResultSet execute() throws SQLException {
+    public ResultSet executeWithResults() throws SQLException {
         return connection.createStatement().executeQuery(getValue());
+    }
+
+    public void execute() throws SQLException {
+        connection.createStatement().execute(getValue());
     }
 }
