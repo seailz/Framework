@@ -32,14 +32,11 @@ import games.negative.framework.database.core.table.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * A way to interact with databases easier
- * @author Seailz
+ * @author Seailz - <a href="https://www.seailz.com">Website</a>
  */
 public class Database {
 
@@ -117,6 +114,7 @@ public class Database {
     /**
      * Creates a table within the Database
      * @param table The table you would like to create
+     * @author Seailz
      */
     public void createTable(Table table) throws SQLException {
         debug = false;
@@ -155,6 +153,26 @@ public class Database {
         new Statement(statement.toString(), connection).execute();
     }
 
+    /**
+     * Get something from the database
+     * <p></p>
+     * <p>For example, if you wanted to get the details about a player,</p>
+     * <p>the key parameter would be "name" or whatever it is within your table</p>
+     * <p>and the value parameter would be the player's name of whom you wish to get the details of.</p>
+     * <p></p>
+     * <p>The "column" parameter would be the specific detail you'd like to get. For example, </p>
+     * <p>if my table contained a "age" column, and I wanted to get the player's age,</p>
+     * <p>I'd set the column parameter to "age"</p>
+     * <p>
+     *
+     * @param table the table you'd like to pull from
+     * @param key The key you'd like to check
+     * @param value The value that you'd like to check
+     * @param column The column you'd like to get
+     * @return An object
+     * @throws SQLException if there is an error retrieving the request value
+     * @author Seailz
+     */
     public Object get(String table, String key, String value, String column) throws SQLException {
         String statement = "SELECT * FROM " + table;
         ResultSet set = new Statement(statement, connection).executeWithResults();
@@ -164,5 +182,18 @@ public class Database {
                 return set.getObject(column);
         }
         return null;
+    }
+
+    /**
+     * Check if a table exists
+     * @param tableName The table you'd like to check
+     * @return A boolean if the table exists or not
+     * @throws SQLException If there is an error
+     */
+    public boolean tableExists(String tableName) throws SQLException {
+        DatabaseMetaData meta = connection.getMetaData();
+        ResultSet resultSet = meta.getTables(null, null, tableName, new String[] {"TABLE"});
+        return resultSet.next();
+
     }
 }
