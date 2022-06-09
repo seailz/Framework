@@ -88,17 +88,6 @@ public class Database {
     }
 
     /**
-     * Initiate a {@code Database} using a {@code URL}
-     * @param url A {@link String} which is the value of your {@code JDBC} connection string
-     * @author Seailz
-     */
-    public Database(String url) throws ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-
-        this.url = url.toString();
-    }
-
-    /**
      * Initiate the connection to the database
      * @author Seailz
      */
