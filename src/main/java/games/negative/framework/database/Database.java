@@ -115,6 +115,10 @@ public class Database {
             ) : DriverManager.getConnection(url);
     }
 
+    public void disconnect() throws SQLException {
+        connection.close();
+    }
+
     /**
      * Creates a table within the Database
      * @param table The table you would like to create
