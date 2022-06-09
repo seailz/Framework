@@ -177,7 +177,7 @@ public class Database {
      * @author Seailz
      */
     public Object get(String table, String key, String value, String column) throws SQLException {
-        String statement = "SELECT * FROM " + table;
+        String statement = "SELECT * FROM '" + table + "'";
         ResultSet set = new Statement(statement, connection).executeWithResults();
 
         while (set.next()) {
@@ -206,15 +206,15 @@ public class Database {
      * @throws SQLException if there is an error
      */
     public void insert(String table, HashMap<String, String> values) throws SQLException {
-        StringBuilder statement = new StringBuilder("insert into " + table + " (");
+        StringBuilder statement = new StringBuilder("insert into '" + table + "' (");
 
         ArrayList<String> keysArray = new ArrayList<>(values.keySet());
         String lastKey = keysArray.get(keysArray.size() - 1);
         for (String key : values.keySet()) {
             if (!key.equals(lastKey))
-                statement.append(key).append(", ");
+                statement.append("'").append(key).append("', ");
             else
-                statement.append(key).append(")");
+                statement.append("'").append(key).append(")");
         }
 
         statement.append(" values (");
@@ -249,7 +249,7 @@ public class Database {
      * @param value The value, such as the player's name
      */
     public void delete(String table, String key, String value) throws SQLException {
-        String statement = "DELETE FROM " + table + " WHERE " + key + "='" + value + "'";
+        String statement = "DELETE FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
         new Statement(statement, connection).execute();
     }
 
@@ -261,7 +261,7 @@ public class Database {
      * @return whether that row exists
      */
     public boolean rowExists(String table, String key, String value) throws SQLException {
-        String statement = "SELECT * FROM " + table + " WHERE " + key + "='" + value + "'";
+        String statement = "SELECT * FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
         return new Statement(statement, connection).executeWithResults().next();
     }
 }
