@@ -26,7 +26,7 @@
 package games.negative.framework.database;
 
 import games.negative.framework.database.core.Statement;
-import games.negative.framework.database.core.table.CollumType;
+import games.negative.framework.database.core.table.ColumnType;
 import games.negative.framework.database.core.table.Column;
 import games.negative.framework.database.core.table.Table;
 import lombok.Getter;
@@ -132,7 +132,7 @@ public class Database {
             else
                 statement.append("\n\t`").append(name).append("` ").append(type);
 
-            if (column.getType() == CollumType.VARCHAR) {
+            if (column.getType() == ColumnType.VARCHAR) {
                 statement.append("(255)");
             }
 

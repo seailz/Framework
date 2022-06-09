@@ -10,7 +10,7 @@ package games.negative.framework.database.core.table;
  * <p>{@code BOOLEAN} represents a {@link Boolean}</p>
  * <p>{@code BIGINT} represents a {@link java.math.BigInteger}</p>
  */
-public enum CollumType {
+public enum ColumnType {
 
     VARCHAR,
     INT,
