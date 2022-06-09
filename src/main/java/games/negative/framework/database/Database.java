@@ -199,6 +199,12 @@ public class Database {
         return resultSet.next();
     }
 
+    /**
+     * Insert into a database
+     * @param table The table you'd like to insert to
+     * @param values A hashmap of keys, and values
+     * @throws SQLException if there is an error
+     */
     public void insert(String table, HashMap<String, String> values) throws SQLException {
         StringBuilder statement = new StringBuilder("insert into " + table + " (");
 
