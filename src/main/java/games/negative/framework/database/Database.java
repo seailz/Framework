@@ -26,8 +26,8 @@
 package games.negative.framework.database;
 
 import games.negative.framework.database.core.Statement;
-import games.negative.framework.database.core.table.ColumnType;
 import games.negative.framework.database.core.table.Column;
+import games.negative.framework.database.core.table.ColumnType;
 import games.negative.framework.database.core.table.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 /**
  * A way to interact with databases easier
@@ -68,8 +67,6 @@ public class Database {
 
     private Connection connection;
 
-    private String url = null;
-
     /**
      * Create a database instance
      * @param ip The ip which you would like to connect to
@@ -93,11 +90,11 @@ public class Database {
      * @author Seailz
      */
     public void connect() throws SQLException {
-            connection = url == null ? DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     "jdbc:mysql://" + getIp() + ":" + getPort() + "/" + getDatabaseName(),
                     getUsername(),
                     getPassword()
-            ) : DriverManager.getConnection(url);
+            );
     }
 
     public void disconnect() throws SQLException {
@@ -134,9 +131,7 @@ public class Database {
         }
 
         if (table.getPrimaryKey() != null)
-            statement.append(
-                    ",\n\tPRIMARY KEY (`" + table.getPrimaryKey() + "`)"
-            );
+            statement.append(",\n\tPRIMARY KEY (`").append(table.getPrimaryKey()).append("`)");
 
         statement.append("\n);");
 
@@ -253,5 +248,20 @@ public class Database {
     public boolean rowExists(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
         String statement = "SELECT * FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
         return new Statement(statement, connection).executeWithResults().next();
+    }
+
+    /**
+     * Replace a current row with a new one
+     * @param table The table in which the row is located
+     * @param key The key you would like to check
+     * @param value the value of that key
+     * @param values the values of the new row you'd like to insert
+     * @throws SQLException If there's an error communicating with the database
+     */
+    public void replace(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull HashMap<String, String> values) throws SQLException {
+        if (!rowExists(table, key, value)) return; // Trying to prevent as many errors as possible :/
+
+        delete(table, key, value);
+        insert(table, values);
     }
 }
