@@ -52,7 +52,6 @@ public class Database {
     private String username;
     private String password;
     private String databaseName;
-    private String url = null;
 
     private Connection connection;
 
@@ -75,28 +74,15 @@ public class Database {
     }
 
     /**
-     * Initiate a {@code Database} using a {@code URL}
-     * @param url A {@link String} which is the value of your {@code JDBC} connection string
-     * @author Seailz
-     */
-    @Deprecated
-    public Database(String url) throws ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-
-        this.url = url.toString();
-    }
-
-
-    /**
      * Initiate the connection to the database
      * @author Seailz
      */
     public void connect() throws SQLException {
-            connection = url == null ? DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     "jdbc:mysql://" + getIp() + ":" + getPort() + "/" + getDatabaseName(),
                     getUsername(),
                     getPassword()
-            ) : DriverManager.getConnection(url);
+            );
     }
 
     public void disconnect() throws SQLException {
