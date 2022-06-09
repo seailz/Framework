@@ -252,4 +252,16 @@ public class Database {
         String statement = "DELETE FROM " + table + " WHERE " + key + "='" + value + "'";
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Check if a row exists
+     * @param table The table you'd like to check
+     * @param key The key
+     * @param value The value
+     * @return whether that row exists
+     */
+    public boolean rowExists(String table, String key, String value) throws SQLException {
+        String statement = "SELECT * FROM " + table + " WHERE " + key + "='" + value + "'";
+        return new Statement(statement, connection).executeWithResults().next();
+    }
 }
