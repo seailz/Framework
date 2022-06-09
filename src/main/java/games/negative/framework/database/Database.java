@@ -34,6 +34,7 @@ import lombok.Setter;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -152,5 +153,16 @@ public class Database {
             System.out.println(statement);
 
         new Statement(statement.toString(), connection).execute();
+    }
+
+    public Object get(String table, String key, String value, String column) throws SQLException {
+        String statement = "SELECT * FROM " + table;
+        ResultSet set = new Statement(statement, connection).executeWithResults();
+
+        while (set.next()) {
+            if (set.getObject(key).equals(value))
+                return set.getObject(column);
+        }
+        return null;
     }
 }
