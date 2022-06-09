@@ -33,6 +33,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * A way to interact with databases easier
@@ -194,6 +197,42 @@ public class Database {
         DatabaseMetaData meta = connection.getMetaData();
         ResultSet resultSet = meta.getTables(null, null, tableName, new String[] {"TABLE"});
         return resultSet.next();
+    }
 
+    public void insert(String table, HashMap<String, String> values) throws SQLException {
+        StringBuilder statement = new StringBuilder("insert into " + table + " (");
+
+        ArrayList<String> keysArray = new ArrayList<>(values.keySet());
+        String lastKey = keysArray.get(keysArray.size() - 1);
+        for (String key : values.keySet()) {
+            if (!key.equals(lastKey))
+                statement.append(key).append(", ");
+            else
+                statement.append(key).append(")");
+        }
+
+        statement.append(" values (");
+
+        ArrayList<String> valuesArray = new ArrayList<>(values.values());
+        String lastValue = valuesArray.get(valuesArray.size() - 1);
+        for (String value : values.values()) {
+            if (!value.equals(lastValue))
+                statement.append("?, ");
+            else
+                statement.append("?)");
+        }
+
+        if (debug)
+            System.out.println(statement);
+
+        PreparedStatement prepStatement = connection.prepareStatement(statement.toString());
+        int i = 0;
+
+        for (String value : values.values()) {
+            i++;
+            prepStatement.setObject(i, value);
+        }
+
+        prepStatement.execute();
     }
 }
