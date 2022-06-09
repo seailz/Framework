@@ -42,8 +42,8 @@ import java.util.stream.Stream;
  * do not hold 2 values.
  *
  * @param <K>  Key (Object)
- * @param <V>  Collum 1 (any Type)
- * @param <V1> Collum 2 (any Type)
+ * @param <V>  Value 1 (any Type)
+ * @param <V1> Value 2 (any Type)
  * @author Negative
  * @since August 4th, 2021
  */
@@ -65,8 +65,8 @@ public class BiMap<K, V, V1> {
      * Puts an Entry in with 2 values
      *
      * @param key    Key
-     * @param value1 Collum 1
-     * @param value2 Collum 2
+     * @param value1 Value 1
+     * @param value2 Value 2
      */
     public void put(@NotNull K key, V value1, @NotNull V1 value2) {
         if (getEntry(key).isPresent())
@@ -83,8 +83,8 @@ public class BiMap<K, V, V1> {
      * Replaces the values inside the entry with the valid key
      *
      * @param key    Key
-     * @param value1 Collum 1
-     * @param value2 Collum 2
+     * @param value1 Value 1
+     * @param value2 Value 2
      */
     public void replace(@NotNull K key, V value1, @NotNull V1 value2) {
         if (!getEntry(key).isPresent())
@@ -101,7 +101,7 @@ public class BiMap<K, V, V1> {
      * Creates a new Entry with only one value
      *
      * @param key    Key
-     * @param value1 Collum
+     * @param value1 Value
      */
     public void putFirst(@NotNull K key, @NotNull V value1) {
         if (getEntry(key).isPresent())
@@ -116,7 +116,7 @@ public class BiMap<K, V, V1> {
      * Replaces the first value in an Entry with a valid key
      *
      * @param key   Key
-     * @param value Collum
+     * @param value Value
      */
     public void replaceFirst(@NotNull K key, @NotNull V value) {
         if (!getEntry(key).isPresent())
@@ -132,7 +132,7 @@ public class BiMap<K, V, V1> {
      * Creates an Entry with only the second value made
      *
      * @param key    Key
-     * @param value2 Collum
+     * @param value2 Value
      */
     public void putSecond(@NotNull K key, @NotNull V1 value2) {
         if (getEntry(key).isPresent())
@@ -148,7 +148,7 @@ public class BiMap<K, V, V1> {
      * Replaces the second value in the Entry
      *
      * @param key   Key
-     * @param value Collum
+     * @param value Value
      */
     public void replaceSecond(@NotNull K key, @NotNull V1 value) {
         if (!getEntry(key).isPresent())
@@ -164,7 +164,7 @@ public class BiMap<K, V, V1> {
      * Gets the first value of an Entry with a valid key
      *
      * @param key Key
-     * @return Collum
+     * @return Value
      * @throws NullPointerException If the entry does not exist inside the entry data
      */
     public Optional<V> getFirst(@NotNull K key) {
@@ -179,7 +179,7 @@ public class BiMap<K, V, V1> {
      * Gets the first value of an Entry with a valid index key
      *
      * @param index Index
-     * @return Collum
+     * @return Value
      * @throws ArrayIndexOutOfBoundsException if the Index value given is out of the index bounds
      */
     public Optional<V> getFirst(int index) {
@@ -206,7 +206,7 @@ public class BiMap<K, V, V1> {
      * Gets the first value of an Entry with a valid index key
      *
      * @param index Index
-     * @return Collum
+     * @return Value
      * @throws ArrayIndexOutOfBoundsException if the Index value given is out of the index bounds
      */
     public Optional<V1> getSecond(int index) {
@@ -371,7 +371,7 @@ public class BiMap<K, V, V1> {
      * Replaces all first values in Entries that matches the condition
      *
      * @param condition Condition
-     * @param value     Collum
+     * @param value     Value
      */
     public void replaceAllFirstValues(@NotNull Function<Entry<K, V, V1>, Boolean> condition, @NotNull V value) {
         List<Entry<K, V, V1>> passed = this.data.stream().filter(condition::apply).collect(Collectors.toList());
@@ -382,7 +382,7 @@ public class BiMap<K, V, V1> {
      * Replaces all secondary values in Entries that matches the condition
      *
      * @param condition Condition
-     * @param value1    Collum
+     * @param value1    Value
      */
     public void replaceAllSecondaryValues(@NotNull Function<Entry<K, V, V1>, Boolean> condition, @NotNull V1 value1) {
         List<Entry<K, V, V1>> passed = this.data.stream().filter(condition::apply).collect(Collectors.toList());
@@ -393,8 +393,8 @@ public class BiMap<K, V, V1> {
      * Replaces all values in Entries that matches the condition
      *
      * @param condition Condition
-     * @param value1    Collum
-     * @param value2    Collum
+     * @param value1    Value
+     * @param value2    Value
      */
     public void replaceAllValues(@NotNull Function<Entry<K, V, V1>, Boolean> condition, @NotNull V value1, @NotNull V1 value2) {
         List<Entry<K, V, V1>> passed = this.data.stream().filter(condition::apply).collect(Collectors.toList());
@@ -410,8 +410,8 @@ public class BiMap<K, V, V1> {
      * of the Map
      *
      * @param <K>  Key
-     * @param <V>  Collum 1
-     * @param <V1> Collum 2
+     * @param <V>  Value 1
+     * @param <V1> Value 2
      */
     @Data
     public static class Entry<K, V, V1> {

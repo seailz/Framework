@@ -34,8 +34,8 @@ import java.util.Objects;
  * Primarily meant for {@link BiMap}.
  *
  * @param <T>  Type
- * @param <U>  Collum 1
- * @param <U1> Collum 2
+ * @param <U>  Value 1
+ * @param <U1> Value 2
  */
 @FunctionalInterface
 public interface TriConsumer<T, U, U1> {
