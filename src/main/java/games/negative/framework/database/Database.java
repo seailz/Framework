@@ -118,7 +118,7 @@ public class Database {
      * @param table The table you would like to create
      */
     public void createTable(Table table) throws SQLException {
-        debug = true;
+        debug = false;
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
 
         Column last = table.getColumns().get(table.getColumns().size() - 1);
@@ -132,13 +132,13 @@ public class Database {
             else
                 statement.append("\n\t`").append(name).append("` ").append(type);
 
-            if (column.getType() == ColumnType.VARCHAR) {
+            if (column.getType() == ColumnType.VARCHAR)
                 statement.append("(255)");
-            }
 
-            if (!last.equals(column)) {
+
+            if (!last.equals(column))
                 statement.append(",");
-            }
+
         }
 
         if (table.getPrimaryKey() != null)
