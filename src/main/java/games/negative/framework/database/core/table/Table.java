@@ -27,6 +27,7 @@ package games.negative.framework.database.core.table;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -39,4 +40,6 @@ import java.util.List;
 public class Table {
     private final String name;
     private final List<Column> columns;
+    @Setter
+    private String primaryKey;
 }

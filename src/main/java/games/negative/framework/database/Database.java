@@ -26,6 +26,7 @@
 package games.negative.framework.database;
 
 import games.negative.framework.database.core.Statement;
+import games.negative.framework.database.core.table.CollumType;
 import games.negative.framework.database.core.table.Column;
 import games.negative.framework.database.core.table.Table;
 import lombok.Getter;
@@ -40,6 +41,8 @@ import java.sql.SQLException;
  * @author Seailz
  */
 public class Database {
+
+    private boolean debug;
 
     @Getter
     @Setter
@@ -75,8 +78,7 @@ public class Database {
      * @author Seailz
      */
     public Database(String ip, int port, String username, String password, String databaseName) throws ClassNotFoundException {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
+        Class.forName("com.mysql.cj.jdbc.Driver");
         setIp(ip);
         setPort(port);
         setUsername(username);
@@ -116,20 +118,38 @@ public class Database {
      * @param table The table you would like to create
      */
     public void createTable(Table table) throws SQLException {
-        StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (");
+        debug = true;
+        StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
 
         Column last = table.getColumns().get(table.getColumns().size() - 1);
+        Column first = table.getColumns().stream().findFirst().get();
         for (Column column : table.getColumns()) {
             String type = column.getType().toString();
             String name = column.getName();
 
-            statement.append("   `").append(name).append("` ").append(type);
+            if (first == column)
+                statement.append("\t`").append(name).append("` ").append(type);
+            else
+                statement.append("\n\t`").append(name).append("` ").append(type);
+
+            if (column.getType() == CollumType.VARCHAR) {
+                statement.append("(255)");
+            }
+
             if (!last.equals(column)) {
                 statement.append(",");
             }
         }
 
-        statement.append(");");
+        if (table.getPrimaryKey() != null)
+            statement.append(
+                    ",\n\tPRIMARY KEY (`" + table.getPrimaryKey() + "`)"
+            );
+
+        statement.append("\n);");
+
+        if (debug)
+            System.out.println(statement);
 
         new Statement(statement.toString(), connection).execute();
     }
