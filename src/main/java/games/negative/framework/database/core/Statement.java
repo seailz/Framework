@@ -46,7 +46,7 @@ public class Statement {
     /**
      * Initiate a new {@code Statement}
      * @param value The {@link String} value of your SQL statement
-     * @param connection
+     * @param connection The database connection
      */
     public Statement(String value, Connection connection) {
         setValue(value);

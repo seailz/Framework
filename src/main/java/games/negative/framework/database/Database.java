@@ -41,28 +41,16 @@ import java.util.HashMap;
  * A way to interact with databases easier
  * @author Seailz - <a href="https://www.seailz.com">Website</a>
  */
+@Getter
+@Setter
 public class Database {
 
     private boolean debug;
 
-    @Getter
-    @Setter
     private String ip;
-
-    @Getter
-    @Setter
     private int port;
-
-    @Getter
-    @Setter
     private String username;
-
-    @Getter
-    @Setter
     private String password;
-
-    @Getter
-    @Setter
     private String databaseName;
 
     private Connection connection;
