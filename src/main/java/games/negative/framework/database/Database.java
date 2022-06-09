@@ -118,7 +118,7 @@ public class Database {
     public void createTable(Table table) throws SQLException {
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (");
 
-        Column last = table.getColumns().get(table.getColumns().size());
+        Column last = table.getColumns().get(table.getColumns().size() - 1);
         for (Column column : table.getColumns()) {
             String type = column.getType().toString();
             String name = column.getName();
