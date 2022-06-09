@@ -10,7 +10,7 @@ package games.negative.framework.database.core.table;
  * <p>{@code BOOLEAN} represents a {@link Boolean}</p>
  * <p>{@code LONG} represents a {@link Long}</p>
  */
-public enum ValueType {
+public enum CollumType {
 
     VARCHAR,
     INT,

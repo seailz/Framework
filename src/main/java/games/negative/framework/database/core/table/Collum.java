@@ -34,9 +34,9 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-public class Value {
+public class Collum {
 
-    private final ValueType type;
+    private final CollumType type;
     private final String name;
 
 }

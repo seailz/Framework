@@ -26,8 +26,8 @@
 package games.negative.framework.database;
 
 import games.negative.framework.database.core.Statement;
+import games.negative.framework.database.core.table.Collum;
 import games.negative.framework.database.core.table.Table;
-import games.negative.framework.database.core.table.Value;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -122,13 +122,13 @@ public class Database {
     public void createTable(Table table) throws SQLException {
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (");
 
-        Value last = table.getValues().get(table.getValues().size());
-        for (Value value : table.getValues()) {
-            String type = value.getType().toString();
-            String name = value.getName();
+        Collum last = table.getCollums().get(table.getCollums().size());
+        for (Collum collum : table.getCollums()) {
+            String type = collum.getType().toString();
+            String name = collum.getName();
 
             statement.append("   `").append(name).append("` ").append(type);
-            if (!last.equals(value)) {
+            if (!last.equals(collum)) {
                 statement.append(",");
             }
         }
