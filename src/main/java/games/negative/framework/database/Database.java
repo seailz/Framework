@@ -74,8 +74,12 @@ public class Database {
      * @param databaseName The name of the database
      * @author Seailz
      */
-    public Database(String ip, int port, String username, String password, String databaseName) throws ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
+    public Database(String ip, int port, String username, String password, String databaseName) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         setIp(ip);
         setPort(port);
@@ -87,11 +91,14 @@ public class Database {
     /**
      * Initiate a {@code Database} using a {@code URL}
      * @param url A {@link String} which is the value of your {@code JDBC} connection string
-     * @throws ClassNotFoundException if the method is unable to load the {@code JDBC Driver} class
      * @author Seailz
      */
-    public Database(String url) throws ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
+    public Database(String url) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         this.url = url.toString();
     }
