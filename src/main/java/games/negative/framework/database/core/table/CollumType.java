@@ -8,7 +8,7 @@ package games.negative.framework.database.core.table;
  * <p>{@code INT} represents an {@link Integer}</p>
  * <p>{@code DOUBLE} represents a {@link Double}</p>
  * <p>{@code BOOLEAN} represents a {@link Boolean}</p>
- * <p>{@code LONG} represents a {@link Long}</p>
+ * <p>{@code BIGINT} represents a {@link java.math.BigInteger}</p>
  */
 public enum CollumType {
 
@@ -16,6 +16,6 @@ public enum CollumType {
     INT,
     DOUBLE,
     BOOLEAN,
-    LONG
+    BIGINT
 
 }
