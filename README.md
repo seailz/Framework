@@ -12,8 +12,8 @@ https://github.com/Negative-Games/Framework/wiki
 
 ```xml
 <repository>     
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
+    <id>negative-games</id>
+    <url>https://repo.negative.games/repository/negative-games/</url>
 </repository>
 ```
 
@@ -21,10 +21,10 @@ https://github.com/Negative-Games/Framework/wiki
 
 ```xml
 <dependency>
-    <groupId>com.github.Negative-Games</groupId>
-    <artifactId>Framework</artifactId>
-    <version>{VERSION}</version>
-    <scope>compile</scope>
+      <groupId>games.negative.framework</groupId>
+      <artifactId>Framework</artifactId>
+      <version>{VERSION}</version>
+      <scope>compile</scope>
 </dependency>
 ```
 
@@ -59,13 +59,14 @@ To view an example in a full pom, head to [this link](https://gist.github.com/jo
 ```groovy
 repositories {
     mavenCentral()
-    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.negative.games/repository/negative-games/' }
 }
 ```
 
 ```groovy
 dependencies {
-    implementation 'com.github.Negative-Games:Framework:{VERSION}'
+    implementation 'games.negative.framework:Framework:{VERSION}'
+}
 }
 ```
 To mask the dependency, add this to your plugins section
