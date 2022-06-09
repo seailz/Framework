@@ -75,7 +75,7 @@ public class Database {
      * @author Seailz
      */
     public Database(String ip, int port, String username, String password, String databaseName) throws ClassNotFoundException {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
         setIp(ip);
         setPort(port);
@@ -90,7 +90,7 @@ public class Database {
      * @author Seailz
      */
     public Database(String url) throws ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         this.url = url.toString();
     }
