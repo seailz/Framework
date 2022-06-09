@@ -241,4 +241,15 @@ public class Database {
 
         prepStatement.execute();
     }
+
+    /**
+     * Delete a row rom the database
+     * @param table The table you'd like to edit
+     * @param key The key, basically the identifier
+     * @param value The value, such as the player's name
+     */
+    public void delete(String table, String key, String value) throws SQLException {
+        String statement = "DELETE FROM " + table + " WHERE " + key + "='" + value + "'";
+        new Statement(statement, connection).execute();
+    }
 }
