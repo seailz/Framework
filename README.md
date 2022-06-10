@@ -4,7 +4,7 @@
 An expanded plugin library which allows more effective and rapid plugin development.
 
 ## Wiki & JavaDocs
-https://github.com/Negative-Games/Framework/wiki
+https://github.com/Negative-Games/Framework/wiki  
 https://framework.docs.negative.games/
 
 # ✨Maven Repository✨
