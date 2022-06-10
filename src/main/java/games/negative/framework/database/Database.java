@@ -109,8 +109,11 @@ public class Database {
             else
                 statement.append("\n\t`").append(name).append("` ").append(type);
 
-            if (column.getType() == ColumnType.VARCHAR)
-                statement.append("(255)");
+
+            statement.append("(").append(column.getLength()).append(")");
+
+            if (!column.isAllowNull())
+                statement.append(" NOT NULL");
 
 
             if (!last.equals(column))

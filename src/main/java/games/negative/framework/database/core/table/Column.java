@@ -26,6 +26,7 @@
 package games.negative.framework.database.core.table;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -38,5 +39,9 @@ public class Column {
 
     private final ColumnType type;
     private final String name;
+    @Setter
+    private int length = 255;
+    @Setter
+    private boolean allowNull = true;
 
 }
