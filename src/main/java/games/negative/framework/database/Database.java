@@ -147,7 +147,7 @@ public class Database {
      * @param table the table you'd like to pull from
      * @param key The key you'd like to check
      * @param value The value that you'd like to check
-     * @param column The column you'd like to get
+     * @param colum n The column you'd like to get
      * @return An object
      * @throws SQLException if there is an error retrieving the request value
      * @author Seailz
@@ -237,7 +237,7 @@ public class Database {
      * @return whether that row exists
      */
     public boolean rowExists(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
-        String statement = "SELECT * FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
+        String statement = "SELECT * FROM `" + table + "` WHERE '" + key + "'='" + value + "'";
         return new Statement(statement, connection).executeWithResults().next();
     }
 
