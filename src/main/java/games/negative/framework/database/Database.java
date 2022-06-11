@@ -147,7 +147,7 @@ public class Database {
      * @param table the table you'd like to pull from
      * @param key The key you'd like to check
      * @param value The value that you'd like to check
-     * @param colum n The column you'd like to get
+     * @param column The column you'd like to get
      * @return An object
      * @throws SQLException if there is an error retrieving the request value
      * @author Seailz
