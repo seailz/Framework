@@ -255,4 +255,9 @@ public class Database {
         delete(table, key, value);
         insert(table, values);
     }
+
+    public void deleteTable(@NotNull String name) throws SQLException {
+        if (!tableExists(name)) return;
+        new Statement("DROP TABLE " + name + ";", connection).execute();
+    }
 }
