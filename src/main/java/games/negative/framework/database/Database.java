@@ -33,6 +33,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -369,4 +371,33 @@ public class Database {
             System.out.println("[Database] Altering table: " + statement);
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Export a table to a file
+     * @param table The table you'd like to export
+     * @param filePath The file's path you'd like to export to
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void exportToCSV(String table, String filePath) throws SQLException {
+        String statement = "SELECT * FROM `" + table + "`";
+        if (debug)
+            System.out.println("[Database] Exporting table: " + statement);
+        ResultSet resultSet = new Statement(statement, connection).executeWithResults();
+        try {
+            FileWriter writer = new FileWriter(filePath);
+            while (resultSet.next()) {
+                for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
+                    writer.write(resultSet.getString(i));
+                    if (i != resultSet.getMetaData().getColumnCount())
+                        writer.write(",");
+                }
+                writer.write("\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+}
+
+
 }
