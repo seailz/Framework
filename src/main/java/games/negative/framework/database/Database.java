@@ -496,4 +496,59 @@ public class Database {
             System.out.println("[Database] Deleting table: " + statement);
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Replace the primary key of a table
+     * @param table The table you'd like to replace the primary key in
+     * @param primaryKey The new primary key
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void replacePrimaryKey(String table, String primaryKey) throws SQLException {
+        String statement = "ALTER TABLE `" + table + "` DROP PRIMARY KEY, ADD PRIMARY KEY (`" + primaryKey + "`);";
+        if (debug)
+            System.out.println("[Database] Altering table: " + statement);
+        new Statement(statement, connection).execute();
+    }
+
+    /**
+     * Copies the contents of one table to another
+     * @param table The table you'd like to copy to
+     * @param copyFrom The table you'd like to copy from
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void copyContentsToNewTable(String table, String copyFrom) throws SQLException {
+        String statement = "INSERT INTO `" + table + "` SELECT * FROM `" + copyFrom + "`;";
+        if (debug)
+            System.out.println("[Database] Altering table: " + statement);
+        new Statement(statement, connection).execute();
+    }
+
+    /**
+     * Describe a table
+     * @param table The table you'd like to describe
+     * @return The description of the table
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public ResultSet describeTable(String table) throws SQLException {
+        String statement = "DESCRIBE `" + table + "`";
+        if (debug)
+            System.out.println("[Database] Describing table: " + statement);
+        return new Statement(statement, connection).executeWithResults();
+    }
+
+    /**
+     * Describe a column in a table
+     * @param table The table you'd like to describe
+     * @param column The column you'd like to describe
+     * @return The description of the column
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public ResultSet describeColumn(String table, String column) throws SQLException {
+        String statement = "DESCRIBE `" + table + "` `" + column + "`";
+        if (debug)
+            System.out.println("[Database] Describing column: " + statement);
+        return new Statement(statement, connection).executeWithResults();
+    }
+
+
 }
