@@ -166,6 +166,32 @@ public class Database {
     }
 
     /**
+     * Start a transaction
+     * @throws SQLException if there is an error with the connection
+     */
+    public void startTransaction() throws SQLException {
+        connection.setAutoCommit(false);
+        new Statement("START TRANSACTION", connection).execute();
+    }
+
+    /**
+     * Rollback a transaction
+     * @throws SQLException if there is an error with the connection
+     */
+    public void rollback() throws SQLException {
+        new Statement("ROLLBACK", connection).execute();
+    }
+
+    /**
+     * Commit a transaction
+     * @throws SQLException if there is an error with the connection
+     */
+    public void commit() throws SQLException {
+        new Statement("COMMIT", connection).execute();
+        connection.setAutoCommit(true);
+    }
+
+    /**
      * Get something from the database
      * <p></p>
      * <p>For example, if you wanted to get the details about a player,</p>
