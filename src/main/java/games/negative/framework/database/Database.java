@@ -399,5 +399,11 @@ public class Database {
         }
 }
 
-
+    /**
+     * Import a table from a file
+     * @param table The table you'd like to import into
+     * @param filePath The file's path you'd like to import from
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void im
 }
