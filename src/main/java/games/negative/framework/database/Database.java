@@ -372,6 +372,13 @@ public class Database {
         new Statement(statement, connection).execute();
     }
 
+    public void deleteColumnFromTable(String table, String column) throws SQLException {
+        String statement = "ALTER TABLE `" + table + "` DROP COLUMN `" + column + "`;";
+        if (debug)
+            System.out.println("[Database] Altering table: " + statement);
+        new Statement(statement, connection).execute();
+    }
+
     /**
      * Export a table to a file
      * @param table The table you'd like to export
