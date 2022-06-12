@@ -451,4 +451,16 @@ public class Database {
             System.out.println("[Database] Getting all data in table: " + statement);
         return new Statement(statement, connection).executeWithResults();
     }
+
+    /**
+     * Delete a table if it exists
+     * @param table The table you'd like to delete
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void deleteTableIfExists(String table) throws SQLException {
+        String statement = "DROP TABLE IF EXISTS `" + table + "`";
+        if (debug)
+            System.out.println("[Database] Deleting table: " + statement);
+        new Statement(statement, connection).execute();
+    }
 }
