@@ -342,4 +342,17 @@ public class Database {
             System.out.println("[Database] Altering table: " + statement);
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Remove a column from a table
+     * @param table The table you'd like to remove a column from
+     * @param column The column you'd like to remove
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void removeColumnFromTable(String table, String column) throws SQLException {
+        String statement = "ALTER TABLE `" + table + "` DROP COLUMN `" + column + "`;";
+        if (debug)
+            System.out.println("[Database] Altering table: " + statement);
+        new Statement(statement, connection).execute();
+    }
 }
