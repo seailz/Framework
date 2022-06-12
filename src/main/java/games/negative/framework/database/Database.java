@@ -327,4 +327,19 @@ public class Database {
             System.out.println("[Database] Updating row: " + statement);
         new Statement(statement, connection).execute();
     }
+
+
+    /**
+     * Update a table in the database
+     * @param table The table you'd like to update
+     * @param column The column you'd like to update
+     * @param type The type of the column
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void addColumnToTable(String table, String column, String type) throws SQLException {
+        String statement = "ALTER TABLE `" + table + "` ADD `" + column + "` " + type + ";";
+        if (debug)
+            System.out.println("[Database] Altering table: " + statement);
+        new Statement(statement, connection).execute();
+    }
 }
