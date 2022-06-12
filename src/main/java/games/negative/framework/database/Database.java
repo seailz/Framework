@@ -397,5 +397,18 @@ public class Database {
         } catch (IOException e) {
             e.printStackTrace();
         }
-}
+    }
+
+    /**
+     * Import a table from a file
+     * @param table The table you'd like to import into
+     * @param filePath The file's path you'd like to import from
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void importFromFile(String table, String filePath) throws SQLException {
+        String statement = "LOAD DATA INFILE '" + filePath + "' INTO TABLE `" + table + "`";
+        if (debug)
+            System.out.println("[Database] Importing table: " + statement);
+        new Statement(statement, connection).execute();
+    }
 }
