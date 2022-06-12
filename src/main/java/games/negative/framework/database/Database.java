@@ -300,10 +300,31 @@ public class Database {
         insert(table, values);
     }
 
+    /**
+     * Delete a table
+     * @param name The name of the table you'd like to delete
+     * @throws SQLException if there is an error communicating with the database
+     */
     public void deleteTable(@NotNull String name) throws SQLException {
         if (!tableExists(name)) return;
         if (debug)
             System.out.println("[Database] Deleting table: " + name);
         new Statement("DROP TABLE " + name + ";", connection).execute();
+    }
+
+    /**
+     * Update a row in a table
+     * @param table The table you'd like to update
+     * @param key The key you'd like to check
+     * @param value The value you'd like to check
+     * @param column The column you'd like to update
+     * @param newColumn The new value you'd like to insert
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void update(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column, @NotNull String newColumn) throws SQLException {
+        String statement = "UPDATE `" + table + "` SET `" + column + "`=`" + newColumn + "` WHERE `" + key + "`='" + value + "'";
+        if (debug)
+            System.out.println("[Database] Updating row: " + statement);
+        new Statement(statement, connection).execute();
     }
 }
