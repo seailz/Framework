@@ -411,4 +411,19 @@ public class Database {
             System.out.println("[Database] Importing table: " + statement);
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Count the number of rows in a table
+     * @param table The table you'd like to count
+     * @return The number of rows in the table
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public int countRows(String table) throws SQLException {
+        String statement = "SELECT COUNT(*) FROM `" + table + "`";
+        if (debug)
+            System.out.println("[Database] Counting rows: " + statement);
+        ResultSet resultSet = new Statement(statement, connection).executeWithResults();
+        resultSet.next();
+        return resultSet.getInt(1);
+    }
 }
