@@ -355,4 +355,18 @@ public class Database {
             System.out.println("[Database] Altering table: " + statement);
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Change a column's name
+     * @param table The table you'd like to change a column's name in
+     * @param oldName The old name of the column
+     * @param newName The new name of the column
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void changeColumnName(String table, String oldName, String newName) throws SQLException {
+        String statement = "ALTER TABLE `" + table + "` CHANGE `" + oldName + "` `" + newName + "`;";
+        if (debug)
+            System.out.println("[Database] Altering table: " + statement);
+        new Statement(statement, connection).execute();
+    }
 }
