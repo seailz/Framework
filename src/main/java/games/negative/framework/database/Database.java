@@ -74,6 +74,29 @@ public class Database {
     }
 
     /**
+     * Create a database instance
+     * @param ip The ip which you would like to connect to
+     * @param port The port on which the database is hosted
+     * @param username The username you'd like to use
+     * @param password The password you'd like to use.
+     * @param databaseName The name of the database
+     * @param debug Whether you'd like to debug the database
+     * @author Seailz
+     */
+    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, @NotNull boolean debug) throws ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        setIp(ip);
+        setPort(port);
+        setUsername(username);
+        setPassword(password);
+        setDatabaseName(databaseName);
+        setDebug(debug);
+
+        if (debug)
+            System.out.println("[Database] Debugging enabled");
+    }
+
+    /**
      * Initiate the connection to the database
      * @author Seailz
      */
@@ -83,10 +106,19 @@ public class Database {
                     getUsername(),
                     getPassword()
             );
+
+            if (debug)
+                System.out.println("[Database] Connected to database");
     }
 
+    /**
+     * Disconnect from the database
+     * @throws SQLException If the connection is already closed
+     */
     public void disconnect() throws SQLException {
         connection.close();
+        if (debug)
+            System.out.println("[Database] Disconnected from database");
     }
 
     /**
@@ -95,7 +127,6 @@ public class Database {
      * @author Seailz
      */
     public void createTable(@NotNull Table table) throws SQLException {
-        debug = false;
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
 
         Column last = table.getColumns().get(table.getColumns().size() - 1);
@@ -127,7 +158,7 @@ public class Database {
         statement.append("\n);");
 
         if (debug)
-            System.out.println(statement);
+            System.out.println("[Database] Creating table: " + statement.toString());
 
         new Statement(statement.toString(), connection).execute();
     }
@@ -160,6 +191,8 @@ public class Database {
             if (set.getObject(key).equals(value))
                 return set.getObject(column);
         }
+        if (debug)
+            System.out.println("[Database] Getting value: " + statement);
         return null;
     }
 
@@ -172,6 +205,8 @@ public class Database {
     public boolean tableExists(@NotNull String tableName) throws SQLException {
         DatabaseMetaData meta = connection.getMetaData();
         ResultSet resultSet = meta.getTables(null, null, tableName, new String[] {"TABLE"});
+        if (debug)
+            System.out.println("[Database] Checking if table exists: " + tableName);
         return resultSet.next();
     }
 
@@ -215,6 +250,8 @@ public class Database {
             prepStatement.setObject(i, value);
         }
 
+        if (debug)
+            System.out.println("[Database] Inserting into table: " + statement.toString());
         prepStatement.execute();
     }
 
@@ -227,6 +264,8 @@ public class Database {
     public void delete(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
         String statement = "DELETE FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
         new Statement(statement, connection).execute();
+        if (debug)
+            System.out.println("[Database] Deleting from table: " + statement);
     }
 
     /**
@@ -238,6 +277,8 @@ public class Database {
      */
     public boolean rowExists(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
         String statement = "SELECT * FROM `" + table + "` WHERE '" + key + "'='" + value + "'";
+        if (debug)
+            System.out.println("[Database] Checking if row exists: " + statement);
         return new Statement(statement, connection).executeWithResults().next();
     }
 
@@ -252,12 +293,17 @@ public class Database {
     public void replace(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull HashMap<String, String> values) throws SQLException {
         if (!rowExists(table, key, value)) return; // Trying to prevent as many errors as possible :/
 
+        if (debug)
+            System.out.println("[Database] Replacing row: " + table + "." + key + "=" + value);
+
         delete(table, key, value);
         insert(table, values);
     }
 
     public void deleteTable(@NotNull String name) throws SQLException {
         if (!tableExists(name)) return;
+        if (debug)
+            System.out.println("[Database] Deleting table: " + name);
         new Statement("DROP TABLE " + name + ";", connection).execute();
     }
 }
