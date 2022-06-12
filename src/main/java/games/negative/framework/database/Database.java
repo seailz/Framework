@@ -426,4 +426,29 @@ public class Database {
         resultSet.next();
         return resultSet.getInt(1);
     }
+
+    /**
+     * Get all tables in the database
+     * @return A list of all tables in the database
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public ResultSet getAllTables() throws SQLException {
+        String statement = "SHOW TABLES";
+        if (debug)
+            System.out.println("[Database] Getting all tables: " + statement);
+        return new Statement(statement, connection).executeWithResults();
+    }
+
+    /**
+     * Get all data in a table
+     * @param table The table you'd like to get data from
+     * @return A list of all data in the table
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public ResultSet getAllDataInTable(String table) throws SQLException {
+        String statement = "SELECT * FROM `" + table + "`";
+        if (debug)
+            System.out.println("[Database] Getting all data in table: " + statement);
+        return new Statement(statement, connection).executeWithResults();
+    }
 }
