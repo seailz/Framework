@@ -48,6 +48,7 @@ import java.util.HashMap;
 public class Database {
 
     private boolean debug;
+    private boolean inTransaction;
 
     private String ip;
     private int port;
@@ -170,8 +171,14 @@ public class Database {
      * @throws SQLException if there is an error with the connection
      */
     public void startTransaction() throws SQLException {
+        if (isInTransaction())
+            throw new IllegalStateException("Transaction already started");
+
         connection.setAutoCommit(false);
         new Statement("START TRANSACTION", connection).execute();
+
+        if (debug)
+            System.out.println("[Database] Started transaction");
     }
 
     /**
@@ -179,7 +186,12 @@ public class Database {
      * @throws SQLException if there is an error with the connection
      */
     public void rollback() throws SQLException {
+        if (!isInTransaction())
+            throw new IllegalStateException("No transaction to rollback");
         new Statement("ROLLBACK", connection).execute();
+
+        if (debug)
+            System.out.println("[Database] Rolled back transaction");
     }
 
     /**
@@ -187,8 +199,14 @@ public class Database {
      * @throws SQLException if there is an error with the connection
      */
     public void commit() throws SQLException {
+        if (!isInTransaction())
+            throw new IllegalStateException("No transaction to commit");
+
         new Statement("COMMIT", connection).execute();
         connection.setAutoCommit(true);
+
+        if (debug)
+            System.out.println("[Database] Committed transaction");
     }
 
     /**
