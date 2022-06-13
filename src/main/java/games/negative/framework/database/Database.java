@@ -128,10 +128,12 @@ public class Database {
      * @param table The table you would like to create
      * @author Seailz
      */
-    public void createTable(@NotNull Table table) throws SQLException {
+    public void createTable(@NotNull Table table) throws SQLException, IllegalStateException {
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
 
         Column last = table.getColumns().get(table.getColumns().size() - 1);
+        if (!table.getColumns().stream().findFirst().isPresent())
+            throw new IllegalStateException("Empty ArrayList");
         Column first = table.getColumns().stream().findFirst().get();
         for (Column column : table.getColumns()) {
             String type = column.getType().toString();
