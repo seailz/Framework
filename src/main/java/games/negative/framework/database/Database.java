@@ -27,7 +27,6 @@ package games.negative.framework.database;
 
 import games.negative.framework.database.core.Statement;
 import games.negative.framework.database.core.table.Column;
-import games.negative.framework.database.core.table.ColumnType;
 import games.negative.framework.database.core.table.Table;
 import lombok.Getter;
 import lombok.Setter;
