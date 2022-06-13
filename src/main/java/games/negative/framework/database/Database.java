@@ -651,6 +651,13 @@ public class Database {
         return new Statement(statement, connection).executeWithResults();
     }
 
+    /**
+     * Set a column's default value
+     * @param table The table you'd like to set the default value in
+     * @param column The column you'd like to set the default value for
+     * @param value The default value you'd like to set
+     * @throws SQLException if there is an error communicating with the database
+     */
     public void setColumnDefaultValue(String table, String column, String value) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` ALTER `" + column + "` SET DEFAULT " + value + ";";
         if (debug)
