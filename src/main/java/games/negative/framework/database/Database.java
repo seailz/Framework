@@ -85,7 +85,7 @@ public class Database {
      * @param debug Whether you'd like to debug the database
      * @author Seailz
      */
-    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, @NotNull boolean debug) throws ClassNotFoundException {
+    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, boolean debug) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         setIp(ip);
         setPort(port);
