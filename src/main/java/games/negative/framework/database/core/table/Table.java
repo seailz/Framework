@@ -42,4 +42,12 @@ public class Table {
     private final List<Column> columns;
     @Setter
     private String primaryKey;
+
+    public void addColumn(ColumnType type, String columnName) {
+        columns.add(new Column(type, columnName));
+    }
+
+    public void addColumn(Column column) {
+        columns.add(column);
+    }
 }
