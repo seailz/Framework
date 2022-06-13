@@ -203,6 +203,16 @@ public class Database {
             System.out.println("[Database] Creating table: " + statement.toString());
 
         new Statement(statement.toString(), connection).execute();
+
+        table.getColumns().forEach(column -> {
+            if (column.getDefaultValue() != null) {
+                try {
+                    setColumnDefaultValue(table.getName(), column.getName(), column.getDefaultValue());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     /**
@@ -641,5 +651,10 @@ public class Database {
         return new Statement(statement, connection).executeWithResults();
     }
 
-
+    public void setColumnDefaultValue(String table, String column, String value) throws SQLException {
+        String statement = "ALTER TABLE `" + table + "` ALTER `" + column + "` SET DEFAULT " + value + ";";
+        if (debug)
+            System.out.println("[Database] Setting column default value: " + statement);
+        new Statement(statement, connection).execute();
+    }
 }

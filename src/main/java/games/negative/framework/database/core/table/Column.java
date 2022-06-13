@@ -43,5 +43,6 @@ public class Column {
     private int length = 255;
     @Setter
     private boolean allowNull = true;
-
+    @Setter
+    private String defaultValue = null;
 }
