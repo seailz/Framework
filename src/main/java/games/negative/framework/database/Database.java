@@ -169,8 +169,9 @@ public class Database {
     /**
      * Start a transaction
      * @throws SQLException if there is an error with the connection
+     * @throws IllegalStateException if the connection is already in a transaction
      */
-    public void startTransaction() throws SQLException {
+    public void startTransaction() throws SQLException, IllegalStateException {
         if (isInTransaction())
             throw new IllegalStateException("Transaction already started");
 
@@ -184,8 +185,9 @@ public class Database {
     /**
      * Rollback a transaction
      * @throws SQLException if there is an error with the connection
+     * @throws IllegalStateException if the connection is not in a transaction
      */
-    public void rollback() throws SQLException {
+    public void rollback() throws SQLException, IllegalStateException {
         if (!isInTransaction())
             throw new IllegalStateException("No transaction to rollback");
         new Statement("ROLLBACK", connection).execute();
@@ -197,8 +199,9 @@ public class Database {
     /**
      * Commit a transaction
      * @throws SQLException if there is an error with the connection
+     * @throws IllegalStateException if there is no transaction to commit
      */
-    public void commit() throws SQLException {
+    public void commit() throws SQLException, IllegalStateException {
         if (!isInTransaction())
             throw new IllegalStateException("No transaction to commit");
 
