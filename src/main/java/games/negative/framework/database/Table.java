@@ -41,7 +41,6 @@ import java.util.List;
 public class Table {
     private final String name;
     private final List<Column> columns;
-    @Setter
     private String primaryKey;
 
     public void addColumn(@NotNull ColumnType type, @NotNull String name) {
