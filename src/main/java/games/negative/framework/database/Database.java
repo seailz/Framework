@@ -25,7 +25,6 @@
 
 package games.negative.framework.database;
 
-import jdk.jfr.internal.LogLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -40,7 +39,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * <p>A way to interact with databases easier than JDBC.</p>
@@ -166,10 +164,9 @@ public class Database {
 
     /**
      * Disconnect from the database
-     * @throws SQLException If the connection is already closed
      */
     @SneakyThrows
-    public void disconnect() throws SQLException {
+    public void disconnect() {
         connection.close();
         if (debug)
             Bukkit.getLogger().log(Level.INFO, "[Database] Disconnected from database");
