@@ -25,6 +25,7 @@
 
 package games.negative.framework.database;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
@@ -33,16 +34,12 @@ import lombok.RequiredArgsConstructor;
  * Represents a value in a table
  * @author Seailz
  */
-@Getter
-@RequiredArgsConstructor
+@Data
 public class Column {
 
     private final ColumnType type;
     private final String name;
-    @Setter
     private int length = 255;
-    @Setter
     private boolean allowNull = true;
-    @Setter
     private String defaultValue = null;
 }
