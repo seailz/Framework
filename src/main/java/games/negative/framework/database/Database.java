@@ -107,12 +107,8 @@ public class Database {
      */
     @SneakyThrows
     public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName) {
+        this(ip, port, username, password, databaseName, false);
         Class.forName("com.mysql.cj.jdbc.Driver");
-        setIp(ip);
-        setPort(port);
-        setUsername(username);
-        setPassword(password);
-        setDatabaseName(databaseName);
     }
 
     /**
@@ -126,7 +122,6 @@ public class Database {
      */
     @SneakyThrows
     public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, boolean debug) {
-        Class.forName("com.mysql.cj.jdbc.Driver");
         setIp(ip);
         setPort(port);
         setUsername(username);
@@ -134,6 +129,7 @@ public class Database {
         setDatabaseName(databaseName);
         setDebug(debug);
 
+        Class.forName("com.mysql.cj.jdbc.Driver");
         if (debug)
             System.out.println("[Database] Debugging enabled");
     }
