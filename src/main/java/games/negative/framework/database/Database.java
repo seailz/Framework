@@ -31,6 +31,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
@@ -89,11 +90,12 @@ public class Database {
     private String username;
     private String password;
     private String databaseName;
+    private File sqlLiteFile = null;
 
     private Connection connection;
 
     /**
-     * Create a database instance
+     * Create a database instance with MySQL
      * @param ip The ip which you would like to connect to
      * @param port The port on which the database is hosted
      * @param username The username you'd like to use
@@ -110,7 +112,7 @@ public class Database {
     }
 
     /**
-     * Create a database instance
+     * Create a database instance with MySQL
      * @param ip The ip which you would like to connect to
      * @param port The port on which the database is hosted
      * @param username The username you'd like to use
@@ -132,17 +134,31 @@ public class Database {
     }
 
     /**
+     * Creates a database instance with SQLite
+     * @param file The file which you would like to use
+     */
+    public Database(File file) {
+        setSqlLiteFile(file);
+    }
+
+    /**
      * Initiate the connection to the database
      */
-    public void connect() throws SQLException {
-            connection = DriverManager.getConnection(
-                    "jdbc:mysql://" + getIp() + ":" + getPort() + "/" + getDatabaseName(),
-                    getUsername(),
-                    getPassword()
-            );
+    public void connect() throws SQLException, ClassNotFoundException {
+        if (getSqlLiteFile() != null) {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection("jdbc:sqlite:" + getSqlLiteFile().getAbsolutePath());
+            return;
+        }
 
-            if (debug)
-                System.out.println("[Database] Connected to database");
+        connection = DriverManager.getConnection(
+                "jdbc:mysql://" + getIp() + ":" + getPort() + "/" + getDatabaseName(),
+                getUsername(),
+                getPassword()
+        );
+
+        if (debug)
+            System.out.println("[Database] Connected to database");
     }
 
     /**
