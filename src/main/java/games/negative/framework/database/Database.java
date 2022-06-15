@@ -25,7 +25,6 @@
 
 package games.negative.framework.database;
 
-import games.negative.framework.database.core.Statement;
 import games.negative.framework.database.core.table.Column;
 import games.negative.framework.database.core.table.Table;
 import lombok.Getter;
@@ -100,7 +99,6 @@ public class Database {
      * @param username The username you'd like to use
      * @param password The password you'd like to use.
      * @param databaseName The name of the database
-     * @author Seailz
      */
     public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -119,7 +117,6 @@ public class Database {
      * @param password The password you'd like to use.
      * @param databaseName The name of the database
      * @param debug Whether you'd like to debug the database
-     * @author Seailz
      */
     public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, boolean debug) throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -136,7 +133,6 @@ public class Database {
 
     /**
      * Initiate the connection to the database
-     * @author Seailz
      */
     public void connect() throws SQLException {
             connection = DriverManager.getConnection(
@@ -152,7 +148,6 @@ public class Database {
     /**
      * Disconnect from the database
      * @throws SQLException If the connection is already closed
-     * @author Seailz
      */
     public void disconnect() throws SQLException {
         connection.close();
@@ -164,7 +159,6 @@ public class Database {
      * Creates a table within the Database
      * @param table The table you would like to create
      * @throws IllegalStateException If the arraylist is empty
-     * @author Seailz
      */
     public void createTable(@NotNull Table table) throws SQLException, IllegalStateException {
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
@@ -219,7 +213,6 @@ public class Database {
      * Start a transaction
      * @throws SQLException if there is an error with the connection
      * @throws IllegalStateException if the connection is already in a transaction
-     * @author Seailz
      */
     public void startTransaction() throws SQLException, IllegalStateException {
         if (isInTransaction())
@@ -236,7 +229,6 @@ public class Database {
      * Rollback a transaction
      * @throws SQLException if there is an error with the connection
      * @throws IllegalStateException if the connection is not in a transaction
-     * @author Seailz
      */
     public void rollback() throws SQLException, IllegalStateException {
         if (!isInTransaction())
@@ -251,7 +243,6 @@ public class Database {
      * Commit a transaction
      * @throws SQLException if there is an error with the connection
      * @throws IllegalStateException if there is no transaction to commit
-     * @author Seailz
      */
     public void commit() throws SQLException, IllegalStateException {
         if (!isInTransaction())
@@ -282,7 +273,6 @@ public class Database {
      * @param column The column you'd like to get
      * @return An object
      * @throws SQLException if there is an error retrieving the request value
-     * @author Seailz
      */
     public Object get(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column) throws SQLException {
         String statement = "SELECT * FROM '" + table + "'";
@@ -302,7 +292,6 @@ public class Database {
      * @param tableName The table you'd like to check
      * @return A boolean if the table exists or not
      * @throws SQLException If there is an error
-     * @author Seailz
      */
     public boolean tableExists(@NotNull String tableName) throws SQLException {
         DatabaseMetaData meta = connection.getMetaData();
@@ -317,7 +306,6 @@ public class Database {
      * @param table The table you'd like to insert to
      * @param values A hashmap of keys, and values
      * @throws SQLException if there is an error
-     * @author Seailz
      */
     public void insert(@NotNull String table, @NotNull HashMap<String, String> values) throws SQLException {
         StringBuilder statement = new StringBuilder("insert into '" + table + "' (");
@@ -363,7 +351,6 @@ public class Database {
      * @param table The table you'd like to edit
      * @param key The key, basically the identifier
      * @param value The value, such as the player's name
-     * @author Seailz
      */
     public void delete(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
         String statement = "DELETE FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
@@ -379,7 +366,6 @@ public class Database {
      * @param value The value
      * @return whether that row exists
      * @throws SQLException if there is an error connecting to the database
-     * @author Seailz
      */
     public boolean rowExists(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
         String statement = "SELECT * FROM `" + table + "` WHERE '" + key + "'='" + value + "'";
@@ -395,7 +381,6 @@ public class Database {
      * @param value the value of that key
      * @param values the values of the new row you'd like to insert
      * @throws SQLException If there's an error communicating with the database
-     * @author Seailz
      */
     public void replace(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull HashMap<String, String> values) throws SQLException {
         if (!rowExists(table, key, value)) return; // Trying to prevent as many errors as possible :/
@@ -411,7 +396,6 @@ public class Database {
      * Delete a table
      * @param name The name of the table you'd like to delete
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void deleteTable(@NotNull String name) throws SQLException {
         if (!tableExists(name)) return;
@@ -428,7 +412,6 @@ public class Database {
      * @param column The column you'd like to update
      * @param newColumn The new value you'd like to insert
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void update(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column, @NotNull String newColumn) throws SQLException {
         String statement = "UPDATE `" + table + "` SET `" + column + "`=`" + newColumn + "` WHERE `" + key + "`='" + value + "'";
@@ -444,7 +427,6 @@ public class Database {
      * @param column The column you'd like to update
      * @param type The type of the column
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void addColumnToTable(String table, String column, String type) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` ADD `" + column + "` " + type + ";";
@@ -458,7 +440,6 @@ public class Database {
      * @param table The table you'd like to remove a column from
      * @param column The column you'd like to remove
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void removeColumnFromTable(String table, String column) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` DROP COLUMN `" + column + "`;";
@@ -473,7 +454,6 @@ public class Database {
      * @param oldName The old name of the column
      * @param newName The new name of the column
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void changeColumnName(String table, String oldName, String newName) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` CHANGE `" + oldName + "` `" + newName + "`;";
@@ -487,7 +467,6 @@ public class Database {
      * @param table The table you'd like to delete a column from
      * @param column The column you'd like to delete
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void deleteColumnFromTable(String table, String column) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` DROP COLUMN `" + column + "`;";
@@ -501,7 +480,6 @@ public class Database {
      * @param table The table you'd like to export
      * @param filePath The file's path you'd like to export to
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void exportToCSV(String table, String filePath) throws SQLException {
         String statement = "SELECT * FROM `" + table + "`";
@@ -529,7 +507,6 @@ public class Database {
      * @param table The table you'd like to import into
      * @param filePath The file's path you'd like to import from
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void importFromFile(String table, String filePath) throws SQLException {
         String statement = "LOAD DATA INFILE '" + filePath + "' INTO TABLE `" + table + "`";
@@ -543,7 +520,6 @@ public class Database {
      * @param table The table you'd like to count
      * @return The number of rows in the table
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public int countRows(String table) throws SQLException {
         String statement = "SELECT COUNT(*) FROM `" + table + "`";
@@ -558,7 +534,6 @@ public class Database {
      * Get all tables in the database
      * @return A list of all tables in the database
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public ResultSet getAllTables() throws SQLException {
         String statement = "SHOW TABLES";
@@ -572,7 +547,6 @@ public class Database {
      * @param table The table you'd like to get data from
      * @return A list of all data in the table
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public ResultSet getAllDataInTable(String table) throws SQLException {
         String statement = "SELECT * FROM `" + table + "`";
@@ -585,7 +559,6 @@ public class Database {
      * Delete a table if it exists
      * @param table The table you'd like to delete
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void deleteTableIfExists(String table) throws SQLException {
         String statement = "DROP TABLE IF EXISTS `" + table + "`";
@@ -599,7 +572,6 @@ public class Database {
      * @param table The table you'd like to replace the primary key in
      * @param primaryKey The new primary key
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void replacePrimaryKey(String table, String primaryKey) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` DROP PRIMARY KEY, ADD PRIMARY KEY (`" + primaryKey + "`);";
@@ -613,7 +585,6 @@ public class Database {
      * @param table The table you'd like to copy to
      * @param copyFrom The table you'd like to copy from
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public void copyContentsToNewTable(String table, String copyFrom) throws SQLException {
         String statement = "INSERT INTO `" + table + "` SELECT * FROM `" + copyFrom + "`;";
@@ -627,7 +598,6 @@ public class Database {
      * @param table The table you'd like to describe
      * @return The description of the table
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public ResultSet describeTable(String table) throws SQLException {
         String statement = "DESCRIBE `" + table + "`";
@@ -642,7 +612,6 @@ public class Database {
      * @param column The column you'd like to describe
      * @return The description of the column
      * @throws SQLException if there is an error communicating with the database
-     * @author Seailz
      */
     public ResultSet describeColumn(String table, String column) throws SQLException {
         String statement = "DESCRIBE `" + table + "` `" + column + "`";
