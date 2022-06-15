@@ -27,6 +27,7 @@ package games.negative.framework.database;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -62,7 +63,8 @@ public class Statement {
         return connection.createStatement().executeQuery(getValue());
     }
 
-    public void execute() throws SQLException {
+    @SneakyThrows
+    public void execute() {
         connection.createStatement().execute(getValue());
     }
 }
