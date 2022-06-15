@@ -93,7 +93,7 @@ public class Database {
     private String username;
     private String password;
     private String databaseName;
-    private File sqlLiteFile = null;
+    private File sqlLiteFile;
 
     private Connection connection;
 
