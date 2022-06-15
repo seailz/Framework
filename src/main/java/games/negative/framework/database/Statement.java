@@ -57,12 +57,15 @@ public class Statement {
     /**
      * Execute your statement
      * @return a {@link ResultSet}
-     * @throws SQLException If your connection is invalid
      */
-    public ResultSet executeWithResults() throws SQLException {
+    @SneakyThrows
+    public ResultSet executeWithResults() {
         return connection.createStatement().executeQuery(getValue());
     }
 
+    /**
+     * Execute your statement
+     */
     @SneakyThrows
     public void execute() {
         connection.createStatement().execute(getValue());
