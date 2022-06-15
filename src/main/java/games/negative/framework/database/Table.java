@@ -28,6 +28,7 @@ package games.negative.framework.database;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -43,8 +44,8 @@ public class Table {
     @Setter
     private String primaryKey;
 
-    public void addColumn(ColumnType type, String columnName) {
-        columns.add(new Column(type, columnName));
+    public void addColumn(@NotNull ColumnType type, @NotNull String name) {
+        columns.add(new Column(type, name));
     }
 
     public void addColumn(Column column) {
