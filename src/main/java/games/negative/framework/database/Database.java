@@ -403,7 +403,7 @@ public class Database {
      * @throws SQLException If there's an error communicating with the database
      */
     public void replace(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull HashMap<String, String> values) throws SQLException {
-        if (!rowExists(table, key, value)) return; // Trying to prevent as many errors as possible :/
+        if (!rowExists(table, key, value)) return;
 
         if (debug)
             Bukkit.getLogger().log(Level.INFO, "[Database] Replacing row in table: " + table + " with key: " + key + " and value: " + value);
