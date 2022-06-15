@@ -9,6 +9,9 @@ package games.negative.framework.database;
  * <p>{@code DOUBLE} represents a {@link Double}</p>
  * <p>{@code BOOLEAN} represents a {@link Boolean}</p>
  * <p>{@code BIGINT} represents a {@link java.math.BigInteger}</p>
+ * <p>{@code FLOAT} represents a {@link Float}</p>
+ * <p>{@code LONG} represents a {@link Long}</p>
+ * <p>{@code BYTE} represents a {@link Byte}</p>
  */
 public enum ColumnType {
 
@@ -16,6 +19,9 @@ public enum ColumnType {
     INT,
     DOUBLE,
     BOOLEAN,
-    BIGINT
+    BIGINT,
+    FLOAT,
+    LONG,
+    BYTE
 
 }
