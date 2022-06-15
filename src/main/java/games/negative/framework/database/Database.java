@@ -182,10 +182,11 @@ public class Database {
     public void createTable(@NotNull Table table) throws SQLException, IllegalStateException {
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
 
+        if (table.getColumns().isEmpty())
+            throw new IllegalStateException("There are no columns for table " + table.getName() + ".");
+
+        Column first = table.getColumns().get(0);
         Column last = table.getColumns().get(table.getColumns().size() - 1);
-        if (!table.getColumns().stream().findFirst().isPresent())
-            throw new IllegalStateException("Empty ArrayList");
-        Column first = table.getColumns().stream().findFirst().get();
         for (Column column : table.getColumns()) {
             String type = column.getType().toString();
             String name = column.getName();
