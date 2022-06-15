@@ -31,6 +31,7 @@ import lombok.Setter;
 import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -294,6 +295,7 @@ public class Database {
      * @return An object
      * @throws SQLException if there is an error retrieving the request value
      */
+    @Nullable
     public Object get(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column) throws SQLException {
         String statement = "SELECT * FROM '" + table + "'";
         ResultSet set = new Statement(statement, connection).executeWithResults();
