@@ -25,6 +25,7 @@
 
 package games.negative.framework.database;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -36,8 +37,7 @@ import java.util.List;
  * Represents a MySQL table
  * @author Seailz
  */
-@Getter
-@RequiredArgsConstructor
+@Data
 public class Table {
     private final String name;
     private final List<Column> columns;
