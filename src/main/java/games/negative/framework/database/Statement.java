@@ -25,9 +25,7 @@
 
 package games.negative.framework.database;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.SneakyThrows;
+import lombok.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -37,22 +35,12 @@ import java.sql.SQLException;
  * Create a new Statement
  * @author Seailz
  */
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
 public class Statement {
 
     private String value;
     private Connection connection;
-
-    /**
-     * Initiate a new {@code Statement}
-     * @param value The {@link String} value of your SQL statement
-     * @param connection The database connection
-     */
-    public Statement(String value, Connection connection) {
-        setValue(value);
-        setConnection(connection);
-    }
 
     /**
      * Execute your statement
