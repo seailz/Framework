@@ -39,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public enum ServerVersion {
 
+    V1_19,
     V1_18,
     V1_17,
     V1_16,
