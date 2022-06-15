@@ -105,7 +105,8 @@ public class Database {
      * @param password The password you'd like to use.
      * @param databaseName The name of the database
      */
-    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName) throws ClassNotFoundException {
+    @SneakyThrows
+    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName) {
         Class.forName("com.mysql.cj.jdbc.Driver");
         setIp(ip);
         setPort(port);
@@ -123,7 +124,8 @@ public class Database {
      * @param databaseName The name of the database
      * @param debug Whether you'd like to debug the database
      */
-    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, boolean debug) throws ClassNotFoundException {
+    @SneakyThrows
+    public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, boolean debug) {
         Class.forName("com.mysql.cj.jdbc.Driver");
         setIp(ip);
         setPort(port);
