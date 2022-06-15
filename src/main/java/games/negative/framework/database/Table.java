@@ -48,7 +48,7 @@ public class Table {
         columns.add(new Column(type, name));
     }
 
-    public void addColumn(Column column) {
+    public void addColumn(@NotNull Column column) {
         columns.add(column);
     }
 }
