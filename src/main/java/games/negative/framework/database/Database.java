@@ -28,6 +28,7 @@ package games.negative.framework.database;
 import jdk.jfr.internal.LogLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
@@ -146,7 +147,8 @@ public class Database {
     /**
      * Initiate the connection to the database
      */
-    public void connect() throws SQLException, ClassNotFoundException {
+    @SneakyThrows
+    public void connect() {
         if (getSqlLiteFile() != null) {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:" + getSqlLiteFile().getAbsolutePath());
