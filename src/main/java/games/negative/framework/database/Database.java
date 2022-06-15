@@ -167,6 +167,7 @@ public class Database {
      * Disconnect from the database
      * @throws SQLException If the connection is already closed
      */
+    @SneakyThrows
     public void disconnect() throws SQLException {
         connection.close();
         if (debug)
