@@ -130,7 +130,7 @@ public class Database {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         if (debug)
-            System.out.println("[Database] Debugging enabled");
+            Bukkit.getLogger().log(Level.INFO, "[Database] Debugging enabled");
     }
 
     /**
