@@ -25,11 +25,12 @@
 
 package games.negative.framework.database;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.SneakyThrows;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * Create a new Statement
