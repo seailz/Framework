@@ -1,4 +1,4 @@
-package games.negative.framework.database.core.table;
+package games.negative.framework.database;
 
 /**
  * Represents the type of value within a table

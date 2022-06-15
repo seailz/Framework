@@ -23,7 +23,7 @@
  *
  */
 
-package games.negative.framework.database.core.table;
+package games.negative.framework.database;
 
 import lombok.Getter;
 import lombok.Setter;
