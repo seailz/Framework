@@ -12,6 +12,8 @@ package games.negative.framework.database;
  * <p>{@code FLOAT} represents a {@link Float}</p>
  * <p>{@code LONG} represents a {@link Long}</p>
  * <p>{@code BYTE} represents a {@link Byte}</p>
+ * <p>{@code TINYINT} represents a smaller {@link Integer}</p>
+ * <p>{@code BLOB} represents a {@link java.sql.Blob}</p>
  */
 public enum ColumnType {
 
@@ -22,6 +24,9 @@ public enum ColumnType {
     BIGINT,
     FLOAT,
     LONG,
-    BYTE
+    BYTE,
+    DECIMAL,
+    BLOB,
+    TINYINT
 
 }
