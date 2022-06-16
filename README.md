@@ -30,7 +30,7 @@ https://framework.docs.negative.games/
 ```
 
 ## Build Configuration
-Add this to your build configuration for this to work correctly
+Add this to your build configuration for this to work correctly.
 ```xml
 <configuration>
   <relocations>
