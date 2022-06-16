@@ -1,7 +1,8 @@
 # Negative Games - Framework
 [![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) ![Jenkins](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci.hypews.com%2Fjob%2FFramework%2F&label=jenkins-build)
 
-An expanded plugin library which allows more effective and rapid plugin development.
+An expanded plugin library which allows more effective and rapid plugin development.  
+Latest version: ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/games.negative.framework/Framework?nexusVersion=3&server=https%3A%2F%2Frepo.negative.games%2F)
 
 ## Wiki & JavaDocs
 https://github.com/Negative-Games/Framework/wiki  
