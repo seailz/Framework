@@ -51,6 +51,7 @@ public class HasteBin {
 
     /**
      * Create a new HasteBin instance with your custom HasteBin (optional)
+     *
      * @param binURL The exact URL to your pastebin - for example https://bin.seailz.com/
      */
     public HasteBin(@NotNull String binURL) {
