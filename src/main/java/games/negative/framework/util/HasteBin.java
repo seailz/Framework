@@ -39,7 +39,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * HasteBin Utility
  *
- * @author Fals3
+ * @author Fals3 & Seailz
  * <p>
  * The ability to post text to HasteBin.
  * <p>
@@ -52,7 +52,6 @@ public class HasteBin {
     /**
      * Create a new HasteBin instance with your custom HasteBin (optional)
      *
-     * @author Seailz
      * @param binURL The exact URL to your pastebin - for example https://bin.seailz.com/
      */
     public HasteBin(@NotNull String binURL) {
