@@ -747,7 +747,7 @@ public class Database {
      * @throws InstantiationException if there is an error instantiating the object
      * @throws InvocationTargetException if there is an error invoking the object
      */
-    public Object readObjectFromTable(String table, String key, String value, Class<?> clazz) throws SQLException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    public Object readObject(String table, String key, String value, Class<?> clazz) throws SQLException, InvocationTargetException, InstantiationException, IllegalAccessException {
         String statement = "SELECT * FROM `" + table + "` WHERE `" + key + "` = '" + value + "';";
         if (debug)
             log("Reading object from table: " + table + " with key: " + key + " and value: " + value);
