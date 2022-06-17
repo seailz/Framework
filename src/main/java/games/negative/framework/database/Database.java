@@ -25,6 +25,7 @@
 
 package games.negative.framework.database;
 
+import games.negative.framework.database.annotation.DontSave;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -35,9 +36,11 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.logging.Level;
 
@@ -666,7 +669,17 @@ public class Database {
 
         // Adds all fields to the keys and values ArrayLists
         for (Field f : object.getClass().getDeclaredFields()) {
-            keys.add(f.getName());
+            String key = f.getName();
+
+            // Checks the field's annotations
+            if (f.isAnnotationPresent(DontSave.class)) continue;
+            if (f.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
+                // If there is an annotation, use the annotation's name instead of the field's name
+                key = f.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
+                return;
+            }
+
+            keys.add(key);
             try {
                 f.setAccessible(true);
                 values.add(f.get(object).toString());
@@ -677,7 +690,17 @@ public class Database {
 
         // Adds all fields from the superclass to the keys and values ArrayLists
         for (Field f : object.getClass().getSuperclass().getDeclaredFields()) {
-            keys.add(f.getName());
+            String key = f.getName();
+
+            // Checks the field's annotations
+            if (f.isAnnotationPresent(DontSave.class)) continue;
+            if (f.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
+                // If there is an annotation, use the annotation's name instead of the field's name
+                key = f.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
+                return;
+            }
+
+            keys.add(key);
             try {
                 f.setAccessible(true);
                 values.add(f.get(object).toString());
@@ -686,11 +709,13 @@ public class Database {
             }
         }
 
+        // Loops through and puts everything in a HashMap
         HashMap<String, String> keyValuesHashMap = new HashMap<>();
         for (int i = 0; i < keys.size(); i++) {
             keyValuesHashMap.put(keys.get(i), values.get(i));
         }
 
+        // Writes the HashMap to the table
         insert(table, keyValuesHashMap);
 
         if (debug)
