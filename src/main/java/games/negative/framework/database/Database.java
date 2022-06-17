@@ -778,6 +778,11 @@ public class Database {
         return object;
     }
 
+    /**
+     * Retrieves the correct constructor for a class
+     * @param clazz The class you'd like to get the constructor for
+     * @return The constructor you retrieved
+     */
     private Constructor<?> retrieveConstructor(Class<?> clazz) {
         ArrayList<Constructor<?>> constructors = new ArrayList<>(Arrays.asList(clazz.getConstructors()));
         AtomicReference<Constructor<?>> validConstructor = new AtomicReference<>();
@@ -792,6 +797,12 @@ public class Database {
         return validConstructor.get();
     }
 
+    /**
+     * Just retrieves a specific parameter from a list
+     * @param list The list you'd like to get the parameter from
+     * @param name The name of the parameter you'd like to get
+     * @return The parameter you retrieved
+     */
     private Parameter getParamByName(Parameter[] list, String name) {
         for (Parameter param : list) {
             if (param.getName().equals(name)) {
@@ -801,6 +812,11 @@ public class Database {
         return null;
     }
 
+    /**
+     * Checks if a parameter has the {@link games.negative.framework.database.annotation.Column} annotation
+     * @param param The parameter you'd like to check
+     * @return Whether the parameter has the {@link games.negative.framework.database.annotation.Column} annotation
+     */
     private boolean hasAnnotation(Parameter param) {
         return param.isAnnotationPresent(games.negative.framework.database.annotation.Column.class);
     }
