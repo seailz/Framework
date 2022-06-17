@@ -35,6 +35,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -129,6 +130,7 @@ public class Database {
         setDebug(debug);
 
         Class.forName("com.mysql.cj.jdbc.Driver");
+
         if (debug)
             Bukkit.getLogger().log(Level.INFO, "[Database] Debugging enabled");
     }
@@ -294,7 +296,7 @@ public class Database {
      */
     @Nullable
     public Object get(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column) throws SQLException {
-        String statement = "SELECT * FROM '" + table + "'";
+        String statement = "SELECT * FROM `" + table + "`";
         ResultSet set = new Statement(statement, connection).executeWithResults();
 
         while (set.next()) {
@@ -327,18 +329,18 @@ public class Database {
      * @throws SQLException if there is an error
      */
     public void insert(@NotNull String table, @NotNull HashMap<String, String> values) throws SQLException {
-        StringBuilder statement = new StringBuilder("insert into '" + table + "' (");
+        StringBuilder statement = new StringBuilder("insert into `" + table + "` (\n\t");
 
         ArrayList<String> keysArray = new ArrayList<>(values.keySet());
         String lastKey = keysArray.get(keysArray.size() - 1);
         for (String key : values.keySet()) {
             if (!key.equals(lastKey))
-                statement.append("'").append(key).append("', ");
+                statement.append(key).append(",");
             else
-                statement.append("'").append(key).append(")");
+                statement.append(key).append("\n)\n\t");
         }
 
-        statement.append(" values (");
+        statement.append(" values (\n\t");
 
         ArrayList<String> valuesArray = new ArrayList<>(values.values());
         String lastValue = valuesArray.get(valuesArray.size() - 1);
@@ -346,11 +348,11 @@ public class Database {
             if (!value.equals(lastValue))
                 statement.append("?, ");
             else
-                statement.append("?)");
+                statement.append("?\n);");
         }
 
         if (debug)
-            System.out.println(statement);
+            Bukkit.getLogger().log(Level.INFO, String.valueOf(statement));
 
         PreparedStatement prepStatement = connection.prepareStatement(statement.toString());
         int i = 0;
@@ -362,7 +364,7 @@ public class Database {
 
         if (debug)
             Bukkit.getLogger().log(Level.INFO, "[Database] Inserting into table: " + table + " with values: " + values);
-        prepStatement.execute();
+        prepStatement.executeUpdate();
     }
 
     /**
@@ -651,4 +653,48 @@ public class Database {
             Bukkit.getLogger().log(Level.INFO, "[Database] Setting default value: " + value + " for column: " + column + " in table: " + table);
         new Statement(statement, connection).execute();
     }
+
+    /**
+     * Write {@code Java Objects} to a table
+     * @param table The table you'd like to write to
+     * @param object The object you'd like to insert
+     * @throws SQLException if there is an error communicating with the database
+     */
+    public void writeObjectToTable(String table, Object object) throws SQLException {
+        ArrayList<String> keys = new ArrayList<>();
+        ArrayList<String> values = new ArrayList<>();
+
+        // Adds all fields to the keys and values ArrayLists
+        for (Field f : object.getClass().getDeclaredFields()) {
+            keys.add(f.getName());
+            try {
+                f.setAccessible(true);
+                values.add(f.get(object).toString());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Adds all fields from the superclass to the keys and values ArrayLists
+        for (Field f : object.getClass().getSuperclass().getDeclaredFields()) {
+            keys.add(f.getName());
+            try {
+                f.setAccessible(true);
+                values.add(f.get(object).toString());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        HashMap<String, String> keyValuesHashMap = new HashMap<>();
+        for (int i = 0; i < keys.size(); i++) {
+            keyValuesHashMap.put(keys.get(i), values.get(i));
+        }
+
+        insert(table, keyValuesHashMap);
+
+        if (debug)
+            Bukkit.getLogger().log(Level.INFO, "[Database] Writing object to table: " + table + " with values: " + values + " and keys: " + keys);
+    }
 }
+
