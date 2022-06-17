@@ -26,9 +26,6 @@
 package games.negative.framework.database;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.RequiredArgsConstructor;
 
 /**
  * Represents a value in a table
