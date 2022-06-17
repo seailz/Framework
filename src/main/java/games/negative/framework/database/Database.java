@@ -676,7 +676,7 @@ public class Database {
      * @param object The object you'd like to insert
      * @throws SQLException if there is an error communicating with the database
      */
-    public void writeObjectToTable(String table, Object object) throws SQLException {
+    public void insert(String table, Object object) throws SQLException {
         ArrayList<String> keys = new ArrayList<>();
         ArrayList<String> values = new ArrayList<>();
 
