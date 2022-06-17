@@ -76,13 +76,6 @@ public abstract class BasePlugin extends JavaPlugin {
         Cooldowns.startInternalCooldowns(this);
 
         commandRepository = new FrameworkCommandRepository();
-
-        /*
-          Metrics registration
-         * @author joeecodes
-         */
-        int pluginId = 15504;
-        new Metrics(this, pluginId);
     }
 
 
@@ -112,6 +105,14 @@ public abstract class BasePlugin extends JavaPlugin {
                     fileConfig.set(priceString, fileConfig.getString(priceString)));
         });
 
+    }
+
+    /**
+     * Opt-in to Framework usage tracking.
+     */
+    public void enableFrameworkUsageTracking() {
+        int pluginId = 15504;
+        new Metrics(this, pluginId);
     }
 
     @SneakyThrows
