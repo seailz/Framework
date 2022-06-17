@@ -37,6 +37,6 @@ public class Column {
     private final ColumnType type;
     private final String name;
     private int length = 255;
-    private boolean allowNull = true;
+    private boolean allowNull = false;
     private String defaultValue = null;
 }
