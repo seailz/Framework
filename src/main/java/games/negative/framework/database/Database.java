@@ -732,7 +732,7 @@ public class Database {
      * Logs a message to the console
      * @param text The message you'd like to log
      */
-    private void log(String text) {
+    private void log(@NotNull String text) {
         Bukkit.getLogger().log(Level.INFO, "[FrameworkAPI Debug] " + text);
     }
 }
