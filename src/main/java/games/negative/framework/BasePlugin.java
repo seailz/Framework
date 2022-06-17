@@ -25,6 +25,7 @@
 
 package games.negative.framework;
 
+import games.negative.framework.bStats.Metrics;
 import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.repository.CommandRepository;
 import games.negative.framework.command.repository.FrameworkCommandRepository;
@@ -37,7 +38,6 @@ import games.negative.framework.util.FileLoader;
 import games.negative.framework.util.version.VersionChecker;
 import lombok.Getter;
 import lombok.SneakyThrows;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
@@ -81,7 +81,7 @@ public abstract class BasePlugin extends JavaPlugin {
           Metrics registration
          * @author joeecodes
          */
-        int pluginId = 15503;
+        int pluginId = 15504;
         new Metrics(this, pluginId);
     }
 
