@@ -674,21 +674,21 @@ public class Database {
         ArrayList<String> values = new ArrayList<>();
 
         // Adds all fields to the keys and values ArrayLists
-        for (Field f : object.getClass().getDeclaredFields()) {
-            String key = f.getName();
+        for (Field field : object.getClass().getDeclaredFields()) {
+            String key = field.getName();
 
             // Checks the field's annotations
-            if (f.isAnnotationPresent(DontSave.class)) continue;
-            if (f.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
+            if (field.isAnnotationPresent(DontSave.class)) continue;
+            if (field.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
                 // If there is an annotation, use the annotation's name instead of the field's name
-                key = f.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
+                key = field.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
                 return;
             }
 
             keys.add(key);
             try {
-                f.setAccessible(true);
-                values.add(f.get(object).toString());
+                field.setAccessible(true);
+                values.add(field.get(object).toString());
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -696,20 +696,20 @@ public class Database {
 
         // Adds all fields from the superclass to the keys and values ArrayLists
         for (Field field : object.getClass().getSuperclass().getDeclaredFields()) {
-            String key = f.getName();
+            String key = field.getName();
 
             // Checks the field's annotations
-            if (f.isAnnotationPresent(DontSave.class)) continue;
-            if (f.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
+            if (field.isAnnotationPresent(DontSave.class)) continue;
+            if (field.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
                 // If there is an annotation, use the annotation's name instead of the field's name
-                key = f.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
+                key = field.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
                 return;
             }
 
             keys.add(key);
             try {
-                f.setAccessible(true);
-                values.add(f.get(object).toString());
+                field.setAccessible(true);
+                values.add(field.get(object).toString());
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
