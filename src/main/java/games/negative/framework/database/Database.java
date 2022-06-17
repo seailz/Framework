@@ -46,7 +46,7 @@ import java.util.logging.Level;
  * <p>A way to interact with databases easier than JDBC.</p>
  * <p></p>
  * <p>I won't leave a full documentation here, but if you want to read</p>
- * <p>how to use this in more detail, you can find it <a href="https://github.com/Negative-Games/Framework/pull/108#issue-1265327573">here</a> </p>
+ * <p>how to use this in more detail, you can find it <a href="https://github.com/Negative-Games/Framework/wiki/">here</a> </p>
  * <p></p>
  * <p>{@code Creating a Database Instance}</p>
  * <p>To create a database instance, you have to do this:</p>
@@ -84,7 +84,7 @@ import java.util.logging.Level;
  * <pre>
  *     db.writeObjectToTable("tableName", new Object());
  * </pre>
- * <p>Again, a more detailed documentation can be found here <a href="https://github.com/Negative-Games/Framework/pull/108#issue-1265327573">here</a> </p>
+ * <p>Again, a more detailed documentation can be found <a href="https://github.com/Negative-Games/Framework/wiki/">here</a> </p>
  * @author Seailz - <a href="https://www.seailz.com">Website</a>
  */
 @Getter
