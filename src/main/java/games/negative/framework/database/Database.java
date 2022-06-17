@@ -79,6 +79,11 @@ import java.util.logging.Level;
  *     db.disconnect();
  * </pre>
  * <p></p>
+ * <p>{@code Inserting Java Objects}</p>
+ * <p>To insert Java objects into a table, you have to do this:</p>
+ * <pre>
+ *     db.writeObjectToTable("tableName", new Object());
+ * </pre>
  * <p>Again, a more detailed documentation can be found here <a href="https://github.com/Negative-Games/Framework/pull/108#issue-1265327573">here</a> </p>
  * @author Seailz - <a href="https://www.seailz.com">Website</a>
  */
