@@ -754,7 +754,7 @@ public class Database {
         ResultSet resultSet = new Statement(statement, connection).executeWithResults();
 
         // Creates a new instance of the class
-        Object object = null;
+        Object object;
         Constructor<?> constructor = retrieveConstructor(clazz);
         ArrayList<Object> parameters = new ArrayList<>();
 
@@ -768,9 +768,8 @@ public class Database {
         }
 
         for (Parameter p : constructor.getParameters()) {
-            if (hasAnnotation(p)) {
-                    parameters.add(keyValuesHashMap.get(p.getAnnotation(games.negative.framework.database.annotation.Column.class).name()));
-            }
+            if (hasAnnotation(p))
+                parameters.add(keyValuesHashMap.get(p.getAnnotation(games.negative.framework.database.annotation.Column.class).name()));
         }
 
         if (debug)
