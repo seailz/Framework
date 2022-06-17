@@ -25,6 +25,7 @@
 
 package games.negative.framework;
 
+import games.negative.framework.bStats.Metrics;
 import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.repository.CommandRepository;
 import games.negative.framework.command.repository.FrameworkCommandRepository;
@@ -75,7 +76,15 @@ public abstract class BasePlugin extends JavaPlugin {
         Cooldowns.startInternalCooldowns(this);
 
         commandRepository = new FrameworkCommandRepository();
+
+        /*
+          Metrics registration
+         * @author joeecodes
+         */
+        int pluginId = 15503;
+        new Metrics(this, pluginId);
     }
+
 
     /**
      * Load custom files with pre-written data.
