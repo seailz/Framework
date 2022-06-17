@@ -85,7 +85,7 @@ import java.util.logging.Level;
  *     db.writeObjectToTable("tableName", new Object());
  * </pre>
  * <p>Again, a more detailed documentation can be found <a href="https://github.com/Negative-Games/Framework/wiki/">here</a> </p>
- * @author Seailz - <a href="https://www.seailz.com">Website</a>
+ * @author Seailz
  */
 @Getter
 @Setter
