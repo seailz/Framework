@@ -9,14 +9,9 @@ import java.lang.annotation.Target;
  * Specify the column you'd like to insert this value into
  * @author Seailz
  */
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
 
-    /**
-     * The name of the column
-     * @return the name of the column
-     */
     String name();
-
 }

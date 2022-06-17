@@ -26,6 +26,7 @@
 package games.negative.framework.database;
 
 import games.negative.framework.database.annotation.DontSave;
+import games.negative.framework.database.annotation.constructor.DatabaseConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -36,10 +37,16 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Parameter;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 
 /**
@@ -726,6 +733,73 @@ public class Database {
 
         if (debug)
             log("Wrote object to table: " + table);
+    }
+
+    /**
+     * Reads {@code Java Objects} from a table
+     * @param table The table you'd like to read from
+     * @param key The key you'd like to read from
+     * @param value The value you'd like to read from
+     * @param clazz The class you'd like to read into
+     * @return The object you read into
+     */
+    public Object readObjectFromTable(String table, String key, String value, Class<?> clazz) throws SQLException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        String statement = "SELECT * FROM `" + table + "` WHERE `" + key + "` = '" + value + "';";
+        if (debug)
+            log("Reading object from table: " + table + " with key: " + key + " and value: " + value);
+        ResultSet resultSet = new Statement(statement, connection).executeWithResults();
+
+        // Creates a new instance of the class
+        Object object = null;
+        Constructor<?> constructor = retrieveConstructor(clazz);
+        ArrayList<Object> parameters = new ArrayList<>();
+
+        HashMap<String, Object> keyValuesHashMap = new HashMap<>();
+
+        while (resultSet.next()) {
+            // Loops through all the columns and adds them to the HashMap
+            for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
+                keyValuesHashMap.put(resultSet.getMetaData().getColumnName(i), resultSet.getObject(i));
+            }
+        }
+
+        for (Parameter p : constructor.getParameters()) {
+            if (hasAnnotation(p)) {
+                    parameters.add(keyValuesHashMap.get(p.getAnnotation(games.negative.framework.database.annotation.Column.class).name()));
+            }
+        }
+
+        if (debug)
+            log("Read object from table: " + table);
+        object = constructor.newInstance(parameters.toArray());
+        return object;
+    }
+
+    private Constructor<?> retrieveConstructor(Class<?> clazz) {
+        ArrayList<Constructor<?>> constructors = new ArrayList<>(Arrays.asList(clazz.getConstructors()));
+        AtomicReference<Constructor<?>> validConstructor = new AtomicReference<>();
+        for (Constructor<?> constructor : constructors) {
+            constructor.setAccessible(true);
+            Arrays.stream(constructor.getAnnotations()).forEach(annotation -> {
+                if (annotation.annotationType().equals(DatabaseConstructor.class)) {
+                    validConstructor.set(constructor);
+                }
+            });
+        }
+        return validConstructor.get();
+    }
+
+    private Parameter getParamByName(Parameter[] list, String name) {
+        for (Parameter param : list) {
+            if (param.getName().equals(name)) {
+                return param;
+            }
+        }
+        return null;
+    }
+
+    private boolean hasAnnotation(Parameter param) {
+        return param.isAnnotationPresent(games.negative.framework.database.annotation.Column.class);
     }
 
     /**
