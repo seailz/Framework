@@ -138,7 +138,7 @@ public class Database {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Debugging enabled");
+            log("Debugging enabled");
     }
 
     /**
@@ -167,7 +167,7 @@ public class Database {
         );
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Connected to database");
+            log("Connected to database");
     }
 
     /**
@@ -177,7 +177,7 @@ public class Database {
     public void disconnect() {
         connection.close();
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Disconnected from database");
+            log("Disconnected from database");
     }
 
     /**
@@ -220,7 +220,7 @@ public class Database {
         statement.append("\n);");
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Creating table: " + table.getName());
+            log("Creating table " + table.getName() + ": " + statement.toString());
 
         new Statement(statement.toString(), connection).execute();
 
@@ -248,7 +248,7 @@ public class Database {
         new Statement("START TRANSACTION", connection).execute();
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Started transaction");
+            log("Started transaction");
     }
 
     /**
@@ -262,7 +262,7 @@ public class Database {
         new Statement("ROLLBACK", connection).execute();
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Rolled back transaction");
+            log("Rolled back transaction");
     }
 
     /**
@@ -278,7 +278,7 @@ public class Database {
         connection.setAutoCommit(true);
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Committed transaction");
+            log("Committed transaction");
     }
 
     /**
@@ -305,12 +305,15 @@ public class Database {
         String statement = "SELECT * FROM `" + table + "`";
         ResultSet set = new Statement(statement, connection).executeWithResults();
 
+        if (debug)
+            log("Getting " + column + " from " + table + " where " + key + " = " + value);
+
         while (set.next()) {
             if (set.getObject(key).equals(value))
                 return set.getObject(column);
         }
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Getting value from table: " + table + " with key: " + key + " and value: " + value + " and column: " + column);
+            log("Getting value from table " + table + " failed");
         return null;
     }
 
@@ -324,7 +327,7 @@ public class Database {
         DatabaseMetaData meta = connection.getMetaData();
         ResultSet resultSet = meta.getTables(null, null, tableName, new String[] {"TABLE"});
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Checking if table exists: " + tableName);
+            log("Checking if table exists: " + tableName);
         return resultSet.next();
     }
 
@@ -369,7 +372,7 @@ public class Database {
         }
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Inserting into table: " + table + " with values: " + values);
+            log("Inserting into table: " + table + " with values: " + values);
         prepStatement.executeUpdate();
     }
 
@@ -383,7 +386,7 @@ public class Database {
         String statement = "DELETE FROM '" + table + "' WHERE '" + key + "'='" + value + "'";
         new Statement(statement, connection).execute();
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Deleting from table: " + table + " with key: " + key + " and value: " + value);
+            log("Deleting from table: " + table + " with key: " + key + " and value: " + value);
     }
 
     /**
@@ -397,7 +400,7 @@ public class Database {
     public boolean rowExists(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
         String statement = "SELECT * FROM `" + table + "` WHERE '" + key + "'='" + value + "'";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Checking if row exists: " + table + " with key: " + key + " and value: " + value);
+            log("Checking if row exists: " + statement);
         return new Statement(statement, connection).executeWithResults().next();
     }
 
@@ -413,7 +416,7 @@ public class Database {
         if (!rowExists(table, key, value)) return;
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Replacing row in table: " + table + " with key: " + key + " and value: " + value);
+            log("Replacing row in table: " + table + " with key: " + key + " and value: " + value);
 
         delete(table, key, value);
         insert(table, values);
@@ -427,7 +430,7 @@ public class Database {
     public void deleteTable(@NotNull String name) throws SQLException {
         if (!tableExists(name)) return;
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Deleting table: " + name);
+            log("Deleteing table: " + name);
         new Statement("DROP TABLE " + name + ";", connection).execute();
     }
 
@@ -443,7 +446,7 @@ public class Database {
     public void update(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column, @NotNull String newColumn) throws SQLException {
         String statement = "UPDATE `" + table + "` SET `" + column + "`=`" + newColumn + "` WHERE `" + key + "`='" + value + "'";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Updating table: " + table + " with key: " + key + " and value: " + value + " with column: " + column + " and new value: " + newColumn);
+            log("Updating row with table: " + table + " with key: " + key + " and value: " + value + " with column: " + column + " and new value: " + newColumn);
         new Statement(statement, connection).execute();
     }
 
@@ -458,7 +461,7 @@ public class Database {
     public void addColumnToTable(String table, String column, String type) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` ADD `" + column + "` " + type + ";";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Adding column: " + column + " to table: " + table + " with type: " + type);
+            log("Adding column to table: " + table + " with name: " + column + " and type: " + type);
         new Statement(statement, connection).execute();
     }
 
@@ -471,7 +474,7 @@ public class Database {
     public void removeColumnFromTable(String table, String column) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` DROP COLUMN `" + column + "`;";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Removing column: " + column + " from table: " + table);
+            log("Removing column: " + column + " from table: " + table);
         new Statement(statement, connection).execute();
     }
 
@@ -485,7 +488,7 @@ public class Database {
     public void changeColumnName(String table, String oldName, String newName) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` CHANGE `" + oldName + "` `" + newName + "`;";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Changing column name: " + oldName + " to: " + newName + " in table: " + table);
+            log("Changing column name: " + oldName + " to " + newName + " in table: " + table);
         new Statement(statement, connection).execute();
     }
 
@@ -498,7 +501,7 @@ public class Database {
     public void deleteColumnFromTable(String table, String column) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` DROP COLUMN `" + column + "`;";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Deleting column: " + column + " from table: " + table);
+            log("Deleteing column: " + column + " from table: " + table);
         new Statement(statement, connection).execute();
     }
 
@@ -511,7 +514,7 @@ public class Database {
     public void exportToCSV(String table, String filePath) throws SQLException {
         String statement = "SELECT * FROM `" + table + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Exporting table: " + table + " to file: " + filePath);
+            log("Exporting table: " + table + " to file: " + filePath);
         ResultSet resultSet = new Statement(statement, connection).executeWithResults();
         try {
             FileWriter writer = new FileWriter(filePath);
@@ -538,7 +541,7 @@ public class Database {
     public void importFromFile(String table, String filePath) throws SQLException {
         String statement = "LOAD DATA INFILE '" + filePath + "' INTO TABLE `" + table + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Importing table: " + table + " from file: " + filePath);
+            log("Importing table: " + table + " from file: " + filePath);
         new Statement(statement, connection).execute();
     }
 
@@ -551,7 +554,7 @@ public class Database {
     public int countRows(String table) throws SQLException {
         String statement = "SELECT COUNT(*) FROM `" + table + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Counting rows in table: " + table);
+            log("Counting rows in table: " + table);
         ResultSet resultSet = new Statement(statement, connection).executeWithResults();
         resultSet.next();
         return resultSet.getInt(1);
@@ -565,7 +568,7 @@ public class Database {
     public ResultSet getAllTables() throws SQLException {
         String statement = "SHOW TABLES";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Getting all tables");
+            log("Getting all tables");
         return new Statement(statement, connection).executeWithResults();
     }
 
@@ -578,7 +581,7 @@ public class Database {
     public ResultSet getAllDataInTable(String table) throws SQLException {
         String statement = "SELECT * FROM `" + table + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Getting all data in table: " + table);
+            log("Getting all data in table: " + table);
         return new Statement(statement, connection).executeWithResults();
     }
 
@@ -590,7 +593,7 @@ public class Database {
     public void deleteTableIfExists(String table) throws SQLException {
         String statement = "DROP TABLE IF EXISTS `" + table + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Deleting table if exists: " + table);
+            log("Deleting table if it exists: " + table);
         new Statement(statement, connection).execute();
     }
 
@@ -602,7 +605,7 @@ public class Database {
     public void replacePrimaryKey(String table, String primaryKey) {
         String statement = "ALTER TABLE `" + table + "` DROP PRIMARY KEY, ADD PRIMARY KEY (`" + primaryKey + "`);";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Replacing primary key: " + primaryKey + " in table: " + table);
+            log("Changing primary key of table: " + table + " to: " + primaryKey);
         new Statement(statement, connection).execute();
     }
 
@@ -615,7 +618,7 @@ public class Database {
     public void copyContentsToNewTable(String table, String copyFrom) throws SQLException {
         String statement = "INSERT INTO `" + table + "` SELECT * FROM `" + copyFrom + "`;";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Copying contents from table: " + copyFrom + " to table: " + table);
+            log("Copying contents from table: " + copyFrom + " to table: " + table);
         new Statement(statement, connection).execute();
     }
 
@@ -628,7 +631,7 @@ public class Database {
     public ResultSet describeTable(String table) throws SQLException {
         String statement = "DESCRIBE `" + table + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Describing table: " + table);
+            log("Describing table: " + table);
         return new Statement(statement, connection).executeWithResults();
     }
 
@@ -642,7 +645,7 @@ public class Database {
     public ResultSet describeColumn(String table, String column) throws SQLException {
         String statement = "DESCRIBE `" + table + "` `" + column + "`";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Describing column: " + column + " in table: " + table);
+            log("Describing column: " + column + " in table: " + table);
         return new Statement(statement, connection).executeWithResults();
     }
 
@@ -656,7 +659,7 @@ public class Database {
     public void setColumnDefaultValue(String table, String column, String value) throws SQLException {
         String statement = "ALTER TABLE `" + table + "` ALTER `" + column + "` SET DEFAULT " + value + ";";
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Setting default value: " + value + " for column: " + column + " in table: " + table);
+            log("Setting default value: " + value + " for column: " + column + " in table: " + table);
         new Statement(statement, connection).execute();
     }
 
@@ -722,7 +725,15 @@ public class Database {
         insert(table, keyValuesHashMap);
 
         if (debug)
-            Bukkit.getLogger().log(Level.INFO, "[Database] Writing object to table: " + table + " with values: " + values + " and keys: " + keys);
+            log("Wrote object to table: " + table);
+    }
+
+    /**
+     * Logs a message to the console
+     * @param text The message you'd like to log
+     */
+    private void log(String text) {
+        Bukkit.getLogger().log(Level.INFO, "[FrameworkAPI Debug] " + text);
     }
 }
 
