@@ -742,6 +742,10 @@ public class Database {
      * @param value The value you'd like to read from
      * @param clazz The class you'd like to read into
      * @return The object you read into
+     * @throws SQLException if there is an error communicating with the database
+     * @throws IllegalAccessException if there is an error accessing the object
+     * @throws InstantiationException if there is an error instantiating the object
+     * @throws InvocationTargetException if there is an error invoking the object
      */
     public Object readObjectFromTable(String table, String key, String value, Class<?> clazz) throws SQLException, InvocationTargetException, InstantiationException, IllegalAccessException {
         String statement = "SELECT * FROM `" + table + "` WHERE `" + key + "` = '" + value + "';";
