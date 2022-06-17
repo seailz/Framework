@@ -695,7 +695,7 @@ public class Database {
         }
 
         // Adds all fields from the superclass to the keys and values ArrayLists
-        for (Field f : object.getClass().getSuperclass().getDeclaredFields()) {
+        for (Field field : object.getClass().getSuperclass().getDeclaredFields()) {
             String key = f.getName();
 
             // Checks the field's annotations
