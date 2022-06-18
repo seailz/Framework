@@ -688,7 +688,7 @@ public class Database {
             if (field.isAnnotationPresent(DontSave.class)) continue;
             if (field.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
                 // If there is an annotation, use the annotation's name instead of the field's name
-                key = field.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
+                key = field.getAnnotation(games.negative.framework.database.annotation.Column.class).value();
                 return;
             }
 
@@ -709,7 +709,7 @@ public class Database {
             if (field.isAnnotationPresent(DontSave.class)) continue;
             if (field.isAnnotationPresent(games.negative.framework.database.annotation.Column.class)) {
                 // If there is an annotation, use the annotation's name instead of the field's name
-                key = field.getAnnotation(games.negative.framework.database.annotation.Column.class).name();
+                key = field.getAnnotation(games.negative.framework.database.annotation.Column.class).value();
                 return;
             }
 
@@ -769,7 +769,7 @@ public class Database {
 
         for (Parameter p : constructor.getParameters()) {
             if (hasAnnotation(p))
-                parameters.add(keyValuesHashMap.get(p.getAnnotation(games.negative.framework.database.annotation.Column.class).name()));
+                parameters.add(keyValuesHashMap.get(p.getAnnotation(games.negative.framework.database.annotation.Column.class).value()));
         }
 
         if (debug)
