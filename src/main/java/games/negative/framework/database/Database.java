@@ -798,21 +798,6 @@ public class Database {
     }
 
     /**
-     * Just retrieves a specific parameter from a list
-     * @param list The list you'd like to get the parameter from
-     * @param name The name of the parameter you'd like to get
-     * @return The parameter you retrieved
-     */
-    private Parameter getParamByName(Parameter[] list, String name) {
-        for (Parameter param : list) {
-            if (param.getName().equals(name)) {
-                return param;
-            }
-        }
-        return null;
-    }
-
-    /**
      * Checks if a parameter has the {@link games.negative.framework.database.annotation.Column} annotation
      * @param param The parameter you'd like to check
      * @return Whether the parameter has the {@link games.negative.framework.database.annotation.Column} annotation
