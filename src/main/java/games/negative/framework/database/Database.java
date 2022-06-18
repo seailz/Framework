@@ -125,6 +125,16 @@ public class Database {
     }
 
     /**
+     * Create a database instance using {@link DatabaseInfo} with MySQL
+     * @param databaseInfo The {@link DatabaseInfo} you'd like to use
+     */
+    @SneakyThrows
+    public Database(@NotNull DatabaseInfo databaseInfo) {
+        this(databaseInfo.getIp(), databaseInfo.getPort(), databaseInfo.getUsername(), databaseInfo.getPassword(), databaseInfo.getDatabase());
+        Class.forName("com.mysql.cj.jdbc.Driver");
+    }
+
+    /**
      * Create a database instance with MySQL
      * @param ip The ip which you would like to connect to
      * @param port The port on which the database is hosted
