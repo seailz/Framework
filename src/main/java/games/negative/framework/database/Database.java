@@ -30,6 +30,7 @@ import games.negative.framework.database.annotation.constructor.DatabaseConstruc
 import games.negative.framework.database.builder.InsertBuilder;
 import games.negative.framework.database.builder.LoginBuilder;
 import games.negative.framework.database.builder.TableBuilder;
+import games.negative.framework.database.builder.general.WhereBuilder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -468,6 +469,20 @@ public class Database {
     }
 
     /**
+     * Check if a row exists
+     * @param table The table you'd like to check
+     * @param builder The builder you'd like to use
+     * @return whether that row exists
+     * @throws SQLException if there is an error connecting to the database
+     */
+    public boolean rowExists(@NotNull String table, @NotNull WhereBuilder builder) throws SQLException {
+        String statement = "SELECT * FROM `" + table + "` WHERE '" + builder.getKey() + "'='" + builder.getValue() + "'";
+        if (debug)
+            log("Checking if row exists: " + statement);
+        return new Statement(statement, connection).executeWithResults().next();
+    }
+
+    /**
      * Replace a current row with a new one
      * @param table The table in which the row is located
      * @param key The key you would like to check
@@ -486,6 +501,23 @@ public class Database {
     }
 
     /**
+     * Replace a current row with a new one
+     * @param table The table in which the row is located
+     * @param whereBuilder The where builder you'd like to use
+     * @param values the values of the new row you'd like to insert
+     * @throws SQLException If there's an error communicating with the database
+     */
+    public void replace(@NotNull String table, @NotNull WhereBuilder whereBuilder, @NotNull HashMap<String, String> values) throws SQLException {
+        if (!rowExists(table, whereBuilder.getKey(), whereBuilder.getValue())) return;
+
+        if (debug)
+            log("Replacing row in table: " + table + " with key: " + whereBuilder.getKey() + " and value: " + whereBuilder.getValue());
+
+        delete(table, whereBuilder.getKey(), whereBuilder.getValue());
+        insert(table, values);
+    }
+
+    /**
      * Delete a table
      * @param name The name of the table you'd like to delete
      * @throws SQLException if there is an error communicating with the database
@@ -500,16 +532,15 @@ public class Database {
     /**
      * Update a row in a table
      * @param table The table you'd like to update
-     * @param key The key you'd like to check
-     * @param value The value you'd like to check
+     * @param whereBuilder The where builder you'd like to use
      * @param column The column you'd like to update
      * @param newColumn The new value you'd like to insert
      * @throws SQLException if there is an error communicating with the database
      */
-    public void update(@NotNull String table, @NotNull String key, @NotNull String value, @NotNull String column, @NotNull String newColumn) throws SQLException {
-        String statement = "UPDATE `" + table + "` SET `" + column + "`=`" + newColumn + "` WHERE `" + key + "`='" + value + "'";
+    public void update(@NotNull String table, @NotNull WhereBuilder whereBuilder, @NotNull String column, @NotNull String newColumn) throws SQLException {
+        String statement = "UPDATE `" + table + "` SET `" + column + "`=`" + newColumn + "` WHERE `" + whereBuilder.getKey() + "`='" + whereBuilder.getValue() + "'";
         if (debug)
-            log("Updating row with table: " + table + " with key: " + key + " and value: " + value + " with column: " + column + " and new value: " + newColumn);
+            log("Updating row with table: " + table + " with key: " + whereBuilder.getKey() + " and value: " + whereBuilder.getValue() + " with column: " + column + " and new value: " + newColumn);
         new Statement(statement, connection).execute();
     }
 
