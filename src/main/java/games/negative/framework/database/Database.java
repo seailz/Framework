@@ -27,6 +27,7 @@ package games.negative.framework.database;
 
 import games.negative.framework.database.annotation.DontSave;
 import games.negative.framework.database.annotation.constructor.DatabaseConstructor;
+import games.negative.framework.database.builder.InsertBuilder;
 import games.negative.framework.database.builder.LoginBuilder;
 import lombok.Getter;
 import lombok.Setter;
@@ -390,6 +391,50 @@ public class Database {
 
         if (debug)
             log("Inserting into table: " + table + " with values: " + values);
+        prepStatement.executeUpdate();
+    }
+
+    /**
+     * Insert into a database
+     * @param builder The builder you'd like to use
+     * @throws SQLException if there is an error
+     */
+    public void insert(@NotNull InsertBuilder builder) throws SQLException {
+        StringBuilder statement = new StringBuilder("insert into `" + builder.getTable() + "` (\n\t");
+
+        ArrayList<String> keysArray = new ArrayList<>(builder.getValues().keySet());
+        String lastKey = keysArray.get(keysArray.size() - 1);
+        for (String key : builder.getValues().keySet()) {
+            if (!key.equals(lastKey))
+                statement.append(key).append(",");
+            else
+                statement.append(key).append("\n)\n\t");
+        }
+
+        statement.append(" values (\n\t");
+
+        ArrayList<String> valuesArray = new ArrayList<>(builder.getValues().values());
+        String lastValue = valuesArray.get(valuesArray.size() - 1);
+        for (String value : builder.getValues().values()) {
+            if (!value.equals(lastValue))
+                statement.append("?, ");
+            else
+                statement.append("?\n);");
+        }
+
+        if (debug)
+            Bukkit.getLogger().log(Level.INFO, String.valueOf(statement));
+
+        PreparedStatement prepStatement = connection.prepareStatement(statement.toString());
+        int i = 0;
+
+        for (String value : builder.getValues().values()) {
+            i++;
+            prepStatement.setObject(i, value);
+        }
+
+        if (debug)
+            log("Inserting into table: " + builder.getTable() + " with values: " + builder.getValues());
         prepStatement.executeUpdate();
     }
 
