@@ -27,6 +27,7 @@ package games.negative.framework.database;
 
 import games.negative.framework.database.annotation.DontSave;
 import games.negative.framework.database.annotation.constructor.DatabaseConstructor;
+import games.negative.framework.database.builder.LoginBuilder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -37,7 +38,6 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -125,12 +125,12 @@ public class Database {
     }
 
     /**
-     * Create a database instance using {@link DatabaseInfo} with MySQL
-     * @param databaseInfo The {@link DatabaseInfo} you'd like to use
+     * Create a database instance using {@link LoginBuilder} with MySQL
+     * @param loginBuilder The {@link LoginBuilder} you'd like to use
      */
     @SneakyThrows
-    public Database(@NotNull DatabaseInfo databaseInfo) {
-        this(databaseInfo.getIp(), databaseInfo.getPort(), databaseInfo.getUsername(), databaseInfo.getPassword(), databaseInfo.getDatabase());
+    public Database(@NotNull LoginBuilder loginBuilder) {
+        this(loginBuilder.getIp(), loginBuilder.getPort(), loginBuilder.getUsername(), loginBuilder.getPassword(), loginBuilder.getDatabase());
         Class.forName("com.mysql.cj.jdbc.Driver");
     }
 

@@ -1,11 +1,11 @@
-package games.negative.framework.database;
+package games.negative.framework.database.builder;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class DatabaseInfo {
+public class LoginBuilder {
 
     private String ip;
     private int port;
