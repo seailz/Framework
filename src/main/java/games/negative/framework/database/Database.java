@@ -29,6 +29,7 @@ import games.negative.framework.database.annotation.DontSave;
 import games.negative.framework.database.annotation.constructor.DatabaseConstructor;
 import games.negative.framework.database.builder.InsertBuilder;
 import games.negative.framework.database.builder.LoginBuilder;
+import games.negative.framework.database.builder.TableBuilder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -65,10 +66,10 @@ import java.util.logging.Level;
  *
  * <p>This will connect to the database for you.</p>
  * <p></p>
- * <p>{@code Creating a Table}</p>
+ * <p>{@code Creating a TableBuilder}</p>
  * <p>To create a table, you have to do this:</p>
  * <pre>
- *     Table table = new Table("tableName");
+ *     TableBuilder table = new TableBuilder("tableName");
  *     table.addColumn(new Column("columnName", ColumnType.EXAMPLE_TYPE));
  *     db.createTable(table);
  * </pre>
@@ -203,7 +204,7 @@ public class Database {
      * @param table The table you would like to create
      * @throws IllegalStateException If the arraylist is empty
      */
-    public void createTable(@NotNull Table table) throws SQLException, IllegalStateException {
+    public void createTable(@NotNull TableBuilder table) throws SQLException, IllegalStateException {
         StringBuilder statement = new StringBuilder("CREATE TABLE `" + table.getName() + "` (\n");
 
         if (table.getColumns().isEmpty())

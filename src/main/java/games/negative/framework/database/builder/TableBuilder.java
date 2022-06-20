@@ -23,8 +23,10 @@
  *
  */
 
-package games.negative.framework.database;
+package games.negative.framework.database.builder;
 
+import games.negative.framework.database.Column;
+import games.negative.framework.database.ColumnType;
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,7 +37,7 @@ import java.util.List;
  * @author Seailz
  */
 @Data
-public class Table {
+public class TableBuilder {
     private final String name;
     private final List<Column> columns;
     private String primaryKey;
