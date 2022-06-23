@@ -4,12 +4,27 @@
 
 An expanded plugin library which allows more effective and rapid plugin development.  
 Latest
-version: ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/games.negative.framework/Framework?nexusVersion=3&server=https%3A%2F%2Frepo.negative.games%2F)
+version: `2.2.0`
 
 ## Wiki & JavaDocs
 
 https://github.com/Negative-Games/Framework/wiki  
 https://framework.docs.negative.games/
+
+# Metrics Tracking
+If you would like to help us gather statistical & usage data for Framework via [Metrics](https://bstats.org), please add the following in your `onEnable()` method:
+```java
+@Override
+public void onEnable() {
+    super.onEnable();
+    /*
+    * This will register our in-built Metrics system for Negative Games to 
+    * gather statistical data on Server Version, how many servers are using Framework 
+    * and how many players we are serving.
+    */
+    enableFrameworkUsageTracking()
+}
+```
 
 # ✨Maven Repository✨
 
@@ -110,3 +125,4 @@ def id = "MyPlugin" // Replace with the plugin name
 def group = 'games.negative' // Replace with your group id
 def version = '1.0-SNAPSHOT' // Replace with the version
 ```
+
