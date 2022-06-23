@@ -8,12 +8,10 @@ The following versions will receive support and security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.2.0-BETA-3 | ✅ |
-| 2.2.0-BETA-2 | ✅ |
-| 2.2.0-BETA-1 | ✅ |
+|2.2.0 | ✅|
 |2.1.0 | ✅ |
-| 2.1.0-BETA-1 | ✅ |
 |  2.0.0   | :white_check_mark: |
+| Any `BETA` version | :x: |
 | 1.x.x   | :x: |
 
 ## Reporting a Vulnerability
