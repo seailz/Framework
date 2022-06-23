@@ -1,9 +1,13 @@
 # Negative Games - Framework
+
 [![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) ![Jenkins](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci.hypews.com%2Fjob%2FFramework%2F&label=jenkins-build)
 
-An expanded plugin library which allows more effective and rapid plugin development.
+An expanded plugin library which allows more effective and rapid plugin development.  
+Latest
+version: ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/games.negative.framework/Framework?nexusVersion=3&server=https%3A%2F%2Frepo.negative.games%2F)
 
 ## Wiki & JavaDocs
+
 https://github.com/Negative-Games/Framework/wiki  
 https://framework.docs.negative.games/
 
@@ -30,7 +34,9 @@ https://framework.docs.negative.games/
 ```
 
 ## Build Configuration
+
 Add this to your build configuration for this to work correctly.
+
 ```xml
 <configuration>
   <relocations>
@@ -43,7 +49,9 @@ Add this to your build configuration for this to work correctly.
 ```
 
 ### Example
+
 An example would be:
+
 ```xml
 <configuration>
   <relocations>
@@ -54,9 +62,12 @@ An example would be:
   </relocations>
 </configuration>
 ```
-To view an example in a full pom, head to [this link](https://gist.github.com/joeecodes/f0d2da7807b256e44cce7da3be0bb188).
+
+To view an example in a full pom, head
+to [this link](https://gist.github.com/joeecodes/f0d2da7807b256e44cce7da3be0bb188).
 
 # ✨Gradle Repo✨
+
 ```groovy
 repositories {
     mavenCentral()
@@ -70,14 +81,18 @@ dependencies {
 }
 }
 ```
+
 To mask the dependency, add this to your plugins section
+
 ```groovy
 plugins {
     id 'java'
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 ```
+
 And then make a shadowJar section and put the following
+
 ```groovy
 shadowJar {
     archiveBaseName.set("${id}-${version}")
@@ -87,7 +102,9 @@ shadowJar {
     relocate "games.negative.framework", "${group}.libs.plugin"
 }
 ```
+
 If you are wondering what `${group}` and `${id}` are, it is this:
+
 ```groovy
 def id = "MyPlugin" // Replace with the plugin name
 def group = 'games.negative' // Replace with your group id

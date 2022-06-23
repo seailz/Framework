@@ -108,6 +108,13 @@ public abstract class SubCommand implements CommandBase {
             if (!annotation.permission().isEmpty())
                 setPermission(annotation.permission());
 
+            if (annotation.consoleOnly())
+                setConsoleOnly(true);
+
+            if (annotation.playerOnly()) {
+                setPlayerOnly(true);
+            }
+
             List<String> shortCmds = new ArrayList<>(Arrays.asList(annotation.shortCommands()));
             if (!shortCmds.get(0).isEmpty()) {
                 ShortCommands.getInstance().addShortSubCommand(this, annotation.shortCommands());

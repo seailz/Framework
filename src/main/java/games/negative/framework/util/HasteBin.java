@@ -39,7 +39,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * HasteBin Utility
  *
- * @author Fals3
+ * @author Fals3 & Seailz
  * <p>
  * The ability to post text to HasteBin.
  * <p>
@@ -47,14 +47,25 @@ import java.nio.charset.StandardCharsets;
  */
 
 public class HasteBin {
+    String binURL = "https://bin.hypews.com/";
+
+    /**
+     * Create a new HasteBin instance with your custom HasteBin (optional)
+     *
+     * @param binURL The exact URL to your pastebin - for example https://bin.seailz.com/
+     */
+    public HasteBin(@NotNull String binURL) {
+        if (!binURL.endsWith("/")) binURL = binURL + "/";
+        this.binURL = binURL;
+    }
+
     public HasteBin() {
     }
 
     public String post(@NotNull String text, boolean raw) throws IOException {
         byte[] postData = text.getBytes(StandardCharsets.UTF_8);
         int postDataLength = postData.length;
-        String requestURL = "https://bin.hypews.com/documents";
-        URL url = new URL(requestURL);
+        URL url = new URL(binURL + "documents");
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
         conn.setDoOutput(true);
         conn.setInstanceFollowRedirects(false);
@@ -77,7 +88,7 @@ public class HasteBin {
 
         if (response.contains("\"key\"")) {
             response = response.substring(response.indexOf(":") + 2, response.length() - 2);
-            String postURL = raw ? "https://bin.hypews.com/raw/" : "https://bin.hypews.com/";
+            String postURL = raw ? binURL + "raw/" : binURL;
             response = postURL + response;
         }
 

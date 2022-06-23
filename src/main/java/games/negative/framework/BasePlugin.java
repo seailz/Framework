@@ -25,6 +25,7 @@
 
 package games.negative.framework;
 
+import games.negative.framework.bStats.Metrics;
 import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.repository.CommandRepository;
 import games.negative.framework.command.repository.FrameworkCommandRepository;
@@ -56,10 +57,16 @@ import java.util.Map;
 @Getter
 public abstract class BasePlugin extends JavaPlugin {
 
+    private static BasePlugin inst;
     private CommandRepository commandRepository;
+
+    public static BasePlugin getInst() {
+        return inst;
+    }
 
     @Override
     public void onEnable() {
+        inst = this;
         FrameworkMessage.init();
         new VersionChecker();
 
@@ -101,6 +108,14 @@ public abstract class BasePlugin extends JavaPlugin {
                     fileConfig.set(priceString, fileConfig.getString(priceString)));
         });
 
+    }
+
+    /**
+     * Opt-in to Framework usage tracking.
+     */
+    public void enableFrameworkUsageTracking() {
+        int pluginId = 15504;
+        new Metrics(this, pluginId);
     }
 
     @SneakyThrows
@@ -150,5 +165,4 @@ public abstract class BasePlugin extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
         Arrays.stream(listeners).forEach(listener -> pluginManager.registerEvents(listener, this));
     }
-
 }
