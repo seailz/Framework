@@ -25,6 +25,7 @@
 
 package games.negative.framework;
 
+import games.negative.framework.bStats.Metrics;
 import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.repository.CommandRepository;
 import games.negative.framework.command.repository.FrameworkCommandRepository;
@@ -77,6 +78,7 @@ public abstract class BasePlugin extends JavaPlugin {
         commandRepository = new FrameworkCommandRepository();
     }
 
+
     /**
      * Load custom files with pre-written data.
      *
@@ -103,6 +105,14 @@ public abstract class BasePlugin extends JavaPlugin {
                     fileConfig.set(priceString, fileConfig.getString(priceString)));
         });
 
+    }
+
+    /**
+     * Opt-in to Framework usage tracking.
+     */
+    public void enableFrameworkUsageTracking() {
+        int pluginId = 15504;
+        new Metrics(this, pluginId);
     }
 
     @SneakyThrows

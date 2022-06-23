@@ -48,6 +48,7 @@ public class Task {
 
     /**
      * Run a task asynchronously
+     *
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -69,7 +70,8 @@ public class Task {
 
     /**
      * Run a delayed task asynchronously
-     * @param delay   Delay in ticks
+     *
+     * @param delay    Delay in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -92,7 +94,8 @@ public class Task {
 
     /**
      * Run a repeating task asynchronously
-     * @param delay   Delay in ticks
+     *
+     * @param delay    Delay in ticks
      * @param interval Interval the task gets repeated in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
@@ -114,6 +117,7 @@ public class Task {
 
     /**
      * Run a task
+     *
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -135,7 +139,8 @@ public class Task {
 
     /**
      * Run a delayed task
-     * @param delay   Delay in ticks
+     *
+     * @param delay    Delay in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance
      */
@@ -158,7 +163,8 @@ public class Task {
 
     /**
      * Run a repeating task
-     * @param delay   Delay in ticks
+     *
+     * @param delay    Delay in ticks
      * @param interval Interval the task gets repeated in ticks
      * @param runnable {@link Runnable} instance
      * @return {@link BukkitTask} instance

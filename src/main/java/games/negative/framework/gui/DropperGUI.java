@@ -26,12 +26,11 @@ import java.util.function.Function;
 @Getter
 @Setter
 public class DropperGUI implements MenuBase {
-    private String title;
     private final ArrayList<MenuItem> items;
-
     private final HashMap<Player, Inventory> activeInventories;
     // Are people allowed to take items from the GUI?
     private final boolean allowTakeItems;
+    private String title;
     private BiConsumer<Player, InventoryCloseEvent> onClose;
     private BiConsumer<Player, InventoryOpenEvent> onOpen;
     private BiConsumer<Player, InventoryClickEvent> playerInventoryClickEvent;
