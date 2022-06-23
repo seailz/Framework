@@ -95,6 +95,7 @@ import java.util.logging.Level;
  *     db.writeObjectToTable("tableName", new Object());
  * </pre>
  * <p>Again, a more detailed documentation can be found <a href="https://github.com/Negative-Games/Framework/wiki/">here</a> </p>
+ *
  * @author Seailz
  */
 @Getter
@@ -115,10 +116,11 @@ public class Database {
 
     /**
      * Create a database instance with MySQL
-     * @param ip The ip which you would like to connect to
-     * @param port The port on which the database is hosted
-     * @param username The username you'd like to use
-     * @param password The password you'd like to use.
+     *
+     * @param ip           The ip which you would like to connect to
+     * @param port         The port on which the database is hosted
+     * @param username     The username you'd like to use
+     * @param password     The password you'd like to use.
      * @param databaseName The name of the database
      */
     @SneakyThrows
@@ -129,6 +131,7 @@ public class Database {
 
     /**
      * Create a database instance using {@link LoginBuilder} with MySQL
+     *
      * @param loginBuilder The {@link LoginBuilder} you'd like to use
      */
     @SneakyThrows
@@ -139,12 +142,13 @@ public class Database {
 
     /**
      * Create a database instance with MySQL
-     * @param ip The ip which you would like to connect to
-     * @param port The port on which the database is hosted
-     * @param username The username you'd like to use
-     * @param password The password you'd like to use.
+     *
+     * @param ip           The ip which you would like to connect to
+     * @param port         The port on which the database is hosted
+     * @param username     The username you'd like to use
+     * @param password     The password you'd like to use.
      * @param databaseName The name of the database
-     * @param debug Whether you'd like to debug the database
+     * @param debug        Whether you'd like to debug the database
      */
     @SneakyThrows
     public Database(@NotNull String ip, int port, @NotNull String username, @NotNull String password, @NotNull String databaseName, boolean debug) {
@@ -163,6 +167,7 @@ public class Database {
 
     /**
      * Creates a database instance with SQLite
+     *
      * @param file The file which you would like to use
      */
     public Database(File file) {
@@ -202,6 +207,7 @@ public class Database {
 
     /**
      * Creates a table within the Database
+     *
      * @param table The table you would like to create
      * @throws IllegalStateException If the arraylist is empty
      */
@@ -257,7 +263,8 @@ public class Database {
 
     /**
      * Start a transaction
-     * @throws SQLException if there is an error with the connection
+     *
+     * @throws SQLException          if there is an error with the connection
      * @throws IllegalStateException if the connection is already in a transaction
      */
     public void startTransaction() throws SQLException, IllegalStateException {
@@ -273,7 +280,8 @@ public class Database {
 
     /**
      * Rollback a transaction
-     * @throws SQLException if there is an error with the connection
+     *
+     * @throws SQLException          if there is an error with the connection
      * @throws IllegalStateException if the connection is not in a transaction
      */
     public void rollback() throws SQLException, IllegalStateException {
@@ -287,7 +295,8 @@ public class Database {
 
     /**
      * Commit a transaction
-     * @throws SQLException if there is an error with the connection
+     *
+     * @throws SQLException          if there is an error with the connection
      * @throws IllegalStateException if there is no transaction to commit
      */
     public void commit() throws SQLException, IllegalStateException {
@@ -313,9 +322,9 @@ public class Database {
      * <p>I'd set the column parameter to "age"</p>
      * <p>
      *
-     * @param table the table you'd like to pull from
-     * @param key The key you'd like to check
-     * @param value The value that you'd like to check
+     * @param table  the table you'd like to pull from
+     * @param key    The key you'd like to check
+     * @param value  The value that you'd like to check
      * @param column The column you'd like to get
      * @return An object
      * @throws SQLException if there is an error retrieving the request value
@@ -339,13 +348,14 @@ public class Database {
 
     /**
      * Check if a table exists
+     *
      * @param tableName The table you'd like to check
      * @return A boolean if the table exists or not
      * @throws SQLException If there is an error
      */
     public boolean tableExists(@NotNull String tableName) throws SQLException {
         DatabaseMetaData meta = connection.getMetaData();
-        ResultSet resultSet = meta.getTables(null, null, tableName, new String[] {"TABLE"});
+        ResultSet resultSet = meta.getTables(null, null, tableName, new String[]{"TABLE"});
         if (debug)
             log("Checking if table exists: " + tableName);
         return resultSet.next();
@@ -353,7 +363,8 @@ public class Database {
 
     /**
      * Insert into a database
-     * @param table The table you'd like to insert to
+     *
+     * @param table  The table you'd like to insert to
      * @param values A hashmap of keys, and values
      * @throws SQLException if there is an error
      */
@@ -398,6 +409,7 @@ public class Database {
 
     /**
      * Insert into a database
+     *
      * @param builder The builder you'd like to use
      * @throws SQLException if there is an error
      */
@@ -442,8 +454,9 @@ public class Database {
 
     /**
      * Delete a row rom the database
+     *
      * @param table The table you'd like to edit
-     * @param key The key, basically the identifier
+     * @param key   The key, basically the identifier
      * @param value The value, such as the player's name
      */
     public void delete(@NotNull String table, @NotNull String key, @NotNull String value) throws SQLException {
@@ -455,8 +468,9 @@ public class Database {
 
     /**
      * Check if a row exists
+     *
      * @param table The table you'd like to check
-     * @param key The key
+     * @param key   The key
      * @param value The value
      * @return whether that row exists
      * @throws SQLException if there is an error connecting to the database
@@ -470,7 +484,8 @@ public class Database {
 
     /**
      * Check if a row exists
-     * @param table The table you'd like to check
+     *
+     * @param table   The table you'd like to check
      * @param builder The builder you'd like to use
      * @return whether that row exists
      * @throws SQLException if there is an error connecting to the database
@@ -484,9 +499,10 @@ public class Database {
 
     /**
      * Replace a current row with a new one
-     * @param table The table in which the row is located
-     * @param key The key you would like to check
-     * @param value the value of that key
+     *
+     * @param table  The table in which the row is located
+     * @param key    The key you would like to check
+     * @param value  the value of that key
      * @param values the values of the new row you'd like to insert
      * @throws SQLException If there's an error communicating with the database
      */
@@ -502,9 +518,10 @@ public class Database {
 
     /**
      * Replace a current row with a new one
-     * @param table The table in which the row is located
+     *
+     * @param table        The table in which the row is located
      * @param whereBuilder The where builder you'd like to use
-     * @param values the values of the new row you'd like to insert
+     * @param values       the values of the new row you'd like to insert
      * @throws SQLException If there's an error communicating with the database
      */
     public void replace(@NotNull String table, @NotNull WhereBuilder whereBuilder, @NotNull HashMap<String, String> values) throws SQLException {
@@ -519,6 +536,7 @@ public class Database {
 
     /**
      * Delete a table
+     *
      * @param name The name of the table you'd like to delete
      * @throws SQLException if there is an error communicating with the database
      */
@@ -531,10 +549,11 @@ public class Database {
 
     /**
      * Update a row in a table
-     * @param table The table you'd like to update
+     *
+     * @param table        The table you'd like to update
      * @param whereBuilder The where builder you'd like to use
-     * @param column The column you'd like to update
-     * @param newColumn The new value you'd like to insert
+     * @param column       The column you'd like to update
+     * @param newColumn    The new value you'd like to insert
      * @throws SQLException if there is an error communicating with the database
      */
     public void update(@NotNull String table, @NotNull WhereBuilder whereBuilder, @NotNull String column, @NotNull String newColumn) throws SQLException {
@@ -547,9 +566,10 @@ public class Database {
 
     /**
      * Update a table in the database
-     * @param table The table you'd like to update
+     *
+     * @param table  The table you'd like to update
      * @param column The column you'd like to update
-     * @param type The type of the column
+     * @param type   The type of the column
      * @throws SQLException if there is an error communicating with the database
      */
     public void addColumnToTable(String table, String column, String type) throws SQLException {
@@ -561,7 +581,8 @@ public class Database {
 
     /**
      * Remove a column from a table
-     * @param table The table you'd like to remove a column from
+     *
+     * @param table  The table you'd like to remove a column from
      * @param column The column you'd like to remove
      * @throws SQLException if there is an error communicating with the database
      */
@@ -574,7 +595,8 @@ public class Database {
 
     /**
      * Change a column's name
-     * @param table The table you'd like to change a column's name in
+     *
+     * @param table   The table you'd like to change a column's name in
      * @param oldName The old name of the column
      * @param newName The new name of the column
      * @throws SQLException if there is an error communicating with the database
@@ -588,7 +610,8 @@ public class Database {
 
     /**
      * Delete a column from a table
-     * @param table The table you'd like to delete a column from
+     *
+     * @param table  The table you'd like to delete a column from
      * @param column The column you'd like to delete
      * @throws SQLException if there is an error communicating with the database
      */
@@ -601,7 +624,8 @@ public class Database {
 
     /**
      * Export a table to a file
-     * @param table The table you'd like to export
+     *
+     * @param table    The table you'd like to export
      * @param filePath The file's path you'd like to export to
      * @throws SQLException if there is an error communicating with the database
      */
@@ -628,7 +652,8 @@ public class Database {
 
     /**
      * Import a table from a file
-     * @param table The table you'd like to import into
+     *
+     * @param table    The table you'd like to import into
      * @param filePath The file's path you'd like to import from
      * @throws SQLException if there is an error communicating with the database
      */
@@ -641,6 +666,7 @@ public class Database {
 
     /**
      * Count the number of rows in a table
+     *
      * @param table The table you'd like to count
      * @return The number of rows in the table
      * @throws SQLException if there is an error communicating with the database
@@ -656,6 +682,7 @@ public class Database {
 
     /**
      * Get all tables in the database
+     *
      * @return A list of all tables in the database
      * @throws SQLException if there is an error communicating with the database
      */
@@ -668,6 +695,7 @@ public class Database {
 
     /**
      * Get all data in a table
+     *
      * @param table The table you'd like to get data from
      * @return A list of all data in the table
      * @throws SQLException if there is an error communicating with the database
@@ -681,6 +709,7 @@ public class Database {
 
     /**
      * Delete a table if it exists
+     *
      * @param table The table you'd like to delete
      * @throws SQLException if there is an error communicating with the database
      */
@@ -693,7 +722,8 @@ public class Database {
 
     /**
      * Replace the primary key of a table
-     * @param table The table you'd like to replace the primary key in
+     *
+     * @param table      The table you'd like to replace the primary key in
      * @param primaryKey The new primary key
      */
     public void replacePrimaryKey(String table, String primaryKey) {
@@ -705,7 +735,8 @@ public class Database {
 
     /**
      * Copies the contents of one table to another
-     * @param table The table you'd like to copy to
+     *
+     * @param table    The table you'd like to copy to
      * @param copyFrom The table you'd like to copy from
      * @throws SQLException if there is an error communicating with the database
      */
@@ -718,6 +749,7 @@ public class Database {
 
     /**
      * Describe a table
+     *
      * @param table The table you'd like to describe
      * @return The description of the table
      * @throws SQLException if there is an error communicating with the database
@@ -731,7 +763,8 @@ public class Database {
 
     /**
      * Describe a column in a table
-     * @param table The table you'd like to describe
+     *
+     * @param table  The table you'd like to describe
      * @param column The column you'd like to describe
      * @return The description of the column
      * @throws SQLException if there is an error communicating with the database
@@ -745,9 +778,10 @@ public class Database {
 
     /**
      * Set a column's default value
-     * @param table The table you'd like to set the default value in
+     *
+     * @param table  The table you'd like to set the default value in
      * @param column The column you'd like to set the default value for
-     * @param value The default value you'd like to set
+     * @param value  The default value you'd like to set
      * @throws SQLException if there is an error communicating with the database
      */
     public void setColumnDefaultValue(String table, String column, String value) throws SQLException {
@@ -759,7 +793,8 @@ public class Database {
 
     /**
      * Write {@code Java Objects} to a table
-     * @param table The table you'd like to write to
+     *
+     * @param table  The table you'd like to write to
      * @param object The object you'd like to insert
      * @throws SQLException if there is an error communicating with the database
      */
@@ -824,14 +859,15 @@ public class Database {
 
     /**
      * Reads {@code Java Objects} from a table
+     *
      * @param table The table you'd like to read from
-     * @param key The key you'd like to read from
+     * @param key   The key you'd like to read from
      * @param value The value you'd like to read from
      * @param clazz The class you'd like to read into
      * @return The object you read into
-     * @throws SQLException if there is an error communicating with the database
-     * @throws IllegalAccessException if there is an error accessing the object
-     * @throws InstantiationException if there is an error instantiating the object
+     * @throws SQLException              if there is an error communicating with the database
+     * @throws IllegalAccessException    if there is an error accessing the object
+     * @throws InstantiationException    if there is an error instantiating the object
      * @throws InvocationTargetException if there is an error invoking the object
      */
     public Object get(String table, String key, String value, Class<?> clazz) throws SQLException, InvocationTargetException, InstantiationException, IllegalAccessException {
@@ -867,6 +903,7 @@ public class Database {
 
     /**
      * Retrieves the correct constructor for a class
+     *
      * @param clazz The class you'd like to get the constructor for
      * @return The constructor you retrieved
      */
@@ -886,6 +923,7 @@ public class Database {
 
     /**
      * Checks if a parameter has the {@link games.negative.framework.database.annotation.Column} annotation
+     *
      * @param param The parameter you'd like to check
      * @return Whether the parameter has the {@link games.negative.framework.database.annotation.Column} annotation
      */
@@ -895,6 +933,7 @@ public class Database {
 
     /**
      * Logs a message to the console
+     *
      * @param text The message you'd like to log
      */
     private void log(@NotNull String text) {

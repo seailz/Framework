@@ -111,7 +111,7 @@ public abstract class SubCommand implements CommandBase {
             if (annotation.consoleOnly())
                 setConsoleOnly(true);
 
-            if(annotation.playerOnly()) {
+            if (annotation.playerOnly()) {
                 setPlayerOnly(true);
             }
 

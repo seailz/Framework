@@ -1,1 +1,3557 @@
-memberSearchIndex = [{"p":"games.negative.framework.util.data","c":"TriConsumer","l":"accept(T, U, U1)","u":"accept(T,U,U1)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"activeInventories"},{"p":"games.negative.framework.gui","c":"GUI","l":"activeInventories"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"activeInventories"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"ADD_PLAYERS"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"add(Command)","u":"add(org.bukkit.command.Command)"},{"p":"games.negative.framework.repository","c":"Repository","l":"add(T)"},{"p":"games.negative.framework.cooldown","c":"Cooldowns","l":"addCooldown(Cooldown<?, ?>)","u":"addCooldown(games.negative.framework.cooldown.Cooldown)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"addEnchant(Enchantment, int)","u":"addEnchant(org.bukkit.enchantments.Enchantment,int)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"addEnchantment(Enchantment, int)","u":"addEnchantment(org.bukkit.enchantments.Enchantment,int)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"addEnchantments(Map<Enchantment, Integer>)","u":"addEnchantments(java.util.Map)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"addItem(Function<Player, ItemStack>)","u":"addItem(java.util.function.Function)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"addItem(Function<Player, ItemStack>)","u":"addItem(java.util.function.Function)"},{"p":"games.negative.framework.gui","c":"GUI","l":"addItem(Function<Player, ItemStack>)","u":"addItem(java.util.function.Function)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"addItem(Function<Player, ItemStack>)","u":"addItem(java.util.function.Function)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"GUI","l":"addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"addItemFlag(ItemFlag)","u":"addItemFlag(org.bukkit.inventory.ItemFlag)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"addItemFlags(ItemFlag...)","u":"addItemFlags(org.bukkit.inventory.ItemFlag...)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"addLoreLine(String)","u":"addLoreLine(java.lang.String)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"addLoreLine(String)","u":"addLoreLine(java.lang.String)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"addLoreLine(String, int)","u":"addLoreLine(java.lang.String,int)"},{"p":"games.negative.framework.command.shortcommand","c":"ShortCommands","l":"addShortCommand(Command, String[])","u":"addShortCommand(games.negative.framework.command.Command,java.lang.String[])"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"addShortCommand(Command, String[])","u":"addShortCommand(games.negative.framework.command.Command,java.lang.String[])"},{"p":"games.negative.framework.command.shortcommand","c":"ShortCommands","l":"addShortSubCommand(SubCommand, String[])","u":"addShortSubCommand(games.negative.framework.command.SubCommand,java.lang.String[])"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"addShortSubCommand(SubCommand, String[])","u":"addShortSubCommand(games.negative.framework.command.SubCommand,java.lang.String[])"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"addSubCommands(SubCommand...)","u":"addSubCommands(games.negative.framework.command.SubCommand...)"},{"p":"games.negative.framework.command","c":"Command","l":"addSubCommands(SubCommand...)","u":"addSubCommands(games.negative.framework.command.SubCommand...)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"addSubCommands(SubCommand...)","u":"addSubCommands(games.negative.framework.command.SubCommand...)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"addUnsafeEnchantment(Enchantment, int)","u":"addUnsafeEnchantment(org.bukkit.enchantments.Enchantment,int)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"aliases"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"aliases()"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"allowTakeItems"},{"p":"games.negative.framework.gui","c":"GUI","l":"allowTakeItems"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"allowTakeItems"},{"p":"games.negative.framework.util.data","c":"TriConsumer","l":"andThen(TriConsumer<? super T, ? super U, ? super U1>)","u":"andThen(games.negative.framework.util.data.TriConsumer)"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"args()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"argument"},{"p":"games.negative.framework.command.event","c":"CommandLogEvent","l":"arguments"},{"p":"games.negative.framework.command.event","c":"SubCommandLogEvent","l":"arguments"},{"p":"games.negative.framework.util","c":"Task","l":"async(JavaPlugin, Runnable)","u":"async(org.bukkit.plugin.java.JavaPlugin,java.lang.Runnable)"},{"p":"games.negative.framework.util","c":"Task","l":"asyncDelayed(JavaPlugin, long, Runnable)","u":"asyncDelayed(org.bukkit.plugin.java.JavaPlugin,long,java.lang.Runnable)"},{"p":"games.negative.framework.util","c":"Task","l":"asyncRepeating(JavaPlugin, long, long, Runnable)","u":"asyncRepeating(org.bukkit.plugin.java.JavaPlugin,long,long,java.lang.Runnable)"},{"p":"games.negative.framework.skulls","c":"CustomSkull","l":"base64"},{"p":"games.negative.framework","c":"BasePlugin","l":"BasePlugin()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"BiMap()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"broadcast()"},{"p":"games.negative.framework.message","c":"Message","l":"broadcast()"},{"p":"games.negative.framework.util","c":"Utils","l":"broadcast(String)","u":"broadcast(java.lang.String)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"build()"},{"p":"games.negative.framework.util","c":"UtilStringBuilder","l":"build(String[])","u":"build(java.lang.String[])"},{"p":"games.negative.framework.util","c":"UtilStringBuilder","l":"build(String[], int)","u":"build(java.lang.String[],int)"},{"p":"games.negative.framework.util.serializer","c":"BukkitSerializer","l":"BukkitSerializer()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.proxy","c":"BungeeManager","l":"BungeeManager(BasePlugin)","u":"%3Cinit%3E(games.negative.framework.BasePlugin)"},{"p":"games.negative.framework.command.event","c":"CommandLogEvent","l":"cancelled"},{"p":"games.negative.framework.command.event","c":"SubCommandLogEvent","l":"cancelled"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ScoreboardAction","l":"CHANGE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"CHAT_COMPONENT_CLASS"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"CHAT_FORMAT_ENUM"},{"p":"games.negative.framework.util","c":"MigrationCheck","l":"check(Player)","u":"check(org.bukkit.entity.Player)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"checkLineNumber(int, boolean, boolean)","u":"checkLineNumber(int,boolean,boolean)"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"clazz"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"clear()"},{"p":"games.negative.framework.repository","c":"Repository","l":"clear()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"clear()"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"clear(Function<Command, Boolean>)","u":"clear(java.util.function.Function)"},{"p":"games.negative.framework.repository","c":"Repository","l":"clear(Function<T, Boolean>)","u":"clear(java.util.function.Function)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"clearSlot(int)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"clearSlot(int)"},{"p":"games.negative.framework.gui","c":"GUI","l":"clearSlot(int)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"clearSlot(int)"},{"p":"games.negative.framework.gui.internal","c":"MenuItem","l":"clickEvent"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"clone()"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"clone()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"cloneMap()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"COLOR_CODES"},{"p":"games.negative.framework.util","c":"Utils","l":"color(List<String>)","u":"color(java.util.List)"},{"p":"games.negative.framework.util","c":"Utils","l":"color(String)","u":"color(java.lang.String)"},{"p":"games.negative.framework.command.event","c":"CommandLogEvent","l":"command"},{"p":"games.negative.framework.command.event","c":"SubCommandLogEvent","l":"command"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"COMMAND_CANNOT_USE_THIS_AS_CONSOLE"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"COMMAND_CANNOT_USE_THIS_AS_PLAYER"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"COMMAND_DISABLED"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"COMMAND_NO_PERMISSION"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"COMMAND_USAGE"},{"p":"games.negative.framework.command","c":"Command","l":"Command()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command","c":"Command","l":"Command(String)","u":"%3Cinit%3E(java.lang.String)"},{"p":"games.negative.framework.command","c":"Command","l":"Command(String, Collection<String>)","u":"%3Cinit%3E(java.lang.String,java.util.Collection)"},{"p":"games.negative.framework.command","c":"Command","l":"Command(String, String)","u":"%3Cinit%3E(java.lang.String,java.lang.String)"},{"p":"games.negative.framework.command","c":"Command","l":"Command(String, String, Collection<String>)","u":"%3Cinit%3E(java.lang.String,java.lang.String,java.util.Collection)"},{"p":"games.negative.framework.command.event","c":"CommandLogEvent","l":"CommandLogEvent()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command.logging","c":"CommandLogListener","l":"CommandLogListener()","u":"%3Cinit%3E()"},{"p":"games.negative.framework","c":"BasePlugin","l":"commandRepository"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"commandShortCommands"},{"p":"games.negative.framework.command","c":"Command","l":"completer"},{"p":"games.negative.framework.database","c":"Database","l":"connect()"},{"p":"games.negative.framework.util.proxy","c":"BungeeManager","l":"connect(Player, String)","u":"connect(org.bukkit.entity.Player,java.lang.String)"},{"p":"games.negative.framework.command","c":"Command","l":"consoleOnly"},{"p":"games.negative.framework.command","c":"SubCommand","l":"consoleOnly"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"consoleOnly()"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"contains(Command)","u":"contains(org.bukkit.command.Command)"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"contains(Function<Command, Boolean>)","u":"contains(java.util.function.Function)"},{"p":"games.negative.framework.repository","c":"Repository","l":"contains(Function<T, Boolean>)","u":"contains(java.util.function.Function)"},{"p":"games.negative.framework.repository","c":"Repository","l":"contains(T)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"containsKey(K)"},{"p":"games.negative.framework.cooldown","c":"Cooldowns","l":"cooldownMap"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"cooldowns"},{"p":"games.negative.framework.cooldown","c":"Cooldowns","l":"Cooldowns()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ObjectiveMode","l":"CREATE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"CREATE"},{"p":"games.negative.framework.skull","c":"CustomSkull","l":"create(String)","u":"create(java.lang.String)"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"CuboidRegion()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.skulls","c":"CustomSkull","l":"CustomSkull()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.skulls","c":"CustomSkulls","l":"CustomSkulls()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"data"},{"p":"games.negative.framework.database","c":"Database","l":"Database()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"Utils","l":"decimalFormat(double)"},{"p":"games.negative.framework.util","c":"Utils","l":"decimalFormat(float)"},{"p":"games.negative.framework.util","c":"Utils","l":"decimalFormat(int)"},{"p":"games.negative.framework.util","c":"Utils","l":"decimalFormat(Object)","u":"decimalFormat(java.lang.Object)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"defaultMessage"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"delete()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"deleted"},{"p":"games.negative.framework.nms","c":"DeltaReflection","l":"DeltaReflection()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"description()"},{"p":"games.negative.framework.util","c":"Utils","l":"df"},{"p":"games.negative.framework.command","c":"Command","l":"disabled"},{"p":"games.negative.framework.command","c":"SubCommand","l":"disabled"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"disabled()"},{"p":"games.negative.framework.database","c":"Database","l":"disconnect()"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"DropperGUI(String)","u":"%3Cinit%3E(java.lang.String)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"DropperGUI(String, boolean)","u":"%3Cinit%3E(java.lang.String,boolean)"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"DropperGUIHolder()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"EMPTY_MESSAGE"},{"p":"games.negative.framework.util.data","c":"BiMap.Entry","l":"Entry()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"ENUM_SB_ACTION"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"ENUM_SB_ACTION_CHANGE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"ENUM_SB_ACTION_REMOVE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"ENUM_SB_HEALTH_DISPLAY"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"ENUM_SB_HEALTH_DISPLAY_INTEGER"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"enumValueOf(Class<?>, String)","u":"enumValueOf(java.lang.Class,java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"enumValueOf(Class<?>, String, int)","u":"enumValueOf(java.lang.Class,java.lang.String,int)"},{"p":"games.negative.framework.command","c":"Command","l":"execute(CommandSender, String, String[])","u":"execute(org.bukkit.command.CommandSender,java.lang.String,java.lang.String[])"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"execute(CommandSender, String[])","u":"execute(org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.util","c":"Utils","l":"executeConsoleCommand(String)","u":"executeConsoleCommand(java.lang.String)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"expandVariables(String)","u":"expandVariables(java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"FastReflection()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"FileLoader","l":"FileLoader()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"findPacketConstructor(Class<?>, MethodHandles.Lookup)","u":"findPacketConstructor(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)"},{"p":"games.negative.framework.util","c":"ForceSavable","l":"forceSave()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"forEach(TriConsumer<? super K, ? super V, ? super V1>)","u":"forEach(games.negative.framework.util.data.TriConsumer)"},{"p":"games.negative.framework.util","c":"TimeUtil","l":"format"},{"p":"games.negative.framework.util","c":"TimeUtil","l":"format(long, long)","u":"format(long,long)"},{"p":"games.negative.framework.util","c":"TimeUtil","l":"format(long, long, boolean)","u":"format(long,long,boolean)"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"FrameworkCommandRepository()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"FrameworkMessage()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"fromServerPackageName(String)","u":"fromServerPackageName(java.lang.String)"},{"p":"games.negative.framework.util","c":"SimpleLocationParser","l":"fromSimpleLocation(SimpleLocation)","u":"fromSimpleLocation(games.negative.framework.util.structure.SimpleLocation)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"GenericCooldown(JavaPlugin)","u":"%3Cinit%3E(org.bukkit.plugin.java.JavaPlugin)"},{"p":"games.negative.framework.database","c":"Database","l":"get()"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"get(Function<Command, Boolean>)","u":"get(java.util.function.Function)"},{"p":"games.negative.framework.repository","c":"Repository","l":"get(Function<T, Boolean>)","u":"get(java.util.function.Function)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"get(K)"},{"p":"games.negative.framework.nms","c":"SkullReflections.FieldAccessor","l":"get(Object)","u":"get(java.lang.Object)"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"getAll()"},{"p":"games.negative.framework.repository","c":"Repository","l":"getAll()"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"getBlock()"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"getBlocks()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getCanonicalClass(String)","u":"getCanonicalClass(java.lang.String)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getClass(String)","u":"getClass(java.lang.String)"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"getCommand(String)","u":"getCommand(java.lang.String)"},{"p":"games.negative.framework.command.shortcommand","c":"ShortCommands","l":"getCommand(String)","u":"getCommand(java.lang.String)"},{"p":"games.negative.framework.database","c":"Database","l":"getConnection()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getConstructor(Class<?>, Class<?>...)","u":"getConstructor(java.lang.Class,java.lang.Class...)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getConstructor(String, Class<?>...)","u":"getConstructor(java.lang.String,java.lang.Class...)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"getCooldown(I)"},{"p":"games.negative.framework.cooldown","c":"Cooldowns","l":"getCooldown(String)","u":"getCooldown(java.lang.String)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"getCooldown(UUID)","u":"getCooldown(java.util.UUID)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"getCooldownEntries()"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"getCooldownEntries()"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"getCooldowns()"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"getCooldowns()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getCraftBukkitClass(String)","u":"getCraftBukkitClass(java.lang.String)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getDataIndex(K)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"getDisplayName()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getEntries()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getEntry(K)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getField(Class<?>, Class<T>, int)","u":"getField(java.lang.Class,java.lang.Class,int)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getField(Class<?>, String, Class<T>)","u":"getField(java.lang.Class,java.lang.String,java.lang.Class)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getField(Class<?>, String, Class<T>, int)","u":"getField(java.lang.Class,java.lang.String,java.lang.Class,int)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getField(String, Class<T>, int)","u":"getField(java.lang.String,java.lang.Class,int)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getField(String, String, Class<T>)","u":"getField(java.lang.String,java.lang.String,java.lang.Class)"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"getFile(String)","u":"getFile(java.lang.String)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getFirst(int)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getFirst(K)"},{"p":"games.negative.framework.nms","c":"DeltaReflection","l":"getGameProfile(Player)","u":"getGameProfile(org.bukkit.entity.Player)"},{"p":"games.negative.framework.nms","c":"DeltaReflection","l":"getHandle(Player)","u":"getHandle(org.bukkit.entity.Player)"},{"p":"games.negative.framework.event","c":"PluginEvent","l":"getHandlerList()"},{"p":"games.negative.framework.event","c":"PluginEvent","l":"getHandlers()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getId()"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"getInventory()"},{"p":"games.negative.framework.skull","c":"CustomSkull","l":"getItemStack()"},{"p":"games.negative.framework.util","c":"UtilHTTP","l":"getJSONObjectFromMojang(String)","u":"getJSONObjectFromMojang(java.lang.String)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"getKey()"},{"p":"games.negative.framework.key","c":"Keyd","l":"getKey()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getLine(int)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getLineByScore(int)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getLineByScore(List<String>, int)","u":"getLineByScore(java.util.List,int)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getLines()"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"getLore()"},{"p":"games.negative.framework.gui.base","c":"MenuHolder","l":"getMenu()"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"getMenu()"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"getMenu()"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"getMenu()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getMethod(Class<?>, String, Class<?>...)","u":"getMethod(java.lang.Class,java.lang.String,java.lang.Class...)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getMethod(String, String, Class<?>...)","u":"getMethod(java.lang.String,java.lang.String,java.lang.Class...)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getMethodSimply(Class<?>, String)","u":"getMethodSimply(java.lang.Class,java.lang.String)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getMinecraftClass(String)","u":"getMinecraftClass(java.lang.String)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"getName()"},{"p":"games.negative.framework.command","c":"Command","l":"getName()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"getName()"},{"p":"games.negative.framework.util","c":"UtilPlayer","l":"getNameByUUID(UUID)","u":"getNameByUUID(java.util.UUID)"},{"p":"games.negative.framework.util","c":"Utils","l":"getOnlinePlayers()"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"getParams()"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"getParent()"},{"p":"games.negative.framework.command","c":"Command","l":"getParent()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"getParent()"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"getPermission()"},{"p":"games.negative.framework.command","c":"Command","l":"getPermission()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"getPermission()"},{"p":"games.negative.framework.command.event","c":"CommandLogEvent","l":"getPlayer()"},{"p":"games.negative.framework.command.event","c":"SubCommandLogEvent","l":"getPlayer()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getPlayer()"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"getPlayer(String)","u":"getPlayer(java.lang.String)"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"getPlayers()"},{"p":"games.negative.framework.nms","c":"DeltaReflection","l":"getProperty(GameProfile, String)","u":"getProperty(com.mojang.authlib.GameProfile,java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getScoreByLine(int)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getSecond(int)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"getSecond(K)"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"getSubCommand(String)","u":"getSubCommand(java.lang.String)"},{"p":"games.negative.framework.command.shortcommand","c":"ShortCommands","l":"getSubCommand(String)","u":"getSubCommand(java.lang.String)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"getSubCommandLogEvent()"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"getSubCommands()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"getTitle()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getTypedMethod(Class<?>, String, Class<?>, Class<?>...)","u":"getTypedMethod(java.lang.Class,java.lang.String,java.lang.Class,java.lang.Class...)"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"getUntypedClass(String)","u":"getUntypedClass(java.lang.String)"},{"p":"games.negative.framework.util","c":"UtilPlayer","l":"getUUIDByName(String)","u":"getUUIDByName(java.lang.String)"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"gson"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"gui"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"gui"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"gui"},{"p":"games.negative.framework.gui","c":"GUI","l":"GUI(String, int)","u":"%3Cinit%3E(java.lang.String,int)"},{"p":"games.negative.framework.gui","c":"GUI","l":"GUI(String, int, boolean)","u":"%3Cinit%3E(java.lang.String,int,boolean)"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"GUIHolder()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.gui.listener","c":"GUIListener","l":"GUIListener()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.inputlistener","c":"InputListener.InputListenerResponse","l":"handle(AsyncPlayerChatEvent)","u":"handle(org.bukkit.event.player.AsyncPlayerChatEvent)"},{"p":"games.negative.framework.event","c":"PluginEvent","l":"handlers"},{"p":"games.negative.framework.nms","c":"SkullReflections.FieldAccessor","l":"hasField(Object)","u":"hasField(java.lang.Object)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"hasLinesMaxLength()"},{"p":"games.negative.framework.util","c":"Utils","l":"hasPlugin(String)","u":"hasPlugin(java.lang.String)"},{"p":"games.negative.framework.util","c":"HasteBin","l":"HasteBin()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"HopperGUI(String)","u":"%3Cinit%3E(java.lang.String)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"HopperGUI(String, boolean)","u":"%3Cinit%3E(java.lang.String,boolean)"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"HopperGUIHolder()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"id"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"ifConsole(CommandSender, Consumer<ConsoleCommandSender>)","u":"ifConsole(org.bukkit.command.CommandSender,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"Command","l":"ifConsole(CommandSender, Consumer<ConsoleCommandSender>)","u":"ifConsole(org.bukkit.command.CommandSender,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"ifConsole(CommandSender, Consumer<ConsoleCommandSender>)","u":"ifConsole(org.bukkit.command.CommandSender,java.util.function.Consumer)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"ifHasPermission(CommandSender, String, Consumer<CommandSender>)","u":"ifHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"Command","l":"ifHasPermission(CommandSender, String, Consumer<CommandSender>)","u":"ifHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"ifHasPermission(CommandSender, String, Consumer<CommandSender>)","u":"ifHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"ifNotHasPermission(CommandSender, String, Consumer<CommandSender>)","u":"ifNotHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"Command","l":"ifNotHasPermission(CommandSender, String, Consumer<CommandSender>)","u":"ifNotHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"ifNotHasPermission(CommandSender, String, Consumer<CommandSender>)","u":"ifNotHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"ifOnCooldown(I, Consumer<I>)","u":"ifOnCooldown(I,java.util.function.Consumer)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"ifPlayer(CommandSender, Consumer<Player>)","u":"ifPlayer(org.bukkit.command.CommandSender,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"Command","l":"ifPlayer(CommandSender, Consumer<Player>)","u":"ifPlayer(org.bukkit.command.CommandSender,java.util.function.Consumer)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"ifPlayer(CommandSender, Consumer<Player>)","u":"ifPlayer(org.bukkit.command.CommandSender,java.util.function.Consumer)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"init()"},{"p":"games.negative.framework.message","c":"Message","l":"initial"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"innerClass(Class<?>, Predicate<Class<?>>)","u":"innerClass(java.lang.Class,java.util.function.Predicate)"},{"p":"games.negative.framework.inputlistener","c":"InputListener","l":"InputListener()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command.shortcommand","c":"ShortCommands","l":"instance"},{"p":"games.negative.framework.database","c":"Database","l":"instance"},{"p":"games.negative.framework.util.version","c":"VersionChecker","l":"instance"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"inventory"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"inventory"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"inventory"},{"p":"games.negative.framework.util.serializer","c":"BukkitSerializer","l":"inventoryFromBase64(String)","u":"inventoryFromBase64(java.lang.String)"},{"p":"games.negative.framework.util.serializer","c":"BukkitSerializer","l":"inventoryToBase64(Inventory)","u":"inventoryToBase64(org.bukkit.inventory.Inventory)"},{"p":"games.negative.framework.nms","c":"FastReflection.PacketConstructor","l":"invoke()"},{"p":"games.negative.framework.nms","c":"SkullReflections.MethodInvoker","l":"invoke(Object, Object...)","u":"invoke(java.lang.Object,java.lang.Object...)"},{"p":"games.negative.framework.nms","c":"SkullReflections.ConstructorInvoker","l":"invoke(Object...)","u":"invoke(java.lang.Object...)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"is"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"isAtLeast(ServerVersion)","u":"isAtLeast(games.negative.framework.util.version.ServerVersion)"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"isAtMost(ServerVersion)","u":"isAtMost(games.negative.framework.util.version.ServerVersion)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"isConsoleOnly()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"isDeleted()"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"isDisabled()"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"isEmpty()"},{"p":"games.negative.framework.repository","c":"Repository","l":"isEmpty()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"isEmpty()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"isHigherOrEqual()"},{"p":"games.negative.framework.util","c":"UtilPlayer","l":"isInside(Location, Location, Location)","u":"isInside(org.bukkit.Location,org.bukkit.Location,org.bukkit.Location)"},{"p":"games.negative.framework.util","c":"UtilPlayer","l":"isInventoryFull(Player)","u":"isInventoryFull(org.bukkit.entity.Player)"},{"p":"games.negative.framework.util.version","c":"VersionChecker","l":"isLegacy()"},{"p":"games.negative.framework.util.version","c":"VersionChecker","l":"isModern()"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"isOnCooldown(I)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"isOnCooldown(UUID)","u":"isOnCooldown(java.util.UUID)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"isPlayerOnly()"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"isRepackaged()"},{"p":"games.negative.framework.gui.internal","c":"MenuItem","l":"item"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"ItemBuilder(ItemStack)","u":"%3Cinit%3E(org.bukkit.inventory.ItemStack)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"ItemBuilder(Material)","u":"%3Cinit%3E(org.bukkit.Material)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"ItemBuilder(Material, int)","u":"%3Cinit%3E(org.bukkit.Material,int)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"ItemBuilder(Material, int, byte)","u":"%3Cinit%3E(org.bukkit.Material,int,byte)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"items"},{"p":"games.negative.framework.gui","c":"GUI","l":"items"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"items"},{"p":"games.negative.framework.util.serializer","c":"BukkitSerializer","l":"itemStackArrayFromBase64(String)","u":"itemStackArrayFromBase64(java.lang.String)"},{"p":"games.negative.framework.util.serializer","c":"BukkitSerializer","l":"itemStackArrayToBase64(ItemStack[])","u":"itemStackArrayToBase64(org.bukkit.inventory.ItemStack[])"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"key"},{"p":"games.negative.framework.util.data","c":"BiMap.Entry","l":"key"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"lines"},{"p":"games.negative.framework.skulls","c":"CustomSkull","l":"link"},{"p":"games.negative.framework.skull","c":"CustomSkull","l":"link()"},{"p":"games.negative.framework.inputlistener","c":"InputListener","l":"listen(UUID, InputListener.InputListenerResponse)","u":"listen(java.util.UUID,games.negative.framework.inputlistener.InputListener.InputListenerResponse)"},{"p":"games.negative.framework.inputlistener","c":"InputListener","l":"listenerMap"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"load()"},{"p":"games.negative.framework.util","c":"FileLoader","l":"loadFile(JavaPlugin, String)","u":"loadFile(org.bukkit.plugin.java.JavaPlugin,java.lang.String)"},{"p":"games.negative.framework","c":"BasePlugin","l":"loadFiles(JavaPlugin, String...)","u":"loadFiles(org.bukkit.plugin.java.JavaPlugin,java.lang.String...)"},{"p":"games.negative.framework.command","c":"Command","l":"logEvent"},{"p":"games.negative.framework.util","c":"TimeUtil","l":"longFromString(String)","u":"longFromString(java.lang.String)"},{"p":"games.negative.framework.util.proxy","c":"BungeeManager","l":"main"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"MATCH_VARIABLE"},{"p":"games.negative.framework.gui.internal","c":"MenuItem","l":"MenuItem()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"message"},{"p":"games.negative.framework.message","c":"Message","l":"message"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"MESSAGE_FROM_STRING"},{"p":"games.negative.framework.message","c":"Message","l":"Message(Collection<String>)","u":"%3Cinit%3E(java.util.Collection)"},{"p":"games.negative.framework.message","c":"Message","l":"Message(String)","u":"%3Cinit%3E(java.lang.String)"},{"p":"games.negative.framework.message","c":"Message","l":"Message(String...)","u":"%3Cinit%3E(java.lang.String...)"},{"p":"games.negative.framework.util","c":"MigrationCheck","l":"MigrationCheck()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.skulls","c":"CustomSkull","l":"name"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"name"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"name()"},{"p":"games.negative.framework.skulls","c":"CustomSkulls","l":"NEGATIVE_SKULL"},{"p":"games.negative.framework.skulls.items","c":"NegativeSkull","l":"NegativeSkull()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"newInstance(Class<T>)","u":"newInstance(java.lang.Class)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"NM_PACKAGE"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"NMS_PACKAGE"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"NMS_PREFIX"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"NMS_REPACKAGED"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"nmsClass(String, String)","u":"nmsClass(java.lang.String,java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"nmsClassName(String, String)","u":"nmsClassName(java.lang.String,java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"nmsOptionalClass(String, String)","u":"nmsOptionalClass(java.lang.String,java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"OBC_PACKAGE"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"OBC_PREFIX"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"obcClass(String)","u":"obcClass(java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"obcClassName(String)","u":"obcClassName(java.lang.String)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"obcOptionalClass(String)","u":"obcOptionalClass(java.lang.String)"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"ObjectCache()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ObjectiveMode","l":"ObjectiveMode()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.skull","c":"CustomSkull","l":"of(String)","u":"of(java.lang.String)"},{"p":"games.negative.framework.inputlistener","c":"InputListener","l":"onChat(AsyncPlayerChatEvent)","u":"onChat(org.bukkit.event.player.AsyncPlayerChatEvent)"},{"p":"games.negative.framework.gui.base","c":"MenuHolder","l":"onClick(InventoryClickEvent)","u":"onClick(org.bukkit.event.inventory.InventoryClickEvent)"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"onClick(InventoryClickEvent)","u":"onClick(org.bukkit.event.inventory.InventoryClickEvent)"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"onClick(InventoryClickEvent)","u":"onClick(org.bukkit.event.inventory.InventoryClickEvent)"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"onClick(InventoryClickEvent)","u":"onClick(org.bukkit.event.inventory.InventoryClickEvent)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"onClose"},{"p":"games.negative.framework.gui","c":"GUI","l":"onClose"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"onClose"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"onClose(BiConsumer<Player, InventoryCloseEvent>)","u":"onClose(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"onClose(BiConsumer<Player, InventoryCloseEvent>)","u":"onClose(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"GUI","l":"onClose(BiConsumer<Player, InventoryCloseEvent>)","u":"onClose(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"onClose(BiConsumer<Player, InventoryCloseEvent>)","u":"onClose(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui.listener","c":"GUIListener","l":"onClose(InventoryCloseEvent)","u":"onClose(org.bukkit.event.inventory.InventoryCloseEvent)"},{"p":"games.negative.framework.gui.base","c":"MenuHolder","l":"onClose(Player, InventoryCloseEvent)","u":"onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"onClose(Player, InventoryCloseEvent)","u":"onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"onClose(Player, InventoryCloseEvent)","u":"onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"onClose(Player, InventoryCloseEvent)","u":"onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"},{"p":"games.negative.framework.command","c":"Command","l":"onCommand(CommandSender, String, String[])","u":"onCommand(org.bukkit.command.CommandSender,java.lang.String,java.lang.String[])"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"onCommand(CommandSender, String[])","u":"onCommand(org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command","c":"Command","l":"onCommand(CommandSender, String[])","u":"onCommand(org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsListener","l":"onCommandInput(PlayerCommandPreprocessEvent)","u":"onCommandInput(org.bukkit.event.player.PlayerCommandPreprocessEvent)"},{"p":"games.negative.framework.command.logging","c":"CommandLogListener","l":"onCommandLog(CommandLogEvent)","u":"onCommandLog(games.negative.framework.command.event.CommandLogEvent)"},{"p":"games.negative.framework.util","c":"Disableable","l":"onDisable()"},{"p":"games.negative.framework","c":"BasePlugin","l":"onEnable()"},{"p":"games.negative.framework.gui.listener","c":"GUIListener","l":"onInvClick(InventoryClickEvent)","u":"onInvClick(org.bukkit.event.inventory.InventoryClickEvent)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"onInventoryClick(BiConsumer<Player, InventoryClickEvent>)","u":"onInventoryClick(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"onInventoryClick(BiConsumer<Player, InventoryClickEvent>)","u":"onInventoryClick(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"GUI","l":"onInventoryClick(BiConsumer<Player, InventoryClickEvent>)","u":"onInventoryClick(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"onInventoryClick(BiConsumer<Player, InventoryClickEvent>)","u":"onInventoryClick(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"onOpen"},{"p":"games.negative.framework.gui","c":"GUI","l":"onOpen"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"onOpen"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"onOpen(BiConsumer<Player, InventoryOpenEvent>)","u":"onOpen(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"onOpen(BiConsumer<Player, InventoryOpenEvent>)","u":"onOpen(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"GUI","l":"onOpen(BiConsumer<Player, InventoryOpenEvent>)","u":"onOpen(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"onOpen(BiConsumer<Player, InventoryOpenEvent>)","u":"onOpen(java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui.listener","c":"GUIListener","l":"onOpen(InventoryOpenEvent)","u":"onOpen(org.bukkit.event.inventory.InventoryOpenEvent)"},{"p":"games.negative.framework.gui.base","c":"MenuHolder","l":"onOpen(Player, InventoryOpenEvent)","u":"onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"},{"p":"games.negative.framework.gui.holder","c":"DropperGUIHolder","l":"onOpen(Player, InventoryOpenEvent)","u":"onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"},{"p":"games.negative.framework.gui.holder","c":"GUIHolder","l":"onOpen(Player, InventoryOpenEvent)","u":"onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"},{"p":"games.negative.framework.gui.holder","c":"HopperGUIHolder","l":"onOpen(Player, InventoryOpenEvent)","u":"onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"},{"p":"games.negative.framework.command.logging","c":"CommandLogListener","l":"onSubCommandLog(SubCommandLogEvent)","u":"onSubCommandLog(games.negative.framework.command.event.SubCommandLogEvent)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"open(Player)","u":"open(org.bukkit.entity.Player)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"open(Player)","u":"open(org.bukkit.entity.Player)"},{"p":"games.negative.framework.gui","c":"GUI","l":"open(Player)","u":"open(org.bukkit.entity.Player)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"open(Player)","u":"open(org.bukkit.entity.Player)"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"optionalClass(String)","u":"optionalClass(java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PACKET_SB_DISPLAY_OBJ"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PACKET_SB_OBJ"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PACKET_SB_SCORE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PACKET_SB_SERIALIZABLE_TEAM"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PACKET_SB_TEAM"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PACKETS"},{"p":"games.negative.framework.command","c":"Command","l":"params"},{"p":"games.negative.framework.command","c":"SubCommand","l":"params"},{"p":"games.negative.framework.command","c":"Command","l":"parent"},{"p":"games.negative.framework.command","c":"SubCommand","l":"parent"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"path"},{"p":"games.negative.framework.command","c":"SubCommand","l":"permission"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"permission()"},{"p":"games.negative.framework.command","c":"Command","l":"permissionNode"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"pitch"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"player"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PLAYER_CONNECTION"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"PLAYER_GET_HANDLE"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"playerInventoryClickEvent"},{"p":"games.negative.framework.gui","c":"GUI","l":"playerInventoryClickEvent"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"playerInventoryClickEvent"},{"p":"games.negative.framework.util.serializer","c":"BukkitSerializer","l":"playerInventoryToBase64(PlayerInventory)","u":"playerInventoryToBase64(org.bukkit.inventory.PlayerInventory)"},{"p":"games.negative.framework.command","c":"Command","l":"playerOnly"},{"p":"games.negative.framework.command","c":"SubCommand","l":"playerOnly"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"playerOnly()"},{"p":"games.negative.framework.event","c":"PluginEvent","l":"PluginEvent()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"position1"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"position2"},{"p":"games.negative.framework.util","c":"HasteBin","l":"post(String, boolean)","u":"post(java.lang.String,boolean)"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"priority"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"put(K, V, V1)","u":"put(K,V,V1)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"putFirst(K, V)","u":"putFirst(K,V)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"putSecond(K, V1)","u":"putSecond(K,V1)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"refresh(Player)","u":"refresh(org.bukkit.entity.Player)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"refresh(Player)","u":"refresh(org.bukkit.entity.Player)"},{"p":"games.negative.framework.gui","c":"GUI","l":"refresh(Player)","u":"refresh(org.bukkit.entity.Player)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"refresh(Player)","u":"refresh(org.bukkit.entity.Player)"},{"p":"games.negative.framework","c":"BasePlugin","l":"registerCommands(Command...)","u":"registerCommands(org.bukkit.command.Command...)"},{"p":"games.negative.framework","c":"BasePlugin","l":"registerListeners(Listener...)","u":"registerListeners(org.bukkit.event.Listener...)"},{"p":"games.negative.framework.util","c":"Reloadable","l":"reload()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ObjectiveMode","l":"REMOVE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ScoreboardAction","l":"REMOVE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"REMOVE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"REMOVE_PLAYERS"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"remove(Command)","u":"remove(org.bukkit.command.Command)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"remove(K)"},{"p":"games.negative.framework.repository","c":"Repository","l":"remove(T)"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"removeAll(Collection<Command>)","u":"removeAll(java.util.Collection)"},{"p":"games.negative.framework.repository","c":"Repository","l":"removeAll(Collection<T>)","u":"removeAll(java.util.Collection)"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"removeAll(Function<Command, Boolean>)","u":"removeAll(java.util.function.Function)"},{"p":"games.negative.framework.repository","c":"Repository","l":"removeAll(Function<T, Boolean>)","u":"removeAll(java.util.function.Function)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"removeAllIf(Function<BiMap.Entry<K, V, V1>, Boolean>)","u":"removeAllIf(java.util.function.Function)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"removeEnchantment(Enchantment)","u":"removeEnchantment(org.bukkit.enchantments.Enchantment)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"removeEnchantment(Enchantment)","u":"removeEnchantment(org.bukkit.enchantments.Enchantment)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"removeIf(K, Function<BiMap.Entry<K, V, V1>, Boolean>)","u":"removeIf(K,java.util.function.Function)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"removeItemFlag(ItemFlag)","u":"removeItemFlag(org.bukkit.inventory.ItemFlag)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"removeItemFlags(ItemFlag...)","u":"removeItemFlags(org.bukkit.inventory.ItemFlag...)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"removeLine(int)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"removeLoreLine(int)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"removeLoreLine(int)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"removeLoreLine(String)","u":"removeLoreLine(java.lang.String)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"replace(K, V, V1)","u":"replace(K,V,V1)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"replace(String, String)","u":"replace(java.lang.String,java.lang.String)"},{"p":"games.negative.framework.message","c":"Message","l":"replace(String, String)","u":"replace(java.lang.String,java.lang.String)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"replaceAllFirstValues(Function<BiMap.Entry<K, V, V1>, Boolean>, V)","u":"replaceAllFirstValues(java.util.function.Function,V)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"replaceAllSecondaryValues(Function<BiMap.Entry<K, V, V1>, Boolean>, V1)","u":"replaceAllSecondaryValues(java.util.function.Function,V1)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"replaceAllValues(Function<BiMap.Entry<K, V, V1>, Boolean>, V, V1)","u":"replaceAllValues(java.util.function.Function,V,V1)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"replaceFirst(K, V)","u":"replaceFirst(K,V)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"replaceLore(Consumer<List<String>>)","u":"replaceLore(java.util.function.Consumer)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"replaceSecond(K, V1)","u":"replaceSecond(K,V1)"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"repository"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"RESET_FORMATTING"},{"p":"games.negative.framework.util","c":"UtilPlayer","l":"reset(Player)","u":"reset(org.bukkit.entity.Player)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"resetCooldown(I)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"resetCooldown(UUID)","u":"resetCooldown(java.util.UUID)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"resetCooldowns()"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"resetCooldowns()"},{"p":"games.negative.framework.gui","c":"GUI","l":"rows"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"runLogEvent(CommandBase, CommandSender, String[])","u":"runLogEvent(games.negative.framework.command.base.CommandBase,org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command","c":"Command","l":"runLogEvent(CommandBase, CommandSender, String[])","u":"runLogEvent(games.negative.framework.command.base.CommandBase,org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command","c":"SubCommand","l":"runLogEvent(CommandBase, CommandSender, String[])","u":"runLogEvent(games.negative.framework.command.base.CommandBase,org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"runSubCommand(SubCommand, CommandSender, String[])","u":"runSubCommand(games.negative.framework.command.SubCommand,org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command","c":"Command","l":"runSubCommand(SubCommand, CommandSender, String[])","u":"runSubCommand(games.negative.framework.command.SubCommand,org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.command","c":"SubCommand","l":"runSubCommand(SubCommand, CommandSender, String[])","u":"runSubCommand(games.negative.framework.command.SubCommand,org.bukkit.command.CommandSender,java.lang.String[])"},{"p":"games.negative.framework.util.cache","c":"ObjectCache","l":"save(ArrayList<T>)","u":"save(java.util.ArrayList)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"Scoreboard(Player)","u":"%3Cinit%3E(org.bukkit.entity.Player)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ScoreboardAction","l":"ScoreboardAction()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"SEND_PACKET"},{"p":"games.negative.framework.message","c":"Message","l":"send(CommandSender)","u":"send(org.bukkit.command.CommandSender)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"send(CommandSender)","u":"send(org.bukkit.command.CommandSender)"},{"p":"games.negative.framework.message","c":"Message","l":"send(Iterable<CommandSender>)","u":"send(java.lang.Iterable)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"send(Iterable<CommandSender>)","u":"send(java.lang.Iterable)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"sendDisplayObjectivePacket()"},{"p":"games.negative.framework.command.event","c":"CommandLogEvent","l":"sender"},{"p":"games.negative.framework.command.event","c":"SubCommandLogEvent","l":"sender"},{"p":"games.negative.framework.util.proxy","c":"BungeeManager","l":"sendMessage(Player, String)","u":"sendMessage(org.bukkit.entity.Player,java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"sendObjectivePacket(Scoreboard.ObjectiveMode)","u":"sendObjectivePacket(games.negative.framework.scoreboard.Scoreboard.ObjectiveMode)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"sendPacket(Object)","u":"sendPacket(java.lang.Object)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"sendParamMessage(String[], CommandSender)","u":"sendParamMessage(java.lang.String[],org.bukkit.command.CommandSender)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"sendScorePacket(int, Scoreboard.ScoreboardAction)","u":"sendScorePacket(int,games.negative.framework.scoreboard.Scoreboard.ScoreboardAction)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"sendTeamPacket(int, Scoreboard.TeamMode)","u":"sendTeamPacket(int,games.negative.framework.scoreboard.Scoreboard.TeamMode)"},{"p":"games.negative.framework.util.version","c":"VersionChecker","l":"serverVersion"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"ServerVersion()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.nms","c":"SkullReflections.FieldAccessor","l":"set(Object, Object)","u":"set(java.lang.Object,java.lang.Object)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"setAmount(int)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"setComponentField(Object, String, int)","u":"setComponentField(java.lang.Object,java.lang.String,int)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"setCooldown(I, V)","u":"setCooldown(I,V)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"setCooldown(UUID, Long)","u":"setCooldown(java.util.UUID,java.lang.Long)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"setData(short)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setDurability(short)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setDyeColor(DyeColor)","u":"setDyeColor(org.bukkit.DyeColor)"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"setEntries(List<BiMap.Entry<K, V, V1>>)","u":"setEntries(java.util.List)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"setField(Object, Class<?>, Object)","u":"setField(java.lang.Object,java.lang.Class,java.lang.Object)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"setField(Object, Class<?>, Object, int)","u":"setField(java.lang.Object,java.lang.Class,java.lang.Object,int)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setInfinityDurability()"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"setItem(int, Function<Player, ItemStack>)","u":"setItem(int,java.util.function.Function)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"setItem(int, Function<Player, ItemStack>)","u":"setItem(int,java.util.function.Function)"},{"p":"games.negative.framework.gui","c":"GUI","l":"setItem(int, Function<Player, ItemStack>)","u":"setItem(int,java.util.function.Function)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"setItem(int, Function<Player, ItemStack>)","u":"setItem(int,java.util.function.Function)"},{"p":"games.negative.framework.gui.base","c":"MenuBase","l":"setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"GUI","l":"setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)","u":"setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"setKey(String)","u":"setKey(java.lang.String)"},{"p":"games.negative.framework.key","c":"Keyd","l":"setKey(T)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setLeatherArmorColor(Color)","u":"setLeatherArmorColor(org.bukkit.Color)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setLore(List<String>)","u":"setLore(java.util.List)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"setLore(List<String>)","u":"setLore(java.util.List)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setLore(String...)","u":"setLore(java.lang.String...)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"setLore(String...)","u":"setLore(java.lang.String...)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"setLoreLine(String, int)","u":"setLoreLine(java.lang.String,int)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setMaterial(Material)","u":"setMaterial(org.bukkit.Material)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"setMessage(Message)","u":"setMessage(games.negative.framework.message.Message)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setName(String)","u":"setName(java.lang.String)"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"setName(String)","u":"setName(java.lang.String)"},{"p":"games.negative.framework.command.base","c":"CommandBase","l":"setParent(CommandBase)","u":"setParent(games.negative.framework.command.base.CommandBase)"},{"p":"games.negative.framework.command","c":"Command","l":"setParent(CommandBase)","u":"setParent(games.negative.framework.command.base.CommandBase)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"setParent(CommandBase)","u":"setParent(games.negative.framework.command.base.CommandBase)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setSkullOwner(String)","u":"setSkullOwner(java.lang.String)"},{"p":"games.negative.framework.command","c":"Command","l":"setTabComplete(BiFunction<CommandSender, String[], List<String>>)","u":"setTabComplete(java.util.function.BiFunction)"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"setWoolColor(DyeColor)","u":"setWoolColor(org.bukkit.DyeColor)"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsListener","l":"shortCommands"},{"p":"games.negative.framework.command.annotation","c":"CommandInfo","l":"shortCommands()"},{"p":"games.negative.framework.command.shortcommand","c":"ShortCommands","l":"ShortCommands()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsListener","l":"ShortCommandsListener()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"ShortCommandsProvider()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"SimpleLocation()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"SimpleLocationParser","l":"SimpleLocationParser()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command.repository","c":"FrameworkCommandRepository","l":"size()"},{"p":"games.negative.framework.repository","c":"Repository","l":"size()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"size()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"size()"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"SkullReflections()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.gui.internal","c":"MenuItem","l":"slot"},{"p":"games.negative.framework.cooldown","c":"Cooldowns","l":"startInternalCooldowns(JavaPlugin)","u":"startInternalCooldowns(org.bukkit.plugin.java.JavaPlugin)"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"stopCooldowns()"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"stopCooldowns()"},{"p":"games.negative.framework.util.data","c":"BiMap","l":"stream()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"SubCommand()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"SubCommand(String)","u":"%3Cinit%3E(java.lang.String)"},{"p":"games.negative.framework.command","c":"SubCommand","l":"SubCommand(String, List<String>)","u":"%3Cinit%3E(java.lang.String,java.util.List)"},{"p":"games.negative.framework.command.event","c":"SubCommandLogEvent","l":"SubCommandLogEvent()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.command","c":"SubCommand","l":"subCommandLogEventConsumer"},{"p":"games.negative.framework.command","c":"Command","l":"subCommands"},{"p":"games.negative.framework.command","c":"SubCommand","l":"subCommands"},{"p":"games.negative.framework.command.shortcommand.provider","c":"ShortCommandsProvider","l":"subCommandShortCommands"},{"p":"games.negative.framework.command","c":"Command","l":"tabComplete(CommandSender, String, String[])","u":"tabComplete(org.bukkit.command.CommandSender,java.lang.String,java.lang.String[])"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"task"},{"p":"games.negative.framework.util","c":"Task","l":"Task()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"Task","l":"task(JavaPlugin, Runnable)","u":"task(org.bukkit.plugin.java.JavaPlugin,java.lang.Runnable)"},{"p":"games.negative.framework.util","c":"Task","l":"taskDelayed(JavaPlugin, long, Runnable)","u":"taskDelayed(org.bukkit.plugin.java.JavaPlugin,long,java.lang.Runnable)"},{"p":"games.negative.framework.util","c":"Task","l":"taskRepeating(JavaPlugin, long, long, Runnable)","u":"taskRepeating(org.bukkit.plugin.java.JavaPlugin,long,long,java.lang.Runnable)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"TeamMode()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"theUnsafe"},{"p":"games.negative.framework.cooldown","c":"Cooldown","l":"tick()"},{"p":"games.negative.framework.cooldown.internal","c":"GenericCooldown","l":"tick()"},{"p":"games.negative.framework.util","c":"TimeUtil","l":"TimeUtil()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.gui","c":"DropperGUI","l":"title"},{"p":"games.negative.framework.gui","c":"GUI","l":"title"},{"p":"games.negative.framework.gui","c":"HopperGUI","l":"title"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"title"},{"p":"games.negative.framework.skulls","c":"CustomSkull","l":"toItem()"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"toLocation()"},{"p":"games.negative.framework.util","c":"SimpleLocationParser","l":"toSimpleLocation(Location)","u":"toSimpleLocation(org.bukkit.Location)"},{"p":"games.negative.framework.util.structure","c":"CuboidRegion","l":"toString()"},{"p":"games.negative.framework.util","c":"ItemBuilder","l":"translate(String)","u":"translate(java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ObjectiveMode","l":"UPDATE"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"UPDATE"},{"p":"games.negative.framework.util","c":"ItemUpdater","l":"update(ItemStack)","u":"update(org.bukkit.inventory.ItemStack)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"updateLine(int, String)","u":"updateLine(int,java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"updateLines(Collection<String>)","u":"updateLines(java.util.Collection)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"updateLines(String...)","u":"updateLines(java.lang.String...)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"updateTitle(String)","u":"updateTitle(java.lang.String)"},{"p":"games.negative.framework.util","c":"UtilHTTP","l":"UtilHTTP()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"UtilPlayer","l":"UtilPlayer()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"Utils","l":"Utils()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util","c":"UtilStringBuilder","l":"UtilStringBuilder()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_10"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_11"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_12"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"V1_13"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_13"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_14"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_15"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_16"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"V1_17"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_17"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_18"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"V1_7"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_7"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"V1_8"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_8"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"V1_9"},{"p":"games.negative.framework.util.data","c":"BiMap.Entry","l":"value1"},{"p":"games.negative.framework.util.data","c":"BiMap.Entry","l":"value2"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ObjectiveMode","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ScoreboardAction","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"games.negative.framework.message","c":"FrameworkMessage","l":"values()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ObjectiveMode","l":"values()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.ScoreboardAction","l":"values()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.TeamMode","l":"values()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"values()"},{"p":"games.negative.framework.util.version","c":"ServerVersion","l":"values()"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"VERSION"},{"p":"games.negative.framework.nms","c":"SkullReflections","l":"VERSION"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard","l":"VERSION_TYPE"},{"p":"games.negative.framework.util.version","c":"VersionChecker","l":"VersionChecker()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.scoreboard","c":"Scoreboard.VersionType","l":"VersionType()","u":"%3Cinit%3E()"},{"p":"games.negative.framework.nms","c":"FastReflection","l":"VOID_METHOD_TYPE"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"world"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"x"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"y"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"yaw"},{"p":"games.negative.framework.util.structure","c":"SimpleLocation","l":"z"}];updateSearchResults();
+memberSearchIndex = [{
+    "p": "games.negative.framework.util.data",
+    "c": "TriConsumer",
+    "l": "accept(T, U, U1)",
+    "u": "accept(T,U,U1)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "activeInventories"
+}, {"p": "games.negative.framework.gui", "c": "GUI", "l": "activeInventories"}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "activeInventories"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "ADD_PLAYERS"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "add(Command)",
+    "u": "add(org.bukkit.command.Command)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "add(T)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "TableBuilder",
+    "l": "addColumn(Column)",
+    "u": "addColumn(games.negative.framework.database.Column)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "TableBuilder",
+    "l": "addColumn(ColumnType, String)",
+    "u": "addColumn(games.negative.framework.database.ColumnType,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "addColumnToTable(String, String, String)",
+    "u": "addColumnToTable(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldowns",
+    "l": "addCooldown(Cooldown<?, ?>)",
+    "u": "addCooldown(games.negative.framework.cooldown.Cooldown)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics",
+    "l": "addCustomChart(Metrics.CustomChart)",
+    "u": "addCustomChart(games.negative.framework.bStats.Metrics.CustomChart)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "addCustomChart(Metrics.CustomChart)",
+    "u": "addCustomChart(games.negative.framework.bStats.Metrics.CustomChart)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "addEnchant(Enchantment, int)",
+    "u": "addEnchant(org.bukkit.enchantments.Enchantment,int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "addEnchantment(Enchantment, int)",
+    "u": "addEnchantment(org.bukkit.enchantments.Enchantment,int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "addEnchantments(Map<Enchantment, Integer>)",
+    "u": "addEnchantments(java.util.Map)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "addItem(Function<Player, ItemStack>)",
+    "u": "addItem(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "addItem(Function<Player, ItemStack>)",
+    "u": "addItem(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "addItem(Function<Player, ItemStack>)",
+    "u": "addItem(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "addItem(Function<Player, ItemStack>)",
+    "u": "addItem(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "addItemClickEvent(Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "addItemClickEvent(java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "addItemFlag(ItemFlag)",
+    "u": "addItemFlag(org.bukkit.inventory.ItemFlag)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "addItemFlags(ItemFlag...)",
+    "u": "addItemFlags(org.bukkit.inventory.ItemFlag...)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "addLoreLine(String)",
+    "u": "addLoreLine(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "addLoreLine(String)",
+    "u": "addLoreLine(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "addLoreLine(String, int)",
+    "u": "addLoreLine(java.lang.String,int)"
+}, {
+    "p": "games.negative.framework.command.shortcommand",
+    "c": "ShortCommands",
+    "l": "addShortCommand(Command, String[])",
+    "u": "addShortCommand(games.negative.framework.command.Command,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "addShortCommand(Command, String[])",
+    "u": "addShortCommand(games.negative.framework.command.Command,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.shortcommand",
+    "c": "ShortCommands",
+    "l": "addShortSubCommand(SubCommand, String[])",
+    "u": "addShortSubCommand(games.negative.framework.command.SubCommand,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "addShortSubCommand(SubCommand, String[])",
+    "u": "addShortSubCommand(games.negative.framework.command.SubCommand,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "addSubCommands(SubCommand...)",
+    "u": "addSubCommands(games.negative.framework.command.SubCommand...)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "addSubCommands(SubCommand...)",
+    "u": "addSubCommands(games.negative.framework.command.SubCommand...)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "addSubCommands(SubCommand...)",
+    "u": "addSubCommands(games.negative.framework.command.SubCommand...)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "addUnsafeEnchantment(Enchantment, int)",
+    "u": "addUnsafeEnchantment(org.bukkit.enchantments.Enchantment,int)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.AdvancedBarChart",
+    "l": "AdvancedBarChart(String, Callable<Map<String, int[]>>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.AdvancedPie",
+    "l": "AdvancedPie(String, Callable<Map<String, Integer>>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "aliases"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "aliases()"
+}, {"p": "games.negative.framework.database", "c": "Column", "l": "allowNull"}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "allowTakeItems"
+}, {"p": "games.negative.framework.gui", "c": "GUI", "l": "allowTakeItems"}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "allowTakeItems"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "TriConsumer",
+    "l": "andThen(TriConsumer<? super T, ? super U, ? super U1>)",
+    "u": "andThen(games.negative.framework.util.data.TriConsumer)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendField(String, int)",
+    "u": "appendField(java.lang.String,int)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendField(String, int[])",
+    "u": "appendField(java.lang.String,int[])"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendField(String, Metrics.JsonObjectBuilder.JsonObject)",
+    "u": "appendField(java.lang.String,games.negative.framework.bStats.Metrics.JsonObjectBuilder.JsonObject)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendField(String, Metrics.JsonObjectBuilder.JsonObject[])",
+    "u": "appendField(java.lang.String,games.negative.framework.bStats.Metrics.JsonObjectBuilder.JsonObject[])"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendField(String, String)",
+    "u": "appendField(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendField(String, String[])",
+    "u": "appendField(java.lang.String,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendFieldUnescaped(String, String)",
+    "u": "appendFieldUnescaped(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "appendNull(String)",
+    "u": "appendNull(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics",
+    "l": "appendPlatformData(Metrics.JsonObjectBuilder)",
+    "u": "appendPlatformData(games.negative.framework.bStats.Metrics.JsonObjectBuilder)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "appendPlatformDataConsumer"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics",
+    "l": "appendServiceData(Metrics.JsonObjectBuilder)",
+    "u": "appendServiceData(games.negative.framework.bStats.Metrics.JsonObjectBuilder)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "appendServiceDataConsumer"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "args()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "argument"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "CommandLogEvent",
+    "l": "arguments"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "SubCommandLogEvent",
+    "l": "arguments"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "async(JavaPlugin, Runnable)",
+    "u": "async(org.bukkit.plugin.java.JavaPlugin,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "async(Runnable)",
+    "u": "async(java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "asyncDelayed(JavaPlugin, long, Runnable)",
+    "u": "asyncDelayed(org.bukkit.plugin.java.JavaPlugin,long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "asyncDelayed(long, Runnable)",
+    "u": "asyncDelayed(long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "asyncRepeating(JavaPlugin, long, long, Runnable)",
+    "u": "asyncRepeating(org.bukkit.plugin.java.JavaPlugin,long,long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "asyncRepeating(long, long, Runnable)",
+    "u": "asyncRepeating(long,long,java.lang.Runnable)"
+}, {"p": "games.negative.framework.skulls", "c": "CustomSkull", "l": "base64"}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "BasePlugin()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "BIGINT"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "BiMap()",
+    "u": "%3Cinit%3E()"
+}, {"p": "games.negative.framework.util", "c": "HasteBin", "l": "binURL"}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "BLOB"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "BOOLEAN"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "broadcast()"
+}, {"p": "games.negative.framework.message", "c": "Message", "l": "broadcast()"}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "broadcast(String)",
+    "u": "broadcast(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "build()"
+}, {"p": "games.negative.framework.util", "c": "ItemBuilder", "l": "build()"}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilStringBuilder",
+    "l": "build(String[])",
+    "u": "build(java.lang.String[])"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilStringBuilder",
+    "l": "build(String[], int)",
+    "u": "build(java.lang.String[],int)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "builder"
+}, {
+    "p": "games.negative.framework.util.serializer",
+    "c": "BukkitSerializer",
+    "l": "BukkitSerializer()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util.proxy",
+    "c": "BungeeManager",
+    "l": "BungeeManager(BasePlugin)",
+    "u": "%3Cinit%3E(games.negative.framework.BasePlugin)"
+}, {"p": "games.negative.framework.database", "c": "ColumnType", "l": "BYTE"}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.AdvancedBarChart",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.AdvancedPie",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.DrilldownPie",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MultiLineChart",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SimpleBarChart",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SimplePie",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SingleLineChart",
+    "l": "callable"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "CommandLogEvent",
+    "l": "cancelled"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "SubCommandLogEvent",
+    "l": "cancelled"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ScoreboardAction",
+    "l": "CHANGE"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "changeColumnName(String, String, String)",
+    "u": "changeColumnName(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.CustomChart",
+    "l": "chartId"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "CHAT_COMPONENT_CLASS"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "CHAT_FORMAT_ENUM"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "MigrationCheck",
+    "l": "check(Player)",
+    "u": "check(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "checkLineNumber(int, boolean, boolean)",
+    "u": "checkLineNumber(int,boolean,boolean)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "checkRelocation()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "checkServiceEnabledSupplier"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "clazz"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "clear()"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "clear()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "clear()"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "clear(Function<Command, Boolean>)",
+    "u": "clear(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "clear(Function<T, Boolean>)",
+    "u": "clear(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "clearSlot(int)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "clearSlot(int)"
+}, {"p": "games.negative.framework.gui", "c": "GUI", "l": "clearSlot(int)"}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "clearSlot(int)"
+}, {
+    "p": "games.negative.framework.gui.internal",
+    "c": "MenuItem",
+    "l": "clickEvent"
+}, {"p": "games.negative.framework.util", "c": "ItemBuilder", "l": "clone()"}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "clone()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "cloneMap()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "COLOR_CODES"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "color(List<String>)",
+    "u": "color(java.util.List)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "color(String)",
+    "u": "color(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Column",
+    "l": "Column()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "TableBuilder",
+    "l": "columns"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "ColumnType()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "CommandLogEvent",
+    "l": "command"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "SubCommandLogEvent",
+    "l": "command"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "COMMAND_CANNOT_USE_THIS_AS_CONSOLE"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "COMMAND_CANNOT_USE_THIS_AS_PLAYER"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "COMMAND_DISABLED"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "COMMAND_NO_PERMISSION"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "COMMAND_USAGE"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "Command()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "Command(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "Command(String, Collection<String>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.Collection)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "Command(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "Command(String, String, Collection<String>)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.util.Collection)"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "CommandLogEvent",
+    "l": "CommandLogEvent()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command.logging",
+    "c": "CommandLogListener",
+    "l": "CommandLogListener()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "commandRepository"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "commandShortCommands"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "commit()"
+}, {"p": "games.negative.framework.command", "c": "Command", "l": "completer"}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "compress(String)",
+    "u": "compress(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "connect()"
+}, {
+    "p": "games.negative.framework.util.proxy",
+    "c": "BungeeManager",
+    "l": "connect(Player, String)",
+    "u": "connect(org.bukkit.entity.Player,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "connection"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Statement",
+    "l": "connection"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "consoleOnly"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "consoleOnly"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "consoleOnly()"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "contains(Command)",
+    "u": "contains(org.bukkit.command.Command)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "contains(Function<Command, Boolean>)",
+    "u": "contains(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "contains(Function<T, Boolean>)",
+    "u": "contains(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "contains(T)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "containsKey(K)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldowns",
+    "l": "cooldownMap"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "cooldowns"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldowns",
+    "l": "Cooldowns()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "copyContentsToNewTable(String, String)",
+    "u": "copyContentsToNewTable(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "countRows(String)",
+    "u": "countRows(java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ObjectiveMode",
+    "l": "CREATE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "CREATE"
+}, {
+    "p": "games.negative.framework.skull",
+    "c": "CustomSkull",
+    "l": "create(String)",
+    "u": "create(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "createTable(TableBuilder)",
+    "u": "createTable(games.negative.framework.database.builder.TableBuilder)"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "CuboidRegion()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.CustomChart",
+    "l": "CustomChart(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "customCharts"
+}, {
+    "p": "games.negative.framework.skulls",
+    "c": "CustomSkull",
+    "l": "CustomSkull()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.skulls",
+    "c": "CustomSkulls",
+    "l": "CustomSkulls()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "data"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "LoginBuilder",
+    "l": "database"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "Database(File)",
+    "u": "%3Cinit%3E(java.io.File)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "Database(LoginBuilder)",
+    "u": "%3Cinit%3E(games.negative.framework.database.builder.LoginBuilder)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "Database(String, int, String, String, String)",
+    "u": "%3Cinit%3E(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "Database(String, int, String, String, String, boolean)",
+    "u": "%3Cinit%3E(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,boolean)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "databaseName"
+}, {"p": "games.negative.framework.database", "c": "Database", "l": "debug"}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "DECIMAL"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "decimalFormat(double)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "decimalFormat(float)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "decimalFormat(int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "decimalFormat(Object)",
+    "u": "decimalFormat(java.lang.Object)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "defaultMessage"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Column",
+    "l": "defaultValue"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "delete()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "delete(String, String, String)",
+    "u": "delete(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "deleteColumnFromTable(String, String)",
+    "u": "deleteColumnFromTable(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "deleted"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "deleteTable(String)",
+    "u": "deleteTable(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "deleteTableIfExists(String)",
+    "u": "deleteTableIfExists(java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "DeltaReflection",
+    "l": "DeltaReflection()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "describeColumn(String, String)",
+    "u": "describeColumn(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "describeTable(String)",
+    "u": "describeTable(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "description()"
+}, {"p": "games.negative.framework.util", "c": "Utils", "l": "df"}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "disabled"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "disabled"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "disabled()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "disconnect()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "DOUBLE"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.DrilldownPie",
+    "l": "DrilldownPie(String, Callable<Map<String, Map<String, Integer>>>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "DropperGUI(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "DropperGUI(String, boolean)",
+    "u": "%3Cinit%3E(java.lang.String,boolean)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "DropperGUIHolder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "EMPTY_MESSAGE"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "enabled"
+}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "enableFrameworkUsageTracking()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap.Entry",
+    "l": "Entry()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "ENUM_SB_ACTION"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "ENUM_SB_ACTION_CHANGE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "ENUM_SB_ACTION_REMOVE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "ENUM_SB_HEALTH_DISPLAY"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "ENUM_SB_HEALTH_DISPLAY_INTEGER"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "enumValueOf(Class<?>, String)",
+    "u": "enumValueOf(java.lang.Class,java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "enumValueOf(Class<?>, String, int)",
+    "u": "enumValueOf(java.lang.Class,java.lang.String,int)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "errorLogger"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "escape(String)",
+    "u": "escape(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Statement",
+    "l": "execute()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "execute(CommandSender, String, String[])",
+    "u": "execute(org.bukkit.command.CommandSender,java.lang.String,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "execute(CommandSender, String[])",
+    "u": "execute(org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "executeConsoleCommand(String)",
+    "u": "executeConsoleCommand(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Statement",
+    "l": "executeWithResults()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "expandVariables(String)",
+    "u": "expandVariables(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "exportToCSV(String, String)",
+    "u": "exportToCSV(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "FastReflection()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "FileLoader",
+    "l": "FileLoader()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "findPacketConstructor(Class<?>, MethodHandles.Lookup)",
+    "u": "findPacketConstructor(java.lang.Class,java.lang.invoke.MethodHandles.Lookup)"
+}, {"p": "games.negative.framework.database", "c": "ColumnType", "l": "FLOAT"}, {
+    "p": "games.negative.framework.util",
+    "c": "ForceSavable",
+    "l": "forceSave()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "forEach(TriConsumer<? super K, ? super V, ? super V1>)",
+    "u": "forEach(games.negative.framework.util.data.TriConsumer)"
+}, {"p": "games.negative.framework.util", "c": "TimeUtil", "l": "format"}, {
+    "p": "games.negative.framework.util",
+    "c": "TimeUtil",
+    "l": "format(long, long)",
+    "u": "format(long,long)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "TimeUtil",
+    "l": "format(long, long, boolean)",
+    "u": "format(long,long,boolean)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "FrameworkCommandRepository()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "FrameworkMessage()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "fromServerPackageName(String)",
+    "u": "fromServerPackageName(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "SimpleLocationParser",
+    "l": "fromSimpleLocation(SimpleLocation)",
+    "u": "fromSimpleLocation(games.negative.framework.util.structure.SimpleLocation)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "GenericCooldown(JavaPlugin)",
+    "u": "%3Cinit%3E(org.bukkit.plugin.java.JavaPlugin)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "get(Function<Command, Boolean>)",
+    "u": "get(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "get(Function<T, Boolean>)",
+    "u": "get(java.util.function.Function)"
+}, {"p": "games.negative.framework.util.data", "c": "BiMap", "l": "get(K)"}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections.FieldAccessor",
+    "l": "get(Object)",
+    "u": "get(java.lang.Object)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "get(String, String, String, Class<?>)",
+    "u": "get(java.lang.String,java.lang.String,java.lang.String,java.lang.Class)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "get(String, String, String, String)",
+    "u": "get(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "getAll()"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "getAll()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "getAllDataInTable(String)",
+    "u": "getAllDataInTable(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "getAllTables()"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "getBlock()"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "getBlocks()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getCanonicalClass(String)",
+    "u": "getCanonicalClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.AdvancedBarChart",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.AdvancedPie",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.CustomChart",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.DrilldownPie",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MultiLineChart",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SimpleBarChart",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SimplePie",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SingleLineChart",
+    "l": "getChartData()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getClass(String)",
+    "u": "getClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "getCommand(String)",
+    "u": "getCommand(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.shortcommand",
+    "c": "ShortCommands",
+    "l": "getCommand(String)",
+    "u": "getCommand(java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getConstructor(Class<?>, Class<?>...)",
+    "u": "getConstructor(java.lang.Class,java.lang.Class...)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getConstructor(String, Class<?>...)",
+    "u": "getConstructor(java.lang.String,java.lang.Class...)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "getCooldown(I)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldowns",
+    "l": "getCooldown(String)",
+    "u": "getCooldown(java.lang.String)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "getCooldown(UUID)",
+    "u": "getCooldown(java.util.UUID)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "getCooldownEntries()"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "getCooldownEntries()"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "getCooldowns()"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "getCooldowns()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getCraftBukkitClass(String)",
+    "u": "getCraftBukkitClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "getDataIndex(K)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "getDisplayName()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "getEntries()"
+}, {"p": "games.negative.framework.util.data", "c": "BiMap", "l": "getEntry(K)"}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getField(Class<?>, Class<T>, int)",
+    "u": "getField(java.lang.Class,java.lang.Class,int)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getField(Class<?>, String, Class<T>)",
+    "u": "getField(java.lang.Class,java.lang.String,java.lang.Class)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getField(Class<?>, String, Class<T>, int)",
+    "u": "getField(java.lang.Class,java.lang.String,java.lang.Class,int)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getField(String, Class<T>, int)",
+    "u": "getField(java.lang.String,java.lang.Class,int)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getField(String, String, Class<T>)",
+    "u": "getField(java.lang.String,java.lang.String,java.lang.Class)"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "getFile(String)",
+    "u": "getFile(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "getFirst(int)"
+}, {"p": "games.negative.framework.util.data", "c": "BiMap", "l": "getFirst(K)"}, {
+    "p": "games.negative.framework.nms",
+    "c": "DeltaReflection",
+    "l": "getGameProfile(Player)",
+    "u": "getGameProfile(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "DeltaReflection",
+    "l": "getHandle(Player)",
+    "u": "getHandle(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.event",
+    "c": "PluginEvent",
+    "l": "getHandlerList()"
+}, {
+    "p": "games.negative.framework.event",
+    "c": "PluginEvent",
+    "l": "getHandlers()"
+}, {"p": "games.negative.framework.scoreboard", "c": "Scoreboard", "l": "getId()"}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "getInst()"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "getInventory()"
+}, {
+    "p": "games.negative.framework.skull",
+    "c": "CustomSkull",
+    "l": "getItemStack()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilHTTP",
+    "l": "getJSONObjectFromMojang(String)",
+    "u": "getJSONObjectFromMojang(java.lang.String)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "getKey()"
+}, {"p": "games.negative.framework.key", "c": "Keyd", "l": "getKey()"}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getLine(int)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getLineByScore(int)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getLineByScore(List<String>, int)",
+    "u": "getLineByScore(java.util.List,int)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getLines()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "getLore()"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuHolder",
+    "l": "getMenu()"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "getMenu()"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "getMenu()"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "getMenu()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getMethod(Class<?>, String, Class<?>...)",
+    "u": "getMethod(java.lang.Class,java.lang.String,java.lang.Class...)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getMethod(String, String, Class<?>...)",
+    "u": "getMethod(java.lang.String,java.lang.String,java.lang.Class...)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getMethodSimply(Class<?>, String)",
+    "u": "getMethodSimply(java.lang.Class,java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getMinecraftClass(String)",
+    "u": "getMinecraftClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "getName()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "getName()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "getName()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilPlayer",
+    "l": "getNameByUUID(UUID)",
+    "u": "getNameByUUID(java.util.UUID)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "getOnlinePlayers()"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "getParams()"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "getParent()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "getParent()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "getParent()"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "getPermission()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "getPermission()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "getPermission()"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "CommandLogEvent",
+    "l": "getPlayer()"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "SubCommandLogEvent",
+    "l": "getPlayer()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getPlayer()"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "getPlayer(String)",
+    "u": "getPlayer(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics",
+    "l": "getPlayerAmount()"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "getPlayers()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "DeltaReflection",
+    "l": "getProperty(GameProfile, String)",
+    "u": "getProperty(com.mojang.authlib.GameProfile,java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.CustomChart",
+    "l": "getRequestJsonObject(BiConsumer<String, Throwable>, boolean)",
+    "u": "getRequestJsonObject(java.util.function.BiConsumer,boolean)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getScoreByLine(int)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "getSecond(int)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "getSecond(K)"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "getSubCommand(String)",
+    "u": "getSubCommand(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.shortcommand",
+    "c": "ShortCommands",
+    "l": "getSubCommand(String)",
+    "u": "getSubCommand(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "getSubCommandLogEvent()"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "getSubCommands()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "getTitle()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getTypedMethod(Class<?>, String, Class<?>, Class<?>...)",
+    "u": "getTypedMethod(java.lang.Class,java.lang.String,java.lang.Class,java.lang.Class...)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "getUntypedClass(String)",
+    "u": "getUntypedClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilPlayer",
+    "l": "getUUIDByName(String)",
+    "u": "getUUIDByName(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "gson"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "gui"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "gui"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "gui"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "GUI(String, int)",
+    "u": "%3Cinit%3E(java.lang.String,int)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "GUI(String, int, boolean)",
+    "u": "%3Cinit%3E(java.lang.String,int,boolean)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "GUIHolder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.gui.listener",
+    "c": "GUIListener",
+    "l": "GUIListener()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.inputlistener",
+    "c": "InputListener.InputListenerResponse",
+    "l": "handle(AsyncPlayerChatEvent)",
+    "u": "handle(org.bukkit.event.player.AsyncPlayerChatEvent)"
+}, {
+    "p": "games.negative.framework.event",
+    "c": "PluginEvent",
+    "l": "handlers"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "hasAnnotation(Parameter)",
+    "u": "hasAnnotation(java.lang.reflect.Parameter)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "hasAtLeastOneField"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections.FieldAccessor",
+    "l": "hasField(Object)",
+    "u": "hasField(java.lang.Object)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "hasLinesMaxLength()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "hasPlugin(String)",
+    "u": "hasPlugin(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "HasteBin",
+    "l": "HasteBin()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "HasteBin",
+    "l": "HasteBin(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "HopperGUI(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "HopperGUI(String, boolean)",
+    "u": "%3Cinit%3E(java.lang.String,boolean)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "HopperGUIHolder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "id"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "ifConsole(CommandSender, Consumer<ConsoleCommandSender>)",
+    "u": "ifConsole(org.bukkit.command.CommandSender,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "ifConsole(CommandSender, Consumer<ConsoleCommandSender>)",
+    "u": "ifConsole(org.bukkit.command.CommandSender,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "ifConsole(CommandSender, Consumer<ConsoleCommandSender>)",
+    "u": "ifConsole(org.bukkit.command.CommandSender,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "ifHasPermission(CommandSender, String, Consumer<CommandSender>)",
+    "u": "ifHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "ifHasPermission(CommandSender, String, Consumer<CommandSender>)",
+    "u": "ifHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "ifHasPermission(CommandSender, String, Consumer<CommandSender>)",
+    "u": "ifHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "ifNotHasPermission(CommandSender, String, Consumer<CommandSender>)",
+    "u": "ifNotHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "ifNotHasPermission(CommandSender, String, Consumer<CommandSender>)",
+    "u": "ifNotHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "ifNotHasPermission(CommandSender, String, Consumer<CommandSender>)",
+    "u": "ifNotHasPermission(org.bukkit.command.CommandSender,java.lang.String,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "ifOnCooldown(I, Consumer<I>)",
+    "u": "ifOnCooldown(I,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "ifPlayer(CommandSender, Consumer<Player>)",
+    "u": "ifPlayer(org.bukkit.command.CommandSender,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "ifPlayer(CommandSender, Consumer<Player>)",
+    "u": "ifPlayer(org.bukkit.command.CommandSender,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "ifPlayer(CommandSender, Consumer<Player>)",
+    "u": "ifPlayer(org.bukkit.command.CommandSender,java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "importFromFile(String, String)",
+    "u": "importFromFile(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "infoLogger"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "init()"
+}, {"p": "games.negative.framework.message", "c": "Message", "l": "initial"}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "innerClass(Class<?>, Predicate<Class<?>>)",
+    "u": "innerClass(java.lang.Class,java.util.function.Predicate)"
+}, {
+    "p": "games.negative.framework.inputlistener",
+    "c": "InputListener",
+    "l": "InputListener()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "insert(InsertBuilder)",
+    "u": "insert(games.negative.framework.database.builder.InsertBuilder)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "insert(String, HashMap<String, String>)",
+    "u": "insert(java.lang.String,java.util.HashMap)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "insert(String, Object)",
+    "u": "insert(java.lang.String,java.lang.Object)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "InsertBuilder",
+    "l": "InsertBuilder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "inst"
+}, {
+    "p": "games.negative.framework.command.shortcommand",
+    "c": "ShortCommands",
+    "l": "instance"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "VersionChecker",
+    "l": "instance"
+}, {"p": "games.negative.framework.database", "c": "ColumnType", "l": "INT"}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "inTransaction"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "inventory"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "inventory"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "inventory"
+}, {
+    "p": "games.negative.framework.util.serializer",
+    "c": "BukkitSerializer",
+    "l": "inventoryFromBase64(String)",
+    "u": "inventoryFromBase64(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.serializer",
+    "c": "BukkitSerializer",
+    "l": "inventoryToBase64(Inventory)",
+    "u": "inventoryToBase64(org.bukkit.inventory.Inventory)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection.PacketConstructor",
+    "l": "invoke()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections.MethodInvoker",
+    "l": "invoke(Object, Object...)",
+    "u": "invoke(java.lang.Object,java.lang.Object...)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections.ConstructorInvoker",
+    "l": "invoke(Object...)",
+    "u": "invoke(java.lang.Object...)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "LoginBuilder",
+    "l": "ip"
+}, {"p": "games.negative.framework.database", "c": "Database", "l": "ip"}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "is"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "isAtLeast(ServerVersion)",
+    "u": "isAtLeast(games.negative.framework.util.version.ServerVersion)"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "isAtMost(ServerVersion)",
+    "u": "isAtMost(games.negative.framework.util.version.ServerVersion)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "isConsoleOnly()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "isDeleted()"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "isDisabled()"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "isEmpty()"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "isEmpty()"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "isEmpty()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "isHigherOrEqual()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilPlayer",
+    "l": "isInside(Location, Location, Location)",
+    "u": "isInside(org.bukkit.Location,org.bukkit.Location,org.bukkit.Location)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilPlayer",
+    "l": "isInventoryFull(Player)",
+    "u": "isInventoryFull(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "VersionChecker",
+    "l": "isLegacy()"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "VersionChecker",
+    "l": "isModern()"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "isOnCooldown(I)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "isOnCooldown(UUID)",
+    "u": "isOnCooldown(java.util.UUID)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "isPlayerOnly()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "isRepackaged()"
+}, {"p": "games.negative.framework.gui.internal", "c": "MenuItem", "l": "item"}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "ItemBuilder(ItemStack)",
+    "u": "%3Cinit%3E(org.bukkit.inventory.ItemStack)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "ItemBuilder(Material)",
+    "u": "%3Cinit%3E(org.bukkit.Material)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "ItemBuilder(Material, int)",
+    "u": "%3Cinit%3E(org.bukkit.Material,int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "ItemBuilder(Material, int, byte)",
+    "u": "%3Cinit%3E(org.bukkit.Material,int,byte)"
+}, {"p": "games.negative.framework.gui", "c": "DropperGUI", "l": "items"}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "items"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "items"
+}, {
+    "p": "games.negative.framework.util.serializer",
+    "c": "BukkitSerializer",
+    "l": "itemStackArrayFromBase64(String)",
+    "u": "itemStackArrayFromBase64(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.serializer",
+    "c": "BukkitSerializer",
+    "l": "itemStackArrayToBase64(ItemStack[])",
+    "u": "itemStackArrayToBase64(org.bukkit.inventory.ItemStack[])"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder.JsonObject",
+    "l": "JsonObject(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder",
+    "l": "JsonObjectBuilder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "key"
+}, {
+    "p": "games.negative.framework.database.builder.general",
+    "c": "WhereBuilder",
+    "l": "key"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap.Entry",
+    "l": "key"
+}, {
+    "p": "games.negative.framework.database.builder.general",
+    "c": "WhereBuilder",
+    "l": "key(String)",
+    "u": "key(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Column",
+    "l": "length"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "lines"
+}, {"p": "games.negative.framework.skulls", "c": "CustomSkull", "l": "link"}, {
+    "p": "games.negative.framework.skull",
+    "c": "CustomSkull",
+    "l": "link()"
+}, {
+    "p": "games.negative.framework.inputlistener",
+    "c": "InputListener",
+    "l": "listen(UUID, InputListener.InputListenerResponse)",
+    "u": "listen(java.util.UUID,games.negative.framework.inputlistener.InputListener.InputListenerResponse)"
+}, {
+    "p": "games.negative.framework.inputlistener",
+    "c": "InputListener",
+    "l": "listenerMap"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "load()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "FileLoader",
+    "l": "loadFile(JavaPlugin, String)",
+    "u": "loadFile(org.bukkit.plugin.java.JavaPlugin,java.lang.String)"
+}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "loadFiles(JavaPlugin, String...)",
+    "u": "loadFiles(org.bukkit.plugin.java.JavaPlugin,java.lang.String...)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "log(String)",
+    "u": "log(java.lang.String)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "logErrors"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "logEvent"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "LoginBuilder",
+    "l": "LoginBuilder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "logResponseStatusText"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "logSentData"
+}, {"p": "games.negative.framework.database", "c": "ColumnType", "l": "LONG"}, {
+    "p": "games.negative.framework.util",
+    "c": "TimeUtil",
+    "l": "longFromString(String)",
+    "u": "longFromString(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.proxy",
+    "c": "BungeeManager",
+    "l": "main"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "MATCH_VARIABLE"
+}, {
+    "p": "games.negative.framework.gui.internal",
+    "c": "MenuItem",
+    "l": "MenuItem()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "message"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "message"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "MESSAGE_FROM_STRING"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "Message(Collection<String>)",
+    "u": "%3Cinit%3E(java.util.Collection)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "Message(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "Message(String...)",
+    "u": "%3Cinit%3E(java.lang.String...)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "METRICS_VERSION"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics",
+    "l": "Metrics(JavaPlugin, int)",
+    "u": "%3Cinit%3E(org.bukkit.plugin.java.JavaPlugin,int)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics",
+    "l": "metricsBase"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "MetricsBase(String, String, int, boolean, Consumer<Metrics.JsonObjectBuilder>, Consumer<Metrics.JsonObjectBuilder>, Consumer<Runnable>, Supplier<Boolean>, BiConsumer<String, Throwable>, Consumer<String>, boolean, boolean, boolean)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,int,boolean,java.util.function.Consumer,java.util.function.Consumer,java.util.function.Consumer,java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.Consumer,boolean,boolean,boolean)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "MigrationCheck",
+    "l": "MigrationCheck()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MultiLineChart",
+    "l": "MultiLineChart(String, Callable<Map<String, Integer>>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "TableBuilder",
+    "l": "name"
+}, {"p": "games.negative.framework.database", "c": "Column", "l": "name"}, {
+    "p": "games.negative.framework.skulls",
+    "c": "CustomSkull",
+    "l": "name"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "name"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "name()"
+}, {
+    "p": "games.negative.framework.skulls",
+    "c": "CustomSkulls",
+    "l": "NEGATIVE_SKULL"
+}, {
+    "p": "games.negative.framework.skulls.items",
+    "c": "NegativeSkull",
+    "l": "NegativeSkull()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "newInstance(Class<T>)",
+    "u": "newInstance(java.lang.Class)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "NM_PACKAGE"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "NMS_PACKAGE"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "NMS_PREFIX"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "NMS_REPACKAGED"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "nmsClass(String, String)",
+    "u": "nmsClass(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "nmsClassName(String, String)",
+    "u": "nmsClassName(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "nmsOptionalClass(String, String)",
+    "u": "nmsOptionalClass(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database.exception",
+    "c": "NoValidConstructorException",
+    "l": "NoValidConstructorException(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "OBC_PACKAGE"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "OBC_PREFIX"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "obcClass(String)",
+    "u": "obcClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "obcClassName(String)",
+    "u": "obcClassName(java.lang.String)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "obcOptionalClass(String)",
+    "u": "obcOptionalClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "ObjectCache()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ObjectiveMode",
+    "l": "ObjectiveMode()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.skull",
+    "c": "CustomSkull",
+    "l": "of(String)",
+    "u": "of(java.lang.String)"
+}, {
+    "p": "games.negative.framework.inputlistener",
+    "c": "InputListener",
+    "l": "onChat(AsyncPlayerChatEvent)",
+    "u": "onChat(org.bukkit.event.player.AsyncPlayerChatEvent)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuHolder",
+    "l": "onClick(InventoryClickEvent)",
+    "u": "onClick(org.bukkit.event.inventory.InventoryClickEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "onClick(InventoryClickEvent)",
+    "u": "onClick(org.bukkit.event.inventory.InventoryClickEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "onClick(InventoryClickEvent)",
+    "u": "onClick(org.bukkit.event.inventory.InventoryClickEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "onClick(InventoryClickEvent)",
+    "u": "onClick(org.bukkit.event.inventory.InventoryClickEvent)"
+}, {"p": "games.negative.framework.gui", "c": "DropperGUI", "l": "onClose"}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "onClose"
+}, {"p": "games.negative.framework.gui", "c": "HopperGUI", "l": "onClose"}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "onClose(BiConsumer<Player, InventoryCloseEvent>)",
+    "u": "onClose(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "onClose(BiConsumer<Player, InventoryCloseEvent>)",
+    "u": "onClose(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "onClose(BiConsumer<Player, InventoryCloseEvent>)",
+    "u": "onClose(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "onClose(BiConsumer<Player, InventoryCloseEvent>)",
+    "u": "onClose(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui.listener",
+    "c": "GUIListener",
+    "l": "onClose(InventoryCloseEvent)",
+    "u": "onClose(org.bukkit.event.inventory.InventoryCloseEvent)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuHolder",
+    "l": "onClose(Player, InventoryCloseEvent)",
+    "u": "onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "onClose(Player, InventoryCloseEvent)",
+    "u": "onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "onClose(Player, InventoryCloseEvent)",
+    "u": "onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "onClose(Player, InventoryCloseEvent)",
+    "u": "onClose(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryCloseEvent)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "onCommand(CommandSender, String, String[])",
+    "u": "onCommand(org.bukkit.command.CommandSender,java.lang.String,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "onCommand(CommandSender, String[])",
+    "u": "onCommand(org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "onCommand(CommandSender, String[])",
+    "u": "onCommand(org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsListener",
+    "l": "onCommandInput(PlayerCommandPreprocessEvent)",
+    "u": "onCommandInput(org.bukkit.event.player.PlayerCommandPreprocessEvent)"
+}, {
+    "p": "games.negative.framework.command.logging",
+    "c": "CommandLogListener",
+    "l": "onCommandLog(CommandLogEvent)",
+    "u": "onCommandLog(games.negative.framework.command.event.CommandLogEvent)"
+}, {"p": "games.negative.framework.util", "c": "Disableable", "l": "onDisable()"}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "onEnable()"
+}, {
+    "p": "games.negative.framework.gui.listener",
+    "c": "GUIListener",
+    "l": "onInvClick(InventoryClickEvent)",
+    "u": "onInvClick(org.bukkit.event.inventory.InventoryClickEvent)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "onInventoryClick(BiConsumer<Player, InventoryClickEvent>)",
+    "u": "onInventoryClick(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "onInventoryClick(BiConsumer<Player, InventoryClickEvent>)",
+    "u": "onInventoryClick(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "onInventoryClick(BiConsumer<Player, InventoryClickEvent>)",
+    "u": "onInventoryClick(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "onInventoryClick(BiConsumer<Player, InventoryClickEvent>)",
+    "u": "onInventoryClick(java.util.function.BiConsumer)"
+}, {"p": "games.negative.framework.gui", "c": "DropperGUI", "l": "onOpen"}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "onOpen"
+}, {"p": "games.negative.framework.gui", "c": "HopperGUI", "l": "onOpen"}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "onOpen(BiConsumer<Player, InventoryOpenEvent>)",
+    "u": "onOpen(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "onOpen(BiConsumer<Player, InventoryOpenEvent>)",
+    "u": "onOpen(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "onOpen(BiConsumer<Player, InventoryOpenEvent>)",
+    "u": "onOpen(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "onOpen(BiConsumer<Player, InventoryOpenEvent>)",
+    "u": "onOpen(java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui.listener",
+    "c": "GUIListener",
+    "l": "onOpen(InventoryOpenEvent)",
+    "u": "onOpen(org.bukkit.event.inventory.InventoryOpenEvent)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuHolder",
+    "l": "onOpen(Player, InventoryOpenEvent)",
+    "u": "onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "DropperGUIHolder",
+    "l": "onOpen(Player, InventoryOpenEvent)",
+    "u": "onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "GUIHolder",
+    "l": "onOpen(Player, InventoryOpenEvent)",
+    "u": "onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"
+}, {
+    "p": "games.negative.framework.gui.holder",
+    "c": "HopperGUIHolder",
+    "l": "onOpen(Player, InventoryOpenEvent)",
+    "u": "onOpen(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryOpenEvent)"
+}, {
+    "p": "games.negative.framework.command.logging",
+    "c": "CommandLogListener",
+    "l": "onSubCommandLog(SubCommandLogEvent)",
+    "u": "onSubCommandLog(games.negative.framework.command.event.SubCommandLogEvent)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "open(Player)",
+    "u": "open(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "open(Player)",
+    "u": "open(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "open(Player)",
+    "u": "open(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "open(Player)",
+    "u": "open(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "optionalClass(String)",
+    "u": "optionalClass(java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PACKET_SB_DISPLAY_OBJ"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PACKET_SB_OBJ"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PACKET_SB_SCORE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PACKET_SB_SERIALIZABLE_TEAM"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PACKET_SB_TEAM"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PACKETS"
+}, {"p": "games.negative.framework.command", "c": "Command", "l": "params"}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "params"
+}, {"p": "games.negative.framework.command", "c": "Command", "l": "parent"}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "parent"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "LoginBuilder",
+    "l": "password"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "password"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "path"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "permission"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "permission()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "permissionNode"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "pitch"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "platform"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "player"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PLAYER_CONNECTION"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "PLAYER_GET_HANDLE"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "playerInventoryClickEvent"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "playerInventoryClickEvent"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "playerInventoryClickEvent"
+}, {
+    "p": "games.negative.framework.util.serializer",
+    "c": "BukkitSerializer",
+    "l": "playerInventoryToBase64(PlayerInventory)",
+    "u": "playerInventoryToBase64(org.bukkit.inventory.PlayerInventory)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "playerOnly"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "playerOnly"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "playerOnly()"
+}, {"p": "games.negative.framework.bStats", "c": "Metrics", "l": "plugin"}, {
+    "p": "games.negative.framework.event",
+    "c": "PluginEvent",
+    "l": "PluginEvent()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "LoginBuilder",
+    "l": "port"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "port"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "position1"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "position2"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "HasteBin",
+    "l": "post(String, boolean)",
+    "u": "post(java.lang.String,boolean)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "TableBuilder",
+    "l": "primaryKey"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "priority"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "put(K, V, V1)",
+    "u": "put(K,V,V1)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "putFirst(K, V)",
+    "u": "putFirst(K,V)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "putSecond(K, V1)",
+    "u": "putSecond(K,V1)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "refresh(Player)",
+    "u": "refresh(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "refresh(Player)",
+    "u": "refresh(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "refresh(Player)",
+    "u": "refresh(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "refresh(Player)",
+    "u": "refresh(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "registerCommands(Command...)",
+    "u": "registerCommands(org.bukkit.command.Command...)"
+}, {
+    "p": "games.negative.framework",
+    "c": "BasePlugin",
+    "l": "registerListeners(Listener...)",
+    "u": "registerListeners(org.bukkit.event.Listener...)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Reloadable",
+    "l": "reload()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ObjectiveMode",
+    "l": "REMOVE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ScoreboardAction",
+    "l": "REMOVE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "REMOVE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "REMOVE_PLAYERS"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "remove(Command)",
+    "u": "remove(org.bukkit.command.Command)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "remove(K)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "remove(T)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "removeAll(Collection<Command>)",
+    "u": "removeAll(java.util.Collection)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "removeAll(Collection<T>)",
+    "u": "removeAll(java.util.Collection)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "removeAll(Function<Command, Boolean>)",
+    "u": "removeAll(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "removeAll(Function<T, Boolean>)",
+    "u": "removeAll(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "removeAllIf(Function<BiMap.Entry<K, V, V1>, Boolean>)",
+    "u": "removeAllIf(java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "removeColumnFromTable(String, String)",
+    "u": "removeColumnFromTable(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "removeEnchantment(Enchantment)",
+    "u": "removeEnchantment(org.bukkit.enchantments.Enchantment)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "removeEnchantment(Enchantment)",
+    "u": "removeEnchantment(org.bukkit.enchantments.Enchantment)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "removeIf(K, Function<BiMap.Entry<K, V, V1>, Boolean>)",
+    "u": "removeIf(K,java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "removeItemFlag(ItemFlag)",
+    "u": "removeItemFlag(org.bukkit.inventory.ItemFlag)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "removeItemFlags(ItemFlag...)",
+    "u": "removeItemFlags(org.bukkit.inventory.ItemFlag...)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "removeLine(int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "removeLoreLine(int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "removeLoreLine(int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "removeLoreLine(String)",
+    "u": "removeLoreLine(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "replace(K, V, V1)",
+    "u": "replace(K,V,V1)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "replace(String, String)",
+    "u": "replace(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "replace(String, String)",
+    "u": "replace(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "replace(String, String, String, HashMap<String, String>)",
+    "u": "replace(java.lang.String,java.lang.String,java.lang.String,java.util.HashMap)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "replace(String, WhereBuilder, HashMap<String, String>)",
+    "u": "replace(java.lang.String,games.negative.framework.database.builder.general.WhereBuilder,java.util.HashMap)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "replaceAllFirstValues(Function<BiMap.Entry<K, V, V1>, Boolean>, V)",
+    "u": "replaceAllFirstValues(java.util.function.Function,V)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "replaceAllSecondaryValues(Function<BiMap.Entry<K, V, V1>, Boolean>, V1)",
+    "u": "replaceAllSecondaryValues(java.util.function.Function,V1)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "replaceAllValues(Function<BiMap.Entry<K, V, V1>, Boolean>, V, V1)",
+    "u": "replaceAllValues(java.util.function.Function,V,V1)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "replaceFirst(K, V)",
+    "u": "replaceFirst(K,V)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "replaceLore(Consumer<List<String>>)",
+    "u": "replaceLore(java.util.function.Consumer)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "replacePrimaryKey(String, String)",
+    "u": "replacePrimaryKey(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "replaceSecond(K, V1)",
+    "u": "replaceSecond(K,V1)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "REPORT_URL"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "repository"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "RESET_FORMATTING"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilPlayer",
+    "l": "reset(Player)",
+    "u": "reset(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "resetCooldown(I)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "resetCooldown(UUID)",
+    "u": "resetCooldown(java.util.UUID)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "resetCooldowns()"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "resetCooldowns()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "retrieveConstructor(Class<?>)",
+    "u": "retrieveConstructor(java.lang.Class)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "rollback()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "rowExists(String, String, String)",
+    "u": "rowExists(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "rowExists(String, WhereBuilder)",
+    "u": "rowExists(java.lang.String,games.negative.framework.database.builder.general.WhereBuilder)"
+}, {"p": "games.negative.framework.gui", "c": "GUI", "l": "rows"}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "runLogEvent(CommandBase, CommandSender, String[])",
+    "u": "runLogEvent(games.negative.framework.command.base.CommandBase,org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "runLogEvent(CommandBase, CommandSender, String[])",
+    "u": "runLogEvent(games.negative.framework.command.base.CommandBase,org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "runLogEvent(CommandBase, CommandSender, String[])",
+    "u": "runLogEvent(games.negative.framework.command.base.CommandBase,org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "runSubCommand(SubCommand, CommandSender, String[])",
+    "u": "runSubCommand(games.negative.framework.command.SubCommand,org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "runSubCommand(SubCommand, CommandSender, String[])",
+    "u": "runSubCommand(games.negative.framework.command.SubCommand,org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "runSubCommand(SubCommand, CommandSender, String[])",
+    "u": "runSubCommand(games.negative.framework.command.SubCommand,org.bukkit.command.CommandSender,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.util.cache",
+    "c": "ObjectCache",
+    "l": "save(ArrayList<T>)",
+    "u": "save(java.util.ArrayList)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "scheduler"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "Scoreboard(Player)",
+    "u": "%3Cinit%3E(org.bukkit.entity.Player)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ScoreboardAction",
+    "l": "ScoreboardAction()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "SEND_PACKET"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "send(CommandSender)",
+    "u": "send(org.bukkit.command.CommandSender)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "send(CommandSender)",
+    "u": "send(org.bukkit.command.CommandSender)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "Message",
+    "l": "send(Iterable<CommandSender>)",
+    "u": "send(java.lang.Iterable)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "send(Iterable<CommandSender>)",
+    "u": "send(java.lang.Iterable)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "sendData(Metrics.JsonObjectBuilder.JsonObject)",
+    "u": "sendData(games.negative.framework.bStats.Metrics.JsonObjectBuilder.JsonObject)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "sendDisplayObjectivePacket()"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "CommandLogEvent",
+    "l": "sender"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "SubCommandLogEvent",
+    "l": "sender"
+}, {
+    "p": "games.negative.framework.util.proxy",
+    "c": "BungeeManager",
+    "l": "sendMessage(Player, String)",
+    "u": "sendMessage(org.bukkit.entity.Player,java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "sendObjectivePacket(Scoreboard.ObjectiveMode)",
+    "u": "sendObjectivePacket(games.negative.framework.scoreboard.Scoreboard.ObjectiveMode)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "sendPacket(Object)",
+    "u": "sendPacket(java.lang.Object)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "sendParamMessage(String[], CommandSender)",
+    "u": "sendParamMessage(java.lang.String[],org.bukkit.command.CommandSender)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "sendScorePacket(int, Scoreboard.ScoreboardAction)",
+    "u": "sendScorePacket(int,games.negative.framework.scoreboard.Scoreboard.ScoreboardAction)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "sendTeamPacket(int, Scoreboard.TeamMode)",
+    "u": "sendTeamPacket(int,games.negative.framework.scoreboard.Scoreboard.TeamMode)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "serverUuid"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "VersionChecker",
+    "l": "serverVersion"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "ServerVersion()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "serviceId"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections.FieldAccessor",
+    "l": "set(Object, Object)",
+    "u": "set(java.lang.Object,java.lang.Object)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "setAmount(int)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "setColumnDefaultValue(String, String, String)",
+    "u": "setColumnDefaultValue(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "setComponentField(Object, String, int)",
+    "u": "setComponentField(java.lang.Object,java.lang.String,int)"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "setCooldown(I, V)",
+    "u": "setCooldown(I,V)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "setCooldown(UUID, Long)",
+    "u": "setCooldown(java.util.UUID,java.lang.Long)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "setData(short)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setDurability(short)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setDyeColor(DyeColor)",
+    "u": "setDyeColor(org.bukkit.DyeColor)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap",
+    "l": "setEntries(List<BiMap.Entry<K, V, V1>>)",
+    "u": "setEntries(java.util.List)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "setField(Object, Class<?>, Object)",
+    "u": "setField(java.lang.Object,java.lang.Class,java.lang.Object)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "setField(Object, Class<?>, Object, int)",
+    "u": "setField(java.lang.Object,java.lang.Class,java.lang.Object,int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setInfinityDurability()"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "setItem(int, Function<Player, ItemStack>)",
+    "u": "setItem(int,java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "setItem(int, Function<Player, ItemStack>)",
+    "u": "setItem(int,java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "setItem(int, Function<Player, ItemStack>)",
+    "u": "setItem(int,java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "setItem(int, Function<Player, ItemStack>)",
+    "u": "setItem(int,java.util.function.Function)"
+}, {
+    "p": "games.negative.framework.gui.base",
+    "c": "MenuBase",
+    "l": "setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "GUI",
+    "l": "setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "setItemClickEvent(int, Function<Player, ItemStack>, BiConsumer<Player, InventoryClickEvent>)",
+    "u": "setItemClickEvent(int,java.util.function.Function,java.util.function.BiConsumer)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "setKey(String)",
+    "u": "setKey(java.lang.String)"
+}, {"p": "games.negative.framework.key", "c": "Keyd", "l": "setKey(T)"}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setLeatherArmorColor(Color)",
+    "u": "setLeatherArmorColor(org.bukkit.Color)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setLore(List<String>)",
+    "u": "setLore(java.util.List)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "setLore(List<String>)",
+    "u": "setLore(java.util.List)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setLore(String...)",
+    "u": "setLore(java.lang.String...)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "setLore(String...)",
+    "u": "setLore(java.lang.String...)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "setLoreLine(String, int)",
+    "u": "setLoreLine(java.lang.String,int)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setMaterial(Material)",
+    "u": "setMaterial(org.bukkit.Material)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "setMessage(Message)",
+    "u": "setMessage(games.negative.framework.message.Message)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setName(String)",
+    "u": "setName(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "setName(String)",
+    "u": "setName(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command.base",
+    "c": "CommandBase",
+    "l": "setParent(CommandBase)",
+    "u": "setParent(games.negative.framework.command.base.CommandBase)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "setParent(CommandBase)",
+    "u": "setParent(games.negative.framework.command.base.CommandBase)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "setParent(CommandBase)",
+    "u": "setParent(games.negative.framework.command.base.CommandBase)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setSkullOwner(String)",
+    "u": "setSkullOwner(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "setTabComplete(BiFunction<CommandSender, String[], List<String>>)",
+    "u": "setTabComplete(java.util.function.BiFunction)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "setWoolColor(DyeColor)",
+    "u": "setWoolColor(org.bukkit.DyeColor)"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsListener",
+    "l": "shortCommands"
+}, {
+    "p": "games.negative.framework.command.annotation",
+    "c": "CommandInfo",
+    "l": "shortCommands()"
+}, {
+    "p": "games.negative.framework.command.shortcommand",
+    "c": "ShortCommands",
+    "l": "ShortCommands()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsListener",
+    "l": "ShortCommandsListener()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "ShortCommandsProvider()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SimpleBarChart",
+    "l": "SimpleBarChart(String, Callable<Map<String, Integer>>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "SimpleLocation()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "SimpleLocationParser",
+    "l": "SimpleLocationParser()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SimplePie",
+    "l": "SimplePie(String, Callable<String>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.SingleLineChart",
+    "l": "SingleLineChart(String, Callable<Integer>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.concurrent.Callable)"
+}, {
+    "p": "games.negative.framework.command.repository",
+    "c": "FrameworkCommandRepository",
+    "l": "size()"
+}, {
+    "p": "games.negative.framework.repository",
+    "c": "Repository",
+    "l": "size()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "size()"
+}, {"p": "games.negative.framework.util.data", "c": "BiMap", "l": "size()"}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "SkullReflections()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.gui.internal",
+    "c": "MenuItem",
+    "l": "slot"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "sqlLiteFile"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldowns",
+    "l": "startInternalCooldowns(JavaPlugin)",
+    "u": "startInternalCooldowns(org.bukkit.plugin.java.JavaPlugin)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "startSubmitting()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "startTransaction()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Statement",
+    "l": "Statement()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "stopCooldowns()"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "stopCooldowns()"
+}, {"p": "games.negative.framework.util.data", "c": "BiMap", "l": "stream()"}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "SubCommand()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "SubCommand(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "SubCommand(String, List<String>)",
+    "u": "%3Cinit%3E(java.lang.String,java.util.List)"
+}, {
+    "p": "games.negative.framework.command.event",
+    "c": "SubCommandLogEvent",
+    "l": "SubCommandLogEvent()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "subCommandLogEventConsumer"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "subCommands"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "SubCommand",
+    "l": "subCommands"
+}, {
+    "p": "games.negative.framework.command.shortcommand.provider",
+    "c": "ShortCommandsProvider",
+    "l": "subCommandShortCommands"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "submitData()"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.MetricsBase",
+    "l": "submitTaskConsumer"
+}, {
+    "p": "games.negative.framework.command",
+    "c": "Command",
+    "l": "tabComplete(CommandSender, String, String[])",
+    "u": "tabComplete(org.bukkit.command.CommandSender,java.lang.String,java.lang.String[])"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "InsertBuilder",
+    "l": "table"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "InsertBuilder",
+    "l": "table(String)",
+    "u": "table(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "TableBuilder",
+    "l": "TableBuilder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "tableExists(String)",
+    "u": "tableExists(java.lang.String)"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "task"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "Task()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "task(JavaPlugin, Runnable)",
+    "u": "task(org.bukkit.plugin.java.JavaPlugin,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "task(Runnable)",
+    "u": "task(java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "taskDelayed(JavaPlugin, long, Runnable)",
+    "u": "taskDelayed(org.bukkit.plugin.java.JavaPlugin,long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "taskDelayed(long, Runnable)",
+    "u": "taskDelayed(long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "taskRepeating(JavaPlugin, long, long, Runnable)",
+    "u": "taskRepeating(org.bukkit.plugin.java.JavaPlugin,long,long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Task",
+    "l": "taskRepeating(long, long, Runnable)",
+    "u": "taskRepeating(long,long,java.lang.Runnable)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "TeamMode()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "theUnsafe"
+}, {
+    "p": "games.negative.framework.cooldown",
+    "c": "Cooldown",
+    "l": "tick()"
+}, {
+    "p": "games.negative.framework.cooldown.internal",
+    "c": "GenericCooldown",
+    "l": "tick()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "TimeUtil",
+    "l": "TimeUtil()",
+    "u": "%3Cinit%3E()"
+}, {"p": "games.negative.framework.database", "c": "ColumnType", "l": "TINYINT"}, {
+    "p": "games.negative.framework.gui",
+    "c": "DropperGUI",
+    "l": "title"
+}, {"p": "games.negative.framework.gui", "c": "GUI", "l": "title"}, {
+    "p": "games.negative.framework.gui",
+    "c": "HopperGUI",
+    "l": "title"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "title"
+}, {
+    "p": "games.negative.framework.skulls",
+    "c": "CustomSkull",
+    "l": "toItem()"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "toLocation()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "SimpleLocationParser",
+    "l": "toSimpleLocation(Location)",
+    "u": "toSimpleLocation(org.bukkit.Location)"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder.JsonObject",
+    "l": "toString()"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "CuboidRegion",
+    "l": "toString()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemBuilder",
+    "l": "translate(String)",
+    "u": "translate(java.lang.String)"
+}, {"p": "games.negative.framework.database", "c": "Column", "l": "type"}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ObjectiveMode",
+    "l": "UPDATE"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "UPDATE"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "ItemUpdater",
+    "l": "update(ItemStack)",
+    "u": "update(org.bukkit.inventory.ItemStack)"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Database",
+    "l": "update(String, WhereBuilder, String, String)",
+    "u": "update(java.lang.String,games.negative.framework.database.builder.general.WhereBuilder,java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "updateLine(int, String)",
+    "u": "updateLine(int,java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "updateLines(Collection<String>)",
+    "u": "updateLines(java.util.Collection)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "updateLines(String...)",
+    "u": "updateLines(java.lang.String...)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "updateTitle(String)",
+    "u": "updateTitle(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "LoginBuilder",
+    "l": "username"
+}, {"p": "games.negative.framework.database", "c": "Database", "l": "username"}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilHTTP",
+    "l": "UtilHTTP()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilPlayer",
+    "l": "UtilPlayer()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "Utils",
+    "l": "Utils()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util",
+    "c": "UtilStringBuilder",
+    "l": "UtilStringBuilder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_10"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_11"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_12"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "V1_13"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_13"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_14"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_15"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_16"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "V1_17"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_17"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_18"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_19"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "V1_7"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_7"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "V1_8"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_8"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "V1_9"
+}, {
+    "p": "games.negative.framework.bStats",
+    "c": "Metrics.JsonObjectBuilder.JsonObject",
+    "l": "value"
+}, {
+    "p": "games.negative.framework.database.builder.general",
+    "c": "WhereBuilder",
+    "l": "value"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "Statement",
+    "l": "value"
+}, {
+    "p": "games.negative.framework.database.annotation",
+    "c": "Column",
+    "l": "value()"
+}, {
+    "p": "games.negative.framework.database.builder.general",
+    "c": "WhereBuilder",
+    "l": "value(String)",
+    "u": "value(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "InsertBuilder",
+    "l": "value(String, String)",
+    "u": "value(java.lang.String,java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap.Entry",
+    "l": "value1"
+}, {
+    "p": "games.negative.framework.util.data",
+    "c": "BiMap.Entry",
+    "l": "value2"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ObjectiveMode",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ScoreboardAction",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "games.negative.framework.database.builder",
+    "c": "InsertBuilder",
+    "l": "values"
+}, {
+    "p": "games.negative.framework.database",
+    "c": "ColumnType",
+    "l": "values()"
+}, {
+    "p": "games.negative.framework.message",
+    "c": "FrameworkMessage",
+    "l": "values()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ObjectiveMode",
+    "l": "values()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.ScoreboardAction",
+    "l": "values()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.TeamMode",
+    "l": "values()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "values()"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "ServerVersion",
+    "l": "values()"
+}, {"p": "games.negative.framework.database", "c": "ColumnType", "l": "VARCHAR"}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "VERSION"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "SkullReflections",
+    "l": "VERSION"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard",
+    "l": "VERSION_TYPE"
+}, {
+    "p": "games.negative.framework.util.version",
+    "c": "VersionChecker",
+    "l": "VersionChecker()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.scoreboard",
+    "c": "Scoreboard.VersionType",
+    "l": "VersionType()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.nms",
+    "c": "FastReflection",
+    "l": "VOID_METHOD_TYPE"
+}, {
+    "p": "games.negative.framework.database.builder.general",
+    "c": "WhereBuilder",
+    "l": "WhereBuilder()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "world"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "x"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "y"
+}, {
+    "p": "games.negative.framework.util.structure",
+    "c": "SimpleLocation",
+    "l": "yaw"
+}, {"p": "games.negative.framework.util.structure", "c": "SimpleLocation", "l": "z"}];
+updateSearchResults();

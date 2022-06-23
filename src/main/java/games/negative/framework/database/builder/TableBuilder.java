@@ -34,6 +34,7 @@ import java.util.List;
 
 /**
  * Represents a MySQL table
+ *
  * @author Seailz
  */
 @Data

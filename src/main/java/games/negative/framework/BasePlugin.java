@@ -60,6 +60,10 @@ public abstract class BasePlugin extends JavaPlugin {
     private static BasePlugin inst;
     private CommandRepository commandRepository;
 
+    public static BasePlugin getInst() {
+        return inst;
+    }
+
     @Override
     public void onEnable() {
         inst = this;
@@ -77,7 +81,6 @@ public abstract class BasePlugin extends JavaPlugin {
 
         commandRepository = new FrameworkCommandRepository();
     }
-
 
     /**
      * Load custom files with pre-written data.
@@ -161,9 +164,5 @@ public abstract class BasePlugin extends JavaPlugin {
     public void registerListeners(@NotNull Listener... listeners) {
         PluginManager pluginManager = Bukkit.getPluginManager();
         Arrays.stream(listeners).forEach(listener -> pluginManager.registerEvents(listener, this));
-    }
-
-    public static BasePlugin getInst() {
-        return inst;
     }
 }

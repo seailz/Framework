@@ -1,7 +1,7 @@
 name: General Question
 description: Asks a general question
 title: "[Question] "
-labels: ["question", "state: pending"]
+labels: [ "question", "state: pending" ]
 body:
   - type: markdown
     attributes:

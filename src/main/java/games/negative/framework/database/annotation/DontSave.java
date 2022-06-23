@@ -7,8 +7,10 @@ import java.lang.annotation.Target;
 
 /**
  * Specify to not save this field to the database
+ *
  * @author Seailz
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DontSave {}
+public @interface DontSave {
+}

@@ -34,6 +34,7 @@ import java.sql.ResultSet;
 
 /**
  * Create a new Statement
+ *
  * @author Seailz
  */
 @Data
@@ -45,6 +46,7 @@ public class Statement {
 
     /**
      * Execute your statement
+     *
      * @return a {@link ResultSet}
      */
     @SneakyThrows

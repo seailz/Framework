@@ -29,6 +29,7 @@ import lombok.Data;
 
 /**
  * Represents a value in a table
+ *
  * @author Seailz
  */
 @Data
