@@ -63,4 +63,52 @@ public class WebUtils {
         connection.disconnect();
     }
 
+    /**
+     * Send a DELETE request to a URL
+     * @param url URL
+     * @throws IOException If the request fails
+     */
+    public void sendDeleteRequest(@NotNull String url) throws IOException {
+        URL rawURL = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
+        connection.setRequestMethod("DELETE");
+        connection.getOutputStream().flush();
+        connection.getOutputStream().close();
+        connection.disconnect();
+    }
+
+    /**
+     * Send a PUT request to a URL
+     * @param url URL
+     * @param data Data to send
+     * @throws IOException If the request fails
+     */
+    public void sendPutRequest(@NotNull String url, @NotNull String data) throws IOException {
+        URL rawURL = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
+        connection.setRequestMethod("PUT");
+        connection.setDoOutput(true);
+        connection.getOutputStream().write(data.getBytes());
+        connection.getOutputStream().flush();
+        connection.getOutputStream().close();
+        connection.disconnect();
+    }
+
+    /**
+     * Send a PATCH request to a URL
+     * @param url URL
+     * @param data Data to send
+     * @throws IOException If the request fails
+     */
+    public void sendPatchRequest(@NotNull String url, @NotNull String data) throws IOException {
+        URL rawURL = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
+        connection.setRequestMethod("PATCH");
+        connection.setDoOutput(true);
+        connection.getOutputStream().write(data.getBytes());
+        connection.getOutputStream().flush();
+        connection.getOutputStream().close();
+        connection.disconnect();
+    }
+
 }
