@@ -2,6 +2,7 @@ package games.negative.framework.database;
 
 /**
  * Represents the type of value within a table
+ *
  * @author Seailz
  * <p></p>
  * <p>{@code VARCHAR} represents a {@link String}</p>

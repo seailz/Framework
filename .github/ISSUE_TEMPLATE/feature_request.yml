@@ -1,7 +1,7 @@
 name: Feature Request
 description: Request a new feature
 title: "[Feature Request] "
-labels: ["type: feature request", "state: pending"]
+labels: [ "type: feature request", "state: pending" ]
 body:
   - type: markdown
     attributes:
