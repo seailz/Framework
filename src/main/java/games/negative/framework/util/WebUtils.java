@@ -23,7 +23,7 @@ public class WebUtils {
      * @return JSON Object from the HTTP request
      */
     @SneakyThrows
-    public JSONObject sendGetRequest(@NotNull String url) {
+    public JSONObject get(@NotNull String url) {
         URL rawURL = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
         connection.setRequestMethod("GET");
@@ -52,7 +52,7 @@ public class WebUtils {
      * @throws IOException If the request fails
      * @author Seailz
      */
-    public void sendPostRequest(@NotNull String url, @NotNull String data) throws IOException {
+    public void post(@NotNull String url, @NotNull String data) throws IOException {
         URL rawURL = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
         connection.setRequestMethod("POST");
@@ -68,7 +68,7 @@ public class WebUtils {
      * @param url URL
      * @throws IOException If the request fails
      */
-    public void sendDeleteRequest(@NotNull String url) throws IOException {
+    public void delete(@NotNull String url) throws IOException {
         URL rawURL = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
         connection.setRequestMethod("DELETE");
@@ -83,7 +83,7 @@ public class WebUtils {
      * @param data Data to send
      * @throws IOException If the request fails
      */
-    public void sendPutRequest(@NotNull String url, @NotNull String data) throws IOException {
+    public void put(@NotNull String url, @NotNull String data) throws IOException {
         URL rawURL = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
         connection.setRequestMethod("PUT");
@@ -100,7 +100,7 @@ public class WebUtils {
      * @param data Data to send
      * @throws IOException If the request fails
      */
-    public void sendPatchRequest(@NotNull String url, @NotNull String data) throws IOException {
+    public void patch(@NotNull String url, @NotNull String data) throws IOException {
         URL rawURL = new URL(url);
         HttpURLConnection connection = (HttpURLConnection) rawURL.openConnection();
         connection.setRequestMethod("PATCH");
