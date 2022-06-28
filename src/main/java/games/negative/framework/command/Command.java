@@ -43,12 +43,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 @Getter
 @Setter
 public abstract class Command extends org.bukkit.command.Command implements CommandBase {
     private final List<SubCommand> subCommands = new ArrayList<>();
 
+    private final Command command = this;
     public boolean consoleOnly = false;
     public boolean playerOnly = false;
     public boolean disabled = false;
@@ -57,6 +59,7 @@ public abstract class Command extends org.bukkit.command.Command implements Comm
     private TabCompleter completer;
     private Consumer<CommandLogEvent> logEvent;
     private CommandBase parent;
+    private Function<CommandSender, Integer> cooldown;
 
     public Command() {
         this("1");
@@ -119,6 +122,8 @@ public abstract class Command extends org.bukkit.command.Command implements Comm
     }
 
     public abstract void onCommand(CommandSender sender, String[] args);
+
+    ;
 
     public void onCommand(CommandSender sender, String label, String[] args) {
         onCommand(sender, args);

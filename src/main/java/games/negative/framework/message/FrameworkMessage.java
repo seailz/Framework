@@ -32,6 +32,10 @@ public enum FrameworkMessage {
             "&cUsage: &7/%command% %usage%"
     )),
 
+    COMMAND_COOLDOWN(Collections.singletonList(
+            "&cThat command is still on cooldown."
+    )),
+
     ;
     private final List<String> defaultMessage;
     private Message message;

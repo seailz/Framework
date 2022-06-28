@@ -42,6 +42,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
@@ -52,6 +53,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 @Getter
@@ -59,6 +61,7 @@ public abstract class BasePlugin extends JavaPlugin {
 
     private static BasePlugin inst;
     private CommandRepository commandRepository;
+    private HashMap<CommandSender, games.negative.framework.command.Command> commandCooldown;
 
     public static BasePlugin getInst() {
         return inst;
@@ -67,6 +70,7 @@ public abstract class BasePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         inst = this;
+        commandCooldown = new HashMap<>();
         FrameworkMessage.init();
         new VersionChecker();
 

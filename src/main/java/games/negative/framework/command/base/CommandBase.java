@@ -1,7 +1,10 @@
 package games.negative.framework.command.base;
 
+import games.negative.framework.BasePlugin;
+import games.negative.framework.command.Command;
 import games.negative.framework.command.SubCommand;
 import games.negative.framework.message.FrameworkMessage;
+import games.negative.framework.util.Task;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -11,11 +14,19 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * The base class for all commands.
  */
 public interface CommandBase {
+
+    /**
+     * Gets the command
+     *
+     * @return The command
+     */
+    Command getCommand();
 
     /**
      * Executes the command.
@@ -132,6 +143,14 @@ public interface CommandBase {
     boolean isConsoleOnly();
 
     /**
+     * The command cooldown
+     *
+     * The Integer value is the amount of ticks the command is on cooldown for.
+     * @return The command cooldown.
+     */
+    Function<CommandSender, Integer> getCooldown();
+
+    /**
      * Get the permission of the command.
      *
      * @return The permission of the command.
@@ -169,6 +188,17 @@ public interface CommandBase {
 
             FrameworkMessage.COMMAND_DISABLED.send(sender);
             return;
+        }
+
+        if (getCooldown().apply(sender) > 0) {
+            int time = getCooldown().apply(sender);
+            if (BasePlugin.getInst().getCommandCooldown().get(sender) == getCommand()) {
+                FrameworkMessage.COMMAND_COOLDOWN.send(sender);
+                return;
+            }
+
+            BasePlugin.getInst().getCommandCooldown().put(sender, getCommand());
+            Task.taskDelayed(time, () -> BasePlugin.getInst().getCommandCooldown().remove(sender));
         }
 
         if (isPlayerOnly() && !(sender instanceof Player)) {
