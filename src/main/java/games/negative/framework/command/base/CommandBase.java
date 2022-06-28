@@ -191,7 +191,8 @@ public interface CommandBase {
             return;
         }
 
-        if (getCooldown().apply(sender) > 0) {
+        // Runs cooldown logic
+        if (getCooldown().apply(sender) > 0 && getCooldown() != null) {
             Map.Entry<CommandSender, Command> entry = new Map.Entry<CommandSender, Command>() {
                 @Override
                 public CommandSender getKey() {
@@ -217,6 +218,7 @@ public interface CommandBase {
 
             BasePlugin.getInst().getCommandCooldown().put(entry, time);
 
+            // Runs the cooldown task, which depletes the saved time by 1 every tick.
             Task.asyncRepeating(BasePlugin.getInst(), 1, 1, new BukkitRunnable() {
                 @Override
                 public void run() {
