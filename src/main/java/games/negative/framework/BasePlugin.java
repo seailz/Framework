@@ -25,7 +25,7 @@
 
 package games.negative.framework;
 
-import games.negative.framework.bStats.Metrics;
+import games.negative.framework.bstats.Metrics;
 import games.negative.framework.command.logging.CommandLogListener;
 import games.negative.framework.command.repository.CommandRepository;
 import games.negative.framework.command.repository.FrameworkCommandRepository;
