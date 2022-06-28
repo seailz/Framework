@@ -61,7 +61,7 @@ public abstract class BasePlugin extends JavaPlugin {
 
     private static BasePlugin inst;
     private CommandRepository commandRepository;
-    private HashMap<CommandSender, Map.Entry<games.negative.framework.command.Command, Integer>> commandCooldown;
+    private HashMap<Map.Entry<CommandSender, games.negative.framework.command.Command>, Integer> commandCooldown;
 
     public static BasePlugin getInst() {
         return inst;

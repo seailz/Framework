@@ -192,38 +192,43 @@ public interface CommandBase {
         }
 
         if (getCooldown().apply(sender) > 0) {
-            int time = getCooldown().apply(sender);
-            if (BasePlugin.getInst().getCommandCooldown().get(sender).getKey() == getCommand()) {
-                FrameworkMessage.COMMAND_COOLDOWN.replace("%cooldown%", BasePlugin.getInst().getCommandCooldown().get(sender).getValue().toString()).send(sender);
-                return;
-            }
-
-            BasePlugin.getInst().getCommandCooldown().put(sender, new Map.Entry<Command, Integer>() {
+            Map.Entry<CommandSender, Command> entry = new Map.Entry<CommandSender, Command>() {
                 @Override
-                public Command getKey() {
+                public CommandSender getKey() {
+                    return sender;
+                }
+
+                @Override
+                public Command getValue() {
                     return getCommand();
                 }
 
                 @Override
-                public Integer getValue() {
-                    return time;
-                }
-
-                @Override
-                public Integer setValue(Integer value) {
+                public Command setValue(Command value) {
                     return null;
                 }
-            });
+            };
+
+            int time = getCooldown().apply(sender);
+            if (BasePlugin.getInst().getCommandCooldown().get(entry) != null) {
+                FrameworkMessage.COMMAND_COOLDOWN.replace("%cooldown%", BasePlugin.getInst().getCommandCooldown().get(entry).toString()).send(sender);
+                return;
+            }
+
+            BasePlugin.getInst().getCommandCooldown().put(entry, time);
+
             Task.asyncRepeating(BasePlugin.getInst(), 1, 1, new BukkitRunnable() {
                 @Override
                 public void run() {
-                    if (BasePlugin.getInst().getCommandCooldown().get(sender).getValue() == 0) {
-                        BasePlugin.getInst().getCommandCooldown().remove(sender);
+                    if (BasePlugin.getInst().getCommandCooldown().get(entry) == 0) {
+                        BasePlugin.getInst().getCommandCooldown().remove(entry);
                         this.cancel();
                         return;
                     }
 
-                    BasePlugin.getInst().getCommandCooldown().get(sender).setValue(BasePlugin.getInst().getCommandCooldown().get(sender).getValue() - 1);
+                    int time = BasePlugin.getInst().getCommandCooldown().get(entry);
+                    BasePlugin.getInst().getCommandCooldown().remove(entry);
+                    BasePlugin.getInst().getCommandCooldown().put(entry, time - 1);
                 }
             });
         }
