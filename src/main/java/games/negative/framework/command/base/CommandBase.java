@@ -212,7 +212,8 @@ public interface CommandBase {
 
             int time = getCooldown().apply(sender);
             if (BasePlugin.getInst().getCommandCooldown().get(entry) != null) {
-                FrameworkMessage.COMMAND_COOLDOWN.replace("%cooldown%", BasePlugin.getInst().getCommandCooldown().get(entry).toString()).send(sender);
+                int remainder = BasePlugin.getInst().getCommandCooldown().get(entry) * 20;
+                FrameworkMessage.COMMAND_COOLDOWN.replace("%cooldown%", String.valueOf(remainder)).send(sender);
                 return;
             }
 
