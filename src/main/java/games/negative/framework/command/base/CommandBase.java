@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -192,13 +193,39 @@ public interface CommandBase {
 
         if (getCooldown().apply(sender) > 0) {
             int time = getCooldown().apply(sender);
-            if (BasePlugin.getInst().getCommandCooldown().get(sender) == getCommand()) {
-                FrameworkMessage.COMMAND_COOLDOWN.send(sender);
+            if (BasePlugin.getInst().getCommandCooldown().get(sender).getKey() == getCommand()) {
+                FrameworkMessage.COMMAND_COOLDOWN.replace("%cooldown%", BasePlugin.getInst().getCommandCooldown().get(sender).getValue().toString()).send(sender);
                 return;
             }
 
-            BasePlugin.getInst().getCommandCooldown().put(sender, getCommand());
-            Task.taskDelayed(time, () -> BasePlugin.getInst().getCommandCooldown().remove(sender));
+            BasePlugin.getInst().getCommandCooldown().put(sender, new Map.Entry<Command, Integer>() {
+                @Override
+                public Command getKey() {
+                    return getCommand();
+                }
+
+                @Override
+                public Integer getValue() {
+                    return time;
+                }
+
+                @Override
+                public Integer setValue(Integer value) {
+                    return null;
+                }
+            });
+            Task.asyncRepeating(BasePlugin.getInst(), 1, 1, new BukkitRunnable() {
+                @Override
+                public void run() {
+                    if (BasePlugin.getInst().getCommandCooldown().get(sender).getValue() == 0) {
+                        BasePlugin.getInst().getCommandCooldown().remove(sender);
+                        this.cancel();
+                        return;
+                    }
+
+                    BasePlugin.getInst().getCommandCooldown().get(sender).setValue(BasePlugin.getInst().getCommandCooldown().get(sender).getValue() - 1);
+                }
+            });
         }
 
         if (isPlayerOnly() && !(sender instanceof Player)) {

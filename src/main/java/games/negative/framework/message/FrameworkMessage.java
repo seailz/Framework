@@ -33,7 +33,7 @@ public enum FrameworkMessage {
     )),
 
     COMMAND_COOLDOWN(Collections.singletonList(
-            "&cThat command is still on cooldown."
+            "&cThat command is still on cooldown. Please wait %cooldown% seconds before trying again."
     )),
 
     ;
