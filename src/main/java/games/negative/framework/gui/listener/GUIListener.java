@@ -25,6 +25,7 @@
 
 package games.negative.framework.gui.listener;
 
+import games.negative.framework.gui.holder.CraftingGUIHolder;
 import games.negative.framework.gui.holder.DropperGUIHolder;
 import games.negative.framework.gui.holder.GUIHolder;
 import games.negative.framework.gui.holder.HopperGUIHolder;
@@ -56,6 +57,11 @@ public class GUIListener implements Listener {
             base.onClick(event);
         }
 
+        if (holder instanceof CraftingGUIHolder) {
+            CraftingGUIHolder base = (CraftingGUIHolder) holder;
+            base.onClick(event);
+        }
+
     }
 
     @EventHandler
@@ -70,6 +76,11 @@ public class GUIListener implements Listener {
             HopperGUIHolder base = (HopperGUIHolder) holder;
             base.onClose((Player) event.getPlayer(), event);
         }
+
+        if (holder instanceof CraftingGUIHolder) {
+            CraftingGUIHolder base = (CraftingGUIHolder) holder;
+            base.onClose((Player) event.getPlayer(), event);
+        }
     }
 
     @EventHandler
@@ -82,6 +93,11 @@ public class GUIListener implements Listener {
 
         if (holder instanceof HopperGUIHolder) {
             HopperGUIHolder base = (HopperGUIHolder) holder;
+            base.onOpen((Player) event.getPlayer(), event);
+        }
+
+        if (holder instanceof CraftingGUIHolder) {
+            CraftingGUIHolder base = (CraftingGUIHolder) holder;
             base.onOpen((Player) event.getPlayer(), event);
         }
     }
