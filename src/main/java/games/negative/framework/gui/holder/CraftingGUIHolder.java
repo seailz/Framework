@@ -19,7 +19,7 @@ import java.util.function.BiConsumer;
 
 /**
  * Crafting GUI Holder
- * @author Negative - modified by Seailz
+ * @author Negative
  */
 @Getter
 @Setter
