@@ -26,7 +26,7 @@ import java.util.function.Function;
 
 /**
  * Crafting GUI
- * @author Negative - modified by Seailz
+ * @author Negative
  */
 @Getter
 @Setter
