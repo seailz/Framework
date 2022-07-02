@@ -93,7 +93,7 @@ public class SignManager {
         BlockChangePacket blockChange = new BlockChangePacket(protocol.createPacket(PacketType.Play.Server.BLOCK_CHANGE));
         blockChange.setLocation(location);
 
-        player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), versionChecker.isLegacy() ? Material.SIGN : Material.valueOf("OAK_SIGN"), (byte) 0);
+        player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), versionChecker.isLegacy() ? Material.SIGN : Material.getMaterial("OAK_SIGN"), (byte) 0);
 
         TileEntityPacket tileEntity = new TileEntityPacket(protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA));
 
@@ -146,18 +146,5 @@ public class SignManager {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * Wraps the given lines into a WrappedChatComponent array.
-     * @param lines The lines to wrap.
-     * @author XlordalX
-     * @return The wrapped lines.
-     */
-    private static WrappedChatComponent[] wrap(ArrayList<String> lines) {
-            return StreamEx.of(lines)
-                    .map(line -> line == null ? "" : line)
-                    .map(WrappedChatComponent::fromText)
-                    .toArray(WrappedChatComponent[]::new);
     }
 }
