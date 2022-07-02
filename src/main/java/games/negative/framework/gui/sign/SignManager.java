@@ -53,8 +53,10 @@ public class SignManager {
 
         signEditorPacket.setLocation(new BlockPosition(0, 0, 0));
 
-        // TODO: Add support for newer versions
-        player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.SIGN, (byte) 0);
+        if (versionChecker.isModern())
+            player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.SIGN, (byte) 0);
+        else if (versionChecker.isLegacy())
+            player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.valueOf("OAK_SIGN"), (byte) 0);
 
         NbtCompound nbt = (NbtCompound) signDataPacket.getNbtModifier().read(0);
         ArrayList<String> lines = new ArrayList<>();
