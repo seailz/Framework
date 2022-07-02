@@ -39,9 +39,6 @@ public abstract class AbstractPacket {
      * @param type - the packet type.
      */
     protected AbstractPacket(PacketContainer handle, PacketType type) {
-        // Make sure we're given a valid packet
-        if (handle == null)
-            throw new IllegalArgumentException("Packet handle cannot be NULL.");
         if (!Objects.equal(handle.getType(), type))
             throw new IllegalArgumentException(handle.getHandle()
                     + " is not a packet of type " + type);
