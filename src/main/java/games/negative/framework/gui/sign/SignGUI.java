@@ -1,6 +1,7 @@
 package games.negative.framework.gui.sign;
 
 import games.negative.framework.gui.sign.exception.ProtocolLibNotInstalledException;
+import games.negative.framework.gui.sign.SignLine;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +27,7 @@ public class SignGUI {
     public SignGUI() {
         lines = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            lines.add(new SignLine(null));
+            lines.set(i, new SignLine(null));
         }
     }
 
