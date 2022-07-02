@@ -72,12 +72,15 @@ public class SignManager {
         sendPacket(player, signEditorPacket.getHandle());
 
         input.put(player, signGUI);
+
+        if (input.get(player).getOnClose() != null)
+            listen();
     }
 
     /**
      * Creates the packet listener
      */
-    public void listen() {
+    private static void listen() {
         protocol.addPacketListener(new PacketAdapter(BasePlugin.getInst(), PacketType.Play.Client.UPDATE_SIGN) {
             @Override
             public void onPacketReceiving(PacketEvent event) {
