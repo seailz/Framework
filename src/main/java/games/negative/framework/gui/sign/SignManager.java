@@ -15,6 +15,7 @@ import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class SignManager {
      * @param signGUI THe gui to open
      * @author FrostedSnowman & Seailz
      */
-    public static void open(Player player, SignGUI signGUI) {
+    public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
         SignEditorPacket signEditorPacket = new SignEditorPacket();
         PacketContainer signDataPacket = protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA);
 
