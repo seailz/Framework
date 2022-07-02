@@ -27,7 +27,7 @@ public class SignGUI {
     public SignGUI() {
         lines = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            lines.set(i, new SignLine(null));
+            lines.add(, new SignLine(null));
         }
     }
 
