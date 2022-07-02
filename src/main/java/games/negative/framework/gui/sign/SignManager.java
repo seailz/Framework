@@ -59,7 +59,7 @@ public class SignManager {
      * @author Seailz & OrangeUtan
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
-        VersionChecker versionChecker = new VersionChecker();
+        VersionChecker versionChecker = VersionChecker.getInstance();
 
         setLocation(new BlockPosition(player.getLocation().getBlockX(), 0, player.getLocation().getBlockZ()));
 
