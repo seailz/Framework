@@ -23,6 +23,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import games.negative.framework.gui.sign.packets.general.AbstractPacket;
+import org.jetbrains.annotations.NotNull;
 
 public class SignEditorPacket extends AbstractPacket {
 
@@ -34,7 +35,7 @@ public class SignEditorPacket extends AbstractPacket {
         handle.getModifier().writeDefaults();
     }
 
-    public SignEditorPacket(PacketContainer packet) {
+    public SignEditorPacket(@NotNull PacketContainer packet) {
         super(packet, TYPE);
     }
 
