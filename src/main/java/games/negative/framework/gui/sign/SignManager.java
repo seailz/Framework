@@ -93,10 +93,7 @@ public class SignManager {
         BlockChangePacket blockChange = new BlockChangePacket(protocol.createPacket(PacketType.Play.Server.BLOCK_CHANGE));
         blockChange.setLocation(location);
 
-        if (versionChecker.isLegacy())
-            blockChange.setBlockData(WrappedBlockData.createData(Material.SIGN_POST));
-        else if (versionChecker.isModern())
-            blockChange.setBlockData(WrappedBlockData.createData(Material.valueOf("OAK_SIGN")));
+        player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), versionChecker.isLegacy() ? Material.SIGN : Material.valueOf("OAK_SIGN"), (byte) 0);
 
         TileEntityPacket tileEntity = new TileEntityPacket(protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA));
 
