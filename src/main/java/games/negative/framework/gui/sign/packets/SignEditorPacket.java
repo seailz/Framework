@@ -53,7 +53,7 @@ public class SignEditorPacket extends AbstractPacket {
      *
      * @param value - new value.
      */
-    public void setLocation(BlockPosition value) {
+    public void setLocation(@NotNull BlockPosition value) {
         handle.getBlockPositionModifier().write(0, value);
     }
 
