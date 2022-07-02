@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
@@ -37,11 +38,11 @@ public class SignGUI {
     }
 
     /**
-     * Opens the sign GUI
+     * Opens the menu
      * @param player The player to open the GUI for
      * @throws ProtocolLibNotInstalledException If ProtocolLib is not installed
      */
-    public void open(Player player) throws ProtocolLibNotInstalledException {
+    public void open(@NotNull Player player) throws ProtocolLibNotInstalledException {
         if (!Bukkit.getPluginManager().isPluginEnabled("ProtocolLib"))
             throw new ProtocolLibNotInstalledException();
         SignManager.open(player, this);
