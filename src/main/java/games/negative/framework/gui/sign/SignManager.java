@@ -11,8 +11,11 @@ import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.WrappedBlockData;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import com.comphenix.protocol.wrappers.nbt.NbtCompound;
+import com.comphenix.protocol.wrappers.nbt.NbtFactory;
 import games.negative.framework.BasePlugin;
+import games.negative.framework.gui.sign.packets.BlockChangePacket;
 import games.negative.framework.gui.sign.packets.SignEditorPacket;
+import games.negative.framework.gui.sign.packets.TileEntityPacket;
 import games.negative.framework.util.Utils;
 import games.negative.framework.util.version.VersionChecker;
 import lombok.Getter;
@@ -53,47 +56,43 @@ public class SignManager {
      *
      * @param player  The player to open the GUI for.
      * @param signGUI THe gui to open
-     * @author FrostedSnowman & Seailz & XlordalX
+     * @author Seailz & OrangeUtan
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
         VersionChecker versionChecker = new VersionChecker();
-        // SignEditorPacket signEditorPacket = new SignEditorPacket();
-        PacketContainer signDataPacket = protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA);
 
-        setLocation(new BlockPosition((int) player.getLocation().getX(), (int) player.getLocation().getY(), (int) player.getLocation().getZ()));
+        setLocation(new BlockPosition(player.getLocation().getBlockX(), 0, player.getLocation().getBlockZ()));
 
-        if (!versionChecker.isModern())
-            player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.SIGN, (byte) 0);
-        else if (!versionChecker.isLegacy())
-            player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.valueOf("OAK_SIGN"), (byte) 0);
+        SignEditorPacket editor = new SignEditorPacket(protocol.createPacket(PacketType.Play.Server.OPEN_SIGN_EDITOR));
+        editor.setLocation(location);
 
-        // signEditorPacket.setLocation(location);
+        NbtCompound signNbt = NbtFactory.ofCompound("SignNBT");
+        signNbt.put("Text1", "{\"text\":\"" + signGUI.getLines().get(0).getText().apply(player) + "\"}");
+        signNbt.put("Text2", "{\"text\":\"" + signGUI.getLines().get(1).getText().apply(player) + "\"}");
+        signNbt.put("Text3", "{\"text\":\"" + signGUI.getLines().get(2).getText().apply(player) + "\"}");
+        signNbt.put("Text4", "{\"text\":\"" + signGUI.getLines().get(3).getText().apply(player) + "\"}");
+        signNbt.put("id", "minecraft:sign");
+        signNbt.put("x", location.getX());
+        signNbt.put("y", location.getY());
+        signNbt.put("z", location.getZ());
 
-        ArrayList<String> lines = new ArrayList<>();
+        BlockChangePacket blockChange = new BlockChangePacket(protocol.createPacket(PacketType.Play.Server.BLOCK_CHANGE));
+        blockChange.setLocation(location);
 
-        signGUI.getLines().forEach(line -> {
-            if (line.getText() != null)
-                lines.add(line.getText().apply(player));
-            else
-                lines.add("");
-        });
+        if (versionChecker.isLegacy())
+            blockChange.setBlockData(WrappedBlockData.createData(Material.SIGN_POST));
+        else if (versionChecker.isModern())
+            blockChange.setBlockData(WrappedBlockData.createData(Material.valueOf("OAK_SIGN")));
 
+        TileEntityPacket tileEntity = new TileEntityPacket(protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA));
 
+        tileEntity.setNbtData(signNbt);
+        tileEntity.setAction(9);
+        tileEntity.setLocation(location);
 
-        // String itemName = versionChecker.isModern() ? "minecraft:sign" : "minecraft:oak_sign";
-
-        signDataPacket.getBlockPositionModifier().write(0, location);
-
-        PacketContainer update = protocol.createPacket(PacketType.Play.Server.UPDATE_SIGN);
-
-        PacketContainer block = protocol.createPacket(PacketType.Play.Server.BLOCK_CHANGE);
-        block.getBlockPositionModifier().write(0, location);
-        block.getBlockData().write(0, WrappedBlockData.createData(Material.SIGN_POST));
-        update.getBlockPositionModifier().write(0, location);
-        update.getChatComponentArrays().write(0, wrap(lines));
-
-        sendPacket(player, signDataPacket);
-        sendPacket(player, update);
+        blockChange.sendPacket(player);
+        editor.sendPacket(player);
+        tileEntity.sendPacket(player);
         // sendPacket(player, signEditorPacket.getHandle());
 
         input.put(player, signGUI);
