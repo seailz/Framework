@@ -12,7 +12,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 /**
- * Custom SignGUI inputs
+ * Sign GUI
  * @author Seailz
  */
 @Getter
