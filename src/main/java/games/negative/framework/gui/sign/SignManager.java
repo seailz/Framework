@@ -58,7 +58,10 @@ public class SignManager {
         ArrayList<String> lines = new ArrayList<>();
 
         signGUI.getLines().forEach(line -> {
-            lines.add(line.getText().apply(player));
+            if (line.getText() != null)
+                lines.add(line.getText().apply(player));
+            else
+                lines.add("");
         });
 
         for (String line : lines) {
