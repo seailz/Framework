@@ -51,8 +51,8 @@ public class SignManager {
 
         signEditorPacket.setLocation(new BlockPosition(0, 0, 0));
 
+        // TODO: Add support for newer versions
         player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.SIGN, (byte) 0);
-        ;
 
         NbtCompound nbt = (NbtCompound) signDataPacket.getNbtModifier().read(0);
         ArrayList<String> lines = new ArrayList<>();
@@ -105,7 +105,7 @@ public class SignManager {
      * @param player The player to send the packet to.
      * @param packet The packet to send.
      */
-    private static void sendPacket(Player player, PacketContainer packet) {
+    private static void sendPacket(@NotNull Player player, @NotNull PacketContainer packet) {
         try {
             protocol.sendServerPacket(player, packet);
         } catch (InvocationTargetException e) {
