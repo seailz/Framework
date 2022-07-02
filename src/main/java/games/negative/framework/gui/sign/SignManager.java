@@ -100,7 +100,7 @@ public class SignManager {
 
                     // String[] lines = new String[]{values.read(1), values.read(2), values.read(3), values.read(4)};
                     WrappedChatComponent[] lines = event.getPacket().getChatComponentArrays().read(0);
-                    String[] linesStrings = new String[]{lines[0].toString(), lines[1].toString(), lines[2].toString(), lines[3].toString()};
+                    String[] linesStrings = new String[]{lines[0].getJson(), lines[1].getJson(), lines[2].getJson(), lines[3].getJson()};
                     signGUI.getOnClose().accept(p, linesStrings);
                     input.remove(p);
                 }
