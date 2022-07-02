@@ -11,6 +11,7 @@ import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import games.negative.framework.BasePlugin;
 import games.negative.framework.gui.sign.packets.SignEditorPacket;
 import games.negative.framework.util.Utils;
+import games.negative.framework.util.version.VersionChecker;
 import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -44,6 +45,7 @@ public class SignManager {
      * @author FrostedSnowman & Seailz
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
+        VersionChecker versionChecker = new VersionChecker();
         SignEditorPacket signEditorPacket = new SignEditorPacket();
         PacketContainer signDataPacket = protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA);
 
@@ -63,7 +65,8 @@ public class SignManager {
             nbt.put("Text" + (line + 1), lines.size() > lines.indexOf(line) ? String.format("{\"text\":\"%s\"}", Utils.color(line)) : "");
         }
 
-        nbt.put("id", "minecraft:sign");
+        String itemName = versionChecker.isModern() ? "minecraft:sign" : "minecraft:oak_sign";
+        nbt.put("id", itemName);
 
         signDataPacket.getBlockPositionModifier().write(0, new BlockPosition(0, 0, 0));
         signDataPacket.getIntegers().write(0, 9);
