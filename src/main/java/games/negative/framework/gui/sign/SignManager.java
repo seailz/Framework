@@ -15,8 +15,11 @@ import games.negative.framework.gui.sign.packets.SignEditorPacket;
 import games.negative.framework.util.Utils;
 import games.negative.framework.util.version.VersionChecker;
 import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,6 +38,10 @@ public class SignManager {
     @Getter
     private static final ProtocolManager protocol;
 
+    @Getter
+    @Setter
+    private static BlockPosition location;
+
     static {
         protocol = ProtocolLibrary.getProtocolManager();
     }
@@ -51,12 +58,14 @@ public class SignManager {
         SignEditorPacket signEditorPacket = new SignEditorPacket();
         PacketContainer signDataPacket = protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA);
 
-        signEditorPacket.setLocation(new BlockPosition(0, 0, 0));
+        setLocation(new BlockPosition((int) player.getLocation().getX(), (int) player.getLocation().getY(), (int) player.getLocation().getZ()));
 
         if (versionChecker.isModern())
             player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.SIGN, (byte) 0);
         else if (versionChecker.isLegacy())
             player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.valueOf("OAK_SIGN"), (byte) 0);
+
+        signEditorPacket.setLocation(location);
 
         NbtCompound nbt = (NbtCompound) signDataPacket.getNbtModifier().read(0);
         ArrayList<String> lines = new ArrayList<>();
@@ -73,6 +82,9 @@ public class SignManager {
         }
 
         String itemName = versionChecker.isModern() ? "minecraft:sign" : "minecraft:oak_sign";
+        nbt.put("x", getLocation().getX());
+        nbt.put("y", getLocation().getY());
+        nbt.put("z", getLocation().getZ());
         nbt.put("id", itemName);
 
         signDataPacket.getBlockPositionModifier().write(0, new BlockPosition(0, 0, 0));
@@ -122,6 +134,5 @@ public class SignManager {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-
     }
 }
