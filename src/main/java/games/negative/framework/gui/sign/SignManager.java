@@ -61,9 +61,9 @@ public class SignManager {
 
         setLocation(new BlockPosition((int) player.getLocation().getX(), (int) player.getLocation().getY(), (int) player.getLocation().getZ()));
 
-        if (versionChecker.isModern())
+        if (!versionChecker.isModern())
             player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.SIGN, (byte) 0);
-        else if (versionChecker.isLegacy())
+        else if (!versionChecker.isLegacy())
             player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.valueOf("OAK_SIGN"), (byte) 0);
 
         // signEditorPacket.setLocation(location);
