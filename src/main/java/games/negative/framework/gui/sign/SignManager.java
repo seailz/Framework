@@ -17,6 +17,7 @@ import games.negative.framework.util.Utils;
 import games.negative.framework.util.version.VersionChecker;
 import lombok.Getter;
 import lombok.Setter;
+import one.util.streamex.StreamEx;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -52,7 +53,7 @@ public class SignManager {
      *
      * @param player  The player to open the GUI for.
      * @param signGUI THe gui to open
-     * @author FrostedSnowman & Seailz
+     * @author FrostedSnowman & Seailz & XlordalX
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
         VersionChecker versionChecker = new VersionChecker();
@@ -137,11 +138,16 @@ public class SignManager {
         }
     }
 
+    /**
+     * Wraps the given lines into a WrappedChatComponent array.
+     * @param lines The lines to wrap.
+     * @author XlordalX
+     * @return The wrapped lines.
+     */
     private static WrappedChatComponent[] wrap(ArrayList<String> lines) {
-        WrappedChatComponent[] wrappedLines = new WrappedChatComponent[lines.size()];
-        for (int i = 0; i < lines.size(); i++) {
-            wrappedLines[i] = WrappedChatComponent.fromText(lines.get(i));
-        }
-        return wrappedLines;
+            return StreamEx.of(lines)
+                    .map(line -> line == null ? "" : line)
+                    .map(WrappedChatComponent::fromText)
+                    .toArray(WrappedChatComponent[]::new);
     }
 }
