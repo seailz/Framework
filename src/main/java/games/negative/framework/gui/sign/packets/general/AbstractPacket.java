@@ -27,6 +27,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
 import com.google.common.base.Objects;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractPacket {
     // The packet we will be modifying
@@ -61,7 +62,7 @@ public abstract class AbstractPacket {
      * @param receiver - the receiver.
      * @throws RuntimeException If the packet cannot be sent.
      */
-    public void sendPacket(Player receiver) {
+    public void sendPacket(@NotNull Player receiver) {
         try {
             ProtocolLibrary.getProtocolManager().sendServerPacket(receiver,
                     getHandle());
