@@ -8,6 +8,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.reflect.StructureModifier;
 import com.comphenix.protocol.wrappers.BlockPosition;
+import com.comphenix.protocol.wrappers.WrappedBlockData;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import games.negative.framework.BasePlugin;
@@ -55,7 +56,7 @@ public class SignManager {
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
         VersionChecker versionChecker = new VersionChecker();
-        SignEditorPacket signEditorPacket = new SignEditorPacket();
+        // SignEditorPacket signEditorPacket = new SignEditorPacket();
         PacketContainer signDataPacket = protocol.createPacket(PacketType.Play.Server.TILE_ENTITY_DATA);
 
         setLocation(new BlockPosition((int) player.getLocation().getX(), (int) player.getLocation().getY(), (int) player.getLocation().getZ()));
@@ -65,9 +66,8 @@ public class SignManager {
         else if (versionChecker.isLegacy())
             player.sendBlockChange(new Location(player.getWorld(), 0, 0, 0), Material.valueOf("OAK_SIGN"), (byte) 0);
 
-        signEditorPacket.setLocation(location);
+        // signEditorPacket.setLocation(location);
 
-        NbtCompound nbt = (NbtCompound) signDataPacket.getNbtModifier().read(0);
         ArrayList<String> lines = new ArrayList<>();
 
         signGUI.getLines().forEach(line -> {
@@ -77,22 +77,23 @@ public class SignManager {
                 lines.add("");
         });
 
-        for (String line : lines) {
-            nbt.put("Text" + (line + 1), lines.size() > lines.indexOf(line) ? String.format("{\"text\":\"%s\"}", Utils.color(line)) : "");
-        }
 
-        String itemName = versionChecker.isModern() ? "minecraft:sign" : "minecraft:oak_sign";
-        nbt.put("x", getLocation().getX());
-        nbt.put("y", getLocation().getY());
-        nbt.put("z", getLocation().getZ());
-        nbt.put("id", itemName);
 
-        signDataPacket.getBlockPositionModifier().write(0, new BlockPosition(0, 0, 0));
-        signDataPacket.getIntegers().write(0, 9);
-        signDataPacket.getNbtModifier().write(0, nbt);
+        // String itemName = versionChecker.isModern() ? "minecraft:sign" : "minecraft:oak_sign";
+
+        signDataPacket.getBlockPositionModifier().write(0, location);
+
+        PacketContainer update = protocol.createPacket(PacketType.Play.Server.UPDATE_SIGN);
+
+        PacketContainer block = protocol.createPacket(PacketType.Play.Server.BLOCK_CHANGE);
+        block.getBlockPositionModifier().write(0, location);
+        block.getBlockData().write(0, WrappedBlockData.createData(Material.SIGN_POST));
+        update.getBlockPositionModifier().write(0, location);
+        update.getChatComponentArrays().write(0, wrap(lines));
 
         sendPacket(player, signDataPacket);
-        sendPacket(player, signEditorPacket.getHandle());
+        sendPacket(player, update);
+        // sendPacket(player, signEditorPacket.getHandle());
 
         input.put(player, signGUI);
 
@@ -134,5 +135,13 @@ public class SignManager {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+    }
+
+    private static WrappedChatComponent[] wrap(ArrayList<String> lines) {
+        WrappedChatComponent[] wrappedLines = new WrappedChatComponent[lines.size()];
+        for (int i = 0; i < lines.size(); i++) {
+            wrappedLines[i] = WrappedChatComponent.fromText(lines.get(i));
+        }
+        return wrappedLines;
     }
 }
