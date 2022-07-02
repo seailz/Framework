@@ -6,6 +6,7 @@ import com.comphenix.protocol.ProtocolManager;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
+import com.comphenix.protocol.reflect.StructureModifier;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import games.negative.framework.BasePlugin;
@@ -94,7 +95,9 @@ public class SignManager {
                 Player p = event.getPlayer();
                 if (input.containsKey(p)) {
                     SignGUI signGUI = input.get(p);
-                    String[] lines = event.getPacket().getStringArrays().read(0);
+                    StructureModifier<String> values = event.getPacket().getStrings();
+
+                    String[] lines = new String[]{values.read(1), values.read(2), values.read(3), values.read(4)};
                     signGUI.getOnClose().accept(p, lines);
                     input.remove(p);
                 }
