@@ -67,10 +67,24 @@ public class SignManager {
         editor.setLocation(location);
 
         NbtCompound signNbt = NbtFactory.ofCompound("SignNBT");
-        signNbt.put("Text1", "{\"text\":\"" + signGUI.getLines().get(0).getText().apply(player) + "\"}");
-        signNbt.put("Text2", "{\"text\":\"" + signGUI.getLines().get(1).getText().apply(player) + "\"}");
-        signNbt.put("Text3", "{\"text\":\"" + signGUI.getLines().get(2).getText().apply(player) + "\"}");
-        signNbt.put("Text4", "{\"text\":\"" + signGUI.getLines().get(3).getText().apply(player) + "\"}");
+
+        if (signGUI.getLines().size() >= 1)
+            signNbt.put("Text1", "{\"text\":\"" + signGUI.getLines().get(0).getText().apply(player) + "\"}");
+        else
+            signNbt.put("Text4", "{\"text\":\"\"}");
+        if (signGUI.getLines().size() >= 2)
+            signNbt.put("Text2", "{\"text\":\"" + signGUI.getLines().get(1).getText().apply(player) + "\"}");
+        else
+            signNbt.put("Text4", "{\"text\":\"\"}");
+        if (signGUI.getLines().size() >= 3)
+            signNbt.put("Text3", "{\"text\":\"" + signGUI.getLines().get(2).getText().apply(player) + "\"}");
+        else
+            signNbt.put("Text4", "{\"text\":\"\"}");
+        if (signGUI.getLines().size() >= 4)
+            signNbt.put("Text4", "{\"text\":\"" + signGUI.getLines().get(3).getText().apply(player) + "\"}");
+        else
+            signNbt.put("Text4", "{\"text\":\"\"}");
+
         signNbt.put("id", "minecraft:sign");
         signNbt.put("x", location.getX());
         signNbt.put("y", location.getY());
