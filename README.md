@@ -94,7 +94,6 @@ repositories {
 dependencies {
     implementation 'games.negative.framework:Framework:{VERSION}'
 }
-}
 ```
 
 To mask the dependency, add this to your plugins section
