@@ -17,29 +17,6 @@
         "projectManagement",
         "maintenance"
       ]
-    },
-    {
-      "login": "NegativeDev",
-      "name": "Negative",
-      "avatar_url": "https://avatars.githubusercontent.com/u/60104846?v=4",
-      "profile": "https://github.com/negativedev",
-      "contributions": [
-        "test",
-        "security",
-        "code",
-        "projectManagement",
-        "maintenance",
-        "infra"
-      ]
-    },
-    {
-      "login": "Seailz",
-      "name": "Seailz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/81972974?v=4",
-      "profile": "https://github.com/seailz",
-      "contributions": [
-        "code"
-      ]
     }
   ],
   "contributorsPerLine": 7,
