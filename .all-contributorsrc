@@ -1,0 +1,28 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "joeecodes",
+      "name": "joee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68609292?v=4",
+      "profile": "https://hi.joehosten.me/",
+      "contributions": [
+        "test",
+        "security",
+        "code",
+        "projectManagement",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Framework",
+  "projectOwner": "Negative-Games",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
