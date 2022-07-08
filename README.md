@@ -1,10 +1,3 @@
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-![Logo](https://cdn.joehosten.me/negative-games/assets/Framework.png)
-
-
 # Framework
 [![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) ![Jenkins](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci.hypews.com%2Fjob%2FFramework%2F&label=jenkins-build)  
 An expanded plugin library which allows more effective and rapid plugin development.   
@@ -153,24 +146,3 @@ If you have any feedback, please reach out to us at https://discord.negative.gam
 - [@negativedev](https://www.github.com/negativedev)
 - [@joeecodes](https://www.github.com/joeecodes)
 - Contributors
-
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/NegativeDev"><img src="https://avatars.githubusercontent.com/u/60104846?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Negative</b></sub></a><br /><a href="https://github.com/Negative-Games/Framework/commits?author=NegativeDev" title="Tests">⚠️</a> <a href="#security-NegativeDev" title="Security">🛡️</a> <a href="https://github.com/Negative-Games/Framework/commits?author=NegativeDev" title="Code">💻</a> <a href="#projectManagement-NegativeDev" title="Project Management">📆</a> <a href="#maintenance-NegativeDev" title="Maintenance">🚧</a> <a href="#infra-NegativeDev" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
