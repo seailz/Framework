@@ -142,7 +142,6 @@ If you have any feedback, please reach out to us at https://discord.negative.gam
 
 
 ## Authors
-
-- [@negativedev](https://www.github.com/negativedev)
-- [@joeecodes](https://www.github.com/joeecodes)
-- Contributors
+<a href="https://github.com/negative-games/framework/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=negative-games/framework" />
+</a>
