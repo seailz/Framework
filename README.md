@@ -1,3 +1,6 @@
+<img src="https://cdn.joehosten.me/negative-games/assets/Framework.png">
+<hr>
+
 # Framework
 [![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) ![Jenkins](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci.hypews.com%2Fjob%2FFramework%2F&label=jenkins-build)  
 An expanded plugin library which allows more effective and rapid plugin development.   
