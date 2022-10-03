@@ -35,6 +35,8 @@ import games.negative.framework.command.shortcommand.provider.ShortCommandsListe
 import games.negative.framework.cooldown.Cooldowns;
 import games.negative.framework.gui.listener.GUIListener;
 import games.negative.framework.inputlistener.InputListener;
+import games.negative.framework.json.JSONConfigManager;
+import games.negative.framework.json.provider.JSONConfigManagerProvider;
 import games.negative.framework.message.FrameworkMessage;
 import games.negative.framework.util.FileLoader;
 import games.negative.framework.util.version.VersionChecker;
@@ -61,6 +63,7 @@ public abstract class BasePlugin extends JavaPlugin {
 
     private static BasePlugin inst;
     private CommandRepository commandRepository;
+    private JSONConfigManager jsonConfigManager;
 
     public static BasePlugin getInst() {
         return inst;
@@ -82,6 +85,7 @@ public abstract class BasePlugin extends JavaPlugin {
         Cooldowns.startInternalCooldowns(this);
 
         commandRepository = new FrameworkCommandRepository();
+        jsonConfigManager = new JSONConfigManagerProvider(this);
     }
 
     /**
@@ -166,5 +170,9 @@ public abstract class BasePlugin extends JavaPlugin {
     public void registerListeners(@NotNull Listener... listeners) {
         PluginManager pluginManager = Bukkit.getPluginManager();
         Arrays.stream(listeners).forEach(listener -> pluginManager.registerEvents(listener, this));
+    }
+
+    public JSONConfigManager getJSONConfigManager() {
+        return jsonConfigManager;
     }
 }
