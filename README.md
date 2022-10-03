@@ -5,7 +5,7 @@
 [![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) 
 
 An expanded plugin library which allows more effective and rapid plugin development.   
-Latest version: `2.2.0`
+Latest version: `2.3.1`
 
 
 ## Contributing
