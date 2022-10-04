@@ -37,6 +37,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
+@Deprecated
 @UtilityClass
 public class MigrationCheck {
 
