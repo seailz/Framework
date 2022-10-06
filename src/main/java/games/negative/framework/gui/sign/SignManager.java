@@ -41,7 +41,7 @@ public class SignManager {
     private static final HashMap<Player, SignGUI> input = new HashMap<>();
 
     @Getter
-    private static final ProtocolManager protocol;
+    private static ProtocolManager protocol;
 
     @Getter
     @Setter
@@ -60,6 +60,7 @@ public class SignManager {
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
         VersionChecker versionChecker = VersionChecker.getInstance();
+        protocol = ProtocolLibrary.getProtocolManager();
 
         setLocation(new BlockPosition(player.getLocation().getBlockX(), 0, player.getLocation().getBlockZ()));
 
