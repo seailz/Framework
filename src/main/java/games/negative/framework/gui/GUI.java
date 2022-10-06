@@ -1,7 +1,9 @@
 /*
- * MIT License
+ *  MIT License
  *
- * Copyright (c) 2022 Negative
+ * Copyright (C) 2022 Negative Games & Developers
+ * Copyright (C) 2022 NegativeDev (NegativeKB, Eric)
+ * Copyright (C) 2022 Contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +30,7 @@ package games.negative.framework.gui;
 import games.negative.framework.gui.base.MenuBase;
 import games.negative.framework.gui.holder.GUIHolder;
 import games.negative.framework.gui.internal.MenuItem;
+import games.negative.framework.util.Utils;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
@@ -105,7 +108,7 @@ public class GUI implements MenuBase {
     @Override
     public void open(@NotNull Player player) {
         GUIHolder holder = new GUIHolder(this);
-        Inventory inv = Bukkit.createInventory(holder, (9 * rows), ChatColor.translateAlternateColorCodes('&', title));
+        Inventory inv = Bukkit.createInventory(holder, (9 * rows), Utils.color(title));
 
         player.openInventory(inv);
         activeInventories.put(player, inv);

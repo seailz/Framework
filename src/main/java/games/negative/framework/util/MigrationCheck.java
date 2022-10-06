@@ -1,7 +1,9 @@
 /*
- * MIT License
+ *  MIT License
  *
- * Copyright (c) 2022 Negative
+ * Copyright (C) 2022 Negative Games & Developers
+ * Copyright (C) 2022 NegativeDev (NegativeKB, Eric)
+ * Copyright (C) 2022 Contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -35,6 +37,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
+@Deprecated
 @UtilityClass
 public class MigrationCheck {
 

@@ -1,0 +1,45 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "NegativeDev",
+      "name": "Negative",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60104846?v=4",
+      "profile": "https://github.com/NegativeDev",
+      "contributions": [
+        "test",
+        "security",
+        "code",
+        "projectManagement",
+        "maintenance",
+        "infra",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "joeecodes",
+      "name": "joee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68609292?v=4",
+      "profile": "https://hi.joehosten.me/",
+      "contributions": [
+        "code",
+        "security",
+        "ideas",
+        "maintenance",
+        "review",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Framework",
+  "projectOwner": "Negative-Games",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

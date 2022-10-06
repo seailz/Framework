@@ -1,7 +1,9 @@
 /*
- * MIT License
+ *  MIT License
  *
- * Copyright (c) 2022 Negative
+ * Copyright (C) 2022 Negative Games & Developers
+ * Copyright (C) 2022 NegativeDev (NegativeKB, Eric)
+ * Copyright (C) 2022 Contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +30,7 @@ package games.negative.framework.gui;
 import games.negative.framework.gui.base.MenuBase;
 import games.negative.framework.gui.holder.HopperGUIHolder;
 import games.negative.framework.gui.internal.MenuItem;
+import games.negative.framework.util.Utils;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
@@ -94,7 +97,7 @@ public class HopperGUI implements MenuBase {
      */
     public void open(@NotNull Player player) {
         HopperGUIHolder holder = new HopperGUIHolder(this);
-        Inventory inv = Bukkit.createInventory(holder, InventoryType.HOPPER, ChatColor.translateAlternateColorCodes('&', title));
+        Inventory inv = Bukkit.createInventory(holder, InventoryType.HOPPER, Utils.color(title));
 
         player.openInventory(inv);
         activeInventories.put(player, inv);

@@ -1,7 +1,9 @@
 /*
- * MIT License
+ *  MIT License
  *
- * Copyright (c) 2022 Negative
+ * Copyright (C) 2022 Negative Games & Developers
+ * Copyright (C) 2022 NegativeDev (NegativeKB, Eric)
+ * Copyright (C) 2022 Contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -101,6 +103,15 @@ public class Message {
         setMessage(getInitial());
     }
 
+    public void send(@NotNull CommandSender sender, @NotNull String... permissions) {
+        for (String permission : permissions) {
+            if (sender.hasPermission(permission)) {
+                send(sender);
+                return;
+            }
+        }
+    }
+
     /**
      * Send Message to a list of players
      * <p>
@@ -110,6 +121,10 @@ public class Message {
      */
     public void send(@NotNull Iterable<CommandSender> players) {
         players.forEach(this::send);
+    }
+
+    public void send(@NotNull Iterable<CommandSender> players, @NotNull String... permissions) {
+        players.forEach(player -> send(player, permissions));
     }
 
     /**

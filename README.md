@@ -1,34 +1,43 @@
-# Negative Games - Framework
+<img src="https://cdn.joehosten.me/negative-games/assets/Framework.png">
+<hr>
 
-[![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) ![Jenkins](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci.hypews.com%2Fjob%2FFramework%2F&label=jenkins-build)
+# Framework
+[![](https://jitpack.io/v/Negative-Games/Framework.svg)](https://jitpack.io/#Negative-Games/Framework) ![licence](https://img.shields.io/github/license/negative-games/framework) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/negative-games/framework/latest) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/negative-games/framework/CodeQL) 
 
-An expanded plugin library which allows more effective and rapid plugin development.  
-Latest
-version: `2.2.0`
+An expanded plugin library which allows more effective and rapid plugin development.   
+Latest version: `2.3.1`
 
-## Wiki & JavaDocs
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+
+## Documentation
 
 https://github.com/Negative-Games/Framework/wiki  
 https://framework.docs.negative.games/
 
-# Metrics Tracking
+
+## License
+
+[We use the MIT licence for this project. Please read it here.](https://choosealicense.com/licenses/mit/)
+
+
+## Metrics Usage
 If you would like to help us gather statistical & usage data for Framework via [Metrics](https://bstats.org), please add the following in your `onEnable()` method:
 ```java
-@Override
-public void onEnable() {
-    super.onEnable();
-    /*
-    * This will register our in-built Metrics system for Negative Games to 
-    * gather statistical data on Server Version, how many servers are using Framework 
-    * and how many players we are serving.
-    */
-    enableFrameworkUsageTracking()
-}
+enableFrameworkUsageTracking()
 ```
+## Maven & Gradle Repositories
 
-# ✨Maven Repository✨
+### ✨Maven Repository✨
 
-## Repository
+#### Repository
 
 ```xml
 <repository>     
@@ -37,7 +46,7 @@ public void onEnable() {
 </repository>
 ```
 
-## Dependency
+#### Dependency
 
 ```xml
 <dependency>
@@ -48,7 +57,7 @@ public void onEnable() {
 </dependency>
 ```
 
-## Build Configuration
+#### Build Configuration
 
 Add this to your build configuration for this to work correctly.
 
@@ -63,7 +72,7 @@ Add this to your build configuration for this to work correctly.
 </configuration>
 ```
 
-### Example
+#### Example
 
 An example would be:
 
@@ -81,7 +90,8 @@ An example would be:
 To view an example in a full pom, head
 to [this link](https://gist.github.com/joeecodes/f0d2da7807b256e44cce7da3be0bb188).
 
-# ✨Gradle Repo✨
+### ✨Gradle Repo✨
+#### Repository
 
 ```groovy
 repositories {
@@ -89,11 +99,11 @@ repositories {
     maven { url 'https://repo.negative.games/repository/negative-games/' }
 }
 ```
+#### Dependencies
 
 ```groovy
 dependencies {
     implementation 'games.negative.framework:Framework:{VERSION}'
-}
 }
 ```
 
@@ -125,4 +135,17 @@ def id = "MyPlugin" // Replace with the plugin name
 def group = 'games.negative' // Replace with your group id
 def version = '1.0-SNAPSHOT' // Replace with the version
 ```
+## Support
 
+For support, join https://discord.negative.games, create an issue card or email us at negativegames.dev@gmail.com.
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at https://discord.negative.games
+
+
+## Authors
+<a href="https://github.com/negative-games/framework/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=negative-games/framework" />
+</a>

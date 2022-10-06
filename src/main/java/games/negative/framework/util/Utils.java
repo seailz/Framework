@@ -1,7 +1,9 @@
 /*
- * MIT License
+ *  MIT License
  *
- * Copyright (c) 2022 Negative
+ * Copyright (C) 2022 Negative Games & Developers
+ * Copyright (C) 2022 NegativeDev (NegativeKB, Eric)
+ * Copyright (C) 2022 Contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -124,6 +126,18 @@ public class Utils {
     }
 
     /**
+     * Colorize a String with a custom character
+     *
+     * @param key Specifies the character to colorize the string with, such as `&`
+     * @param input Input String
+     * @return Chat Color formatted String
+     */
+    @NotNull
+    public String color(char key, @NotNull String input) {
+        return ChatColor.translateAlternateColorCodes(key, input);
+    }
+
+    /**
      * Colorize a List of Strings
      *
      * @param input Input StringList
@@ -132,6 +146,19 @@ public class Utils {
     public List<String> color(@NotNull List<String> input) {
         List<String> returnValue = new ArrayList<>();
         input.forEach(s -> returnValue.add(color(s)));
+        return returnValue;
+    }
+
+    /**
+     * Colorize a List of Strings with a custom character
+     *
+     * @param key Specifies the character to colorize the string with, such as `&`
+     * @param input Input StringList
+     * @return Chat Color formatted List of Strings
+     */
+    public List<String> color(char key, @NotNull List<String> input) {
+        List<String> returnValue = new ArrayList<>();
+        input.forEach(s -> returnValue.add(color(key, s)));
         return returnValue;
     }
 
