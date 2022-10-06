@@ -60,10 +60,12 @@ public class SignManager {
      */
     public static void open(@NotNull Player player, @NotNull SignGUI signGUI) {
         VersionChecker versionChecker = VersionChecker.getInstance();
-        protocol = ProtocolLibrary.getProtocolManager();
 
         setLocation(new BlockPosition(player.getLocation().getBlockX(), 0, player.getLocation().getBlockZ()));
 
+        protocol = ProtocolLibrary.getProtocolManager();
+        if (protocol == null)
+            System.out.println("Protocol is null");
         SignEditorPacket editor = new SignEditorPacket(protocol.createPacket(PacketType.Play.Server.OPEN_SIGN_EDITOR));
         editor.setLocation(location);
 
